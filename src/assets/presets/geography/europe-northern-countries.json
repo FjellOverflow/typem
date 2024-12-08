@@ -1,0 +1,50 @@
+{
+  "id": "europe-northern-countries",
+  "meta": {
+    "name": "Countries of Northern Europe",
+    "description": "Can you guess all 10 countries of Northern Europe?",
+    "difficulty": 1
+  },
+  "items": [
+    {
+      "answer": "Denmark",
+      "matches": ["Denmark", "Danmark"]
+    },
+    {
+      "answer": "Estonia",
+      "matches": ["Estonia", "Eesti"]
+    },
+    {
+      "answer": "Finland",
+      "matches": ["Finland", "Suomi"]
+    },
+    {
+      "answer": "Iceland",
+      "matches": ["Iceland", "Ísland"]
+    },
+    {
+      "answer": "Ireland",
+      "matches": ["Ireland", "Éire"]
+    },
+    {
+      "answer": "Latvia",
+      "matches": ["Latvia", "Latvija"]
+    },
+    {
+      "answer": "Lithuania",
+      "matches": ["Lithuania", "Lietuva"]
+    },
+    {
+      "answer": "Norway",
+      "matches": ["Norway", "Norge", "Noreg", "Norga", "Vuodna", "Nöörje"]
+    },
+    {
+      "answer": "Sweden",
+      "matches": ["Sweden", "Sverige"]
+    },
+    {
+      "answer": "United Kingdom",
+      "matches": ["United Kingdom", "UK", "Britain"]
+    }
+  ]
+}

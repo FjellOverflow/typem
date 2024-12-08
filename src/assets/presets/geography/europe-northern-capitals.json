@@ -1,0 +1,64 @@
+{
+  "id": "europe-northern-capitals",
+  "meta": {
+    "name": "Capitals of Northern Europe",
+    "description": "Can you name the capital of all countries of Northern Europe?",
+    "difficulty": 2
+  },
+  "items": [
+    {
+      "hint": "Capital of Denmark",
+      "answer": "Copenhagen",
+      "matches": ["Copenhagen", "København"]
+    },
+    {
+      "hint": "Capital of Estonia",
+      "answer": "Tallinn",
+      "matches": ["Tallinn"]
+    },
+    {
+      "hint": "Capital of Finland",
+      "answer": "Helsinki",
+      "matches": ["Helsinki", "Helsingfors"]
+    },
+    {
+      "hint": "Capital of Iceland",
+      "answer": "Reykjavik",
+      "matches": ["Reykjavik", "Reykjavík"]
+    },
+    {
+      "hint": "Capital of Ireland",
+      "answer": "Dublin",
+      "matches": ["Dublin", "Baile Átha Cliath"]
+    },
+    {
+      "hint": "Capital of Latvia",
+      "answer": "Riga",
+      "matches": ["Riga", "Rīga"]
+    },
+    {
+      "hint": "Capital of Lithuania",
+      "answer": "Vilnius",
+      "matches": ["Vilnius", "Vilnius"]
+    },
+    {
+      "hint": "Capital of Norway",
+      "answer": "Oslo",
+      "matches": ["Oslo"]
+    },
+    {
+      "hint": "Capital of Sweden",
+      "answer": "Stockholm",
+      "matches": ["Stockholm"]
+    },
+    {
+      "hint": "Capital of the United Kingdom",
+      "answer": "London",
+      "matches": ["London", "Llundain", "Lunnon", "Lunnainn", "Londain", "Loundres"]
+    }
+  ],
+  "settings": {
+    "requireOrder": false,
+    "showHints": true
+  }
+}

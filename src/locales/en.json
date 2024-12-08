@@ -1,0 +1,64 @@
+{
+  "checkedItems": {
+    "label": "Checked items"
+  },
+  "difficulty": {
+    "easy": "Easy",
+    "medium": "Medium",
+    "hard": "Hard"
+  },
+  "items": {
+    "label": "Items"
+  },
+  "hint": {
+    "next": "Next",
+    "previous": "Previous",
+    "none": "No hint available"
+  },
+  "play": {
+    "label": "Let's play"
+  },
+  "settings": {
+    "label": "Settings",
+    "canOverride": "Custom settings",
+    "cannotOverride": "Predefined settings",
+    "showHints": {
+      "label": "Show hints",
+      "tooltip": "Show the hint or question for the item. Example: \"What is the capital of Germany?\"."
+    },
+    "allowPauses": {
+      "label": "Allow pauses",
+      "tooltip": "Allow pausing the timer during the quiz. If allowed, choose between 1 to 5 or a infinite number of pauses."
+    },
+    "requireWhitespaces": {
+      "label": "Require whitespaces",
+      "tooltip": "If enabled, requires you to type out all whitespaces. If disabled, whitespaces can be omitted, for example \"BuenosAires\" matches \"Buenos Aires\"."
+    },
+    "requireCapitalization": {
+      "label": "Require proper capitalization",
+      "tooltip": "If enabled, requires you to use capital and lowercase letters. If disabled, capitalization is ignored, for example \"berlin\" matches \"Berlin\"."
+    },
+    "requireOrder": {
+      "label": "Require right ordering",
+      "tooltip": "If enabled, requires you match the items in the same order as defined."
+    }
+  },
+  "starter": {
+    "label": "I'm ready!"
+  },
+  "restart": {
+    "label": "Restart"
+  },
+  "timer": {
+    "seconds": {
+      "short": "sec"
+    },
+    "minutes": {
+      "short": "min"
+    },
+    "start": { "label": "Start" },
+    "pause": { "label": "Pause" },
+    "resume": { "label": "Resume" },
+    "stop": { "label": "Give up" }
+  }
+}

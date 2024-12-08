@@ -1,0 +1,72 @@
+{
+  "id": "europe-southern-countries",
+  "meta": {
+    "name": "Countries of Southern Europe",
+    "description": "Can you guess all 14 countries of Southern Europe?",
+    "difficulty": 1
+  },
+  "items": [
+    {
+      "answer": "Albania",
+      "matches": ["Albania", "Shqipëria"]
+    },
+    {
+      "answer": "Andorra",
+      "matches": ["Andorra"]
+    },
+    {
+      "answer": "Bosnia and Herzegovina",
+      "matches": ["Bosnia and Herzegovina", "Bosna i Hercegovina", "Босна и Херцеговина"]
+    },
+    {
+      "answer": "Croatia",
+      "matches": ["Croatia", "Hrvatska"]
+    },
+    {
+      "answer": "Greece",
+      "matches": ["Greece", "Ellada", "Ελλάδα", "Hellas", "Ελλάς"]
+    },
+    {
+      "answer": "Italy",
+      "matches": ["Italy", "Italia"]
+    },
+    {
+      "answer": "Malta",
+      "matches": ["Malta"]
+    },
+    {
+      "answer": "Montenegro",
+      "matches": ["Montenegro", "Crna Gora", "Црна Гора"]
+    },
+    {
+      "answer": "North Macedonia",
+      "matches": [
+        "North Macedonia",
+        "Severna Makedonija",
+        "Северна Македонија",
+        "Maqedonia e Veriut"
+      ]
+    },
+    {
+      "answer": "Portugal",
+      "matches": ["Portugal"]
+    },
+    {
+      "answer": "San Marino",
+      "matches": ["San Marino"]
+    },
+    {
+      "answer": "Serbia",
+      "matches": ["Serbia", "Srbija", "Србија"]
+    },
+    {
+      "answer": "Slovenia",
+      "matches": ["Slovenia", "Slovenija"]
+    },
+    {
+      "answer": "Spain",
+      "matches": ["Spain", "España", "Espanya", "Espainia", "Espanha"]
+    },
+    { "answer": "Vatican", "matches": ["Vatican", "Vaticana", "Vaticano"] }
+  ]
+}

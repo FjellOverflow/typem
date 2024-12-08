@@ -1,0 +1,55 @@
+{
+  "id": "planets",
+  "meta": {
+    "name": "Planets of the Solar System",
+    "description": "Name all planets of the solar system in their right order",
+    "difficulty": 1
+  },
+  "items": [
+    {
+      "hint": "1st planet",
+      "answer": "Mercury",
+      "matches": ["Mercury"]
+    },
+    {
+      "hint": "2nd planet",
+      "answer": "Venus",
+      "matches": ["Venus"]
+    },
+    {
+      "hint": "3rd planet",
+      "answer": "Earth",
+      "matches": ["Earth"]
+    },
+    {
+      "hint": "4th planet",
+      "answer": "Mars",
+      "matches": ["Mars"]
+    },
+    {
+      "hint": "5th planet",
+      "answer": "Jupiter",
+      "matches": ["Jupiter"]
+    },
+    {
+      "hint": "6th planet",
+      "answer": "Saturn",
+      "matches": ["Saturn"]
+    },
+    {
+      "hint": "7th planet",
+      "answer": "Uranus",
+      "matches": ["Uranus"]
+    },
+    {
+      "hint": "8th planet",
+      "answer": "Neptun",
+      "matches": ["Neptun"]
+    }
+  ],
+  "settings": {
+    "showHints": false,
+    "requireOrder": true,
+    "numberOfPauses": 0
+  }
+}

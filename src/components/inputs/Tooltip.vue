@@ -1,0 +1,34 @@
+<script setup lang="ts">
+import { CircleHelp, Lightbulb } from 'lucide-vue-next'
+
+withDefaults(
+  defineProps<{
+    label: string
+    type?: 'help' | 'hint'
+  }>(),
+  {
+    type: 'help',
+  },
+)
+</script>
+<template>
+  <div class="flex">
+    <div>
+      <slot />
+    </div>
+    <div class="flex flex-col justify-center">
+      <div class="tooltip tooltip-bottom" :data-tip="label">
+        <Lightbulb
+          v-if="type === 'hint'"
+          :size="20"
+          class="hover:opacity-100 opacity-25 ease-in-out transition-opacity duration-200"
+        />
+        <CircleHelp
+          v-else
+          :size="20"
+          class="hover:opacity-100 opacity-25 ease-in-out transition-opacity duration-200"
+        />
+      </div>
+    </div>
+  </div>
+</template>
