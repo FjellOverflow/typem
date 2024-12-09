@@ -1,6 +1,7 @@
 <script setup lang="ts">
+import { useFavorites } from '@/composables/favorites'
 import type { IItemList } from '@/types'
-import { List, Lock, Star } from 'lucide-vue-next'
+import { Heart, List, Lock, Star } from 'lucide-vue-next'
 
 const props = withDefaults(
   defineProps<{
@@ -13,6 +14,8 @@ const props = withDefaults(
 )
 
 const { t } = useI18n()
+
+const { isFavorite, toggleFavorite } = useFavorites()
 
 const difficultyLabel = computed(() => {
   if (props.list.meta.difficulty === 3) return t('difficulty.hard')
@@ -35,7 +38,7 @@ const difficultyLabel = computed(() => {
     <div class="flex flex-col justify-center">
       <slot name="action" />
     </div>
-    <div v-if="showDetails" class="col-span-3 flex gap-8">
+    <div v-if="showDetails" class="col-span-3 flex items-center gap-8">
       <div class="flex gap-2 opacity-65">
         <List /> <span>{{ list.items.length }} items</span>
       </div>
@@ -47,6 +50,14 @@ const difficultyLabel = computed(() => {
         <Lock />
         <span>{{ $t('settings.cannotOverride') }}</span>
       </div>
+      <div class="mx-auto" />
+      <button
+        @click="toggleFavorite(list)"
+        class="btn btn-ghost"
+        :class="{ 'text-primary': isFavorite(list) }"
+      >
+        <Heart :class="{ 'fill-primary': isFavorite(list) }" />
+      </button>
     </div>
   </div>
 </template>

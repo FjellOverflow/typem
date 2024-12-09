@@ -2,6 +2,7 @@
 import { usePresetLoader } from '@/assets/presets/loader'
 import { formatSeconds } from '@/plugins/util'
 import type { IItem } from '@/types'
+import { useTitle } from '@vueuse/core'
 export { usePresetLoader }
 </script>
 
@@ -12,8 +13,11 @@ import { PartyPopper, RotateCw, ThumbsUp } from 'lucide-vue-next'
 
 const { data: preset } = usePresetLoader()
 
+const pageTitle = useTitle(`${preset.value.meta.name} | Typem`)
+
 watch(preset, (newPreset) => {
   reset()
+  pageTitle.value = `${newPreset.meta.name} | Typem`
   settings.value = { ...newPreset.settings }
 })
 
