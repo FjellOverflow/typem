@@ -71,7 +71,12 @@ function resetFilters() {
       <X /> Clear
     </button>
   </div>
-  <ListPreview v-for="preset in filteredPresets" :key="preset.id" :list="preset" class="mt-4">
+  <ListPreview
+    v-for="preset in filteredPresets"
+    :key="preset.id"
+    :list="preset"
+    class="mt-4 last:mb-8"
+  >
     <template #action>
       <button
         class="btn btn-outline btn-primary text-xl font-medium"

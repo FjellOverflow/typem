@@ -1,0 +1,207 @@
+{
+  "id": "europe-countries",
+  "meta": {
+    "name": "European Countries",
+    "description": "Name all European countries.",
+    "difficulty": 1,
+    "source": "https://en.wikipedia.org/wiki/Europe",
+    "author": "FjellOverflow",
+    "lastUpdated": "2024-12-10"
+  },
+  "items": [
+    {
+      "answer": "Albania",
+      "matches": ["Albania", "Shqipëria"]
+    },
+    {
+      "answer": "Andorra",
+      "matches": ["Andorra"]
+    },
+    {
+      "answer": "Austria",
+      "matches": ["Austria", "Österreich"]
+    },
+    {
+      "answer": "Belarus",
+      "matches": ["Belarus", "Bielaruś", "Беларусь", "Беларусь"]
+    },
+    {
+      "answer": "Belgium",
+      "matches": ["Belgium", "België", "Belgique", "Belgien"]
+    },
+    {
+      "answer": "Bosnia and Herzegovina",
+      "matches": ["Bosnia and Herzegovina", "Bosna i Hercegovina", "Босна и Херцеговина", "Bosnia"]
+    },
+    {
+      "answer": "Bulgaria",
+      "matches": ["Bulgaria", "Bălgariya", "Bălgarija", "България"]
+    },
+    {
+      "answer": "Croatia",
+      "matches": ["Croatia", "Hrvatska"]
+    },
+    {
+      "answer": "Czechia",
+      "matches": ["Czechia", "Česká", "Česko"]
+    },
+    {
+      "answer": "Denmark",
+      "matches": ["Denmark", "Danmark"]
+    },
+    {
+      "answer": "Estonia",
+      "matches": ["Estonia", "Eesti"]
+    },
+    {
+      "answer": "Finland",
+      "matches": ["Finland", "Suomi"]
+    },
+    {
+      "answer": "France",
+      "matches": ["France"]
+    },
+    {
+      "answer": "Germany",
+      "matches": ["Germany", "Deutschland"]
+    },
+    {
+      "answer": "Greece",
+      "matches": ["Greece", "Ellada", "Ελλάδα", "Hellas", "Ελλάς"]
+    },
+    {
+      "answer": "Hungary",
+      "matches": ["Hungary", "Magyarország"]
+    },
+    {
+      "answer": "Iceland",
+      "matches": ["Iceland", "Ísland"]
+    },
+    {
+      "answer": "Ireland",
+      "matches": ["Ireland", "Éire"]
+    },
+    {
+      "answer": "Italy",
+      "matches": ["Italy", "Italia"]
+    },
+    {
+      "answer": "Kosovo",
+      "matches": ["Kosovo", "Косово"]
+    },
+    {
+      "answer": "Latvia",
+      "matches": ["Latvia", "Latvija"]
+    },
+    {
+      "answer": "Liechtenstein",
+      "matches": ["Liechtenstein"]
+    },
+    {
+      "answer": "Lithuania",
+      "matches": ["Lithuania", "Lietuva"]
+    },
+    {
+      "answer": "Luxembourg",
+      "matches": ["Luxembourg", "Lëtzebuerg", "Luxemburg"]
+    },
+    {
+      "answer": "Malta",
+      "matches": ["Malta"]
+    },
+    {
+      "answer": "Moldova",
+      "matches": ["Moldova"]
+    },
+    {
+      "answer": "Monaco",
+      "matches": ["Monaco", "Múnegu"]
+    },
+    {
+      "answer": "Montenegro",
+      "matches": ["Montenegro", "Crna Gora", "Црна Гора"]
+    },
+    {
+      "answer": "Netherlands",
+      "matches": ["Netherlands", "Nederland", "Nederlân"]
+    },
+    {
+      "answer": "North Macedonia",
+      "matches": [
+        "North Macedonia",
+        "Severna Makedonija",
+        "Северна Македонија",
+        "Maqedonia e Veriut",
+        "Macedonia"
+      ]
+    },
+    {
+      "answer": "Norway",
+      "matches": ["Norway", "Norge", "Noreg", "Norga", "Vuodna", "Nöörje"]
+    },
+    {
+      "answer": "Poland",
+      "matches": ["Poland", "Polska"]
+    },
+    {
+      "answer": "Portugal",
+      "matches": ["Portugal"]
+    },
+    {
+      "answer": "Romania",
+      "matches": ["Romania", "România"]
+    },
+    {
+      "answer": "Russia",
+      "matches": ["Russia", "Rossiya", "Rossiâ", "Россия"]
+    },
+    {
+      "answer": "San Marino",
+      "matches": ["San Marino"]
+    },
+    {
+      "answer": "Serbia",
+      "matches": ["Serbia", "Srbija", "Србија"]
+    },
+    {
+      "answer": "Slovakia",
+      "matches": ["Slovakia", "Slovensko"]
+    },
+    {
+      "answer": "Slovenia",
+      "matches": ["Slovenia", "Slovenija"]
+    },
+    {
+      "answer": "Spain",
+      "matches": ["Spain", "España", "Espanya", "Espainia", "Espanha"]
+    },
+    {
+      "answer": "Sweden",
+      "matches": ["Sweden", "Sverige"]
+    },
+    {
+      "answer": "Switzerland",
+      "matches": ["Switzerland", "Schweiz", "Suisse", "Svizzera", "Svizra"]
+    },
+    {
+      "answer": "Ukraine",
+      "matches": ["Ukraine", "Ukrajina", "Україна"]
+    },
+    {
+      "answer": "United Kingdom",
+      "matches": ["United Kingdom", "UK", "Britain"]
+    },
+    {
+      "answer": "Vatican",
+      "matches": ["Vatican", "Vaticana", "Vaticano"]
+    }
+  ],
+  "settings": {
+    "requireWhitespaces": false,
+    "requireCapitalization": false,
+    "requireOrder": false,
+    "numberOfPauses": -1,
+    "showHints": false,
+    "allowOverride": true
+  }
+}

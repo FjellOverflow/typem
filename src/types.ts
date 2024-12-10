@@ -32,6 +32,9 @@ export const ItemListSchema = z.object({
     name: z.string(),
     description: z.string(),
     difficulty: z.number(),
+    author: z.string(),
+    lastUpdated: z.string().date(),
+    source: z.string(),
   }),
   items: z.array(ItemSchema),
   settings: SettingsSchema.default(defaultSettings),
@@ -40,4 +43,11 @@ export type IItemList = z.infer<typeof ItemListSchema>
 
 export type ICheckableItem = IItem & {
   checked: boolean
+}
+
+export interface IRun {
+  listId: string
+  seconds: number
+  finished: boolean
+  timestamp: string
 }

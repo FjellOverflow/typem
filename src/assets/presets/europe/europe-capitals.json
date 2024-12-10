@@ -1,0 +1,246 @@
+{
+  "id": "europe-capitals",
+  "meta": {
+    "name": "European Capitals",
+    "description": "Name the capital of every European country.",
+    "difficulty": 1,
+    "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_and_their_capitals_in_native_languages",
+    "author": "FjellOverflow",
+    "lastUpdated": "2024-12-10"
+  },
+  "items": [
+    {
+      "hint": "Capital of Albania",
+      "answer": "Tirana",
+      "matches": ["Tirana"]
+    },
+    {
+      "hint": "Capital of Andorra",
+      "answer": "Andorra la Vella",
+      "matches": ["Andorra la Vella", "Andorra"]
+    },
+    {
+      "hint": "Capital of Austria",
+      "answer": "Vienna",
+      "matches": ["Vienna", "Wien"]
+    },
+    {
+      "hint": "Capital of Belarus",
+      "answer": "Minsk",
+      "matches": ["Minsk"]
+    },
+    {
+      "hint": "Capital of Belgium",
+      "answer": "Brussels",
+      "matches": ["Brussels", "Bruxelles", "Brüssel", "Brussel"]
+    },
+    {
+      "hint": "Capital of Bosnia and Herzegovina",
+      "answer": "Sarajevo",
+      "matches": ["Sarajevo", "Сарајево"]
+    },
+    {
+      "hint": "Capital of Bulgaria",
+      "answer": "Sofia",
+      "matches": ["Sofia", "Sofija"]
+    },
+    {
+      "hint": "Capital of Croatia",
+      "answer": "Zagreb",
+      "matches": ["Zagreb"]
+    },
+    {
+      "hint": "Capital of Czechia",
+      "answer": "Prague",
+      "matches": ["Prague", "Praha"]
+    },
+    {
+      "hint": "Capital of Denmark",
+      "answer": "Copenhagen",
+      "matches": ["Copenhagen", "København", "Kobenhavn"]
+    },
+    {
+      "hint": "Capital of Estonia",
+      "answer": "Tallinn",
+      "matches": ["Tallinn"]
+    },
+    {
+      "hint": "Capital of Finland",
+      "answer": "Helsinki",
+      "matches": ["Helsinki", "Helsingfors"]
+    },
+    {
+      "hint": "Capital of France",
+      "answer": "Paris",
+      "matches": ["Paris"]
+    },
+    {
+      "hint": "Capital of Germany",
+      "answer": "Berlin",
+      "matches": ["Berlin"]
+    },
+    {
+      "hint": "Capital of Greece",
+      "answer": "Athens",
+      "matches": ["Athens"]
+    },
+    {
+      "hint": "Capital of Hungary",
+      "answer": "Budapest",
+      "matches": ["Budapest"]
+    },
+    {
+      "hint": "Capital of Iceland",
+      "answer": "Reykjavík",
+      "matches": ["Reykjavík", "Reykjavik"]
+    },
+    {
+      "hint": "Capital of Ireland",
+      "answer": "Dublin",
+      "matches": ["Dublin", "Baile Átha Cliath", "Baile Atha Cliath"]
+    },
+    {
+      "hint": "Capital of Italy",
+      "answer": "Rome",
+      "matches": ["Rome", "Roma"]
+    },
+    {
+      "hint": "Capital of Kosovo",
+      "answer": "Pristina",
+      "matches": ["Pristina", "Prishtinë", "Prishtine", "Priština", "Приштина"]
+    },
+    {
+      "hint": "Capital of Latvia",
+      "answer": "Rīga",
+      "matches": ["Rīga", "Riga"]
+    },
+    {
+      "hint": "Capital of Liechtenstein",
+      "answer": "Vaduz",
+      "matches": ["Vaduz"]
+    },
+    {
+      "hint": "Capital of Lithuania",
+      "answer": "Vilnius",
+      "matches": ["Vilnius"]
+    },
+    {
+      "hint": "Capital of Luxembourg",
+      "answer": "Luxembourg",
+      "matches": ["Luxembourg", "Lëtzebuerg", "Luxemburg"]
+    },
+    {
+      "hint": "Capital of Malta",
+      "answer": "Valletta",
+      "matches": ["Valletta", "Il-Belt Valletta", "Il Belt Valletta"]
+    },
+    {
+      "hint": "Capital of Moldova",
+      "answer": "Chișinău",
+      "matches": ["Chișinău", "Chisinau", "Kišin'ov", "Kisin ov"]
+    },
+    {
+      "hint": "Capital of Monaco",
+      "answer": "Monaco",
+      "matches": ["Monaco", "Múnegu"]
+    },
+    {
+      "hint": "Capital of Montenegro",
+      "answer": "Podgorica",
+      "matches": ["Podgorica", "Подгорица"]
+    },
+    {
+      "hint": "Capital of Netherlands",
+      "answer": "Amsterdam",
+      "matches": ["Amsterdam"]
+    },
+    {
+      "hint": "Capital of North Macedonia",
+      "answer": "Skopje",
+      "matches": ["Skopje", "Скопје", "Северна Македонија", "Shkup"]
+    },
+    {
+      "hint": "Capital of Norway",
+      "answer": "Oslo",
+      "matches": ["Oslo"]
+    },
+    {
+      "hint": "Capital of Poland",
+      "answer": "Warsaw",
+      "matches": ["Warsaw", "Warszawa"]
+    },
+    {
+      "hint": "Capital of Portugal",
+      "answer": "Lisbon",
+      "matches": ["Lisbon", "Lisboa"]
+    },
+    {
+      "hint": "Capital of Romania",
+      "answer": "Bucharest",
+      "matches": ["Bucharest", "București", "Bucuresti"]
+    },
+    {
+      "hint": "Capital of Russia",
+      "answer": "Moscow",
+      "matches": ["Moscow", "Moskva"]
+    },
+    {
+      "hint": "Capital of San Marino",
+      "answer": "San Marino",
+      "matches": ["San Marino"]
+    },
+    {
+      "hint": "Capital of Serbia",
+      "answer": "Belgrade",
+      "matches": ["Belgrade", "Beograd"]
+    },
+    {
+      "hint": "Capital of Slovakia",
+      "answer": "Bratislava",
+      "matches": ["Bratislava", "Bratislava"]
+    },
+    {
+      "hint": "Capital of Slovenia",
+      "answer": "Ljubljana",
+      "matches": ["Ljubljana", "Ljubljana"]
+    },
+    {
+      "hint": "Capital of Spain",
+      "answer": "Madrid",
+      "matches": ["Madrid"]
+    },
+    {
+      "hint": "Capital of Sweden",
+      "answer": "Stockholm",
+      "matches": ["Stockholm"]
+    },
+    {
+      "hint": "Capital of Switzerland",
+      "answer": "Bern",
+      "matches": ["Bern", "Berne", "Berna"]
+    },
+    {
+      "hint": "Capital of Ukraine",
+      "answer": "Kiev",
+      "matches": ["Kiev", "Kyïv", "Kyiv"]
+    },
+    {
+      "hint": "Capital of the United Kingdom",
+      "answer": "London",
+      "matches": ["London"]
+    },
+    {
+      "hint": "Capital of Vatican",
+      "answer": "Civitas Vaticana",
+      "matches": ["Civitas Vaticana", "Città del Vaticano", "Vatican city", "Vatican"]
+    }
+  ],
+  "settings": {
+    "requireWhitespaces": false,
+    "requireCapitalization": false,
+    "requireOrder": false,
+    "numberOfPauses": -1,
+    "showHints": false,
+    "allowOverride": true
+  }
+}

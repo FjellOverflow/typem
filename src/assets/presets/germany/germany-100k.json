@@ -1,0 +1,333 @@
+{
+  "id": "germany-100k",
+  "meta": {
+    "name": "German Cities: 100k",
+    "description": "Name all German cities with more than 100.000 inhabitants.",
+    "difficulty": 1,
+    "source": "https://citypopulation.de/en/germany/cities/",
+    "author": "FjellOverflow",
+    "lastUpdated": "2024-12-10"
+  },
+  "items": [
+    {
+      "answer": "Berlin",
+      "matches": ["Berlin"]
+    },
+    {
+      "answer": "Hamburg",
+      "matches": ["Hamburg"]
+    },
+    {
+      "answer": "München",
+      "matches": ["München", "Munchen", "Munich"]
+    },
+    {
+      "answer": "Köln",
+      "matches": ["Köln", "Koln", "Cologne"]
+    },
+    {
+      "answer": "Frankfurt",
+      "matches": ["Frankfurt"]
+    },
+    {
+      "answer": "Düsseldorf",
+      "matches": ["Düsseldorf", "Dusseldorf"]
+    },
+    {
+      "answer": "Stuttgart",
+      "matches": ["Stuttgart"]
+    },
+    {
+      "answer": "Leipzig",
+      "matches": ["Leipzig"]
+    },
+    {
+      "answer": "Dortmund",
+      "matches": ["Dortmund"]
+    },
+    {
+      "answer": "Bremen",
+      "matches": ["Bremen"]
+    },
+    {
+      "answer": "Essen",
+      "matches": ["Essen"]
+    },
+    {
+      "answer": "Dresden",
+      "matches": ["Dresden"]
+    },
+    {
+      "answer": "Nürnberg",
+      "matches": ["Nürnberg", "Nurnberg", "Nuremberg"]
+    },
+    {
+      "answer": "Hannover",
+      "matches": ["Hannover", "Hanover"]
+    },
+    {
+      "answer": "Duisburg",
+      "matches": ["Duisburg"]
+    },
+    {
+      "answer": "Wuppertal",
+      "matches": ["Wuppertal"]
+    },
+    {
+      "answer": "Bochum",
+      "matches": ["Bochum"]
+    },
+    {
+      "answer": "Bielefeld",
+      "matches": ["Bielefeld"]
+    },
+    {
+      "answer": "Bonn",
+      "matches": ["Bonn"]
+    },
+    {
+      "answer": "Mannheim",
+      "matches": ["Mannheim"]
+    },
+    {
+      "answer": "Karlsruhe",
+      "matches": ["Karlsruhe"]
+    },
+    {
+      "answer": "Münster",
+      "matches": ["Münster", "Munster"]
+    },
+    {
+      "answer": "Augsburg",
+      "matches": ["Augsburg"]
+    },
+    {
+      "answer": "Wiesbaden",
+      "matches": ["Wiesbaden"]
+    },
+    {
+      "answer": "Gelsenkirchen",
+      "matches": ["Gelsenkirchen"]
+    },
+    {
+      "answer": "Mönchengladbach",
+      "matches": ["Mönchengladbach", "Monchengladbach"]
+    },
+    {
+      "answer": "Aachen",
+      "matches": ["Aachen", "Aix-la-Chapelle", "Aix la Chapelle"]
+    },
+    {
+      "answer": "Braunschweig",
+      "matches": ["Braunschweig", "Brunswick"]
+    },
+    {
+      "answer": "Kiel",
+      "matches": ["Kiel"]
+    },
+    {
+      "answer": "Magdeburg",
+      "matches": ["Magdeburg"]
+    },
+    {
+      "answer": "Chemnitz",
+      "matches": ["Chemnitz"]
+    },
+    {
+      "answer": "Freiburg",
+      "matches": ["Freiburg"]
+    },
+    {
+      "answer": "Krefeld",
+      "matches": ["Krefeld"]
+    },
+    {
+      "answer": "Halle",
+      "matches": ["Halle"]
+    },
+    {
+      "answer": "Mainz",
+      "matches": ["Mainz"]
+    },
+    {
+      "answer": "Erfurt",
+      "matches": ["Erfurt"]
+    },
+    {
+      "answer": "Lübeck",
+      "matches": ["Lübeck", "Lubeck"]
+    },
+    {
+      "answer": "Oberhausen",
+      "matches": ["Oberhausen"]
+    },
+    {
+      "answer": "Rostock",
+      "matches": ["Rostock"]
+    },
+    {
+      "answer": "Kassel",
+      "matches": ["Kassel"]
+    },
+    {
+      "answer": "Hagen",
+      "matches": ["Hagen"]
+    },
+    {
+      "answer": "Potsdam",
+      "matches": ["Potsdam"]
+    },
+    {
+      "answer": "Saarbrücken",
+      "matches": ["Saarbrücken", "Saarbrucken"]
+    },
+    {
+      "answer": "Hamm",
+      "matches": ["Hamm"]
+    },
+    {
+      "answer": "Ludwigshafen",
+      "matches": ["Ludwigshafen"]
+    },
+    {
+      "answer": "Oldenburg",
+      "matches": ["Oldenburg"]
+    },
+    {
+      "answer": "Mülheim",
+      "matches": ["Mülheim", "Mulheim"]
+    },
+    {
+      "answer": "Leverkusen",
+      "matches": ["Leverkusen"]
+    },
+    {
+      "answer": "Osnabrück",
+      "matches": ["Osnabrück", "Osnabruck"]
+    },
+    {
+      "answer": "Solingen",
+      "matches": ["Solingen"]
+    },
+    {
+      "answer": "Darmstadt",
+      "matches": ["Darmstadt"]
+    },
+    {
+      "answer": "Paderborn",
+      "matches": ["Paderborn"]
+    },
+    {
+      "answer": "Herne",
+      "matches": ["Herne"]
+    },
+    {
+      "answer": "Heidelberg",
+      "matches": ["Heidelberg"]
+    },
+    {
+      "answer": "Neuss",
+      "matches": ["Neuss"]
+    },
+    {
+      "answer": "Regensburg",
+      "matches": ["Regensburg"]
+    },
+    {
+      "answer": "Ingolstadt",
+      "matches": ["Ingolstadt"]
+    },
+    {
+      "answer": "Pforzheim",
+      "matches": ["Pforzheim"]
+    },
+    {
+      "answer": "Würzburg",
+      "matches": ["Würzburg", "Wurzburg"]
+    },
+    {
+      "answer": "Fürth",
+      "matches": ["Fürth", "Furth"]
+    },
+    {
+      "answer": "Offenbach",
+      "matches": ["Offenbach"]
+    },
+    {
+      "answer": "Heilbronn",
+      "matches": ["Heilbronn"]
+    },
+    {
+      "answer": "Wolfsburg",
+      "matches": ["Wolfsburg"]
+    },
+    {
+      "answer": "Ulm",
+      "matches": ["Ulm"]
+    },
+    {
+      "answer": "Göttingen",
+      "matches": ["Göttingen", "Gottingen"]
+    },
+    {
+      "answer": "Bremerhaven",
+      "matches": ["Bremerhaven"]
+    },
+    {
+      "answer": "Bottrop",
+      "matches": ["Bottrop"]
+    },
+    {
+      "answer": "Reutlingen",
+      "matches": ["Reutlingen"]
+    },
+    {
+      "answer": "Recklinghausen",
+      "matches": ["Recklinghausen"]
+    },
+    {
+      "answer": "Remscheid",
+      "matches": ["Remscheid"]
+    },
+    {
+      "answer": "Koblenz",
+      "matches": ["Koblenz"]
+    },
+    {
+      "answer": "Erlangen",
+      "matches": ["Erlangen"]
+    },
+    {
+      "answer": "Bergisch Gladbach",
+      "matches": ["Bergisch Gladbach"]
+    },
+    {
+      "answer": "Jena",
+      "matches": ["Jena"]
+    },
+    {
+      "answer": "Salzgitter",
+      "matches": ["Salzgitter"]
+    },
+    {
+      "answer": "Trier",
+      "matches": ["Trier"]
+    },
+    {
+      "answer": "Siegen",
+      "matches": ["Siegen"]
+    },
+    {
+      "answer": "Moers",
+      "matches": ["Moers"]
+    }
+  ],
+  "settings": {
+    "requireWhitespaces": false,
+    "requireCapitalization": false,
+    "requireOrder": false,
+    "numberOfPauses": -1,
+    "showHints": false,
+    "allowOverride": true
+  }
+}

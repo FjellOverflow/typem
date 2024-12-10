@@ -1,0 +1,100 @@
+{
+  "id": "germany-states",
+  "meta": {
+    "name": "German States",
+    "description": "Name all German federal states.",
+    "difficulty": 1,
+    "source": "https://citypopulation.de/en/germany/cities/",
+    "author": "FjellOverflow",
+    "lastUpdated": "2024-12-10"
+  },
+  "items": [
+    {
+      "answer": "Baden-Württemberg",
+      "matches": ["Baden-Württemberg", "Baden Württemberg", "Baden-Wurttemberg", "BadenWurttemberg"]
+    },
+    {
+      "answer": "Bayern",
+      "matches": ["Bayern", "Bavaria"]
+    },
+    {
+      "answer": "Berlin",
+      "matches": ["Berlin"]
+    },
+    {
+      "answer": "Brandenburg",
+      "matches": ["Brandenburg"]
+    },
+    {
+      "answer": "Bremen",
+      "matches": ["Bremen"]
+    },
+    {
+      "answer": "Hamburg",
+      "matches": ["Hamburg"]
+    },
+    {
+      "answer": "Hessen",
+      "matches": ["Hessen", "Hesse"]
+    },
+    {
+      "answer": "Mecklenburg-Vorpommern",
+      "matches": [
+        "Mecklenburg-Vorpommern",
+        "Mecklenburg Vorpommern",
+        "Mecklenburg-Western Pomerania",
+        "Mecklenburg Western Pomerania"
+      ]
+    },
+    {
+      "answer": "Niedersachsen",
+      "matches": ["Niedersachsen", "Lower Saxony"]
+    },
+    {
+      "answer": "Nordrhein-Westfalen",
+      "matches": [
+        "Nordrhein-Westfalen",
+        "Nordrhein Westfalen",
+        "North Rhine-Westphalia",
+        "North Rhine Westphalia"
+      ]
+    },
+    {
+      "answer": "Rheinland-Pfalz",
+      "matches": [
+        "Rheinland-Pfalz",
+        "Rheinland Pfalz",
+        "Rhineland-Palatinate",
+        "Rhineland Palatinate"
+      ]
+    },
+    {
+      "answer": "Saarland",
+      "matches": ["Saarland"]
+    },
+    {
+      "answer": "Sachsen",
+      "matches": ["Sachsen", "Saxony"]
+    },
+    {
+      "answer": "Sachsen-Anhalt",
+      "matches": ["Sachsen-Anhalt", "Sachsen Anhalt", "Saxony-Anhalt", "Saxony Anhalt"]
+    },
+    {
+      "answer": "Schleswig-Holstein",
+      "matches": ["Schleswig-Holstein", "Schleswig Holstein"]
+    },
+    {
+      "answer": "Thüringen",
+      "matches": ["Thüringen", "Thuringen", "Thuringia"]
+    }
+  ],
+  "settings": {
+    "requireWhitespaces": false,
+    "requireCapitalization": false,
+    "requireOrder": false,
+    "numberOfPauses": -1,
+    "showHints": false,
+    "allowOverride": true
+  }
+}

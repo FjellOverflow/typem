@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { useFavorites } from '@/composables/favorites'
 import type { IItemList } from '@/types'
-import { Heart, List, Lock, Star } from 'lucide-vue-next'
+import { Heart, Info, List, Lock, Star } from 'lucide-vue-next'
+
+const infoModal = useTemplateRef('infoModal')
 
 const props = withDefaults(
   defineProps<{
@@ -51,13 +53,26 @@ const difficultyLabel = computed(() => {
         <span>{{ $t('settings.cannotOverride') }}</span>
       </div>
       <div class="mx-auto" />
-      <button
-        @click="toggleFavorite(list)"
-        class="btn btn-ghost"
-        :class="{ 'text-primary': isFavorite(list) }"
-      >
-        <Heart :class="{ 'fill-primary': isFavorite(list) }" />
-      </button>
+      <div class="flex gap-1">
+        <button
+          @click="toggleFavorite(list)"
+          class="btn btn-ghost"
+          :class="{ 'text-primary': isFavorite(list) }"
+        >
+          <Heart :class="{ 'fill-primary': isFavorite(list) }" />
+        </button>
+        <button @click="infoModal?.showModal()" class="btn btn-ghost">
+          <Info />
+        </button>
+        <dialog ref="infoModal" class="modal">
+          <div class="modal-box border">
+            <ListInfo :list />
+          </div>
+          <form method="dialog" class="modal-backdrop">
+            <button>close</button>
+          </form>
+        </dialog>
+      </div>
     </div>
   </div>
 </template>

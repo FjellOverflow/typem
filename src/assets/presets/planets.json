@@ -3,7 +3,10 @@
   "meta": {
     "name": "Planets of the Solar System",
     "description": "Name all planets of the solar system in their right order",
-    "difficulty": 1
+    "difficulty": 1,
+    "source": "https://en.wikipedia.org/wiki/Solar_System",
+    "author": "FjellOverflow",
+    "lastUpdated": "2024-12-10"
   },
   "items": [
     {
@@ -48,8 +51,11 @@
     }
   ],
   "settings": {
-    "showHints": false,
+    "requireWhitespaces": false,
+    "requireCapitalization": false,
     "requireOrder": true,
-    "numberOfPauses": 0
+    "numberOfPauses": 0,
+    "showHints": false,
+    "allowOverride": true
   }
 }

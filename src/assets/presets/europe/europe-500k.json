@@ -1,0 +1,423 @@
+{
+  "id": "europe-500k",
+  "meta": {
+    "name": "European Cities: 500k",
+    "description": "Name all European cities with more than 500.000 inhabitants.",
+    "difficulty": 1,
+    "source": "https://citypopulation.de/en/europe/",
+    "author": "FjellOverflow",
+    "lastUpdated": "2024-12-10"
+  },
+  "items": [
+    {
+      "answer": "Moscow",
+      "matches": ["Moscow", "Moskva"]
+    },
+    {
+      "answer": "London",
+      "matches": ["London"]
+    },
+    {
+      "answer": "Saint Petersburg",
+      "matches": ["Saint Petersburg", "Sankt-Peterburg", "Sankt Peterburg", "Leningrad"]
+    },
+    {
+      "answer": "Berlin",
+      "matches": ["Berlin"]
+    },
+    {
+      "answer": "Madrid",
+      "matches": ["Madrid"]
+    },
+    {
+      "answer": "Athens",
+      "matches": ["Athens"]
+    },
+    {
+      "answer": "Kiev",
+      "matches": ["Kiev", "Kyïv", "Kyiv"]
+    },
+    {
+      "answer": "Rome",
+      "matches": ["Rome", "Roma"]
+    },
+    {
+      "answer": "Paris",
+      "matches": ["Paris"]
+    },
+    {
+      "answer": "Vienna",
+      "matches": ["Vienna", "Wien"]
+    },
+    {
+      "answer": "Minsk",
+      "matches": ["Minsk"]
+    },
+    {
+      "answer": "Warsaw",
+      "matches": ["Warsaw", "Warszawa"]
+    },
+    {
+      "answer": "Hamburg",
+      "matches": ["Hamburg"]
+    },
+    {
+      "answer": "Bucharest",
+      "matches": ["Bucharest", "București", "Bucuresti"]
+    },
+    {
+      "answer": "Budapest",
+      "matches": ["Budapest"]
+    },
+    {
+      "answer": "Barcelona",
+      "matches": ["Barcelona"]
+    },
+    {
+      "answer": "Munich",
+      "matches": ["Munich", "München", "Munchen"]
+    },
+    {
+      "answer": "Kharkiv",
+      "matches": ["Kharkiv", "Charkiv"]
+    },
+    {
+      "answer": "Copenhagen",
+      "matches": ["Copenhagen", "Kjøbnhavn", "Kjobnhavn"]
+    },
+    {
+      "answer": "Milan",
+      "matches": ["Milan", "Milano"]
+    },
+    {
+      "answer": "Kazan",
+      "matches": ["Kazan"]
+    },
+    {
+      "answer": "Prague",
+      "matches": ["Prague", "Praha"]
+    },
+    {
+      "answer": "Dublin",
+      "matches": ["Dublin", "Baile Átha Cliath", "Baile Atha Cliath"]
+    },
+    {
+      "answer": "Nizhny Novgorod",
+      "matches": ["Nizhny Novgorod", "Nižnij Novgorod", "Niznij Novgorod"]
+    },
+    {
+      "answer": "Belgrade",
+      "matches": ["Belgrade", "Beograd"]
+    },
+    {
+      "answer": "Sofia",
+      "matches": ["Sofia", "Sofija"]
+    },
+    {
+      "answer": "Samara",
+      "matches": ["Samara", "Kujbyšev", "Kujbysev"]
+    },
+    {
+      "answer": "Ufa",
+      "matches": ["Ufa"]
+    },
+    {
+      "answer": "Rostov-on-Don",
+      "matches": ["Rostov-on-Don", "Rostov", "Rostov-na-Donu"]
+    },
+    {
+      "answer": "Amsterdam",
+      "matches": ["Amsterdam"]
+    },
+    {
+      "answer": "Birmingham",
+      "matches": ["Birmingham"]
+    },
+    {
+      "answer": "Krasnodar",
+      "matches": ["Krasnodar"]
+    },
+    {
+      "answer": "Voronezh",
+      "matches": ["Voronezh", "Voronež", "Voronez"]
+    },
+    {
+      "answer": "Perm'",
+      "matches": ["Perm'", "Perm"]
+    },
+    {
+      "answer": "Volgograd",
+      "matches": ["Volgograd"]
+    },
+    {
+      "answer": "Cologne",
+      "matches": ["Cologne", "Köln", "Koln"]
+    },
+    {
+      "answer": "Odessa",
+      "matches": ["Odessa", "Odesa"]
+    },
+    {
+      "answer": "Stockholm",
+      "matches": ["Stockholm"]
+    },
+    {
+      "answer": "Dnipro",
+      "matches": ["Dnipro", "Dnepropetrovsk", "Dnipropėtrovs'k", "Dnipropetrovsk"]
+    },
+    {
+      "answer": "Naples",
+      "matches": ["Naples", "Napoli"]
+    },
+    {
+      "answer": "Donetsk",
+      "matches": ["Donetsk", "Donec'k", "Doneck"]
+    },
+    {
+      "answer": "Saratov",
+      "matches": ["Saratov"]
+    },
+    {
+      "answer": "Marseille",
+      "matches": ["Marseille"]
+    },
+    {
+      "answer": "Rotterdam",
+      "matches": ["Rotterdam"]
+    },
+    {
+      "answer": "The Hague",
+      "matches": ["The Hague", "'s-Gravenhage", "Gravenhage"]
+    },
+    {
+      "answer": "Turin",
+      "matches": ["Turin", "Torino"]
+    },
+    {
+      "answer": "Krakow",
+      "matches": ["Krakow", "Kraków"]
+    },
+    {
+      "answer": "Valencia",
+      "matches": ["Valencia", "València"]
+    },
+    {
+      "answer": "Thessaloniki",
+      "matches": ["Thessaloniki", "Thessaloníki"]
+    },
+    {
+      "answer": "Frankfurt",
+      "matches": ["Frankfurt"]
+    },
+    {
+      "answer": "Oslo",
+      "matches": ["Oslo"]
+    },
+    {
+      "answer": "Lviv",
+      "matches": ["Lviv", "L'viv"]
+    },
+    {
+      "answer": "Zaporizhia",
+      "matches": ["Zaporizhia", "Zaporižžja", "Zaporizzja"]
+    },
+    {
+      "answer": "Tolyatti",
+      "matches": ["Tolyatti", "Tol'jatti", "Toljatti"]
+    },
+    {
+      "answer": "Sevilla",
+      "matches": ["Sevilla"]
+    },
+    {
+      "answer": "Zaragoza",
+      "matches": ["Zaragoza"]
+    },
+    {
+      "answer": "Helsinki",
+      "matches": ["Helsinki", "Helsingfors"]
+    },
+    {
+      "answer": "Wrocław",
+      "matches": ["Wrocław", "Wroclaw"]
+    },
+    {
+      "answer": "Zagreb",
+      "matches": ["Zagreb"]
+    },
+    {
+      "answer": "Lodz",
+      "matches": ["Lodz", "Łódź"]
+    },
+    {
+      "answer": "Glasgow",
+      "matches": ["Glasgow"]
+    },
+    {
+      "answer": "Palermo",
+      "matches": ["Palermo"]
+    },
+    {
+      "answer": "Izhevsk",
+      "matches": ["Izhevsk", "Iževsk", "Izevsk", "Ustinov"]
+    },
+    {
+      "answer": "Makhachkala",
+      "matches": ["Makhachkala", "Machačkala", "Machackala"]
+    },
+    {
+      "answer": "Rīga",
+      "matches": ["Rīga", "Riga"]
+    },
+    {
+      "answer": "Ulyanovsk",
+      "matches": ["Ulyanovsk", "Ul'janovsk", "Uljanovsk", "Simbirsk"]
+    },
+    {
+      "answer": "Dusseldorf",
+      "matches": ["Dusseldorf", "Düsseldorf"]
+    },
+    {
+      "answer": "Stuttgart",
+      "matches": ["Stuttgart"]
+    },
+    {
+      "answer": "Gothenburg",
+      "matches": ["Gothenburg", "Göteborg", "Goteborg"]
+    },
+    {
+      "answer": "Kryvyi Rih",
+      "matches": ["Kryvyi Rih"]
+    },
+    {
+      "answer": "Leipzig",
+      "matches": ["Leipzig"]
+    },
+    {
+      "answer": "Dortmund",
+      "matches": ["Dortmund"]
+    },
+    {
+      "answer": "Vilnius",
+      "matches": ["Vilnius"]
+    },
+    {
+      "answer": "Málaga",
+      "matches": ["Málaga", "Malaga"]
+    },
+    {
+      "answer": "Yaroslavl",
+      "matches": ["Yaroslavl", "Jaroslavl'", "Jaroslavl"]
+    },
+    {
+      "answer": "Bremen",
+      "matches": ["Bremen"]
+    },
+    {
+      "answer": "Essen",
+      "matches": ["Essen"]
+    },
+    {
+      "answer": "Genoa",
+      "matches": ["Genoa", "Genova"]
+    },
+    {
+      "answer": "Dresden",
+      "matches": ["Dresden"]
+    },
+    {
+      "answer": "Naberezhnye Chelny",
+      "matches": [
+        "Naberezhnye Chelny",
+        "Naberežnyje Čelny",
+        "Nabereznyje Celny",
+        "Brešnev",
+        "Bresnev"
+      ]
+    },
+    {
+      "answer": "Stavropol",
+      "matches": ["Stavropol", "Stavropol'"]
+    },
+    {
+      "answer": "Lisbon",
+      "matches": ["Lisbon", "Lisboa"]
+    },
+    {
+      "answer": "Antwerp",
+      "matches": ["Antwerp", "Antwerpen"]
+    },
+    {
+      "answer": "Orenburg",
+      "matches": ["Orenburg"]
+    },
+    {
+      "answer": "Poznań",
+      "matches": ["Poznań", "Poznan"]
+    },
+    {
+      "answer": "Leeds",
+      "matches": ["Leeds"]
+    },
+    {
+      "answer": "Chișinău",
+      "matches": ["Chișinău", "Chisinau", "Kišin'ov", "Kisin'ov"]
+    },
+    {
+      "answer": "Ryazan",
+      "matches": ["Ryazan", "Rjazan'"]
+    },
+    {
+      "answer": "Nuremberg",
+      "matches": ["Nuremberg", "Nürnberg", "Nurnberg"]
+    },
+    {
+      "answer": "Lyon",
+      "matches": ["Lyon"]
+    },
+    {
+      "answer": "Balashikha",
+      "matches": ["Balashikha", "Balašicha", "Balasicha"]
+    },
+    {
+      "answer": "Hanover",
+      "matches": ["Hanover", "Hannover"]
+    },
+    {
+      "answer": "Liverpool",
+      "matches": ["Liverpool"]
+    },
+    {
+      "answer": "Edinburgh",
+      "matches": ["Edinburgh"]
+    },
+    {
+      "answer": "Toulouse",
+      "matches": ["Toulouse"]
+    },
+    {
+      "answer": "Homieĺ",
+      "matches": ["Homieĺ", "Homiel"]
+    },
+    {
+      "answer": "Duisburg",
+      "matches": ["Duisburg"]
+    },
+    {
+      "answer": "Penza",
+      "matches": ["Penza"]
+    },
+    {
+      "answer": "Sheffield",
+      "matches": ["Sheffield"]
+    }
+  ],
+  "settings": {
+    "requireWhitespaces": false,
+    "requireCapitalization": false,
+    "requireOrder": false,
+    "numberOfPauses": -1,
+    "showHints": false,
+    "allowOverride": true
+  }
+}

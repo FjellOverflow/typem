@@ -1,0 +1,81 @@
+{
+  "id": "germany-500k",
+  "meta": {
+    "name": "German Cities: 500k",
+    "description": "Name all German cities with more than 500.000 inhabitants.",
+    "difficulty": 1,
+    "source": "https://citypopulation.de/en/germany/cities/",
+    "author": "FjellOverflow",
+    "lastUpdated": "2024-12-10"
+  },
+  "items": [
+    {
+      "answer": "Berlin",
+      "matches": ["Berlin"]
+    },
+    {
+      "answer": "Hamburg",
+      "matches": ["Hamburg"]
+    },
+    {
+      "answer": "München",
+      "matches": ["München", "Munchen", "Munich"]
+    },
+    {
+      "answer": "Köln",
+      "matches": ["Köln", "Koln", "Cologne"]
+    },
+    {
+      "answer": "Frankfurt",
+      "matches": ["Frankfurt"]
+    },
+    {
+      "answer": "Düsseldorf",
+      "matches": ["Düsseldorf", "Dusseldorf"]
+    },
+    {
+      "answer": "Stuttgart",
+      "matches": ["Stuttgart"]
+    },
+    {
+      "answer": "Leipzig",
+      "matches": ["Leipzig"]
+    },
+    {
+      "answer": "Dortmund",
+      "matches": ["Dortmund"]
+    },
+    {
+      "answer": "Bremen",
+      "matches": ["Bremen"]
+    },
+    {
+      "answer": "Essen",
+      "matches": ["Essen"]
+    },
+    {
+      "answer": "Dresden",
+      "matches": ["Dresden"]
+    },
+    {
+      "answer": "Nürnberg",
+      "matches": ["Nürnberg", "Nurnberg", "Nuremberg"]
+    },
+    {
+      "answer": "Hannover",
+      "matches": ["Hannover", "Hanover"]
+    },
+    {
+      "answer": "Duisburg",
+      "matches": ["Duisburg"]
+    }
+  ],
+  "settings": {
+    "requireWhitespaces": false,
+    "requireCapitalization": false,
+    "requireOrder": false,
+    "numberOfPauses": -1,
+    "showHints": false,
+    "allowOverride": true
+  }
+}

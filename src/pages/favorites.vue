@@ -6,7 +6,7 @@ export { usePresetsLoader }
 </script>
 
 <script setup lang="ts">
-useTitle('Favorites | Typem')
+useTitle('Favorites - Typem')
 
 const { data: presets } = usePresetsLoader()
 

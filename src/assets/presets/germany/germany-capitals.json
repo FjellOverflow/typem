@@ -1,0 +1,101 @@
+{
+  "id": "germany-capitals",
+  "meta": {
+    "name": "German Capitals",
+    "description": "Name the capital of every German federal state.",
+    "difficulty": 1,
+    "source": "https://citypopulation.de/en/germany/cities/",
+    "author": "FjellOverflow",
+    "lastUpdated": "2024-12-10"
+  },
+  "items": [
+    {
+      "hint": "Capital of Baden-Württemberg",
+      "answer": "Stuttgart",
+      "matches": ["Stuttgart"]
+    },
+    {
+      "hint": "Capital of Bayern",
+      "answer": "München",
+      "matches": ["München", "Munchen", "Munich"]
+    },
+    {
+      "hint": "Capital of Berlin",
+      "answer": "Berlin",
+      "matches": ["Berlin"]
+    },
+    {
+      "hint": "Capital of Brandenburg",
+      "answer": "Potsdam",
+      "matches": ["Potsdam"]
+    },
+    {
+      "hint": "Capital of Bremen",
+      "answer": "Bremen",
+      "matches": ["Bremen"]
+    },
+    {
+      "hint": "Capital of Hamburg",
+      "answer": "Hamburg",
+      "matches": ["Hamburg"]
+    },
+    {
+      "hint": "Capital of Hessen",
+      "answer": "Wiesbaden",
+      "matches": ["Wiesbaden"]
+    },
+    {
+      "hint": "Capital of Mecklenburg-Vorpommern",
+      "answer": "Schwerin",
+      "matches": ["Schwerin"]
+    },
+    {
+      "hint": "Capital of Niedersachsen",
+      "answer": "Hannover",
+      "matches": ["Hannover", "Hanover"]
+    },
+    {
+      "hint": "Capital of Nordrhein-Westfalen",
+      "answer": "Düsseldorf",
+      "matches": ["Düsseldorf", "Dusseldorf"]
+    },
+    {
+      "hint": "Capital of Rheinland-Pfalz",
+      "answer": "Mainz",
+      "matches": ["Mainz"]
+    },
+    {
+      "hint": "Capital of Saarland",
+      "answer": "Saarbrücken",
+      "matches": ["Saarbrücken", "Saarbrucken"]
+    },
+    {
+      "hint": "Capital of Sachsen",
+      "answer": "Dresden",
+      "matches": ["Dresden"]
+    },
+    {
+      "hint": "Capital of Sachsen-Anhalt",
+      "answer": "Magdeburg",
+      "matches": ["Magdeburg"]
+    },
+    {
+      "hint": "Capital of Schleswig-Holstein",
+      "answer": "Kiel",
+      "matches": ["Kiel"]
+    },
+    {
+      "hint": "Capital of Thüringen",
+      "answer": "Erfurt",
+      "matches": ["Erfurt"]
+    }
+  ],
+  "settings": {
+    "requireWhitespaces": false,
+    "requireCapitalization": false,
+    "requireOrder": false,
+    "numberOfPauses": -1,
+    "showHints": true,
+    "allowOverride": true
+  }
+}

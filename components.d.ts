@@ -10,6 +10,7 @@ declare module 'vue' {
     Checkbox: typeof import('./src/components/inputs/Checkbox.vue')['default']
     Hint: typeof import('./src/components/Hint.vue')['default']
     Items: typeof import('./src/components/Items.vue')['default']
+    ListInfo: typeof import('./src/components/ListInfo.vue')['default']
     ListPreview: typeof import('./src/components/ListPreview.vue')['default']
     Lists: typeof import('./src/components/Lists.vue')['default']
     Range: typeof import('./src/components/inputs/Range.vue')['default']

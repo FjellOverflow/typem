@@ -3,6 +3,7 @@ import { usePresetLoader } from '@/assets/presets/loader'
 import { formatSeconds } from '@/plugins/util'
 import type { IItem } from '@/types'
 import { useTitle } from '@vueuse/core'
+import { useHistory } from '@/composables/history'
 export { usePresetLoader }
 </script>
 
@@ -13,17 +14,18 @@ import { PartyPopper, RotateCw, ThumbsUp } from 'lucide-vue-next'
 
 const { data: preset } = usePresetLoader()
 
-const pageTitle = useTitle(`${preset.value.meta.name} | Typem`)
+const pageTitle = useTitle(`${preset.value.meta.name} - Typem`)
 
 watch(preset, (newPreset) => {
   reset()
-  pageTitle.value = `${newPreset.meta.name} | Typem`
+  pageTitle.value = `${newPreset.meta.name} - Typem`
   settings.value = { ...newPreset.settings }
 })
 
 const inputField = useTemplateRef('inputField')
 const settingsCard = useTemplateRef('settingsCard')
 const itemsCard = useTemplateRef('itemsCard')
+const { history } = useHistory()
 
 const settings = ref({ ...preset.value.settings })
 const checker = ref()
@@ -61,6 +63,8 @@ function init() {
 
 function reset() {
   settings.value.allowOverride = preset.value.settings.allowOverride
+  checker.value = undefined
+  timer.value = undefined
 
   isStopped.value = false
   isInitialized.value = false
@@ -85,6 +89,12 @@ function onStop() {
   isStopped.value = true
 
   itemsCard.value?.open()
+  history.value.push({
+    listId: preset.value.id,
+    seconds: timer.value.seconds,
+    finished: isDone.value,
+    timestamp: new Date().toISOString(),
+  })
 }
 
 function onInput() {
