@@ -6,7 +6,7 @@ export { usePresetsLoader }
 
 <script setup lang="ts">
 import { useStorage } from '@vueuse/core'
-import { Shuffle, List, Sun, Moon, Heart } from 'lucide-vue-next'
+import { Shuffle, List, Sun, Moon, Heart, CalendarClock } from 'lucide-vue-next'
 import logo from '@/assets/logo.svg'
 
 const { data: presets } = usePresetsLoader()
@@ -48,6 +48,11 @@ function getRandomPreset() {
           >
         </li>
         <li>
+          <RouterLink :to="getRandomPreset()" class="btn btn-ghost text-2xl">
+            <Shuffle /> Random
+          </RouterLink>
+        </li>
+        <li>
           <RouterLink
             to="/favorites"
             class="btn text-2xl"
@@ -57,8 +62,12 @@ function getRandomPreset() {
           </RouterLink>
         </li>
         <li>
-          <RouterLink :to="getRandomPreset()" class="btn btn-ghost text-2xl">
-            <Shuffle /> Random
+          <RouterLink
+            to="/history"
+            class="btn btn-ghost text-2xl"
+            :class="[route.name.startsWith('/history') ? 'btn-outline' : 'btn-ghost']"
+          >
+            <CalendarClock /> History
           </RouterLink>
         </li>
       </ul>

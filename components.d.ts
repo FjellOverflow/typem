@@ -17,6 +17,8 @@ declare module 'vue' {
     Range: typeof import('./src/components/inputs/Range.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Run: typeof import('./src/components/Run.vue')['default']
+    Runs: typeof import('./src/components/Runs.vue')['default']
     Settings: typeof import('./src/components/Settings.vue')['default']
     Timer: typeof import('./src/components/Timer.vue')['default']
     Toggle: typeof import('./src/components/inputs/Toggle.vue')['default']
