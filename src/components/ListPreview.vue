@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { useFavorites } from '@/composables/favorites'
+import { useListHistory } from '@/composables/history'
+import { formatSeconds } from '@/plugins/util'
 import type { IItemList } from '@/types'
-import { Heart, Info, List, Lock, Star } from 'lucide-vue-next'
+import { Heart, Info, List, Lock, Star, Timer } from 'lucide-vue-next'
 
 const infoModal = useTemplateRef('infoModal')
 
@@ -17,6 +19,7 @@ const props = withDefaults(
 
 const { t } = useI18n()
 
+const { bestListRun } = useListHistory(props.list.id)
 const { isFavorite, toggleFavorite } = useFavorites()
 
 const difficultyLabel = computed(() => {
@@ -33,7 +36,7 @@ const difficultyLabel = computed(() => {
       <span class="text-3xl font-medium">
         {{ list.meta.name }}
       </span>
-      <span class="text-xl font-medium">
+      <span v-if="showDetails" class="text-xl font-medium">
         {{ list.meta.description }}
       </span>
     </div>
@@ -47,6 +50,10 @@ const difficultyLabel = computed(() => {
       <div class="flex gap-2 opacity-65">
         <Star v-for="i in list.meta.difficulty" :key="i" />
         <span> {{ difficultyLabel }}</span>
+      </div>
+      <div v-if="bestListRun" class="flex gap-2 opacity-65">
+        <Timer />
+        <span> {{ formatSeconds(bestListRun.seconds) }}</span>
       </div>
       <div v-if="!list.settings.allowOverride" class="flex gap-2 opacity-65">
         <Lock />

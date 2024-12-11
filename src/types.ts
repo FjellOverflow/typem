@@ -49,5 +49,6 @@ export interface IRun {
   listId: string
   seconds: number
   finished: boolean
+  numberOfMatches: number
   timestamp: string
 }

@@ -34,7 +34,7 @@ async function getPresets() {
   return presets
 }
 
-async function getPresetById(id: string): Promise<IItemList> {
+export async function getPresetById(id: string): Promise<IItemList> {
   await isLoaded
 
   const preset = presets.find((item) => item.id === id)

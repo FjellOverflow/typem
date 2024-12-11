@@ -3,7 +3,7 @@ import { usePresetLoader } from '@/assets/presets/loader'
 import { formatSeconds } from '@/plugins/util'
 import type { IItem } from '@/types'
 import { useTitle } from '@vueuse/core'
-import { useHistory } from '@/composables/history'
+import { useHistory, useListHistory } from '@/composables/history'
 export { usePresetLoader }
 </script>
 
@@ -25,7 +25,10 @@ watch(preset, (newPreset) => {
 const inputField = useTemplateRef('inputField')
 const settingsCard = useTemplateRef('settingsCard')
 const itemsCard = useTemplateRef('itemsCard')
-const { history } = useHistory()
+const newRecordDialog = useTemplateRef('newRecordDialog')
+
+const { allRuns } = useHistory()
+const { bestListRun } = useListHistory(preset.value.id)
 
 const settings = ref({ ...preset.value.settings })
 const checker = ref()
@@ -65,6 +68,7 @@ function reset() {
   settings.value.allowOverride = preset.value.settings.allowOverride
   checker.value = undefined
   timer.value = undefined
+  input.value = ''
 
   isStopped.value = false
   isInitialized.value = false
@@ -89,12 +93,22 @@ function onStop() {
   isStopped.value = true
 
   itemsCard.value?.open()
-  history.value.push({
+
+  const numberOfMatches = checker.value?.items.filter((item) => item.checked).length
+
+  if (numberOfMatches === 0) return
+
+  const newRun = {
     listId: preset.value.id,
     seconds: timer.value.seconds,
     finished: isDone.value,
+    numberOfMatches,
     timestamp: new Date().toISOString(),
-  })
+  }
+  if (newRun.finished && bestListRun.value && newRun.seconds < bestListRun.value.seconds)
+    newRecordDialog.value?.open(newRun, bestListRun.value)
+
+  allRuns.value.push(newRun)
 }
 
 function onInput() {
@@ -110,8 +124,9 @@ function onInput() {
 }
 </script>
 <template>
+  <NewRecordDialog ref="newRecordDialog" />
   <div class="grid grid-cols-5 items-center gap-4 py-4">
-    <ListPreview :list="preset" class="col-span-5" :show-details="false">
+    <ListPreview :list="preset" class="col-span-5" :show-details="!isInitialized">
       <template #action>
         <button
           v-if="!isInitialized"
