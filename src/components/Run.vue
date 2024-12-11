@@ -3,7 +3,7 @@ import { getPresetById } from '@/assets/presets/loader'
 import { useHistory } from '@/composables/history'
 import { formatSeconds } from '@/plugins/util'
 import { type IItemList, type IRun } from '@/types'
-import { Trophy } from 'lucide-vue-next'
+import { Ban, Check, Trophy } from 'lucide-vue-next'
 
 const props = defineProps<{
   run: IRun
@@ -44,6 +44,14 @@ async function loadList() {
       <div v-if="isRecord" class="badge badge-outline badge-primary h-7 p-2 flex gap-1">
         <Trophy :size="14" /> Record
       </div>
+      <template v-else>
+        <div v-if="run.finished" class="badge badge-outline badge-success h-7 p-2 flex gap-1">
+          <Check :size="14" /> Finished
+        </div>
+        <div v-else class="badge badge-outline badge-error h-7 p-2 flex gap-1">
+          <Ban :size="14" /> Matched {{ run.numberOfMatches }}/{{ list.items.length }}
+        </div>
+      </template>
     </div>
   </div>
 </template>
