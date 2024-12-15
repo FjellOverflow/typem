@@ -14,7 +14,14 @@ export default defineConfig({
     vueLayouts(),
     vueComponents(),
     autoImports({
-      imports: ['vue', 'vue-router', 'vue-i18n'],
+      imports: [
+        'vue',
+        'vue-router',
+        'vue-i18n',
+        {
+          '@vueuse/core': ['useStorage'],
+        },
+      ],
     }),
   ],
   resolve: {
