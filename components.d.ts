@@ -8,6 +8,7 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     Checkbox: typeof import('./src/components/inputs/Checkbox.vue')['default']
+    CollapsibleBox: typeof import('./src/components/layout/CollapsibleBox.vue')['default']
     Hint: typeof import('./src/components/Hint.vue')['default']
     Items: typeof import('./src/components/Items.vue')['default']
     ListInfo: typeof import('./src/components/ListInfo.vue')['default']

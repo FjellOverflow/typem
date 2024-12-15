@@ -2,8 +2,9 @@
 import type { ISettings } from '@/types'
 import { Lock, Settings } from 'lucide-vue-next'
 
-const isOpen = ref(true)
 const settings = defineModel<ISettings>({ required: true })
+
+const isOpen = ref(true)
 
 const numberOfPauses = computed(() =>
   settings.value.numberOfPauses >= 0 ? settings.value.numberOfPauses : 6,
@@ -22,19 +23,21 @@ function onUpdateNumberOfPauses(newVal: number) {
 }
 
 defineExpose({
+  isOpen,
   open: () => (isOpen.value = true),
   close: () => (isOpen.value = false),
 })
 </script>
 <template>
-  <div class="collapse collapse-arrow border rounded-lg overflow-visible">
-    <input type="checkbox" v-model="isOpen" />
-    <div class="collapse-title text-xl font-medium flex gap-2 items-center">
-      <Lock v-if="!settings.allowOverride" />
-      <Settings v-else />
-      {{ $t('settings.label') }}
-    </div>
-    <div class="collapse-content">
+  <CollapsibleBox v-model="isOpen">
+    <template #title>
+      <div class="flex gap-2 items-center">
+        <Lock v-if="!settings.allowOverride" />
+        <Settings v-else />
+        {{ $t('settings.label') }}
+      </div>
+    </template>
+    <template #content>
       <div class="grid grid-cols-2 gap-4">
         <div>
           <Tooltip :label="$t('settings.showHints.tooltip')">
@@ -87,6 +90,6 @@ defineExpose({
           </Tooltip>
         </div>
       </div>
-    </div>
-  </div>
+    </template>
+  </CollapsibleBox>
 </template>
