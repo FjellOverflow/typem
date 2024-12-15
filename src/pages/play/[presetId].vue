@@ -20,6 +20,7 @@ watch(preset, (newPreset) => {
   reset()
   pageTitle.value = `${newPreset.meta.name} - Typem`
   settings.value = { ...newPreset.settings }
+  window.scrollTo(0, 0)
 })
 
 const inputField = useTemplateRef('inputField')
