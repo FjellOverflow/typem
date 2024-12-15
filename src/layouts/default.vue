@@ -40,41 +40,25 @@ function getRandomPreset() {
     <div class="navbar-center">
       <ul class="menu menu-horizontal gap-2">
         <li>
-          <RouterLink
-            to="/"
-            class="btn text-2xl"
-            :class="[route.name === '/' ? 'btn-outline' : 'btn-ghost']"
-            ><List /> All</RouterLink
-          >
+          <NavLink to="/"><List /> All </NavLink>
         </li>
         <li>
-          <RouterLink :to="getRandomPreset()" class="btn btn-ghost text-2xl">
-            <Shuffle /> Random
-          </RouterLink>
+          <NavLink :to="getRandomPreset()"> <Shuffle /> Random </NavLink>
         </li>
         <li>
-          <RouterLink
-            to="/favorites"
-            class="btn text-2xl"
-            :class="[route.name === '/favorites' ? 'btn-outline' : 'btn-ghost']"
-          >
-            <Heart /> Favorites
-          </RouterLink>
+          <NavLink to="/favorites"><Heart /> Favorites </NavLink>
         </li>
         <li>
-          <RouterLink
-            to="/history"
-            class="btn btn-ghost text-2xl"
-            :class="[route.name.startsWith('/history') ? 'btn-outline' : 'btn-ghost']"
-          >
-            <CalendarClock /> History
-          </RouterLink>
+          <NavLink to="/history" :active="route.name.startsWith('/history')"
+            ><CalendarClock /> History
+          </NavLink>
         </li>
       </ul>
     </div>
     <div class="navbar-end">
       <button class="btn btn-ghost" @click="toggleTheme">
-        <Sun v-if="theme === 'light'" /><Moon v-else />
+        <Sun v-if="theme === 'light'" />
+        <Moon v-else />
       </button>
     </div>
   </div>

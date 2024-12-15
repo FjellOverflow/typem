@@ -13,6 +13,7 @@ declare module 'vue' {
     ListInfo: typeof import('./src/components/ListInfo.vue')['default']
     ListPreview: typeof import('./src/components/ListPreview.vue')['default']
     Lists: typeof import('./src/components/Lists.vue')['default']
+    NavLink: typeof import('./src/components/layout/NavLink.vue')['default']
     NewRecordDialog: typeof import('./src/components/NewRecordDialog.vue')['default']
     Range: typeof import('./src/components/inputs/Range.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
