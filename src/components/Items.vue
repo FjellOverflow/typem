@@ -18,13 +18,14 @@ defineExpose({
 })
 </script>
 <template>
-  <div class="collapse collapse-arrow border rounded-lg overflow-visible">
-    <input type="checkbox" v-model="isOpen" />
-    <div class="collapse-title text-xl font-medium flex gap-2 items-center">
-      <ListCheck />
-      {{ `${$t('items.label')} (${numberOfItemsChecked}/${items.length})` }}
-    </div>
-    <div class="collapse-content">
+  <CollapsibleBox v-model="isOpen">
+    <template #title>
+      <div class="flex gap-2 items-center">
+        <ListCheck />
+        {{ `${$t('items.label')} (${numberOfItemsChecked}/${items.length})` }}
+      </div>
+    </template>
+    <template #content>
       <ul class="grid grid-cols-4 list-none mt-4 gap-2">
         <li v-for="item in items" :key="item.answer" class="min-h-6 mb-2">
           <div
@@ -59,6 +60,6 @@ defineExpose({
           </div>
         </li>
       </ul>
-    </div>
-  </div>
+    </template>
+  </CollapsibleBox>
 </template>
