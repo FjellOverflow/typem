@@ -1,12 +1,12 @@
 <script lang="ts">
-import { usePresetsLoader } from '@/assets/presets/loader'
-export { usePresetsLoader }
+import { useListsLoader } from '@/assets/lists/loader'
+export { useListsLoader }
 </script>
 
 <script setup lang="ts">
 import { Shuffle, List, Heart, CalendarClock } from 'lucide-vue-next'
 
-const { data: presets } = usePresetsLoader()
+const { data: lists } = useListsLoader()
 const route = useRoute()
 
 const randomListUrl = computed(() => {
@@ -14,8 +14,8 @@ const randomListUrl = computed(() => {
   let randomUrl = currentRoute
 
   do {
-    const randomPreset = presets.value[Math.floor(Math.random() * presets.value.length)]
-    randomUrl = `/play/${randomPreset.id}`
+    const { id } = lists.value[Math.floor(Math.random() * lists.value.length)]
+    randomUrl = `/play/${id}`
   } while (randomUrl === currentRoute)
 
   return randomUrl

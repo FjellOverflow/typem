@@ -26,7 +26,7 @@ const filtersActive = computed(
   () => !!filterKeyword.value || sortBy.value !== 'name' || sortDirection.value !== 'asc',
 )
 
-const filteredPresets = computed(() => {
+const filteredLists = computed(() => {
   const sets = props.lists.filter((list) => matchKeyword(list.meta.name, filterKeyword.value))
 
   sets.sort((s1, s2) => {
@@ -71,22 +71,17 @@ function resetFilters() {
       <X /> Clear
     </button>
   </div>
-  <ListPreview
-    v-for="preset in filteredPresets"
-    :key="preset.id"
-    :list="preset"
-    class="mt-4 last:mb-8"
-  >
+  <ListPreview v-for="list in filteredLists" :key="list.id" :list class="mt-4 last:mb-8">
     <template #action>
       <button
         class="btn btn-outline btn-primary text-xl font-medium"
-        @click="$router.push(`/play/${preset.id}`)"
+        @click="$router.push(`/play/${list.id}`)"
       >
         {{ $t('play.label') }} <Gamepad2 />
       </button>
     </template>
   </ListPreview>
-  <div v-if="filteredPresets.length === 0" class="w-full flex justify-center text-3xl mt-8">
+  <div v-if="filteredLists.length === 0" class="w-full flex justify-center text-3xl mt-8">
     {{ filtersActive ? 'No results found' : noDataText }}
   </div>
 </template>

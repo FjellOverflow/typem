@@ -3,13 +3,13 @@ import { NavigationResult } from 'unplugin-vue-router/data-loaders'
 import { defineBasicLoader } from 'unplugin-vue-router/data-loaders/basic'
 
 const isLoaded = new Promise((r) => {
-  loadPresets().then(() => r(true))
+  loadLists().then(() => r(true))
 })
 
-const presets: IItemList[] = []
+const lists: IItemList[] = []
 
-async function loadPresets() {
-  const files = import.meta.glob('@/assets/presets/**/[^.]*.json')
+async function loadLists() {
+  const files = import.meta.glob('@/assets/lists/**/[^.]*.json')
   const promises = Object.entries(files).map(([fileName, file]) =>
     file().then((loadedFile) => {
       try {
@@ -22,35 +22,35 @@ async function loadPresets() {
   )
 
   await Promise.all(promises).then((results) => {
-    presets.push(...results.filter((r) => !!r))
+    lists.push(...results.filter((r) => !!r))
   })
 
-  presets.sort((l1, l2) => l1.meta.name.localeCompare(l2.meta.name))
+  lists.sort((l1, l2) => l1.meta.name.localeCompare(l2.meta.name))
 }
 
-async function getPresets() {
+async function getLists() {
   await isLoaded
 
-  return presets
+  return lists
 }
 
-export async function getPresetById(id: string): Promise<IItemList> {
+export async function getListById(listId: string): Promise<IItemList> {
   await isLoaded
 
-  const preset = presets.find((item) => item.id === id)
+  const list = lists.find(({ id }) => id === listId)
 
-  if (preset) return preset
+  if (list) return list
 
-  throw new Error(`Preset with id "${id}" does not exist.`)
+  throw new Error(`List with id "${listId}" does not exist.`)
 }
 
-export const usePresetLoader = defineBasicLoader('/play/[presetId]', async (to) => {
+export const useListLoader = defineBasicLoader('/play/[listId]', async (to) => {
   try {
-    return await getPresetById(to.params.presetId)
+    return await getListById(to.params.listId)
   } catch (e) {
     console.error(e)
     return new NavigationResult('/')
   }
 })
 
-export const usePresetsLoader = defineBasicLoader('/', async () => getPresets())
+export const useListsLoader = defineBasicLoader('/', async () => getLists())

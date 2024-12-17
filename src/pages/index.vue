@@ -1,11 +1,11 @@
 <script lang="ts">
-import { usePresetsLoader } from '@/assets/presets/loader'
-export { usePresetsLoader }
+import { useListsLoader } from '@/assets/lists/loader'
+export { useListsLoader }
 </script>
 
 <script setup lang="ts">
-const { data: presets } = usePresetsLoader()
+const { data: lists } = useListsLoader()
 </script>
 <template>
-  <Lists :lists="presets" />
+  <Lists :lists />
 </template>
