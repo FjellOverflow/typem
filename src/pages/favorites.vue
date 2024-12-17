@@ -1,18 +1,19 @@
 <script lang="ts">
-import { usePresetsLoader } from '@/assets/presets/loader'
-import { useFavorites } from '@/composables/favorites'
-import { useTitle } from '@vueuse/core'
-export { usePresetsLoader }
+import { useListsLoader } from '@/assets/lists/loader'
+export { useListsLoader }
 </script>
 
 <script setup lang="ts">
+import { useTitle } from '@vueuse/core'
+import { useFavorites } from '@/composables/favorites'
+
 useTitle('Favorites - Typem')
 
-const { data: presets } = usePresetsLoader()
+const { data: lists } = useListsLoader()
 
 const { isFavorite } = useFavorites()
 
-const favorites = computed(() => presets.value.filter(isFavorite))
+const favorites = computed(() => lists.value.filter(isFavorite))
 </script>
 <template>
   <Lists :lists="favorites" no-data-text="No list marked favorite yet" />

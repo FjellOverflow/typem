@@ -1,25 +1,25 @@
 <script lang="ts">
-import { usePresetLoader } from '@/assets/presets/loader'
-import { formatSeconds } from '@/plugins/util'
-import type { IItem } from '@/types'
-import { useTitle } from '@vueuse/core'
-import { useHistory, useListHistory } from '@/composables/history'
-export { usePresetLoader }
+import { useListLoader } from '@/assets/lists/loader'
+export { useListLoader }
 </script>
 
 <script setup lang="ts">
+import { formatSeconds } from '@/plugins/util'
+import type { ICheckableItem, IItem } from '@/types'
+import { useTitle } from '@vueuse/core'
+import { useHistory, useListHistory } from '@/composables/history'
 import { useChecking, useOrderedChecking } from '@/composables/checking'
 import { useTimer } from '@/composables/timer'
 import { PartyPopper, RotateCw, ThumbsUp } from 'lucide-vue-next'
 
-const { data: preset } = usePresetLoader()
+const { data: list } = useListLoader()
 
-const pageTitle = useTitle(`${preset.value.meta.name} - Typem`)
+const pageTitle = useTitle(`${list.value.meta.name} - Typem`)
 
-watch(preset, (newPreset) => {
+watch(list, (newList) => {
   reset()
-  pageTitle.value = `${newPreset.meta.name} - Typem`
-  settings.value = { ...newPreset.settings }
+  pageTitle.value = `${newList.meta.name} - Typem`
+  settings.value = { ...newList.settings }
   window.scrollTo(0, 0)
 })
 
@@ -29,9 +29,9 @@ const itemsCard = useTemplateRef('itemsCard')
 const newRecordDialog = useTemplateRef('newRecordDialog')
 
 const { allRuns } = useHistory()
-const { bestListRun } = useListHistory(preset.value.id)
+const { bestListRun } = useListHistory(list.value.id)
 
-const settings = ref({ ...preset.value.settings })
+const settings = ref({ ...list.value.settings })
 const checker = ref()
 const timer = ref()
 
@@ -48,7 +48,7 @@ function init() {
 
   timer.value = useTimer(settings.value.numberOfPauses)
   checker.value = (settings.value.requireOrder ? useOrderedChecking : useChecking)(
-    preset.value.items,
+    list.value.items,
     settings.value,
     () => {
       isDone.value = true
@@ -66,7 +66,7 @@ function init() {
 }
 
 function reset() {
-  settings.value.allowOverride = preset.value.settings.allowOverride
+  settings.value.allowOverride = list.value.settings.allowOverride
   checker.value = undefined
   timer.value = undefined
   input.value = ''
@@ -95,12 +95,12 @@ function onStop() {
 
   itemsCard.value?.open()
 
-  const numberOfMatches = checker.value?.items.filter((item) => item.checked).length
+  const numberOfMatches = checker.value?.items.filter((item: ICheckableItem) => item.checked).length
 
   if (numberOfMatches === 0) return
 
   const newRun = {
-    listId: preset.value.id,
+    listId: list.value.id,
     seconds: timer.value.seconds,
     finished: isDone.value,
     numberOfMatches,
@@ -127,7 +127,7 @@ function onInput() {
 <template>
   <NewRecordDialog ref="newRecordDialog" />
   <div class="grid grid-cols-5 items-center gap-4 py-4">
-    <ListPreview :list="preset" class="col-span-5" :show-details="!isInitialized">
+    <ListPreview :list class="col-span-5" :show-details="!isInitialized">
       <template #action>
         <button
           v-if="!isInitialized"
@@ -182,7 +182,7 @@ function onInput() {
           <PartyPopper :size="36" />
           <span class="text-3xl">You did it!</span>
           <span class="text-xl"
-            >You named all {{ preset.items.length }} items in
+            >You named all {{ list.items.length }} items in
             {{ formatSeconds(timer.seconds) }}.</span
           >
         </div>
@@ -191,7 +191,7 @@ function onInput() {
 
     <Items
       ref="itemsCard"
-      :items="checker?.items || preset.items"
+      :items="checker?.items || list.items"
       :isStopped
       class="col-span-5"
       :highlighted="newMatch"

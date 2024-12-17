@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { getPresetById } from '@/assets/presets/loader'
+import { getListById } from '@/assets/lists/loader'
 import { useHistory } from '@/composables/history'
 import { formatSeconds } from '@/plugins/util'
 import { type IItemList, type IRun } from '@/types'
@@ -19,7 +19,7 @@ loadList()
 watch(props.run, loadList)
 
 async function loadList() {
-  const result = await getPresetById(props.run.listId)
+  const result = await getListById(props.run.listId)
 
   if (result) {
     list.value = result
