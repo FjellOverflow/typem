@@ -1,7 +1,12 @@
 <script setup lang="ts">
 import { matchKeyword } from '@/plugins/util'
 import type { IItemList } from '@/types'
-import { ArrowDownNarrowWide, ArrowDownWideNarrow, Gamepad2, X } from 'lucide-vue-next'
+import {
+  ArrowDownNarrowWideIcon,
+  ArrowDownWideNarrowIcon,
+  Gamepad2Icon,
+  XIcon,
+} from 'lucide-vue-next'
 import { useRouteQuery } from '@vueuse/router'
 
 const props = withDefaults(
@@ -59,8 +64,8 @@ function resetFilters() {
       <option value="difficulty">Sort by difficulty</option>
     </select>
     <button class="btn btn-ghost" @click="toggleSortDirection">
-      <ArrowDownNarrowWide v-if="sortDirection === 'asc'" />
-      <ArrowDownWideNarrow v-else />
+      <ArrowDownNarrowWideIcon v-if="sortDirection === 'asc'" />
+      <ArrowDownWideNarrowIcon v-else />
     </button>
 
     <button
@@ -68,7 +73,7 @@ function resetFilters() {
       @click="resetFilters"
       :disabled="!filtersActive"
     >
-      <X /> Clear
+      <XIcon /> Clear
     </button>
   </div>
   <ListPreview v-for="list in filteredLists" :key="list.id" :list class="mt-4 last:mb-8">
@@ -77,7 +82,7 @@ function resetFilters() {
         class="btn btn-outline btn-primary text-xl font-medium"
         @click="$router.push(`/play/${list.id}`)"
       >
-        {{ $t('play.label') }} <Gamepad2 />
+        {{ $t('play.label') }} <Gamepad2Icon />
       </button>
     </template>
   </ListPreview>

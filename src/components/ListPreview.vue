@@ -3,7 +3,7 @@ import { useFavorites } from '@/composables/favorites'
 import { useListHistory } from '@/composables/history'
 import { formatSeconds } from '@/plugins/util'
 import type { IItemList } from '@/types'
-import { Heart, Info, List, Lock, Star, Timer } from 'lucide-vue-next'
+import { HeartIcon, InfoIcon, ListIcon, LockIcon, StarIcon, TimerIcon } from 'lucide-vue-next'
 
 const infoModal = useTemplateRef('infoModal')
 
@@ -45,18 +45,18 @@ const difficultyLabel = computed(() => {
     </div>
     <div v-if="showDetails" class="col-span-3 flex items-center gap-8">
       <div class="flex gap-2 opacity-65">
-        <List /> <span>{{ list.items.length }} items</span>
+        <ListIcon /> <span>{{ list.items.length }} items</span>
       </div>
       <div class="flex gap-2 opacity-65">
-        <Star v-for="i in list.meta.difficulty" :key="i" />
+        <StarIcon v-for="i in list.meta.difficulty" :key="i" />
         <span> {{ difficultyLabel }}</span>
       </div>
       <div v-if="bestListRun" class="flex gap-2 opacity-65">
-        <Timer />
+        <TimerIcon />
         <span> {{ formatSeconds(bestListRun.seconds) }}</span>
       </div>
       <div v-if="!list.settings.allowOverride" class="flex gap-2 opacity-65">
-        <Lock />
+        <LockIcon />
         <span>{{ $t('settings.cannotOverride') }}</span>
       </div>
       <div class="mx-auto" />
@@ -66,10 +66,10 @@ const difficultyLabel = computed(() => {
           class="btn btn-ghost"
           :class="{ 'text-primary': isFavorite(list) }"
         >
-          <Heart :class="{ 'fill-primary': isFavorite(list) }" />
+          <HeartIcon :class="{ 'fill-primary': isFavorite(list) }" />
         </button>
         <button @click="infoModal?.showModal()" class="btn btn-ghost">
-          <Info />
+          <InfoIcon />
         </button>
         <dialog ref="infoModal" class="modal">
           <div class="modal-box border">

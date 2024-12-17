@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { CircleHelp, Lightbulb } from 'lucide-vue-next'
+import { CircleHelpIcon, LightbulbIcon } from 'lucide-vue-next'
 
 withDefaults(
   defineProps<{
@@ -18,12 +18,12 @@ withDefaults(
     </div>
     <div class="flex flex-col justify-center">
       <div class="tooltip tooltip-bottom" :data-tip="label">
-        <Lightbulb
+        <LightbulbIcon
           v-if="type === 'hint'"
           :size="20"
           class="hover:opacity-100 opacity-25 ease-in-out transition-opacity duration-200"
         />
-        <CircleHelp
+        <CircleHelpIcon
           v-else
           :size="20"
           class="hover:opacity-100 opacity-25 ease-in-out transition-opacity duration-200"

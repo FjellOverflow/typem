@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Sun, Moon } from 'lucide-vue-next'
+import { SunIcon, MoonIcon } from 'lucide-vue-next'
 
 const theme = useStorage('data-theme', 'dark')
 
@@ -11,7 +11,7 @@ function toggleTheme() {
 </script>
 <template>
   <button class="btn btn-ghost" @click="toggleTheme">
-    <Sun v-if="theme === 'light'" />
-    <Moon v-else />
+    <SunIcon v-if="theme === 'light'" />
+    <MoonIcon v-else />
   </button>
 </template>
