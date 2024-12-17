@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { ISettings } from '@/types'
-import { Lock, Settings } from 'lucide-vue-next'
+import { LockIcon, SettingsIcon } from 'lucide-vue-next'
 
 const settings = defineModel<ISettings>({ required: true })
 
@@ -32,8 +32,8 @@ defineExpose({
   <CollapsibleBox v-model="isOpen">
     <template #title>
       <div class="flex gap-2 items-center">
-        <Lock v-if="!settings.allowOverride" />
-        <Settings v-else />
+        <LockIcon v-if="!settings.allowOverride" />
+        <SettingsIcon v-else />
         {{ $t('settings.label') }}
       </div>
     </template>

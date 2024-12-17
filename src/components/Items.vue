@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { ICheckableItem, IItem } from '@/types'
-import { ListCheck } from 'lucide-vue-next'
+import { ListCheckIcon } from 'lucide-vue-next'
 
 const isOpen = ref(false)
 
@@ -21,7 +21,7 @@ defineExpose({
   <CollapsibleBox v-model="isOpen">
     <template #title>
       <div class="flex gap-2 items-center">
-        <ListCheck />
+        <ListCheckIcon />
         {{ `${$t('items.label')} (${numberOfItemsChecked}/${items.length})` }}
       </div>
     </template>

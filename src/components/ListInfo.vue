@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { IItemList } from '@/types'
-import { ExternalLink } from 'lucide-vue-next'
+import { ExternalLinkIcon } from 'lucide-vue-next'
 
 defineProps<{
   list: IItemList
@@ -21,7 +21,7 @@ defineProps<{
         >Last update: <i>{{ new Date(list.meta.lastUpdated).toLocaleDateString() }}</i>
       </span>
       <a class="flex gap-1 underline" target="_blank" norefferer noopener :href="list.meta.source"
-        ><i>Source</i><ExternalLink :size="14" />
+        ><i>Source</i><ExternalLinkIcon :size="14" />
       </a>
     </div>
   </div>

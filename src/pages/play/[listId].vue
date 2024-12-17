@@ -10,7 +10,7 @@ import { useTitle } from '@vueuse/core'
 import { useHistory, useListHistory } from '@/composables/history'
 import { useChecking, useOrderedChecking } from '@/composables/checking'
 import { useTimer } from '@/composables/timer'
-import { PartyPopper, RotateCw, ThumbsUp } from 'lucide-vue-next'
+import { PartyPopperIcon, RotateCwIcon, ThumbsUpIcon } from 'lucide-vue-next'
 
 const { data: list } = useListLoader()
 
@@ -134,14 +134,14 @@ function onInput() {
           class="btn btn-outline btn-primary text-xl font-medium"
           @click="init"
         >
-          <ThumbsUp /> {{ $t('starter.label') }}
+          <ThumbsUpIcon /> {{ $t('starter.label') }}
         </button>
         <button
           v-if="isInitialized && isStopped"
           class="btn btn-outline btn-primary text-xl font-medium"
           @click="reset"
         >
-          <RotateCw /> {{ $t('restart.label') }}
+          <RotateCwIcon /> {{ $t('restart.label') }}
         </button>
       </template>
     </ListPreview>
@@ -179,7 +179,7 @@ function onInput() {
 
       <div v-else class="border border-success rounded-lg col-span-5 p-4">
         <div class="flex gap-4 items-end text-success">
-          <PartyPopper :size="36" />
+          <PartyPopperIcon :size="36" />
           <span class="text-3xl">You did it!</span>
           <span class="text-xl"
             >You named all {{ list.items.length }} items in

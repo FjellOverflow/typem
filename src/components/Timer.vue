@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { formatSeconds } from '@/plugins/util'
-import { Pause, Play, Square } from 'lucide-vue-next'
+import { PauseIcon, PlayIcon, SquareIcon } from 'lucide-vue-next'
 
 const props = defineProps<{
   isRunning: boolean
@@ -33,14 +33,14 @@ const isStoppable = computed(
         class="btn btn-outline"
         @click="$emit('pause')"
       >
-        <Pause /> {{ $t('timer.pause.label') }}
+        <PauseIcon /> {{ $t('timer.pause.label') }}
         {{ numberOfPauses >= 0 ? `(${numberOfPauses})` : '' }}
       </button>
       <button v-else class="btn btn-outline" @click="$emit('start')">
-        <Play /> {{ $t(seconds === 0 ? 'timer.start.label' : 'timer.resume.label') }}
+        <PlayIcon /> {{ $t(seconds === 0 ? 'timer.start.label' : 'timer.resume.label') }}
       </button>
       <button v-if="isStoppable" class="btn btn-outline" @click="$emit('stop')">
-        <Square /> {{ $t('timer.stop.label') }}
+        <SquareIcon /> {{ $t('timer.stop.label') }}
       </button>
     </template>
   </div>

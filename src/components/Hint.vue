@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { ICheckableItem } from '@/types'
-import { ArrowLeft, ArrowRight, Lightbulb } from 'lucide-vue-next'
+import { ArrowLeftIcon, ArrowRightIcon, LightbulbIcon } from 'lucide-vue-next'
 
 const props = defineProps<{ items: ICheckableItem[]; canCycle: boolean }>()
 
@@ -20,16 +20,16 @@ const nextItem = computed(() => {
 <template>
   <div class="border rounded-lg p-4 text-2xl flex justify-between">
     <button v-if="canCycle" class="btn btn-outline text-xl font-medium" @click="offset -= 1">
-      <ArrowLeft /> {{ $t('hint.previous') }}
+      <ArrowLeftIcon /> {{ $t('hint.previous') }}
     </button>
 
     <div class="flex gap-4 items-center">
-      <Lightbulb :size="36" />
+      <LightbulbIcon :size="36" />
       {{ nextItem?.hint || $t('hint.none') }}
     </div>
 
     <button v-if="canCycle" class="btn btn-outline text-xl font-medium" @click="offset += 1">
-      <ArrowRight /> {{ $t('hint.next') }}
+      <ArrowRightIcon /> {{ $t('hint.next') }}
     </button>
   </div>
 </template>

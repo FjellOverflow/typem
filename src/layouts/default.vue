@@ -4,7 +4,7 @@ export { useListsLoader }
 </script>
 
 <script setup lang="ts">
-import { Shuffle, List, Heart, CalendarClock } from 'lucide-vue-next'
+import { ShuffleIcon, ListIcon, HeartIcon, CalendarClockIcon } from 'lucide-vue-next'
 
 const { data: lists } = useListsLoader()
 const route = useRoute()
@@ -27,17 +27,17 @@ const randomListUrl = computed(() => {
     <template #center>
       <ul class="menu menu-horizontal gap-2">
         <li>
-          <NavLink to="/"><List /> All </NavLink>
+          <NavLink to="/"><ListIcon /> All </NavLink>
         </li>
         <li>
-          <NavLink :to="randomListUrl"> <Shuffle /> Random </NavLink>
+          <NavLink :to="randomListUrl"> <ShuffleIcon /> Random </NavLink>
         </li>
         <li>
-          <NavLink to="/favorites"><Heart /> Favorites </NavLink>
+          <NavLink to="/favorites"><HeartIcon /> Favorites </NavLink>
         </li>
         <li>
           <NavLink to="/history" :active="route.name.startsWith('/history')">
-            <CalendarClock /> History
+            <CalendarClockIcon /> History
           </NavLink>
         </li>
       </ul>
