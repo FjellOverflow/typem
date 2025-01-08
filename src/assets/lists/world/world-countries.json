@@ -1,0 +1,920 @@
+{
+  "id": "world-countries",
+  "meta": {
+    "name": "World Countries",
+    "description": "Name all countries of the world.",
+    "difficulty": 1,
+    "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_and_their_capitals_in_native_languages",
+    "author": "FjellOverflow",
+    "lastUpdated": "2025-01-08"
+  },
+  "items": [
+    {
+      "answer": "Afghanistan",
+      "matches": ["Afghanistan", "Afġānistān", "Afganistan", "افغانستان"]
+    },
+    {
+      "answer": "Albania",
+      "matches": ["Albania", "Shqipëria"]
+    },
+    {
+      "answer": "Algeria",
+      "matches": ["Algeria", "Dzayer", "ⴷⵣⴰⵢⴻⵔ", "Al-Jazā'ir", "الجزائر"]
+    },
+    {
+      "answer": "Andorra",
+      "matches": ["Andorra"]
+    },
+    {
+      "answer": "Angola",
+      "matches": ["Angola", "Ngola"]
+    },
+    {
+      "answer": "Antigua and Barbuda",
+      "matches": ["Antigua and Barbuda", "Antigua", "Barbuda"]
+    },
+    {
+      "answer": "Argentina",
+      "matches": ["Argentina"]
+    },
+    {
+      "answer": "Armenia",
+      "matches": ["Armenia", "Hayastán", "Հայաստան"]
+    },
+    {
+      "answer": "Australia",
+      "matches": ["Australia"]
+    },
+    {
+      "answer": "Austria",
+      "matches": ["Austria", "Österreich"]
+    },
+    {
+      "answer": "Azerbaijan",
+      "matches": ["Azerbaijan", "Azərbaycan"]
+    },
+    {
+      "answer": "The Bahamas",
+      "matches": ["The Bahamas", "Bahamas"]
+    },
+    {
+      "answer": "Bahrain",
+      "matches": ["Bahrain", "Al-Baḥrayn", "البحرين"]
+    },
+    {
+      "answer": "Bangladesh",
+      "matches": ["Bangladesh", "Bānglādesh", "বাংলাদেশ"]
+    },
+    {
+      "answer": "Barbados",
+      "matches": ["Barbados"]
+    },
+    {
+      "answer": "Belarus",
+      "matches": ["Belarus", "Bielaruś", "Беларусь", "Belarus", "Беларусь"]
+    },
+    {
+      "answer": "Belgium",
+      "matches": ["Belgium", "België", "Belgique", "Belgien"]
+    },
+    {
+      "answer": "Belize",
+      "matches": ["Belize"]
+    },
+    {
+      "answer": "Benin",
+      "matches": ["Benin", "Bénin"]
+    },
+    {
+      "answer": "Bhutan",
+      "matches": ["Bhutan", "Druk Yul", "འབྲུག་ཡུལ"]
+    },
+    {
+      "answer": "Bolivia",
+      "matches": ["Bolivia", "Buliwya", "Wuliwya", "Volívia"]
+    },
+    {
+      "answer": "Bosnia and Herzegovina",
+      "matches": [
+        "Bosnia and Herzegovina",
+        "Bosna i Hercegovina",
+        "Босна и Херцеговина",
+        "Bosnia",
+        "Herzegovina"
+      ]
+    },
+    {
+      "answer": "Botswana",
+      "matches": ["Botswana"]
+    },
+    {
+      "answer": "Brazil",
+      "matches": ["Brazil", "Brasil"]
+    },
+    {
+      "answer": "Brunei",
+      "matches": ["Brunei", "بروني"]
+    },
+    {
+      "answer": "Bulgaria",
+      "matches": ["Bulgaria", "Bălgariya", "Bălgarija", "България"]
+    },
+    {
+      "answer": "Burkina Faso",
+      "matches": ["Burkina Faso"]
+    },
+    {
+      "answer": "Burundi",
+      "matches": ["Uburundi", "Burundi"]
+    },
+    {
+      "answer": "Cambodia",
+      "matches": ["Cambodia", "Kămpŭchéa", "កម្ពុជា"]
+    },
+    {
+      "answer": "Cameroon",
+      "matches": ["Cameroun", "Cameroon"]
+    },
+    {
+      "answer": "Canada",
+      "matches": ["Canada"]
+    },
+    {
+      "answer": "Cape Verde",
+      "matches": ["Cape Verde", "Cabo Verde"]
+    },
+    {
+      "answer": "Central African Republic",
+      "matches": ["Central African Republic", "Centrafrique", "Bêafrîka", "Central Africa", "CAR"]
+    },
+    {
+      "answer": "Chad",
+      "matches": ["Chad", "Tchad", "Tšād", "تشاد"]
+    },
+    {
+      "answer": "Chile",
+      "matches": ["Chile"]
+    },
+    {
+      "answer": "China",
+      "matches": ["China", "Zhōngguó", "中国"]
+    },
+    {
+      "answer": "Colombia",
+      "matches": ["Colombia"]
+    },
+    {
+      "answer": "Comoros",
+      "matches": ["Comoros", "Komori", "Juzur al-Qumur", "جزر القمر", "Comores"]
+    },
+    {
+      "answer": "Republic of the Congo",
+      "matches": [
+        "Republic of the Congo",
+        "République du Congo",
+        "Repubilika ya Kôngo",
+        "Republíki ya Kongó",
+        "Congo"
+      ]
+    },
+    {
+      "answer": "Democratic Republic of the Congo",
+      "matches": [
+        "Democratic Republic of the Congo",
+        "République démocratique du Congo",
+        "Republíki ya Kongó Demokratíki",
+        "Repubilika ya Kôngo ya Dimokalasi",
+        "Jamhuri ya Kidemokrasia ya Kongo",
+        "Congo"
+      ]
+    },
+    {
+      "answer": "Costa Rica",
+      "matches": ["Costa Rica"]
+    },
+    {
+      "answer": "Côte d'Ivoire",
+      "matches": ["Côte d'Ivoire", "Ivory Coast"]
+    },
+    {
+      "answer": "Croatia",
+      "matches": ["Croatia", "Hrvatska"]
+    },
+    {
+      "answer": "Cuba",
+      "matches": ["Cuba"]
+    },
+    {
+      "answer": "Cyprus",
+      "matches": ["Cyprus", "Kypros", "Κύπρος", "Kıbrıs"]
+    },
+    {
+      "answer": "Czech Republic",
+      "matches": ["Czech Republic", "Česká republika", "Česko", "Czechia"]
+    },
+    {
+      "answer": "Denmark",
+      "matches": ["Denmark", "Danmark"]
+    },
+    {
+      "answer": "Djibouti",
+      "matches": ["Jībūtī", "جيبوتي", "Djibouti", "Jabuuti", "Gabuuti"]
+    },
+    {
+      "answer": "Dominica",
+      "matches": ["Dominica"]
+    },
+    {
+      "answer": "Dominican Republic",
+      "matches": ["Dominican Republic", "República Dominicana", "DR"]
+    },
+    {
+      "answer": "East Timor",
+      "matches": ["East Timor", "Timor Lorosa'e", "Timor-Leste", "Timor"]
+    },
+    {
+      "answer": "Ecuador",
+      "matches": ["Ecuador"]
+    },
+    {
+      "answer": "Egypt",
+      "matches": ["Egypt", "Misr", "Masr", "مصر"]
+    },
+    {
+      "answer": "El Salvador",
+      "matches": ["El Salvador"]
+    },
+    {
+      "answer": "Equatorial Guinea",
+      "matches": [
+        "Equatorial Guinea",
+        "Guinea Ecuatorial",
+        "Guinée équatoriale",
+        "Guiné Equatorial"
+      ]
+    },
+    {
+      "answer": "Eritrea",
+      "matches": ["Eritrea", "Iritriya", "إرتريا", "Ertra", "ኤርትራ"]
+    },
+    {
+      "answer": "Estonia",
+      "matches": ["Estonia", "Eesti"]
+    },
+    {
+      "answer": "Eswatini",
+      "matches": ["Eswatini", "Swaziland", "eSwatini"]
+    },
+    {
+      "answer": "Ethiopia",
+      "matches": ["Ethiopia", "Ityop'ia", "ኢትዮጵያ"]
+    },
+    {
+      "answer": "Fiji",
+      "matches": ["Fiji", "Viti", "फ़िजी"]
+    },
+    {
+      "answer": "Finland",
+      "matches": ["Suomi", "Finland"]
+    },
+    {
+      "answer": "France",
+      "matches": ["France"]
+    },
+    {
+      "answer": "Gabon",
+      "matches": ["Gabon"]
+    },
+    {
+      "answer": "The Gambia",
+      "matches": ["The Gambia", "Kambiya", "ߞߊߡߓߌߦߊ", "Gambi", "𞤘𞤢𞤥𞤦𞤭", "Gámbi", "Gambia"]
+    },
+    {
+      "answer": "Georgia",
+      "matches": ["Georgia", "Sak'art'velo", "საქართველო"]
+    },
+    {
+      "answer": "Germany",
+      "matches": ["Germany", "Deutschland"]
+    },
+    {
+      "answer": "Ghana",
+      "matches": ["Ghana", "Gaana", "Gana", "Gana"]
+    },
+    {
+      "answer": "Greece",
+      "matches": ["Greece", "Ellada", "Ελλάδα", "Hellas", "Ελλάς"]
+    },
+    {
+      "answer": "Grenada",
+      "matches": ["Grenada"]
+    },
+    {
+      "answer": "Guatemala",
+      "matches": ["Guatemala"]
+    },
+    {
+      "answer": "Guinea",
+      "matches": ["Guinea", "Guinée", "Gine", "ߖߌ߬ߣߍ߫", "Gine", "𞤘𞤭𞤲𞤫"]
+    },
+    {
+      "answer": "Guinea-Bissau",
+      "matches": [
+        "Guinea-Bissau",
+        "Guiné-Bissau",
+        "Gine-Bisaawo",
+        "𞤘𞤭𞤲𞤫 𞤄𞤭𞤧𞤢𞥄𞤱𞤮",
+        "Gine-Bisawo",
+        "ߖߌ߬ߣߍ߫ ߓߌߛߊߥߏ߫",
+        "Guinea Bissau"
+      ]
+    },
+    {
+      "answer": "Guyana",
+      "matches": ["Guyana"]
+    },
+    {
+      "answer": "Haiti",
+      "matches": ["Haiti", "Haïti", "Ayiti"]
+    },
+    {
+      "answer": "Honduras",
+      "matches": ["Honduras"]
+    },
+    {
+      "answer": "Hungary",
+      "matches": ["Hungary", "Magyarország"]
+    },
+    {
+      "answer": "Iceland",
+      "matches": ["Iceland", "Ísland"]
+    },
+    {
+      "answer": "India",
+      "matches": [
+        "Bhārôt",
+        "ভাৰত",
+        "Bhārôt",
+        "ভারত",
+        "India",
+        "Bhārat",
+        "ભારત",
+        "Bhārat",
+        "भारत",
+        "Bhārata",
+        "ಭಾರತ",
+        "Bhārat",
+        "भारत",
+        "Bhāratam",
+        "ഭാരതം",
+        "Bhārat",
+        "भारत",
+        "Bhārat",
+        "भारत",
+        "Bhārata",
+        "ଭାରତ",
+        "Bhārat",
+        "ਭਾਰਤ",
+        "Bhāratam",
+        "भारतम्",
+        "Bāratam",
+        "பாரதம்",
+        "Bhāratadēśam",
+        "భారతదేశం"
+      ]
+    },
+    {
+      "answer": "Indonesia",
+      "matches": ["Indonesia"]
+    },
+    {
+      "answer": "Iran",
+      "matches": ["Iran", "Īrān", "ایران"]
+    },
+    {
+      "answer": "Iraq",
+      "matches": ["Iraq", "Al-'Iraq", "العراق", "Êraq", "عێراق"]
+    },
+    {
+      "answer": "Ireland",
+      "matches": ["Éire", "Ireland"]
+    },
+    {
+      "answer": "Israel",
+      "matches": ["Israel", "Yisra'el", "ישראל", "Israʼiyl", "إسرائيل"]
+    },
+    {
+      "answer": "Italy",
+      "matches": ["Italy", "Italia"]
+    },
+    {
+      "answer": "Jamaica",
+      "matches": ["Jamaica"]
+    },
+    {
+      "answer": "Japan",
+      "matches": ["Japan", "Nihon", "Nippon", "日本"]
+    },
+    {
+      "answer": "Jordan",
+      "matches": ["Jordan", "Al-’Urdun", "الأردن"]
+    },
+    {
+      "answer": "Kazakhstan",
+      "matches": ["Kazakhstan", "Qazaqstan", "Қазақстан", "Kazakhstán", "Казахстан"]
+    },
+    {
+      "answer": "Kenya",
+      "matches": ["Kenya"]
+    },
+    {
+      "answer": "Kiribati",
+      "matches": ["Kiribati"]
+    },
+    {
+      "answer": "North Korea",
+      "matches": ["North Korea", "Chosŏn", "조", "朝鮮", "Bukchosŏn", "북조선", "NK"]
+    },
+    {
+      "answer": "South Korea",
+      "matches": ["South Korea", "Hanguk", "한국", "韓國", "Namhan", "남한", "SK"]
+    },
+    {
+      "answer": "Kosovo",
+      "matches": ["Kosova", "Kosovo", "Косово"]
+    },
+    {
+      "answer": "Kuwait",
+      "matches": ["Kuwait", "Dawlat ul-Kuwayt", "دولة الكويت", "il-ikwet", "الكويت"]
+    },
+    {
+      "answer": "Kyrgyzstan",
+      "matches": ["Kyrgyzstan", "Кыргызстан", "Kyrgyzstan", "Кыргызстан"]
+    },
+    {
+      "answer": "Laos",
+      "matches": ["Laos", "Lao", "ປະເທດລາວ"]
+    },
+    {
+      "answer": "Latvia",
+      "matches": ["Latvia", "Latvija"]
+    },
+    {
+      "answer": "Lebanon",
+      "matches": ["Lebanon", "Lubnān", "لبنان", "Liban"]
+    },
+    {
+      "answer": "Lesotho",
+      "matches": ["Lesotho"]
+    },
+    {
+      "answer": "Liberia",
+      "matches": ["Liberia"]
+    },
+    {
+      "answer": "Libya",
+      "matches": ["Libya", "ⵍⵉⴱⵢⴰ", "Lībiyā", "ليبيا"]
+    },
+    {
+      "answer": "Liechtenstein",
+      "matches": ["Liechtenstein"]
+    },
+    {
+      "answer": "Lithuania",
+      "matches": ["Lithuania", "Lietuva"]
+    },
+    {
+      "answer": "Luxembourg",
+      "matches": ["Lëtzebuerg", "Luxemburg", "Luxembourg"]
+    },
+    {
+      "answer": "Madagascar",
+      "matches": ["Madagasikara", "Madagascar"]
+    },
+    {
+      "answer": "Malawi",
+      "matches": ["Malawi", "Malaŵi"]
+    },
+    {
+      "answer": "Malaysia",
+      "matches": ["Malaysia"]
+    },
+    {
+      "answer": "Maldives",
+      "matches": ["Maldives", "Dhivehi Raajje", "ދިވެހިރާއްޖެ"]
+    },
+    {
+      "answer": "Mali",
+      "matches": ["Mali", "ߡߊ߬ߟߌ", "Maali", "𞤃𞤢𞥄𞤤𞤭"]
+    },
+    {
+      "answer": "Malta",
+      "matches": ["Malta", "Malta"]
+    },
+    {
+      "answer": "Marshall Islands",
+      "matches": ["Aorōkin Ṃajeḷ", "Marshall Islands"]
+    },
+    {
+      "answer": "Mauritania",
+      "matches": ["Mauritania", "Muritan", "Agawec", "ⵎⵓⵔⵉⵜⴰⵏ", "ⴰⴳⴰⵡⵛ", "Mūrītānyā", "موريتانيا"]
+    },
+    {
+      "answer": "Mauritius",
+      "matches": ["Mauritius", "Maurice", "Moris"]
+    },
+    {
+      "answer": "Mexico",
+      "matches": ["Mexico", "México", "Mēxihco"]
+    },
+    {
+      "answer": "Micronesia",
+      "matches": ["Micronesia", "Federated States of Micronesia"]
+    },
+    {
+      "answer": "Moldova",
+      "matches": ["Moldova"]
+    },
+    {
+      "answer": "Monaco",
+      "matches": ["Monaco", "Múnegu"]
+    },
+    {
+      "answer": "Mongolia",
+      "matches": ["Mongolia", "Mongol Uls", "Монгол Улс", "ᠮᠤᠩᠭᠤᠯ", "ᠤᠯᠤᠰ"]
+    },
+    {
+      "answer": "Montenegro",
+      "matches": ["Montenegro", "Crna Gora", "Црна Гора"]
+    },
+    {
+      "answer": "Morocco",
+      "matches": ["Morocco", "Amerruk", "Elmeɣrib", "ⴰⵎⵔⵔⵓⴽ", "ⵍⵎⵖⵔⵉⴱ", "Al-maɣréb", "المغرب"]
+    },
+    {
+      "answer": "Mozambique",
+      "matches": ["Mozambique", "Moçambique", "Muzambhiki"]
+    },
+    {
+      "answer": "Myanmar",
+      "matches": ["Myanmar", "Burma", "Myanma", "မြန်မာ"]
+    },
+    {
+      "answer": "Namibia",
+      "matches": ["Namibia", "Namibia", "Namibië", "Namibia", "Namibia"]
+    },
+    {
+      "answer": "Nauru",
+      "matches": ["Nauru", "Naoero"]
+    },
+    {
+      "answer": "Nepal",
+      "matches": ["Nepal", "Nepāl", "नेपाल"]
+    },
+    {
+      "answer": "Netherlands",
+      "matches": ["Netherlands", "Nederland", "Nederlân"]
+    },
+    {
+      "answer": "New Zealand",
+      "matches": ["New Zealand", "Aotearoa"]
+    },
+    {
+      "answer": "Nicaragua",
+      "matches": ["Nicaragua"]
+    },
+    {
+      "answer": "Niger",
+      "matches": ["Niger", "Nijar"]
+    },
+    {
+      "answer": "Nigeria",
+      "matches": ["Nigeria", "Nijeriya", "Naìjíríyà", "Nàìjíríà"]
+    },
+    {
+      "answer": "North Macedonia",
+      "matches": [
+        "North Macedonia",
+        "Severna Makedonija",
+        "Северна Македонија",
+        "Maqedonia e Veriut",
+        "Macedonia"
+      ]
+    },
+    {
+      "answer": "Norway",
+      "matches": ["Norway", "Norge", "Noreg", "Norga", "Vuodna", "Nöörje"]
+    },
+    {
+      "answer": "Oman",
+      "matches": ["Oman", "‘Umān", "عُمان"]
+    },
+    {
+      "answer": "Pakistan",
+      "matches": ["Pakistan", "Pākistān", "پاکستان"]
+    },
+    {
+      "answer": "Palau",
+      "matches": ["Belau", "Palau"]
+    },
+    {
+      "answer": "Palestine",
+      "matches": ["Palestine", "Filasṭīn", "فلسطين"]
+    },
+    {
+      "answer": "Panama",
+      "matches": ["Panama", "Panamá"]
+    },
+    {
+      "answer": "Papua New Guinea",
+      "matches": ["Papua New Guinea", "Papua Niugini", "Papua Niu Gini", "PNG"]
+    },
+    {
+      "answer": "Paraguay",
+      "matches": ["Paraguay", "Paraguái"]
+    },
+    {
+      "answer": "Peru",
+      "matches": ["Peru", "Perú", "Piruw"]
+    },
+    {
+      "answer": "Philippines",
+      "matches": ["Pilipinas", "Philippines"]
+    },
+    {
+      "answer": "Poland",
+      "matches": ["Poland", "Polska"]
+    },
+    {
+      "answer": "Portugal",
+      "matches": ["Portugal"]
+    },
+    {
+      "answer": "Qatar",
+      "matches": ["Qatar", "Qaṭar", "قطر"]
+    },
+    {
+      "answer": "Romania",
+      "matches": ["Romania", "România"]
+    },
+    {
+      "answer": "Russia",
+      "matches": ["Russia", "Rossiya", "Rossiâ", "Россия"]
+    },
+    {
+      "answer": "Rwanda",
+      "matches": ["Rwanda"]
+    },
+    {
+      "answer": "Saint Kitts and Nevis",
+      "matches": ["Saint Kitts and Nevis", "Saint Kitts", "Nevis", "St Kitts"]
+    },
+    {
+      "answer": "Saint Lucia",
+      "matches": ["Saint Lucia", "St Lucia"]
+    },
+    {
+      "answer": "Saint Vincent and the Grenadines",
+      "matches": ["Saint Vincent and the Grenadines", "Saint Vincent", "St Vincent", "Grenadines"]
+    },
+    {
+      "answer": "Samoa",
+      "matches": ["Samoa", "Sāmoa"]
+    },
+    {
+      "answer": "San Marino",
+      "matches": ["San Marino"]
+    },
+    {
+      "answer": "São Tomé and Príncipe",
+      "matches": ["São Tomé and Príncipe", "São Tomé e Príncipe", "Sao Tome", "Principe"]
+    },
+    {
+      "answer": "Saudi Arabia",
+      "matches": [
+        "Saudi Arabia",
+        "Al-Mamlaka Al-‘Arabiyyah",
+        "Sa‘ūdiyyah",
+        "المملكة العربية السعودية"
+      ]
+    },
+    {
+      "answer": "Senegal",
+      "matches": ["Senegal", "Sénégal", "Senegaal"]
+    },
+    {
+      "answer": "Serbia",
+      "matches": ["Serbia", "Srbija", "Србија"]
+    },
+    {
+      "answer": "Seychelles",
+      "matches": ["Sesel", "Seychelles", "Seychelles"]
+    },
+    {
+      "answer": "Sierra Leone",
+      "matches": ["Sierra Leone"]
+    },
+    {
+      "answer": "Singapore",
+      "matches": ["Singapura", "Singapore", "Xīnjiāpō", "新加坡", "Singapur", "சிங்கப்பூர்"]
+    },
+    {
+      "answer": "Slovakia",
+      "matches": ["Slovakia", "Slovensko"]
+    },
+    {
+      "answer": "Slovenia",
+      "matches": ["Slovenia", "Slovenija"]
+    },
+    {
+      "answer": "Solomon Islands",
+      "matches": ["Solomon Islands", "Solomon Aelan"]
+    },
+    {
+      "answer": "Somalia",
+      "matches": ["Somalia", "Soomaaliya", "aş-Şūmāl", "الصومال"]
+    },
+    {
+      "answer": "South Africa",
+      "matches": [
+        "South Africa",
+        "Suid-Afrika",
+        "iNingizimu Afrika",
+        "uMzantsi Afrika",
+        "Afrika-Borwa",
+        "Afrika Borwa",
+        "Aforika Borwa",
+        "Afurika Tshipembe",
+        "Afrika Dzonga",
+        "iNingizimu Afrika",
+        "iSewula Afrika"
+      ]
+    },
+    {
+      "answer": "South Sudan",
+      "matches": ["South Sudan", "Paguot Thudän", "Sudan Kusini"]
+    },
+    {
+      "answer": "Spain",
+      "matches": ["Spain", "España", "Espanya", "Espainia", "Espanha"]
+    },
+    {
+      "answer": "Sri Lanka",
+      "matches": ["Sri Lanka", "Sri Lankā", "ශ්‍රී ලංකාව", "இலங்கை"]
+    },
+    {
+      "answer": "Sudan",
+      "matches": ["Sudan", "As-Sudan", "السودان"]
+    },
+    {
+      "answer": "Suriname",
+      "matches": ["Suriname"]
+    },
+    {
+      "answer": "Sweden",
+      "matches": ["Sweden", "Sverige"]
+    },
+    {
+      "answer": "Switzerland",
+      "matches": ["Switzerland", "Schweiz", "Suisse", "Svizzera", "Svizra"]
+    },
+    {
+      "answer": "Syria",
+      "matches": ["Syria", "Suriyah", "سورية"]
+    },
+    {
+      "answer": "Taiwan",
+      "matches": ["Taiwan", "Zhōnghuá Mínguó", "Táiwān", "中華民國", "臺灣/台灣"]
+    },
+    {
+      "answer": "Tajikistan",
+      "matches": ["Tajikistan", "Tojikistan", "Тоҷикистон"]
+    },
+    {
+      "answer": "Tanzania",
+      "matches": ["Tanzania"]
+    },
+    {
+      "answer": "Thailand",
+      "matches": [
+        "Thailand",
+        "Thai, Prathet Thai, Ratcha-anachak Thai",
+        "ไทย, ประเทศไทย, ราชอาณาจักรไทย"
+      ]
+    },
+    {
+      "answer": "Togo",
+      "matches": ["Togo", "Togo", "Togo"]
+    },
+    {
+      "answer": "Tonga",
+      "matches": ["Tonga"]
+    },
+    {
+      "answer": "Trinidad and Tobago",
+      "matches": ["Trinidad and Tobago", "Trinidad", "Tobago"]
+    },
+    {
+      "answer": "Tunisia",
+      "matches": ["Tunisia", "Tunes", "ⵜⵓⵏⵙ", "Tūns", "تونس"]
+    },
+    {
+      "answer": "Turkey",
+      "matches": ["Turkey", "Türkiye"]
+    },
+    {
+      "answer": "Turkmenistan",
+      "matches": ["Turkmenistan", "Türkmenistan"]
+    },
+    {
+      "answer": "Tuvalu",
+      "matches": ["Tuvalu"]
+    },
+    {
+      "answer": "Uganda",
+      "matches": ["Uganda"]
+    },
+    {
+      "answer": "Ukraine",
+      "matches": ["Ukraine", "Ukrajina", "Україна"]
+    },
+    {
+      "answer": "United Arab Emirates",
+      "matches": [
+        "United Arab Emirates",
+        "Al-’Imārat Al-‘Arabiyyah Al-Muttaḥidah",
+        "الإمارات العربيّة المتّحدة",
+        "UAE"
+      ]
+    },
+    {
+      "answer": "United Kingdom",
+      "matches": [
+        "United Kingdom",
+        "Britain",
+        "Y Deyrnas Unedig",
+        "Unitit Kinrick",
+        "Rìoghachd Aonaichte",
+        "Ríocht Aontaithe",
+        "An Rywvaneth Unys",
+        "UK"
+      ]
+    },
+    {
+      "answer": "United States",
+      "matches": [
+        "United States",
+        "America",
+        "Estados Unidos",
+        "États-Unis",
+        "(multiple names)",
+        "‘Amelika Hui Pū ‘ia",
+        "USA"
+      ]
+    },
+    {
+      "answer": "Uruguay",
+      "matches": ["Uruguay"]
+    },
+    {
+      "answer": "Uzbekistan",
+      "matches": ["Uzbekistan", "O‘zbekiston", "Ўзбекистон"]
+    },
+    {
+      "answer": "Vanuatu",
+      "matches": ["Vanuatu"]
+    },
+    {
+      "answer": "Vatican City",
+      "matches": ["Vatican City", "Civitas Vaticana", "Città del Vaticano", "Vatican"]
+    },
+    {
+      "answer": "Venezuela",
+      "matches": ["Venezuela"]
+    },
+    {
+      "answer": "Vietnam",
+      "matches": ["Vietnam", "Việt Nam"]
+    },
+    {
+      "answer": "Yemen",
+      "matches": ["Yemen", "Al-Yaman", "اليمن"]
+    },
+    {
+      "answer": "Zambia",
+      "matches": ["Zambia"]
+    },
+    {
+      "answer": "Zimbabwe",
+      "matches": ["Zimbabwe"]
+    }
+  ],
+  "settings": {
+    "requireWhitespaces": false,
+    "requireCapitalization": false,
+    "requireOrder": false,
+    "numberOfPauses": -1,
+    "showHints": false,
+    "allowOverride": true
+  }
+}
