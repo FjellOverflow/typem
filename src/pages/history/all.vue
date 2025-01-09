@@ -29,10 +29,21 @@ const groups = computed(() => {
 })
 </script>
 <template>
-  <template v-for="group in groups" :key="group.date">
-    <span class="text-2xl opacity-50 mt-6 mb-2">{{ group.date.toDateString() }}</span>
-    <Runs :runs="group.runs" />
-  </template>
+  <div
+    v-for="group in groups"
+    :key="group.date.toISOString()"
+    class="collapse collapse-arrow overflow-visible"
+  >
+    <input type="checkbox" checked="true" />
+    <span class="collapse-title text-2xl opacity-50 pt-6 pb-2 px-0">{{
+      group.date.toDateString()
+    }}</span>
+
+    <div class="collapse-content p-0">
+      <Runs :runs="group.runs" />
+    </div>
+  </div>
+
   <div class="p-8 mb-8 flex justify-center">
     <button
       v-if="numberOfVisibleRuns < allRuns.length"
