@@ -1,0 +1,1054 @@
+{
+  "id": "world-capitals",
+  "meta": {
+    "name": "World Capitals",
+    "description": "Name the capital of every country of the world.",
+    "difficulty": 1,
+    "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_and_their_capitals_in_native_languages",
+    "author": "FjellOverflow",
+    "lastUpdated": "2025-01-09"
+  },
+  "items": [
+    {
+      "hint": "Capital of Afghanistan",
+      "answer": "Kabul",
+      "matches": ["Kabul", "كابل"]
+    },
+    {
+      "hint": "Capital of Albania",
+      "answer": "Tirana",
+      "matches": ["Tirana"]
+    },
+    {
+      "hint": "Capital of Algeria",
+      "answer": "Algiers",
+      "matches": ["Algiers", "Dzayer", "ⴷⵣⴰⵢⴻⵔ", "Al-Jazā'ir", "الجزائر"]
+    },
+    {
+      "hint": "Capital of Andorra",
+      "answer": "Andorra la Vella",
+      "matches": ["Andorra la Vella", "Andorra"]
+    },
+    {
+      "hint": "Capital of Angola",
+      "answer": "Luanda",
+      "matches": ["Luanda", "Lwanda"]
+    },
+    {
+      "hint": "Capital of Antigua and Barbuda",
+      "answer": "Saint John's",
+      "matches": ["St. John's", "Saint John's", "Saint Johns", "St Johns"]
+    },
+    {
+      "hint": "Capital of Argentina",
+      "answer": "Buenos Aires",
+      "matches": ["Buenos Aires"]
+    },
+    {
+      "hint": "Capital of Armenia",
+      "answer": "Yerevan",
+      "matches": ["Yerevan", "Երևան"]
+    },
+    {
+      "hint": "Capital of Australia",
+      "answer": "Canberra",
+      "matches": ["Canberra"]
+    },
+    {
+      "hint": "Capital of Austria",
+      "answer": "Vienna",
+      "matches": ["Vienna", "Wien"]
+    },
+    {
+      "hint": "Capital of Azerbaijan",
+      "answer": "Baku",
+      "matches": ["Baku", "Bakı"]
+    },
+    {
+      "hint": "Capital of The Bahamas",
+      "answer": "Nassau",
+      "matches": ["Nassau"]
+    },
+    {
+      "hint": "Capital of Bahrain",
+      "answer": "Manama",
+      "matches": ["Manama", "Al-Manāmah", "المنامة"]
+    },
+    {
+      "hint": "Capital of Bangladesh",
+      "answer": "Dhaka",
+      "matches": ["Dhaka", "Dhākā", "ঢাকা"]
+    },
+    {
+      "hint": "Capital of Barbados",
+      "answer": "Bridgetown",
+      "matches": ["Bridgetown"]
+    },
+    {
+      "hint": "Capital of Belarus",
+      "answer": "Minsk",
+      "matches": ["Minsk", "Мінск", "Минск"]
+    },
+    {
+      "hint": "Capital of Belgium",
+      "answer": "Brussels",
+      "matches": ["Brussels", "Brussel", "Bruxelles", "Brüssel"]
+    },
+    {
+      "hint": "Capital of Belize",
+      "answer": "Belmopan",
+      "matches": ["Belmopan"]
+    },
+    {
+      "hint": "Capital of Benin",
+      "answer": "Porto-Novo",
+      "matches": ["Porto-Novo", "Porto Novo"]
+    },
+    {
+      "hint": "Capital of Bhutan",
+      "answer": "Thimphu",
+      "matches": ["Thimphu", "ཐིམ་ཕུ"]
+    },
+    {
+      "hint": "Capital of Bolivia",
+      "answer": "La Paz",
+      "matches": ["La Paz", "Chuqiyapu", "Chuqiyapu"]
+    },
+    {
+      "hint": "Capital of Bosnia and Herzegovina",
+      "answer": "Sarajevo",
+      "matches": ["Sarajevo", "Сарајево"]
+    },
+    {
+      "hint": "Capital of Botswana",
+      "answer": "Gaborone",
+      "matches": ["Gaborone"]
+    },
+    {
+      "hint": "Capital of Brazil",
+      "answer": "Brasília",
+      "matches": ["Brasília", "Brasilia"]
+    },
+    {
+      "hint": "Capital of Brunei",
+      "answer": "Bandar Seri Begawan",
+      "matches": ["Bandar Seri Begawan", "Bandar", "باندر سري بڬاون"]
+    },
+    {
+      "hint": "Capital of Bulgaria",
+      "answer": "Sofia",
+      "matches": ["Sofia", "Sofiya", "Sofija", "София"]
+    },
+    {
+      "hint": "Capital of Burkina Faso",
+      "answer": "Ouagadougou",
+      "matches": ["Ouagadougou"]
+    },
+    {
+      "hint": "Capital of Burundi",
+      "answer": "Gitega",
+      "matches": ["Gitega"]
+    },
+    {
+      "hint": "Capital of Cambodia",
+      "answer": "Phnom Penh",
+      "matches": ["Phnom Penh", "Phnum Pénh", "ភ្នំពេញ"]
+    },
+    {
+      "hint": "Capital of Cameroon",
+      "answer": "Yaoundé",
+      "matches": ["Yaoundé", "Yaounde"]
+    },
+    {
+      "hint": "Capital of Canada",
+      "answer": "Ottawa",
+      "matches": ["Ottawa"]
+    },
+    {
+      "hint": "Capital of Cape Verde",
+      "answer": "Praia",
+      "matches": ["Praia"]
+    },
+    {
+      "hint": "Capital of Central African Republic",
+      "answer": "Bangui",
+      "matches": ["Bangui", "Bangî"]
+    },
+    {
+      "hint": "Capital of Chad",
+      "answer": "N'Djamena",
+      "matches": ["N'Djamena", "Ndjamena", "Nijāmīnā", "نجامينا"]
+    },
+    {
+      "hint": "Capital of Chile",
+      "answer": "Santiago",
+      "matches": ["Santiago"]
+    },
+    {
+      "hint": "Capital of China",
+      "answer": "Beijing",
+      "matches": ["Beijing", "Běijīng", "北京"]
+    },
+    {
+      "hint": "Capital of Colombia",
+      "answer": "Bogotá",
+      "matches": ["Bogotá", "Bogota"]
+    },
+    {
+      "hint": "Capital of Comoros",
+      "answer": "Moroni",
+      "matches": ["Moroni", "موروني"]
+    },
+    {
+      "hint": "Capital of Republic of the Congo",
+      "answer": "Brazzaville",
+      "matches": ["Brazzaville", "Balazavile"]
+    },
+    {
+      "hint": "Capital of Democratic Republic of the Congo",
+      "answer": "Kinshasa",
+      "matches": ["Kinshasa", "Kinsasa", "Kinsásá"]
+    },
+    {
+      "hint": "Capital of Costa Rica",
+      "answer": "San José",
+      "matches": ["San José", "San Jose"]
+    },
+    {
+      "hint": "Capital of Côte d'Ivoire",
+      "answer": "Yamoussoukro",
+      "matches": ["Yamoussoukro"]
+    },
+    {
+      "hint": "Capital of Croatia",
+      "answer": "Zagreb",
+      "matches": ["Zagreb"]
+    },
+    {
+      "hint": "Capital of Cuba",
+      "answer": "Havana",
+      "matches": ["Havana", "La Habana"]
+    },
+    {
+      "hint": "Capital of Cyprus",
+      "answer": "Nicosia",
+      "matches": ["Nicosia", "Lefkosia", "Λευκωσία", "Lefkoşa"]
+    },
+    {
+      "hint": "Capital of Czech Republic",
+      "answer": "Prague",
+      "matches": ["Prague", "Praha"]
+    },
+    {
+      "hint": "Capital of Denmark",
+      "answer": "Copenhagen",
+      "matches": ["Copenhagen", "København"]
+    },
+    {
+      "hint": "Capital of Djibouti",
+      "answer": "Djibouti",
+      "matches": ["Djibouti", "Jībūtī", "جيبوتي", "Jabuuti", "Gabuuti"]
+    },
+    {
+      "hint": "Capital of Dominica",
+      "answer": "Roseau",
+      "matches": ["Roseau"]
+    },
+    {
+      "hint": "Capital of Dominican Republic",
+      "answer": "Santo Domingo",
+      "matches": ["Santo Domingo"]
+    },
+    {
+      "hint": "Capital of East Timor",
+      "answer": "Díli",
+      "matches": ["Díli", "Dili"]
+    },
+    {
+      "hint": "Capital of Ecuador",
+      "answer": "Quito",
+      "matches": ["Quito"]
+    },
+    {
+      "hint": "Capital of Egypt",
+      "answer": "Cairo",
+      "matches": ["Cairo", "Al-Qāhirah", "القاهرة"]
+    },
+    {
+      "hint": "Capital of El Salvador",
+      "answer": "San Salvador",
+      "matches": ["San Salvador"]
+    },
+    {
+      "hint": "Capital of Equatorial Guinea",
+      "answer": "Malabo",
+      "matches": ["Malabo"]
+    },
+    {
+      "hint": "Capital of Eritrea",
+      "answer": "Asmara",
+      "matches": ["Asmara", "Asmaraa", "أسمرا", "Asmära", "አሥመራ"]
+    },
+    {
+      "hint": "Capital of Estonia",
+      "answer": "Tallinn",
+      "matches": ["Tallinn"]
+    },
+    {
+      "hint": "Capital of Eswatini",
+      "answer": "Mbabane",
+      "matches": ["Mbabane"]
+    },
+    {
+      "hint": "Capital of Ethiopia",
+      "answer": "Addis Ababa",
+      "matches": ["Addis Ababa", "Addis Abäba", "አዲስ አበ"]
+    },
+    {
+      "hint": "Capital of Fiji",
+      "answer": "Suva",
+      "matches": ["Suva"]
+    },
+    {
+      "hint": "Capital of Finland",
+      "answer": "Helsinki",
+      "matches": ["Helsinki", "Helsingfors"]
+    },
+    {
+      "hint": "Capital of France",
+      "answer": "Paris",
+      "matches": ["Paris"]
+    },
+    {
+      "hint": "Capital of Gabon",
+      "answer": "Libreville",
+      "matches": ["Libreville"]
+    },
+    {
+      "hint": "Capital of The Gambia",
+      "answer": "Banjul",
+      "matches": ["Banjul", "ߓߊ߲߬ߖߎߟ", "Bannjulu", "𞤄𞤢𞤲𞥆𞤶𞤵𞤤𞤵"]
+    },
+    {
+      "hint": "Capital of Georgia",
+      "answer": "Tbilisi",
+      "matches": ["Tbilisi", "თბილისი"]
+    },
+    {
+      "hint": "Capital of Germany",
+      "answer": "Berlin",
+      "matches": ["Berlin"]
+    },
+    {
+      "hint": "Capital of Ghana",
+      "answer": "Accra",
+      "matches": ["Accra", "Nkran"]
+    },
+    {
+      "hint": "Capital of Greece",
+      "answer": "Athens",
+      "matches": ["Athens", "Athina", "Αθήνα", "Athinai", "Αθήναι"]
+    },
+    {
+      "hint": "Capital of Grenada",
+      "answer": "St. George's",
+      "matches": ["St. George's", "Saint George's", "St Georges", "Saint Georges"]
+    },
+    {
+      "hint": "Capital of Guatemala",
+      "answer": "Guatemala City",
+      "matches": ["Guatemala City", "Ciudad de Guatemala"]
+    },
+    {
+      "hint": "Capital of Guinea",
+      "answer": "Conakry",
+      "matches": ["Conakry", "Kɔnakrí", "ߞߐߣߊߞߙߌ߫", "Konaakiri", "𞤑𞤮𞤲𞤢𞥄𞤳𞤭𞤪𞤭"]
+    },
+    {
+      "hint": "Capital of Guinea-Bissau",
+      "answer": "Bissau",
+      "matches": ["Bissau", "Bisaawo", "𞤄𞤭𞤧𞤢𞥄𞤱𞤮", "Bisawo", "ߓߌߛߊߥߏ߫"]
+    },
+    {
+      "hint": "Capital of Guyana",
+      "answer": "Georgetown",
+      "matches": ["Georgetown"]
+    },
+    {
+      "hint": "Capital of Haiti",
+      "answer": "Port-au-Prince",
+      "matches": ["Port-au-Prince", "Pòtoprens", "Port au Prince"]
+    },
+    {
+      "hint": "Capital of Honduras",
+      "answer": "Tegucigalpa",
+      "matches": ["Tegucigalpa"]
+    },
+    {
+      "hint": "Capital of Hungary",
+      "answer": "Budapest",
+      "matches": ["Budapest"]
+    },
+    {
+      "hint": "Capital of Iceland",
+      "answer": "Reykjavík",
+      "matches": ["Reykjavík", "Reykjavik"]
+    },
+    {
+      "hint": "Capital of India",
+      "answer": "New Delhi",
+      "matches": [
+        "Nôtun Dillī",
+        "নতুন দিল্লী",
+        "New Delhi",
+        "Navī Dilhī",
+        "નવી દિલ્હી",
+        "Naī Dillī",
+        "नई दिल्ली",
+        "Navadehalī",
+        "ನವದೆಹಲಿ",
+        "Navī Dillī",
+        "नवी दिल्ली",
+        "Nyūḍalhi",
+        "ന്യൂഡല്ഹി",
+        "Nayã Dillī",
+        "नयाँ दिल्ली",
+        "Nūā Dillī",
+        "ନୂଆ ଦିଲ୍ଲୀ",
+        "Navĩ Dillī",
+        "ਨਵੀਂ ਦਿੱਲੀ",
+        "Navdillī",
+        "नवदिल्ली",
+        "Pududilli",
+        "புது தில்லி",
+        "Krottaḍhillī",
+        "క్రొత్తఢిల్లీ"
+      ]
+    },
+    {
+      "hint": "Capital of Indonesia",
+      "answer": "Jakarta",
+      "matches": ["Jakarta"]
+    },
+    {
+      "hint": "Capital of Iran",
+      "answer": "Tehran",
+      "matches": ["Tehran", "Tehrān", "تهران"]
+    },
+    {
+      "hint": "Capital of Iraq",
+      "answer": "Baghdad",
+      "matches": ["Baghdad", "بغداد", "Bexda", "بەغدا"]
+    },
+    {
+      "hint": "Capital of Ireland",
+      "answer": "Dublin",
+      "matches": ["Baile Átha Cliath", "Dublin"]
+    },
+    {
+      "hint": "Capital of Israel",
+      "answer": "Jerusalem",
+      "matches": ["Jerusalem", "Yerushalayim", "ירושלים", "Al-Quds", "القُدس"]
+    },
+    {
+      "hint": "Capital of Italy",
+      "answer": "Rome",
+      "matches": ["Rome", "Roma"]
+    },
+    {
+      "hint": "Capital of Jamaica",
+      "answer": "Kingston",
+      "matches": ["Kingston"]
+    },
+    {
+      "hint": "Capital of Japan",
+      "answer": "Tokyo",
+      "matches": ["Tokyo", "Tōkyō", "東京"]
+    },
+    {
+      "hint": "Capital of Jordan",
+      "answer": "Amman",
+      "matches": ["Amman", "‘Ammān", "عمان"]
+    },
+    {
+      "hint": "Capital of Kazakhstan",
+      "answer": "Astana",
+      "matches": ["Astana", "Астана"]
+    },
+    {
+      "hint": "Capital of Kenya",
+      "answer": "Nairobi",
+      "matches": ["Nairobi"]
+    },
+    {
+      "hint": "Capital of Kiribati",
+      "answer": "Tarawa",
+      "matches": ["Tarawa"]
+    },
+    {
+      "hint": "Capital of North Korea",
+      "answer": "Pyongyang",
+      "matches": ["Pyongyang", "P'yŏngyang", "평양", "平壌"]
+    },
+    {
+      "hint": "Capital of South Korea",
+      "answer": "Seoul",
+      "matches": ["Seoul", "서울"]
+    },
+    {
+      "hint": "Capital of Kosovo",
+      "answer": "Pristina",
+      "matches": ["Pristina", "Prishtinë", "Priština", "Приштина"]
+    },
+    {
+      "hint": "Capital of Kuwait",
+      "answer": "Kuwait City",
+      "matches": ["Kuwait City", "Madiinat ul-Kuwayt", "مدينة الكويت", "id-diira", "الديرة"]
+    },
+    {
+      "hint": "Capital of Kyrgyzstan",
+      "answer": "Bishkek",
+      "matches": ["Bishkek", "Бишкек"]
+    },
+    {
+      "hint": "Capital of Laos",
+      "answer": "Vientiane",
+      "matches": ["Vientiane", "Vieng Chan", "Wīang Chan", "ວຽງຈັນ"]
+    },
+    {
+      "hint": "Capital of Latvia",
+      "answer": "Riga",
+      "matches": ["Riga", "Rīga"]
+    },
+    {
+      "hint": "Capital of Lebanon",
+      "answer": "Beirut",
+      "matches": ["Beirut", "Bayrūt", "بيروت", "Beyrouth"]
+    },
+    {
+      "hint": "Capital of Lesotho",
+      "answer": "Maseru",
+      "matches": ["Maseru"]
+    },
+    {
+      "hint": "Capital of Liberia",
+      "answer": "Monrovia",
+      "matches": ["Monrovia"]
+    },
+    {
+      "hint": "Capital of Libya",
+      "answer": "Tripoli",
+      "matches": ["Tripoli", "Ṭrables", "ⵟⵔⴰⴱⵍⴻⵙ", "Tarabulus", "طرابلس"]
+    },
+    {
+      "hint": "Capital of Liechtenstein",
+      "answer": "Vaduz",
+      "matches": ["Vaduz"]
+    },
+    {
+      "hint": "Capital of Lithuania",
+      "answer": "Vilnius",
+      "matches": ["Vilnius"]
+    },
+    {
+      "hint": "Capital of Luxembourg",
+      "answer": "Luxembourg",
+      "matches": ["Lëtzebuerg", "Luxemburg", "Luxembourg"]
+    },
+    {
+      "hint": "Capital of Madagascar",
+      "answer": "Antananarivo",
+      "matches": ["Antananarivo", "Antananarivo", "Tananarive"]
+    },
+    {
+      "hint": "Capital of Malawi",
+      "answer": "Lilongwe",
+      "matches": ["Lilongwe"]
+    },
+    {
+      "hint": "Capital of Malaysia",
+      "answer": "Kuala Lumpur",
+      "matches": ["Kuala Lumpur"]
+    },
+    {
+      "hint": "Capital of Maldives",
+      "answer": "Malé",
+      "matches": ["Malé", "މާލެ", "Male"]
+    },
+    {
+      "hint": "Capital of Mali",
+      "answer": "Bamako",
+      "matches": ["Bamakɔ", "ߓߡߊ߬ߞߐ߬", "Bamako", "𞤄𞤢𞤥𞤢𞤳𞤮"]
+    },
+    {
+      "hint": "Capital of Malta",
+      "answer": "Valletta",
+      "matches": ["Valletta", "Il-Belt Valletta"]
+    },
+    {
+      "hint": "Capital of Marshall Islands",
+      "answer": "Majuro",
+      "matches": ["Mājro", "Majuro"]
+    },
+    {
+      "hint": "Capital of Mauritania",
+      "answer": "Nouakchott",
+      "matches": [
+        "Nouakchott",
+        "Nwakcuṭ",
+        "anu ukcuḍ",
+        "ⵏⵡⴰⴽⵛⵓⵟ",
+        "ⴰⵏⵓ ⵓⴽⵛⵓⴹ",
+        "nwakšūṭ",
+        "نواكشوط",
+        "أنو ؤكشوض"
+      ]
+    },
+    {
+      "hint": "Capital of Mauritius",
+      "answer": "Port Louis",
+      "matches": ["Port Louis", "Port-Louis", "Porlwi"]
+    },
+    {
+      "hint": "Capital of Mexico",
+      "answer": "Mexico City",
+      "matches": ["Mexico City", "Ciudad de México", "Āltepētl Mēxihco"]
+    },
+    {
+      "hint": "Capital of Micronesia",
+      "answer": "Palikir",
+      "matches": ["Palikir"]
+    },
+    {
+      "hint": "Capital of Moldova",
+      "answer": "Chișinău",
+      "matches": ["Chișinău", "Chisinau"]
+    },
+    {
+      "hint": "Capital of Monaco",
+      "answer": "Monaco",
+      "matches": ["Monaco", "Múnegu"]
+    },
+    {
+      "hint": "Capital of Mongolia",
+      "answer": "Ulaanbaatar",
+      "matches": ["Ulaanbaatar", "Улаанбаатар", "ᠤᠯᠠᠭᠠᠨᠪᠠᠭᠠᠲᠤᠷ"]
+    },
+    {
+      "hint": "Capital of Montenegro",
+      "answer": "Podgorica",
+      "matches": ["Podgorica", "Подгорица"]
+    },
+    {
+      "hint": "Capital of Morocco",
+      "answer": "Rabat",
+      "matches": ["Rabat", "Errbaṭ", "ⵔⵔⴱⴰⵟ", "Ar-ribaaṭ", "الرباط"]
+    },
+    {
+      "hint": "Capital of Mozambique",
+      "answer": "Maputo",
+      "matches": ["Maputo"]
+    },
+    {
+      "hint": "Capital of Myanmar",
+      "answer": "Naypyidaw",
+      "matches": ["Naypyidaw", "Nay Pyi Taw", "နေပြည်တော်"]
+    },
+    {
+      "hint": "Capital of Namibia",
+      "answer": "Windhoek",
+      "matches": ["Windhoek", "Windhuk", "Windhoek", "/Ae-//Gams", "Otjomuise"]
+    },
+    {
+      "hint": "Capital of Nauru",
+      "answer": "Yaren",
+      "matches": ["Yaren"]
+    },
+    {
+      "hint": "Capital of Nepal",
+      "answer": "Kathmandu",
+      "matches": ["Kathmandu", "Kāṭhamāṇḍaũ", "काठमाडौँ"]
+    },
+    {
+      "hint": "Capital of Netherlands",
+      "answer": "Amsterdam",
+      "matches": ["Amsterdam"]
+    },
+    {
+      "hint": "Capital of New Zealand",
+      "answer": "Wellington",
+      "matches": ["Wellington", "Poneke", "Te Whanganui-a-Tara"]
+    },
+    {
+      "hint": "Capital of Nicaragua",
+      "answer": "Managua",
+      "matches": ["Managua"]
+    },
+    {
+      "hint": "Capital of Niger",
+      "answer": "Niamey",
+      "matches": ["Niamey", "Yamai"]
+    },
+    {
+      "hint": "Capital of Nigeria",
+      "answer": "Abuja",
+      "matches": ["Abuja", "Abuja", "Àbújá"]
+    },
+    {
+      "hint": "Capital of North Macedonia",
+      "answer": "Skopje",
+      "matches": ["Skopje", "Скопје", "Shkup"]
+    },
+    {
+      "hint": "Capital of Norway",
+      "answer": "Oslo",
+      "matches": ["Oslo"]
+    },
+    {
+      "hint": "Capital of Oman",
+      "answer": "Muscat",
+      "matches": ["Muscat", "Masqaṭ", "مسقط"]
+    },
+    {
+      "hint": "Capital of Pakistan",
+      "answer": "Islamabad",
+      "matches": ["Islamabad", "Islāmabād", "اسلام‌اباد"]
+    },
+    {
+      "hint": "Capital of Palau",
+      "answer": "Ngerulmud",
+      "matches": ["Ngerulmud"]
+    },
+    {
+      "hint": "Capital of Palestine",
+      "answer": "East Jerusalem",
+      "matches": ["East Jerusalem", "Al-Quds Al-Sharqit", "القدس الشرقية", "Rāmallāh", "رام الله"]
+    },
+    {
+      "hint": "Capital of Panama",
+      "answer": "Panama City",
+      "matches": ["Panama City", "Ciudad de Panamá"]
+    },
+    {
+      "hint": "Capital of Papua New Guinea",
+      "answer": "Port Moresby",
+      "matches": ["Port Moresby", "Pot Mosbi"]
+    },
+    {
+      "hint": "Capital of Paraguay",
+      "answer": "Asunción",
+      "matches": ["Asunción", "Paraguay", "Asuncion"]
+    },
+    {
+      "hint": "Capital of Peru",
+      "answer": "Lima",
+      "matches": ["Lima"]
+    },
+    {
+      "hint": "Capital of Philippines",
+      "answer": "Manila",
+      "matches": ["Maynila", "Manila"]
+    },
+    {
+      "hint": "Capital of Poland",
+      "answer": "Warsaw",
+      "matches": ["Warsaw", "Warszawa"]
+    },
+    {
+      "hint": "Capital of Portugal",
+      "answer": "Lisbon",
+      "matches": ["Lisbon", "Lisboa"]
+    },
+    {
+      "hint": "Capital of Qatar",
+      "answer": "Doha",
+      "matches": ["Doha", "Ad-Dawḥah", "الدوحة"]
+    },
+    {
+      "hint": "Capital of Romania",
+      "answer": "Bucharest",
+      "matches": ["Bucharest", "București"]
+    },
+    {
+      "hint": "Capital of Russia",
+      "answer": "Moscow",
+      "matches": ["Moscow", "Moskva", "Москва"]
+    },
+    {
+      "hint": "Capital of Rwanda",
+      "answer": "Kigali",
+      "matches": ["Kigali"]
+    },
+    {
+      "hint": "Capital of Saint Kitts and Nevis",
+      "answer": "Basseterre",
+      "matches": ["Basseterre"]
+    },
+    {
+      "hint": "Capital of Saint Lucia",
+      "answer": "Castries",
+      "matches": ["Castries"]
+    },
+    {
+      "hint": "Capital of Saint Vincent and the Grenadines",
+      "answer": "Kingstown",
+      "matches": ["Kingstown"]
+    },
+    {
+      "hint": "Capital of Samoa",
+      "answer": "Apia",
+      "matches": ["Apia"]
+    },
+    {
+      "hint": "Capital of San Marino",
+      "answer": "San Marino",
+      "matches": ["San Marino"]
+    },
+    {
+      "hint": "Capital of São Tomé and Príncipe",
+      "answer": "São Tomé",
+      "matches": ["São Tomé", "Sao Tome"]
+    },
+    {
+      "hint": "Capital of Saudi Arabia",
+      "answer": "Riyadh",
+      "matches": ["Riyadh", "Ar-Riyāḍ", "الرياض"]
+    },
+    {
+      "hint": "Capital of Senegal",
+      "answer": "Dakar",
+      "matches": ["Dakar", "Ndakaaru"]
+    },
+    {
+      "hint": "Capital of Serbia",
+      "answer": "Belgrade",
+      "matches": ["Belgrade", "Beograd", "Београд"]
+    },
+    {
+      "hint": "Capital of Seychelles",
+      "answer": "Victoria",
+      "matches": ["Victoria", "Port Victoria"]
+    },
+    {
+      "hint": "Capital of Sierra Leone",
+      "answer": "Freetown",
+      "matches": ["Freetown"]
+    },
+    {
+      "hint": "Capital of Singapore",
+      "answer": "Singapore",
+      "matches": ["Singapura", "Singapore", "Xīnjiāpō", "新加坡", "Singapur", "சிங்கப்பூர்"]
+    },
+    {
+      "hint": "Capital of Slovakia",
+      "answer": "Bratislava",
+      "matches": ["Bratislava"]
+    },
+    {
+      "hint": "Capital of Slovenia",
+      "answer": "Ljubljana",
+      "matches": ["Ljubljana"]
+    },
+    {
+      "hint": "Capital of Solomon Islands",
+      "answer": "Honiara",
+      "matches": ["Honiara", "Honiala"]
+    },
+    {
+      "hint": "Capital of Somalia",
+      "answer": "Mogadishu",
+      "matches": ["Mogadishu", "Muqdisho", "Maqadīshū", "مقديشو"]
+    },
+    {
+      "hint": "Capital of South Africa",
+      "answer": "Cape Town",
+      "matches": [
+        "Cape Town",
+        "Kaapstad",
+        "Pretoria",
+        "iPitoli",
+        "Pitori",
+        "iPitori",
+        "iKapa",
+        "Bloemfontein"
+      ]
+    },
+    {
+      "hint": "Capital of South Sudan",
+      "answer": "Juba",
+      "matches": ["Juba"]
+    },
+    {
+      "hint": "Capital of Spain",
+      "answer": "Madrid",
+      "matches": ["Madrid", "Madril"]
+    },
+    {
+      "hint": "Capital of Sri Lanka",
+      "answer": "Sri Jayawardenapura Kotte",
+      "matches": [
+        "Sri Jayawardenapura Kotte",
+        "ශ්‍රී ජයවර්ධනපුර කෝට්ටේ",
+        "ஶ்ரீ ஜெயவர்த்தனபுரம் கோட்டை"
+      ]
+    },
+    {
+      "hint": "Capital of Sudan",
+      "answer": "Khartoum",
+      "matches": ["Khartoum", "Al-Khartûm", "الخرطوم"]
+    },
+    {
+      "hint": "Capital of Suriname",
+      "answer": "Paramaribo",
+      "matches": ["Paramaribo"]
+    },
+    {
+      "hint": "Capital of Sweden",
+      "answer": "Stockholm",
+      "matches": ["Stockholm"]
+    },
+    {
+      "hint": "Capital of Switzerland",
+      "answer": "Bern",
+      "matches": ["Bern", "Berne", "Berna"]
+    },
+    {
+      "hint": "Capital of Syria",
+      "answer": "Damascus",
+      "matches": ["Damascus", "Dimashq", "Ash-Sham", "الشام", "دمشق"]
+    },
+    {
+      "hint": "Capital of Taiwan",
+      "answer": "Taipei",
+      "matches": ["Taipei", "Táiběi", "臺北/台北"]
+    },
+    {
+      "hint": "Capital of Tajikistan",
+      "answer": "Dushanbe",
+      "matches": ["Dushanbe", "Душанбе"]
+    },
+    {
+      "hint": "Capital of Tanzania",
+      "answer": "Dodoma",
+      "matches": ["Dodoma"]
+    },
+    {
+      "hint": "Capital of Thailand",
+      "answer": "Bangkok",
+      "matches": ["Bangkok", "Krung Thep", "Krung Thep Maha Nakhon", "กรุงเทพฯ, กรุงเทพมหานคร"]
+    },
+    {
+      "hint": "Capital of Togo",
+      "answer": "Lomé",
+      "matches": ["Lomé", "Lome", "Loma"]
+    },
+    {
+      "hint": "Capital of Tonga",
+      "answer": "Nukuʻalofa",
+      "matches": ["Nukuʻalofa", "Nuku alofa"]
+    },
+    {
+      "hint": "Capital of Trinidad and Tobago",
+      "answer": "Port of Spain",
+      "matches": ["Port of Spain"]
+    },
+    {
+      "hint": "Capital of Tunisia",
+      "answer": "Tunis",
+      "matches": ["Tunis", "Tunes", "ⵜⵓⵏⵙ", "Tūns", "تونس"]
+    },
+    {
+      "hint": "Capital of Turkey",
+      "answer": "Ankara",
+      "matches": ["Ankara"]
+    },
+    {
+      "hint": "Capital of Turkmenistan",
+      "answer": "Ashgabat",
+      "matches": ["Ashgabat", "Aşgabat"]
+    },
+    {
+      "hint": "Capital of Tuvalu",
+      "answer": "Fongafale",
+      "matches": ["Fongafale"]
+    },
+    {
+      "hint": "Capital of Uganda",
+      "answer": "Kampala",
+      "matches": ["Kampala"]
+    },
+    {
+      "hint": "Capital of Ukraine",
+      "answer": "Kyiv",
+      "matches": ["Kyiv", "Kyjiv", "Київ"]
+    },
+    {
+      "hint": "Capital of United Arab Emirates",
+      "answer": "Abu Dhabi",
+      "matches": ["Abu Dhabi", "‘Abū ẓabī", "أبوظبي"]
+    },
+    {
+      "hint": "Capital of United Kingdom",
+      "answer": "London",
+      "matches": ["London", "Llundain", "Lunnon", "Lunnainn", "Londain", "Loundres"]
+    },
+    {
+      "hint": "Capital of United States",
+      "answer": "Washington, D.C.",
+      "matches": ["Washington D.C.", "Washington", "Wakinekona", "Wasinetona"]
+    },
+    {
+      "hint": "Capital of Uruguay",
+      "answer": "Montevideo",
+      "matches": ["Montevideo"]
+    },
+    {
+      "hint": "Capital of Uzbekistan",
+      "answer": "Tashkent",
+      "matches": ["Tashkent", "Toshkent", "Тошкент"]
+    },
+    {
+      "hint": "Capital of Vanuatu",
+      "answer": "Port Vila",
+      "matches": ["Port-Vila", "Port Vila"]
+    },
+    {
+      "hint": "Capital of Vatican City",
+      "answer": "Vatican City",
+      "matches": ["Vatican City", "Civitas Vaticana", "Città del Vaticano", "Vatican"]
+    },
+    {
+      "hint": "Capital of Venezuela",
+      "answer": "Caracas",
+      "matches": ["Caracas"]
+    },
+    {
+      "hint": "Capital of Vietnam",
+      "answer": "Hanoi",
+      "matches": ["Hanoi", "Hà Nội"]
+    },
+    {
+      "hint": "Capital of Yemen",
+      "answer": "Sana'a",
+      "matches": ["Ṣan‘ā’", "ﺻﻨﻌﺎﺀ", "Sanaa"]
+    },
+    {
+      "hint": "Capital of Zambia",
+      "answer": "Lusaka",
+      "matches": ["Lusaka"]
+    },
+    {
+      "hint": "Capital of Zimbabwe",
+      "answer": "Harare",
+      "matches": ["Harare"]
+    }
+  ],
+  "settings": {
+    "requireWhitespaces": false,
+    "requireCapitalization": false,
+    "requireOrder": false,
+    "numberOfPauses": -1,
+    "showHints": true,
+    "allowOverride": true
+  }
+}
