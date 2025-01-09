@@ -4,10 +4,14 @@ import type { IRun } from '@/types'
 
 const { allRuns } = useHistory()
 
+const numberOfVisibleRuns = ref(10)
+
+const visibleRuns = computed(() => allRuns.value.slice(0, numberOfVisibleRuns.value))
+
 const groups = computed(() => {
   const dateMap = new Map<string, { date: Date; runs: IRun[] }>()
 
-  allRuns.value.forEach((run) => {
+  visibleRuns.value.forEach((run) => {
     const date = new Date(run.timestamp)
     const dateStr = date.toDateString()
 
@@ -29,4 +33,13 @@ const groups = computed(() => {
     <span class="text-2xl opacity-50 mt-6 mb-2">{{ group.date.toDateString() }}</span>
     <Runs :runs="group.runs" />
   </template>
+  <div class="p-8 mb-8 flex justify-center">
+    <button
+      v-if="numberOfVisibleRuns < allRuns.length"
+      @click="numberOfVisibleRuns += 10"
+      class="btn btn-outline"
+    >
+      Show more
+    </button>
+  </div>
 </template>
