@@ -3,7 +3,15 @@ import { useFavorites } from '@/composables/favorites'
 import { useListHistory } from '@/composables/history'
 import { formatSeconds } from '@/plugins/util'
 import type { IItemList } from '@/types'
-import { HeartIcon, InfoIcon, ListIcon, LockIcon, StarIcon, TimerIcon } from 'lucide-vue-next'
+import {
+  HeartIcon,
+  InfoIcon,
+  ListCheckIcon,
+  ListIcon,
+  LockIcon,
+  StarIcon,
+  TimerIcon,
+} from 'lucide-vue-next'
 
 const infoModal = useTemplateRef('infoModal')
 
@@ -52,9 +60,16 @@ const difficultyLabel = computed(() => {
         <span> {{ difficultyLabel }}</span>
       </div>
       <div v-if="bestListRun" class="flex gap-2 opacity-65">
-        <TimerIcon />
-        <span> {{ formatSeconds(bestListRun.seconds) }}</span>
+        <template v-if="bestListRun.finished">
+          <TimerIcon />
+          <span> {{ formatSeconds(bestListRun.seconds) }}</span>
+        </template>
+        <template v-else>
+          <ListCheckIcon />
+          <span> {{ `${bestListRun.numberOfMatches}/${list.items.length}` }}</span>
+        </template>
       </div>
+
       <div v-if="!list.settings.allowOverride" class="flex gap-2 opacity-65">
         <LockIcon />
         <span>{{ $t('settings.cannotOverride') }}</span>

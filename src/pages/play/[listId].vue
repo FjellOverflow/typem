@@ -106,7 +106,7 @@ function onStop() {
     numberOfMatches,
     timestamp: new Date().toISOString(),
   }
-  if (newRun.finished && bestListRun.value && newRun.seconds < bestListRun.value.seconds)
+  if (newRun.finished && bestListRun.value?.finished && newRun.seconds < bestListRun.value.seconds)
     newRecordDialog.value?.open(newRun, bestListRun.value)
 
   allRuns.value.push(newRun)
