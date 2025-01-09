@@ -5,6 +5,9 @@ export { useListsLoader }
 
 <script setup lang="ts">
 import { useHistory } from '@/composables/history'
+import { useTitle } from '@vueuse/core'
+
+useTitle('Records - Typem')
 
 const { data: lists } = useListsLoader()
 
