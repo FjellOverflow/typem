@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useHistory } from '@/composables/history'
 import type { IRun } from '@/types'
+import { EllipsisIcon } from 'lucide-vue-next'
 
 const { allRuns } = useHistory()
 
@@ -50,6 +51,7 @@ const groups = computed(() => {
       @click="numberOfVisibleRuns += 10"
       class="btn btn-outline"
     >
+      <EllipsisIcon />
       Show more
     </button>
   </div>
