@@ -41,17 +41,17 @@ async function loadList() {
 
     <div class="text-lg font-medium flex justify-between">
       <span class="opacity-50">{{ new Date(run.timestamp).toLocaleString() }}</span>
-      <div v-if="isRecord" class="badge badge-outline badge-primary h-7 p-2 flex gap-1">
-        <TrophyIcon :size="14" /> Record
-      </div>
-      <template v-else>
+      <div class="flex gap-2">
+        <div v-if="isRecord" class="badge badge-outline badge-primary h-7 p-2 flex gap-1">
+          <TrophyIcon :size="14" /> Record
+        </div>
         <div v-if="run.finished" class="badge badge-outline badge-success h-7 p-2 flex gap-1">
           <CheckIcon :size="14" /> Finished
         </div>
         <div v-else class="badge badge-outline badge-error h-7 p-2 flex gap-1">
           <BanIcon :size="14" /> Matched {{ run.numberOfMatches }}/{{ list.items.length }}
         </div>
-      </template>
+      </div>
     </div>
   </div>
 </template>
