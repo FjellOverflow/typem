@@ -240,7 +240,7 @@
     "requireCapitalization": false,
     "requireOrder": false,
     "numberOfPauses": -1,
-    "showHints": false,
+    "showHints": true,
     "allowOverride": true
   }
 }
