@@ -26,7 +26,13 @@ export function useHistory() {
     return listRuns.sort(sortRunsByMatchesAndSeconds)[0]
   }
 
-  return { allRuns, getBestRun }
+  function deleteRun(run: IRun) {
+    const runIndex = allRuns.value.findIndex((r) => JSON.stringify(r) === JSON.stringify(run))
+
+    if (runIndex > -1) allRuns.value.splice(runIndex, 1)
+  }
+
+  return { allRuns, getBestRun, deleteRun }
 }
 
 export function useListHistory(listId: string) {

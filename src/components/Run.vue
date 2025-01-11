@@ -3,13 +3,15 @@ import { getListById } from '@/assets/lists/loader'
 import { useHistory } from '@/composables/history'
 import { calculateSecondsPerItems, formatSeconds } from '@/plugins/util'
 import { type IItemList, type IRun } from '@/types'
-import { BanIcon, CheckIcon, TrophyIcon } from 'lucide-vue-next'
+import { BanIcon, CheckIcon, TrashIcon, TrophyIcon } from 'lucide-vue-next'
+
+const confirmDeletionModal = useTemplateRef('confirmDeletionModal')
 
 const props = defineProps<{
   run: IRun
 }>()
 
-const { getBestRun } = useHistory()
+const { getBestRun, deleteRun } = useHistory()
 
 const list = ref<IItemList>()
 const isRecord = ref(false)
@@ -42,18 +44,41 @@ async function loadList() {
       </div>
     </div>
 
-    <div class="text-lg font-medium flex justify-between">
-      <span class="opacity-50">{{ new Date(run.timestamp).toLocaleString() }}</span>
-      <div class="flex gap-2">
-        <div v-if="isRecord" class="badge badge-outline badge-primary h-7 p-2 flex gap-1">
-          <TrophyIcon :size="14" /> Record
+    <div class="text-lg font-medium grid grid-cols-4 w-full">
+      <div class="col-span-3 flex justify-between items-end">
+        <div class="flex gap-2">
+          <div v-if="isRecord" class="badge badge-outline badge-primary h-7 p-2 flex gap-1">
+            <TrophyIcon :size="14" /> Record
+          </div>
+          <div class="mx-auto" />
+          <div v-if="run.finished" class="badge badge-outline badge-success h-7 p-2 flex gap-1">
+            <CheckIcon :size="14" /> Finished
+          </div>
+          <div v-else class="badge badge-outline badge-error h-7 p-2 flex gap-1">
+            <BanIcon :size="14" /> Matched {{ run.numberOfMatches }}/{{ list.items.length }}
+          </div>
         </div>
-        <div v-if="run.finished" class="badge badge-outline badge-success h-7 p-2 flex gap-1">
-          <CheckIcon :size="14" /> Finished
-        </div>
-        <div v-else class="badge badge-outline badge-error h-7 p-2 flex gap-1">
-          <BanIcon :size="14" /> Matched {{ run.numberOfMatches }}/{{ list.items.length }}
-        </div>
+        <span class="opacity-50">{{ new Date(run.timestamp).toLocaleString() }}</span>
+      </div>
+
+      <div class="flex justify-end">
+        <dialog ref="confirmDeletionModal" class="modal">
+          <div class="modal-box">
+            <h3 class="text-lg font-bold">Are you sure?</h3>
+            <p class="py-4">Once deleted, the run can not be recovered.</p>
+            <div class="modal-action">
+              <form method="dialog">
+                <button @click="deleteRun(run)" class="btn btn-error btn-outline mr-4">
+                  Confirm
+                </button>
+                <button class="btn btn-outline">Close</button>
+              </form>
+            </div>
+          </div>
+        </dialog>
+        <button @click="confirmDeletionModal?.showModal()" class="btn btn-ghost">
+          <TrashIcon />
+        </button>
       </div>
     </div>
   </div>
