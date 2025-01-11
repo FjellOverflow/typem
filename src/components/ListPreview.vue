@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useFavorites } from '@/composables/favorites'
 import { useListHistory } from '@/composables/history'
-import { formatSeconds } from '@/plugins/util'
+import { calculateSecondsPerItems, formatSeconds } from '@/plugins/util'
 import type { IItemList } from '@/types'
 import {
   HeartIcon,
@@ -59,15 +59,22 @@ const difficultyLabel = computed(() => {
         <StarIcon v-for="i in list.meta.difficulty" :key="i" />
         <span> {{ difficultyLabel }}</span>
       </div>
-      <div v-if="bestListRun" class="flex gap-2 opacity-65">
-        <template v-if="bestListRun.finished">
-          <TimerIcon />
-          <span> {{ formatSeconds(bestListRun.seconds) }}</span>
-        </template>
-        <template v-else>
-          <ListCheckIcon />
-          <span> {{ `${bestListRun.numberOfMatches}/${list.items.length}` }}</span>
-        </template>
+
+      <div
+        v-if="bestListRun"
+        class="tooltip tooltip-bottom cursor-default"
+        :data-tip="calculateSecondsPerItems(bestListRun.numberOfMatches, bestListRun.seconds)"
+      >
+        <div class="flex gap-2 opacity-65">
+          <template v-if="bestListRun.finished">
+            <TimerIcon />
+            <span> {{ formatSeconds(bestListRun.seconds) }}</span>
+          </template>
+          <template v-else>
+            <ListCheckIcon />
+            <span> {{ `${bestListRun.numberOfMatches}/${list.items.length}` }}</span>
+          </template>
+        </div>
       </div>
 
       <div v-if="!list.settings.allowOverride" class="flex gap-2 opacity-65">

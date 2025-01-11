@@ -16,3 +16,9 @@ export function matchKeyword(item: string, keyword: string) {
 
   return itemStr.includes(keywordStr)
 }
+
+export function calculateSecondsPerItems(numberOfItems: number, seconds: number) {
+  const secondsPerItem = seconds / numberOfItems
+
+  return `${secondsPerItem.toFixed(2)} seconds/item`
+}
