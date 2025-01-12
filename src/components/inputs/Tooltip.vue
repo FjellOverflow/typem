@@ -5,9 +5,11 @@ withDefaults(
   defineProps<{
     label: string
     type?: 'help' | 'hint'
+    size?: number
   }>(),
   {
     type: 'help',
+    size: 20,
   },
 )
 </script>
@@ -20,12 +22,12 @@ withDefaults(
       <div class="tooltip tooltip-bottom" :data-tip="label">
         <LightbulbIcon
           v-if="type === 'hint'"
-          :size="20"
+          :size
           class="hover:opacity-100 opacity-25 ease-in-out transition-opacity duration-200"
         />
         <CircleHelpIcon
           v-else
-          :size="20"
+          :size
           class="hover:opacity-100 opacity-25 ease-in-out transition-opacity duration-200"
         />
       </div>

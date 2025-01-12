@@ -12,6 +12,8 @@ const props = defineProps<{
 
 const numberOfItemsChecked = computed(() => props.items.filter((item) => item.checked).length)
 
+const smallerLayout = computed(() => props.items.length > 28)
+
 defineExpose({
   open: () => (isOpen.value = true),
   close: () => (isOpen.value = false),
@@ -26,8 +28,16 @@ defineExpose({
       </div>
     </template>
     <template #content>
-      <ul class="grid grid-cols-4 list-none mt-4 gap-2">
-        <li v-for="item in items" :key="item.answer" class="min-h-6 mb-2">
+      <ul
+        class="grid list-none mt-4 gap-2"
+        :class="[smallerLayout ? 'grid-cols-5' : 'grid-cols-4']"
+      >
+        <li
+          v-for="item in items"
+          :key="item.answer"
+          class="mb-2"
+          :class="{ 'text-sm': smallerLayout, 'text-base': !smallerLayout }"
+        >
           <div
             class="overflow-visible border rounded-lg py-1 px-2"
             :class="{
@@ -40,6 +50,7 @@ defineExpose({
                 v-if="item.hint"
                 :label="item.hint"
                 type="hint"
+                :size="smallerLayout ? 17 : 20"
                 :class="{
                   'text-success': highlighted?.answer === item.answer,
                   'text-error': isStopped && !item.checked,
@@ -56,7 +67,7 @@ defineExpose({
                 >{{ item.answer }}</span
               >
             </template>
-            <div v-else class="h-6"></div>
+            <div v-else :class="[smallerLayout ? 'h-5' : 'h-6']"></div>
           </div>
         </li>
       </ul>
