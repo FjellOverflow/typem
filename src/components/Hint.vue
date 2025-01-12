@@ -8,18 +8,27 @@ const offset = ref(0)
 
 const uncheckedItems = computed(() => props.items.filter((item) => !item.checked))
 
-watch(uncheckedItems, () => (offset.value = 0))
+watch(uncheckedItems, () => setOffset(offset.value))
 
-const nextItem = computed(() => {
-  let positivOffset = offset.value
-  while (positivOffset < 0) positivOffset += uncheckedItems.value.length
+function setOffset(newOffset: number) {
+  let normalizedOffset = newOffset
 
-  return uncheckedItems.value[positivOffset % uncheckedItems.value.length]
-})
+  while (normalizedOffset >= uncheckedItems.value.length)
+    normalizedOffset -= uncheckedItems.value.length
+  while (normalizedOffset < 0) normalizedOffset += uncheckedItems.value.length
+
+  offset.value = normalizedOffset
+}
+
+const nextItem = computed(() => uncheckedItems.value[offset.value])
 </script>
 <template>
   <div class="border rounded-lg p-4 text-2xl flex justify-between">
-    <button v-if="canCycle" class="btn btn-outline text-xl font-medium" @click="offset -= 1">
+    <button
+      v-if="canCycle"
+      class="btn btn-outline text-xl font-medium"
+      @click="setOffset(offset - 1)"
+    >
       <ArrowLeftIcon /> {{ $t('hint.previous') }}
     </button>
 
@@ -28,7 +37,11 @@ const nextItem = computed(() => {
       {{ nextItem?.hint || $t('hint.none') }}
     </div>
 
-    <button v-if="canCycle" class="btn btn-outline text-xl font-medium" @click="offset += 1">
+    <button
+      v-if="canCycle"
+      class="btn btn-outline text-xl font-medium"
+      @click="setOffset(offset + 1)"
+    >
       <ArrowRightIcon /> {{ $t('hint.next') }}
     </button>
   </div>
