@@ -153,6 +153,7 @@ function onInput() {
           :items="checker?.items || []"
           :can-cycle="!settings.requireOrder"
           class="col-span-5"
+          @move="inputField?.focus()"
         />
         <Timer
           ref="timerCard"

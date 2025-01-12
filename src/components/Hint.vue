@@ -2,6 +2,10 @@
 import type { ICheckableItem } from '@/types'
 import { ArrowLeftIcon, ArrowRightIcon, LightbulbIcon } from 'lucide-vue-next'
 
+const emit = defineEmits<{
+  move: []
+}>()
+
 const props = defineProps<{ items: ICheckableItem[]; canCycle: boolean }>()
 
 const offset = ref(0)
@@ -9,6 +13,16 @@ const offset = ref(0)
 const uncheckedItems = computed(() => props.items.filter((item) => !item.checked))
 
 watch(uncheckedItems, () => setOffset(offset.value))
+
+function onClickPrevious() {
+  setOffset(offset.value - 1)
+  emit('move')
+}
+
+function onClickNext() {
+  setOffset(offset.value + 1)
+  emit('move')
+}
 
 function setOffset(newOffset: number) {
   let normalizedOffset = newOffset
@@ -24,11 +38,7 @@ const nextItem = computed(() => uncheckedItems.value[offset.value])
 </script>
 <template>
   <div class="border rounded-lg p-4 text-2xl flex justify-between">
-    <button
-      v-if="canCycle"
-      class="btn btn-outline text-xl font-medium"
-      @click="setOffset(offset - 1)"
-    >
+    <button v-if="canCycle" class="btn btn-outline text-xl font-medium" @click="onClickPrevious">
       <ArrowLeftIcon /> {{ $t('hint.previous') }}
     </button>
 
@@ -37,11 +47,7 @@ const nextItem = computed(() => uncheckedItems.value[offset.value])
       {{ nextItem?.hint || $t('hint.none') }}
     </div>
 
-    <button
-      v-if="canCycle"
-      class="btn btn-outline text-xl font-medium"
-      @click="setOffset(offset + 1)"
-    >
+    <button v-if="canCycle" class="btn btn-outline text-xl font-medium" @click="onClickNext">
       <ArrowRightIcon /> {{ $t('hint.next') }}
     </button>
   </div>
