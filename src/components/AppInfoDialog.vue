@@ -1,9 +1,11 @@
 <script setup lang="ts">
-import { BugIcon, HouseIcon, InfoIcon, RotateCcwIcon } from 'lucide-vue-next'
+import { BugIcon, HouseIcon, RotateCcwIcon } from 'lucide-vue-next'
 import packageJson from '../../package.json'
 import { useHistory } from '@/composables/history'
+import logo from '@/assets/logo.svg'
 
 const {
+  name: packageName,
   description: packageDescription,
   version: packageVersion,
   author: packageAuthor,
@@ -21,7 +23,9 @@ defineExpose({ open: () => appInfoModal.value?.showModal() })
 <template>
   <dialog ref="appInfoDialog" class="modal">
     <div class="modal-box border rounded-lg w-xl flex flex-col gap-4">
-      <div class="text-4xl flex gap-4"><InfoIcon :size="40" /> About</div>
+      <div class="text-4xl flex gap-4 capitalize">
+        <img :src="logo" class="h-10" /> {{ packageName }}
+      </div>
       <div class="text-xl flex flex-col gap-2">
         <div>{{ packageDescription }}</div>
       </div>
