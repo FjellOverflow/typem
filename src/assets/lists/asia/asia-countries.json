@@ -1,0 +1,253 @@
+{
+  "id": "asia-countries",
+  "meta": {
+    "name": "Asian Countries",
+    "description": "Name all Asian countries.",
+    "difficulty": 1,
+    "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_and_their_capitals_in_native_languages",
+    "author": "FjellOverflow",
+    "lastUpdated": "2025-01-13"
+  },
+  "items": [
+    {
+      "answer": "Afghanistan",
+      "matches": ["Afghanistan", "Afġānistān", "Afganistan", "افغانستان"]
+    },
+    {
+      "answer": "Armenia",
+      "matches": ["Armenia", "Hayastán", "Հայաստան"]
+    },
+    {
+      "answer": "Azerbaijan",
+      "matches": ["Azerbaijan", "Azərbaycan"]
+    },
+    {
+      "answer": "Bahrain",
+      "matches": ["Bahrain", "Al-Baḥrayn", "البحرين"]
+    },
+    {
+      "answer": "Bangladesh",
+      "matches": ["Bangladesh", "Bānglādesh", "বাংলাদেশ"]
+    },
+    {
+      "answer": "Bhutan",
+      "matches": ["Bhutan", "Druk Yul", "འབྲུག་ཡུལ"]
+    },
+    {
+      "answer": "Brunei",
+      "matches": ["Brunei", "بروني"]
+    },
+    {
+      "answer": "Cambodia",
+      "matches": ["Cambodia", "Kămpŭchéa", "កម្ពុជា"]
+    },
+    {
+      "answer": "China",
+      "matches": ["China", "Zhōngguó", "中国"]
+    },
+    {
+      "answer": "East Timor",
+      "matches": ["East Timor", "Timor Lorosa'e", "Timor-Leste", "Timor"]
+    },
+    {
+      "answer": "India",
+      "matches": [
+        "Bhārôt",
+        "ভাৰত",
+        "Bhārôt",
+        "ভারত",
+        "India",
+        "Bhārat",
+        "ભારત",
+        "Bhārat",
+        "भारत",
+        "Bhārata",
+        "ಭಾರತ",
+        "Bhārat",
+        "भारत",
+        "Bhāratam",
+        "ഭാരതം",
+        "Bhārat",
+        "भारत",
+        "Bhārat",
+        "भारत",
+        "Bhārata",
+        "ଭାରତ",
+        "Bhārat",
+        "ਭਾਰਤ",
+        "Bhāratam",
+        "भारतम्",
+        "Bāratam",
+        "பாரதம்",
+        "Bhāratadēśam",
+        "భారతదేశం"
+      ]
+    },
+    {
+      "answer": "Indonesia",
+      "matches": ["Indonesia"]
+    },
+    {
+      "answer": "Iran",
+      "matches": ["Iran", "Īrān", "ایران"]
+    },
+    {
+      "answer": "Iraq",
+      "matches": ["Iraq", "Al-'Iraq", "العراق", "Êraq", "عێراق"]
+    },
+    {
+      "answer": "Israel",
+      "matches": ["Israel", "Yisra'el", "ישראל", "Israʼiyl", "إسرائيل"]
+    },
+    {
+      "answer": "Japan",
+      "matches": ["Japan", "Nihon", "Nippon", "日本"]
+    },
+    {
+      "answer": "Jordan",
+      "matches": ["Jordan", "Al-’Urdun", "الأردن"]
+    },
+    {
+      "answer": "Kazakhstan",
+      "matches": ["Kazakhstan", "Qazaqstan", "Қазақстан", "Kazakhstán", "Казахстан"]
+    },
+    {
+      "answer": "North Korea",
+      "matches": ["North Korea", "Chosŏn", "조", "朝鮮", "Bukchosŏn", "북조선", "NK"]
+    },
+    {
+      "answer": "South Korea",
+      "matches": ["South Korea", "Hanguk", "한국", "韓國", "Namhan", "남한", "SK"]
+    },
+    {
+      "answer": "Kuwait",
+      "matches": ["Kuwait", "Dawlat ul-Kuwayt", "دولة الكويت", "il-ikwet", "الكويت"]
+    },
+    {
+      "answer": "Kyrgyzstan",
+      "matches": ["Kyrgyzstan", "Кыргызстан", "Kyrgyzstan", "Кыргызстан"]
+    },
+    {
+      "answer": "Laos",
+      "matches": ["Laos", "Lao", "ປະເທດລາວ"]
+    },
+    {
+      "answer": "Lebanon",
+      "matches": ["Lebanon", "Lubnān", "لبنان", "Liban"]
+    },
+    {
+      "answer": "Malaysia",
+      "matches": ["Malaysia"]
+    },
+    {
+      "answer": "Maldives",
+      "matches": ["Maldives", "Dhivehi Raajje", "ދިވެހިރާއްޖެ"]
+    },
+    {
+      "answer": "Mongolia",
+      "matches": ["Mongolia", "Mongol Uls", "Монгол Улс", "ᠮᠤᠩᠭᠤᠯ", "ᠤᠯᠤᠰ"]
+    },
+    {
+      "answer": "Myanmar",
+      "matches": ["Myanmar", "Burma", "Myanma", "မြန်မာ"]
+    },
+    {
+      "answer": "Nepal",
+      "matches": ["Nepal", "Nepāl", "नेपाल"]
+    },
+    {
+      "answer": "Oman",
+      "matches": ["Oman", "‘Umān", "عُمان"]
+    },
+    {
+      "answer": "Pakistan",
+      "matches": ["Pakistan", "Pākistān", "پاکستان"]
+    },
+    {
+      "answer": "Palestine",
+      "matches": ["Palestine", "Filasṭīn", "فلسطين"]
+    },
+    {
+      "answer": "Philippines",
+      "matches": ["Pilipinas", "Philippines"]
+    },
+    {
+      "answer": "Qatar",
+      "matches": ["Qatar", "Qaṭar", "قطر"]
+    },
+    {
+      "answer": "Saudi Arabia",
+      "matches": [
+        "Saudi Arabia",
+        "Al-Mamlaka Al-‘Arabiyyah",
+        "Sa‘ūdiyyah",
+        "المملكة العربية السعودية"
+      ]
+    },
+    {
+      "answer": "Singapore",
+      "matches": ["Singapura", "Singapore", "Xīnjiāpō", "新加坡", "Singapur", "சிங்கப்பூர்"]
+    },
+    {
+      "answer": "Sri Lanka",
+      "matches": ["Sri Lanka", "Sri Lankā", "ශ්‍රී ලංකාව", "இலங்கை"]
+    },
+    {
+      "answer": "Syria",
+      "matches": ["Syria", "Suriyah", "سورية"]
+    },
+    {
+      "answer": "Taiwan",
+      "matches": ["Taiwan", "Zhōnghuá Mínguó", "Táiwān", "中華民國", "臺灣/台灣"]
+    },
+    {
+      "answer": "Tajikistan",
+      "matches": ["Tajikistan", "Tojikistan", "Тоҷикистон"]
+    },
+    {
+      "answer": "Thailand",
+      "matches": [
+        "Thailand",
+        "Thai, Prathet Thai, Ratcha-anachak Thai",
+        "ไทย, ประเทศไทย, ราชอาณาจักรไทย"
+      ]
+    },
+    {
+      "answer": "Turkey",
+      "matches": ["Turkey", "Türkiye"]
+    },
+    {
+      "answer": "Turkmenistan",
+      "matches": ["Turkmenistan", "Türkmenistan"]
+    },
+    {
+      "answer": "United Arab Emirates",
+      "matches": [
+        "United Arab Emirates",
+        "Al-’Imārat Al-‘Arabiyyah Al-Muttaḥidah",
+        "الإمارات العربيّة المتّحدة",
+        "UAE"
+      ]
+    },
+    {
+      "answer": "Uzbekistan",
+      "matches": ["Uzbekistan", "O‘zbekiston", "Ўзбекистон"]
+    },
+    {
+      "answer": "Vietnam",
+      "matches": ["Vietnam", "Việt Nam"]
+    },
+    {
+      "answer": "Yemen",
+      "matches": ["Yemen", "Al-Yaman", "اليمن"]
+    }
+  ],
+  "settings": {
+    "requireWhitespaces": false,
+    "requireCapitalization": false,
+    "requireOrder": false,
+    "numberOfPauses": -1,
+    "showHints": false,
+    "allowOverride": true
+  }
+}

@@ -1,0 +1,286 @@
+{
+  "id": "asia-capitals",
+  "meta": {
+    "name": "Asian Capitals",
+    "description": "Name the capital of every Asian country.",
+    "difficulty": 1,
+    "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_and_their_capitals_in_native_languages",
+    "author": "FjellOverflow",
+    "lastUpdated": "2025-01-13"
+  },
+  "items": [
+    {
+      "hint": "Capital of Afghanistan",
+      "answer": "Kabul",
+      "matches": ["Kabul", "كابل"]
+    },
+    {
+      "hint": "Capital of Armenia",
+      "answer": "Yerevan",
+      "matches": ["Yerevan", "Երևան"]
+    },
+    {
+      "hint": "Capital of Azerbaijan",
+      "answer": "Baku",
+      "matches": ["Baku", "Bakı"]
+    },
+    {
+      "hint": "Capital of Bahrain",
+      "answer": "Manama",
+      "matches": ["Manama", "Al-Manāmah", "المنامة"]
+    },
+    {
+      "hint": "Capital of Bangladesh",
+      "answer": "Dhaka",
+      "matches": ["Dhaka", "Dhākā", "ঢাকা"]
+    },
+    {
+      "hint": "Capital of Bhutan",
+      "answer": "Thimphu",
+      "matches": ["Thimphu", "ཐིམ་ཕུ"]
+    },
+    {
+      "hint": "Capital of Brunei",
+      "answer": "Bandar Seri Begawan",
+      "matches": ["Bandar Seri Begawan", "Bandar", "باندر سري بڬاون"]
+    },
+    {
+      "hint": "Capital of Cambodia",
+      "answer": "Phnom Penh",
+      "matches": ["Phnom Penh", "Phnum Pénh", "ភ្នំពេញ"]
+    },
+    {
+      "hint": "Capital of China",
+      "answer": "Beijing",
+      "matches": ["Beijing", "Běijīng", "北京"]
+    },
+    {
+      "hint": "Capital of East Timor",
+      "answer": "Díli",
+      "matches": ["Díli", "Dili"]
+    },
+    {
+      "hint": "Capital of India",
+      "answer": "New Delhi",
+      "matches": [
+        "Nôtun Dillī",
+        "নতুন দিল্লী",
+        "New Delhi",
+        "Navī Dilhī",
+        "નવી દિલ્હી",
+        "Naī Dillī",
+        "नई दिल्ली",
+        "Navadehalī",
+        "ನವದೆಹಲಿ",
+        "Navī Dillī",
+        "नवी दिल्ली",
+        "Nyūḍalhi",
+        "ന്യൂഡല്ഹി",
+        "Nayã Dillī",
+        "नयाँ दिल्ली",
+        "Nūā Dillī",
+        "ନୂଆ ଦିଲ୍ଲୀ",
+        "Navĩ Dillī",
+        "ਨਵੀਂ ਦਿੱਲੀ",
+        "Navdillī",
+        "नवदिल्ली",
+        "Pududilli",
+        "புது தில்லி",
+        "Krottaḍhillī",
+        "క్రొత్తఢిల్లీ"
+      ]
+    },
+    {
+      "hint": "Capital of Indonesia",
+      "answer": "Jakarta",
+      "matches": ["Jakarta"]
+    },
+    {
+      "hint": "Capital of Iran",
+      "answer": "Tehran",
+      "matches": ["Tehran", "Tehrān", "تهران"]
+    },
+    {
+      "hint": "Capital of Iraq",
+      "answer": "Baghdad",
+      "matches": ["Baghdad", "بغداد", "Bexda", "بەغدا"]
+    },
+    {
+      "hint": "Capital of Israel",
+      "answer": "Jerusalem",
+      "matches": ["Jerusalem", "Yerushalayim", "ירושלים", "Al-Quds", "القُدس"]
+    },
+    {
+      "hint": "Capital of Japan",
+      "answer": "Tokyo",
+      "matches": ["Tokyo", "Tōkyō", "東京"]
+    },
+    {
+      "hint": "Capital of Jordan",
+      "answer": "Amman",
+      "matches": ["Amman", "‘Ammān", "عمان"]
+    },
+    {
+      "hint": "Capital of Kazakhstan",
+      "answer": "Astana",
+      "matches": ["Astana", "Астана"]
+    },
+    {
+      "hint": "Capital of North Korea",
+      "answer": "Pyongyang",
+      "matches": ["Pyongyang", "P'yŏngyang", "평양", "平壌"]
+    },
+    {
+      "hint": "Capital of South Korea",
+      "answer": "Seoul",
+      "matches": ["Seoul", "서울"]
+    },
+    {
+      "hint": "Capital of Kuwait",
+      "answer": "Kuwait City",
+      "matches": ["Kuwait City", "Madiinat ul-Kuwayt", "مدينة الكويت", "id-diira", "الديرة"]
+    },
+    {
+      "hint": "Capital of Kyrgyzstan",
+      "answer": "Bishkek",
+      "matches": ["Bishkek", "Бишкек"]
+    },
+    {
+      "hint": "Capital of Laos",
+      "answer": "Vientiane",
+      "matches": ["Vientiane", "Vieng Chan", "Wīang Chan", "ວຽງຈັນ"]
+    },
+    {
+      "hint": "Capital of Lebanon",
+      "answer": "Beirut",
+      "matches": ["Beirut", "Bayrūt", "بيروت", "Beyrouth"]
+    },
+    {
+      "hint": "Capital of Malaysia",
+      "answer": "Kuala Lumpur",
+      "matches": ["Kuala Lumpur"]
+    },
+    {
+      "hint": "Capital of Maldives",
+      "answer": "Malé",
+      "matches": ["Malé", "މާލެ", "Male"]
+    },
+    {
+      "hint": "Capital of Mongolia",
+      "answer": "Ulaanbaatar",
+      "matches": ["Ulaanbaatar", "Улаанбаатар", "ᠤᠯᠠᠭᠠᠨᠪᠠᠭᠠᠲᠤᠷ"]
+    },
+    {
+      "hint": "Capital of Myanmar",
+      "answer": "Naypyidaw",
+      "matches": ["Naypyidaw", "Nay Pyi Taw", "နေပြည်တော်"]
+    },
+    {
+      "hint": "Capital of Nepal",
+      "answer": "Kathmandu",
+      "matches": ["Kathmandu", "Kāṭhamāṇḍaũ", "काठमाडौँ"]
+    },
+    {
+      "hint": "Capital of Oman",
+      "answer": "Muscat",
+      "matches": ["Muscat", "Masqaṭ", "مسقط"]
+    },
+    {
+      "hint": "Capital of Pakistan",
+      "answer": "Islamabad",
+      "matches": ["Islamabad", "Islāmabād", "اسلام‌اباد"]
+    },
+    {
+      "hint": "Capital of Palestine",
+      "answer": "East Jerusalem",
+      "matches": ["East Jerusalem", "Al-Quds Al-Sharqit", "القدس الشرقية", "Rāmallāh", "رام الله"]
+    },
+    {
+      "hint": "Capital of Philippines",
+      "answer": "Manila",
+      "matches": ["Maynila", "Manila"]
+    },
+    {
+      "hint": "Capital of Qatar",
+      "answer": "Doha",
+      "matches": ["Doha", "Ad-Dawḥah", "الدوحة"]
+    },
+    {
+      "hint": "Capital of Saudi Arabia",
+      "answer": "Riyadh",
+      "matches": ["Riyadh", "Ar-Riyāḍ", "الرياض"]
+    },
+    {
+      "hint": "Capital of Singapore",
+      "answer": "Singapore",
+      "matches": ["Singapura", "Singapore", "Xīnjiāpō", "新加坡", "Singapur", "சிங்கப்பூர்"]
+    },
+    {
+      "hint": "Capital of Sri Lanka",
+      "answer": "Sri Jayawardenapura Kotte",
+      "matches": [
+        "Sri Jayawardenapura Kotte",
+        "ශ්‍රී ජයවර්ධනපුර කෝට්ටේ",
+        "ஶ்ரீ ஜெயவர்த்தனபுரம் கோட்டை"
+      ]
+    },
+    {
+      "hint": "Capital of Syria",
+      "answer": "Damascus",
+      "matches": ["Damascus", "Dimashq", "Ash-Sham", "الشام", "دمشق"]
+    },
+    {
+      "hint": "Capital of Taiwan",
+      "answer": "Taipei",
+      "matches": ["Taipei", "Táiběi", "臺北/台北"]
+    },
+    {
+      "hint": "Capital of Tajikistan",
+      "answer": "Dushanbe",
+      "matches": ["Dushanbe", "Душанбе"]
+    },
+    {
+      "hint": "Capital of Thailand",
+      "answer": "Bangkok",
+      "matches": ["Bangkok", "Krung Thep", "Krung Thep Maha Nakhon", "กรุงเทพฯ, กรุงเทพมหานคร"]
+    },
+    {
+      "hint": "Capital of Turkey",
+      "answer": "Ankara",
+      "matches": ["Ankara"]
+    },
+    {
+      "hint": "Capital of Turkmenistan",
+      "answer": "Ashgabat",
+      "matches": ["Ashgabat", "Aşgabat"]
+    },
+    {
+      "hint": "Capital of United Arab Emirates",
+      "answer": "Abu Dhabi",
+      "matches": ["Abu Dhabi", "‘Abū ẓabī", "أبوظبي"]
+    },
+    {
+      "hint": "Capital of Uzbekistan",
+      "answer": "Tashkent",
+      "matches": ["Tashkent", "Toshkent", "Тошкент"]
+    },
+    {
+      "hint": "Capital of Vietnam",
+      "answer": "Hanoi",
+      "matches": ["Hanoi", "Hà Nội"]
+    },
+    {
+      "hint": "Capital of Yemen",
+      "answer": "Sana'a",
+      "matches": ["Ṣan‘ā’", "ﺻﻨﻌﺎﺀ", "Sanaa"]
+    }
+  ],
+  "settings": {
+    "requireWhitespaces": false,
+    "requireCapitalization": false,
+    "requireOrder": false,
+    "numberOfPauses": -1,
+    "showHints": true,
+    "allowOverride": true
+  }
+}
