@@ -7,6 +7,7 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    AppInfoDialog: typeof import('./src/components/AppInfoDialog.vue')['default']
     Checkbox: typeof import('./src/components/inputs/Checkbox.vue')['default']
     CollapsibleBox: typeof import('./src/components/layout/CollapsibleBox.vue')['default']
     Hint: typeof import('./src/components/Hint.vue')['default']

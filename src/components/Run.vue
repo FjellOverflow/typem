@@ -63,7 +63,7 @@ async function loadList() {
 
       <div class="flex justify-end">
         <dialog ref="confirmDeletionModal" class="modal">
-          <div class="modal-box">
+          <div class="modal-box border rounded-lg">
             <h3 class="text-lg font-bold">Are you sure?</h3>
             <p class="py-4">Once deleted, the run can not be recovered.</p>
             <div class="modal-action">

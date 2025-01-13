@@ -32,7 +32,11 @@ export function useHistory() {
     if (runIndex > -1) allRuns.value.splice(runIndex, 1)
   }
 
-  return { allRuns, getBestRun, deleteRun }
+  function resetAll() {
+    allRuns.value = []
+  }
+
+  return { allRuns, getBestRun, deleteRun, resetAll }
 }
 
 export function useListHistory(listId: string) {
