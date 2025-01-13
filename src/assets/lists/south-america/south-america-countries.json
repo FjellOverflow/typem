@@ -1,0 +1,69 @@
+{
+  "id": "south-america-countries",
+  "meta": {
+    "name": "South American Countries",
+    "description": "Name all South American countries.",
+    "difficulty": 1,
+    "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_and_their_capitals_in_native_languages",
+    "author": "FjellOverflow",
+    "lastUpdated": "2025-01-13"
+  },
+  "items": [
+    {
+      "answer": "Argentina",
+      "matches": ["Argentina"]
+    },
+    {
+      "answer": "Bolivia",
+      "matches": ["Bolivia", "Buliwya", "Wuliwya", "Volívia"]
+    },
+    {
+      "answer": "Brazil",
+      "matches": ["Brazil", "Brasil"]
+    },
+    {
+      "answer": "Chile",
+      "matches": ["Chile"]
+    },
+    {
+      "answer": "Colombia",
+      "matches": ["Colombia"]
+    },
+    {
+      "answer": "Ecuador",
+      "matches": ["Ecuador"]
+    },
+    {
+      "answer": "Guyana",
+      "matches": ["Guyana"]
+    },
+    {
+      "answer": "Paraguay",
+      "matches": ["Paraguay", "Paraguái"]
+    },
+    {
+      "answer": "Peru",
+      "matches": ["Peru", "Perú", "Piruw"]
+    },
+    {
+      "answer": "Suriname",
+      "matches": ["Suriname"]
+    },
+    {
+      "answer": "Uruguay",
+      "matches": ["Uruguay"]
+    },
+    {
+      "answer": "Venezuela",
+      "matches": ["Venezuela"]
+    }
+  ],
+  "settings": {
+    "requireWhitespaces": false,
+    "requireCapitalization": false,
+    "requireOrder": false,
+    "numberOfPauses": -1,
+    "showHints": false,
+    "allowOverride": true
+  }
+}

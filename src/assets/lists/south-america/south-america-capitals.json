@@ -1,0 +1,81 @@
+{
+  "id": "south-america-capitals",
+  "meta": {
+    "name": "South American Capitals",
+    "description": "Name the capital of every South American country.",
+    "difficulty": 1,
+    "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_and_their_capitals_in_native_languages",
+    "author": "FjellOverflow",
+    "lastUpdated": "2025-01-13"
+  },
+  "items": [
+    {
+      "hint": "Capital of Argentina",
+      "answer": "Buenos Aires",
+      "matches": ["Buenos Aires"]
+    },
+    {
+      "hint": "Capital of Bolivia",
+      "answer": "La Paz",
+      "matches": ["La Paz", "Chuqiyapu", "Chuqiyapu"]
+    },
+    {
+      "hint": "Capital of Brazil",
+      "answer": "Brasília",
+      "matches": ["Brasília", "Brasilia"]
+    },
+    {
+      "hint": "Capital of Chile",
+      "answer": "Santiago",
+      "matches": ["Santiago"]
+    },
+    {
+      "hint": "Capital of Colombia",
+      "answer": "Bogotá",
+      "matches": ["Bogotá", "Bogota"]
+    },
+    {
+      "hint": "Capital of Ecuador",
+      "answer": "Quito",
+      "matches": ["Quito"]
+    },
+    {
+      "hint": "Capital of Guyana",
+      "answer": "Georgetown",
+      "matches": ["Georgetown"]
+    },
+    {
+      "hint": "Capital of Paraguay",
+      "answer": "Asunción",
+      "matches": ["Asunción", "Paraguay", "Asuncion"]
+    },
+    {
+      "hint": "Capital of Peru",
+      "answer": "Lima",
+      "matches": ["Lima"]
+    },
+    {
+      "hint": "Capital of Suriname",
+      "answer": "Paramaribo",
+      "matches": ["Paramaribo"]
+    },
+    {
+      "hint": "Capital of Uruguay",
+      "answer": "Montevideo",
+      "matches": ["Montevideo"]
+    },
+    {
+      "hint": "Capital of Venezuela",
+      "answer": "Caracas",
+      "matches": ["Caracas"]
+    }
+  ],
+  "settings": {
+    "requireWhitespaces": false,
+    "requireCapitalization": false,
+    "requireOrder": false,
+    "numberOfPauses": -1,
+    "showHints": true,
+    "allowOverride": true
+  }
+}
