@@ -2,7 +2,7 @@
   "id": "africa-countries",
   "meta": {
     "name": "African Countries",
-    "description": "Name all the countries of Africa.",
+    "description": "Name all African countries.",
     "difficulty": 1,
     "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_and_their_capitals_in_native_languages",
     "author": "FjellOverflow",

@@ -2,7 +2,7 @@
   "id": "planets",
   "meta": {
     "name": "Planets of the Solar System",
-    "description": "Name all planets of the solar system in their right order",
+    "description": "Name all planets of the solar system in their right order.",
     "difficulty": 1,
     "source": "https://en.wikipedia.org/wiki/Solar_System",
     "author": "FjellOverflow",
