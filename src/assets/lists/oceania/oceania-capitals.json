@@ -4,6 +4,7 @@
     "name": "Oceanian Capitals",
     "description": "Name the capital of every Oceanian country.",
     "difficulty": 2,
+    "tags": ["oceania", "capitals"],
     "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_and_their_capitals_in_native_languages",
     "author": "FjellOverflow",
     "lastUpdated": "2025-01-13"

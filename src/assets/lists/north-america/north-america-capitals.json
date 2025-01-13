@@ -4,6 +4,7 @@
     "name": "North American Capitals",
     "description": "Name the capital of every North American country.",
     "difficulty": 2,
+    "tags": ["north-america", "capitals"],
     "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_and_their_capitals_in_native_languages",
     "author": "FjellOverflow",
     "lastUpdated": "2025-01-13"

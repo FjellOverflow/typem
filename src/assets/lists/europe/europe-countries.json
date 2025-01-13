@@ -4,6 +4,7 @@
     "name": "European Countries",
     "description": "Name all European countries.",
     "difficulty": 1,
+    "tags": ["europe", "countries"],
     "source": "https://en.wikipedia.org/wiki/Europe",
     "author": "FjellOverflow",
     "lastUpdated": "2024-12-10"

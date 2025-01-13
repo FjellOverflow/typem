@@ -4,6 +4,7 @@
     "name": "German Capitals",
     "description": "Name the capital of every German federal state.",
     "difficulty": 2,
+    "tags": ["germany", "capitals"],
     "source": "https://citypopulation.de/en/germany/cities/",
     "author": "FjellOverflow",
     "lastUpdated": "2024-12-10"
