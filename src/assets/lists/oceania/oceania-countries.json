@@ -1,0 +1,77 @@
+{
+  "id": "oceania-countries",
+  "meta": {
+    "name": "Oceanian Countries",
+    "description": "Name all Oceanian countries.",
+    "difficulty": 1,
+    "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_and_their_capitals_in_native_languages",
+    "author": "FjellOverflow",
+    "lastUpdated": "2025-01-13"
+  },
+  "items": [
+    {
+      "answer": "Australia",
+      "matches": ["Australia"]
+    },
+    {
+      "answer": "Fiji",
+      "matches": ["Fiji", "Viti", "फ़िजी"]
+    },
+    {
+      "answer": "Kiribati",
+      "matches": ["Kiribati"]
+    },
+    {
+      "answer": "Marshall Islands",
+      "matches": ["Aorōkin Ṃajeḷ", "Marshall Islands"]
+    },
+    {
+      "answer": "Micronesia",
+      "matches": ["Micronesia", "Federated States of Micronesia"]
+    },
+    {
+      "answer": "Nauru",
+      "matches": ["Nauru", "Naoero"]
+    },
+    {
+      "answer": "New Zealand",
+      "matches": ["New Zealand", "Aotearoa"]
+    },
+    {
+      "answer": "Palau",
+      "matches": ["Belau", "Palau"]
+    },
+    {
+      "answer": "Papua New Guinea",
+      "matches": ["Papua New Guinea", "Papua Niugini", "Papua Niu Gini", "PNG"]
+    },
+    {
+      "answer": "Samoa",
+      "matches": ["Samoa", "Sāmoa"]
+    },
+    {
+      "answer": "Solomon Islands",
+      "matches": ["Solomon Islands", "Solomon Aelan"]
+    },
+    {
+      "answer": "Tonga",
+      "matches": ["Tonga"]
+    },
+    {
+      "answer": "Tuvalu",
+      "matches": ["Tuvalu"]
+    },
+    {
+      "answer": "Vanuatu",
+      "matches": ["Vanuatu"]
+    }
+  ],
+  "settings": {
+    "requireWhitespaces": false,
+    "requireCapitalization": false,
+    "requireOrder": false,
+    "numberOfPauses": -1,
+    "showHints": false,
+    "allowOverride": true
+  }
+}

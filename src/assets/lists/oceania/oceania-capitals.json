@@ -1,0 +1,91 @@
+{
+  "id": "oceania-capitals",
+  "meta": {
+    "name": "Oceanian Capitals",
+    "description": "Name the capital of every Oceanian country.",
+    "difficulty": 1,
+    "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_and_their_capitals_in_native_languages",
+    "author": "FjellOverflow",
+    "lastUpdated": "2025-01-13"
+  },
+  "items": [
+    {
+      "hint": "Capital of Australia",
+      "answer": "Canberra",
+      "matches": ["Canberra"]
+    },
+    {
+      "hint": "Capital of Fiji",
+      "answer": "Suva",
+      "matches": ["Suva"]
+    },
+    {
+      "hint": "Capital of Kiribati",
+      "answer": "Tarawa",
+      "matches": ["Tarawa"]
+    },
+    {
+      "hint": "Capital of Marshall Islands",
+      "answer": "Majuro",
+      "matches": ["Mājro", "Majuro"]
+    },
+    {
+      "hint": "Capital of Micronesia",
+      "answer": "Palikir",
+      "matches": ["Palikir"]
+    },
+    {
+      "hint": "Capital of Nauru",
+      "answer": "Yaren",
+      "matches": ["Yaren"]
+    },
+    {
+      "hint": "Capital of New Zealand",
+      "answer": "Wellington",
+      "matches": ["Wellington", "Poneke", "Te Whanganui-a-Tara"]
+    },
+    {
+      "hint": "Capital of Palau",
+      "answer": "Ngerulmud",
+      "matches": ["Ngerulmud"]
+    },
+    {
+      "hint": "Capital of Papua New Guinea",
+      "answer": "Port Moresby",
+      "matches": ["Port Moresby", "Pot Mosbi"]
+    },
+    {
+      "hint": "Capital of Samoa",
+      "answer": "Apia",
+      "matches": ["Apia"]
+    },
+    {
+      "hint": "Capital of Solomon Islands",
+      "answer": "Honiara",
+      "matches": ["Honiara", "Honiala"]
+    },
+    {
+      "hint": "Capital of Tonga",
+      "answer": "Nukuʻalofa",
+      "matches": ["Nukuʻalofa", "Nuku alofa"]
+    },
+    {
+      "hint": "Capital of Tuvalu",
+      "answer": "Fongafale",
+      "matches": ["Fongafale"]
+    },
+    {
+      "hint": "Capital of Vanuatu",
+      "answer": "Port Vila",
+      "matches": ["Port-Vila", "Port Vila"]
+    }
+  ],
+  "settings": {
+    "requireWhitespaces": false,
+    "requireCapitalization": false,
+    "requireOrder": false,
+    "numberOfPauses": -1,
+    "showHints": true,
+    "allowOverride": true
+  }
+}
