@@ -3,7 +3,7 @@
   "meta": {
     "name": "European Cities: 500k",
     "description": "Name all European cities with more than 500.000 inhabitants.",
-    "difficulty": 1,
+    "difficulty": 3,
     "source": "https://citypopulation.de/en/europe/",
     "author": "FjellOverflow",
     "lastUpdated": "2024-12-10"

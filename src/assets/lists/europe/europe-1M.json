@@ -3,7 +3,7 @@
   "meta": {
     "name": "European Cities: 1M",
     "description": "Name all European cities with more than 1 million inhabitants.",
-    "difficulty": 1,
+    "difficulty": 2,
     "source": "https://citypopulation.de/en/europe/",
     "author": "FjellOverflow",
     "lastUpdated": "2024-12-10"

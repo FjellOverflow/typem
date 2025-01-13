@@ -3,7 +3,7 @@
   "meta": {
     "name": "European Capitals",
     "description": "Name the capital of every European country.",
-    "difficulty": 1,
+    "difficulty": 2,
     "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_and_their_capitals_in_native_languages",
     "author": "FjellOverflow",
     "lastUpdated": "2024-12-10"

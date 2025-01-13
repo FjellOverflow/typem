@@ -3,7 +3,7 @@
   "meta": {
     "name": "World Capitals",
     "description": "Name the capital of every country of the world.",
-    "difficulty": 1,
+    "difficulty": 3,
     "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_and_their_capitals_in_native_languages",
     "author": "FjellOverflow",
     "lastUpdated": "2025-01-09"

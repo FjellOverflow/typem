@@ -3,7 +3,7 @@
   "meta": {
     "name": "German States",
     "description": "Name all German federal states.",
-    "difficulty": 1,
+    "difficulty": 2,
     "source": "https://citypopulation.de/en/germany/cities/",
     "author": "FjellOverflow",
     "lastUpdated": "2024-12-10"
