@@ -35,6 +35,8 @@ export const ItemListSchema = z.object({
     author: z.string(),
     lastUpdated: z.string().date(),
     source: z.string(),
+    tags: z.array(z.string()),
+    category: z.string(),
   }),
   items: z.array(ItemSchema),
   settings: SettingsSchema.default(defaultSettings),

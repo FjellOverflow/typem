@@ -4,6 +4,8 @@
     "name": "Planets of the Solar System",
     "description": "Name all planets of the solar system in their right order.",
     "difficulty": 1,
+    "tags": ["universe"],
+    "category": "universe",
     "source": "https://en.wikipedia.org/wiki/Solar_System",
     "author": "FjellOverflow",
     "lastUpdated": "2024-12-10"
