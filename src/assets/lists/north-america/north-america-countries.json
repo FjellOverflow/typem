@@ -1,0 +1,121 @@
+{
+  "id": "north-america-countries",
+  "meta": {
+    "name": "North American Countries",
+    "description": "Name all North American countries.",
+    "difficulty": 1,
+    "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_and_their_capitals_in_native_languages",
+    "author": "FjellOverflow",
+    "lastUpdated": "2025-01-13"
+  },
+  "items": [
+    {
+      "answer": "Antigua and Barbuda",
+      "matches": ["Antigua and Barbuda", "Antigua", "Barbuda"]
+    },
+    {
+      "answer": "The Bahamas",
+      "matches": ["The Bahamas", "Bahamas"]
+    },
+    {
+      "answer": "Barbados",
+      "matches": ["Barbados"]
+    },
+    {
+      "answer": "Belize",
+      "matches": ["Belize"]
+    },
+    {
+      "answer": "Canada",
+      "matches": ["Canada"]
+    },
+    {
+      "answer": "Costa Rica",
+      "matches": ["Costa Rica"]
+    },
+    {
+      "answer": "Cuba",
+      "matches": ["Cuba"]
+    },
+    {
+      "answer": "Dominica",
+      "matches": ["Dominica"]
+    },
+    {
+      "answer": "Dominican Republic",
+      "matches": ["Dominican Republic", "República Dominicana", "DR"]
+    },
+    {
+      "answer": "El Salvador",
+      "matches": ["El Salvador"]
+    },
+    {
+      "answer": "Grenada",
+      "matches": ["Grenada"]
+    },
+    {
+      "answer": "Guatemala",
+      "matches": ["Guatemala"]
+    },
+    {
+      "answer": "Haiti",
+      "matches": ["Haiti", "Haïti", "Ayiti"]
+    },
+    {
+      "answer": "Honduras",
+      "matches": ["Honduras"]
+    },
+    {
+      "answer": "Jamaica",
+      "matches": ["Jamaica"]
+    },
+    {
+      "answer": "Mexico",
+      "matches": ["Mexico", "México", "Mēxihco"]
+    },
+    {
+      "answer": "Nicaragua",
+      "matches": ["Nicaragua"]
+    },
+    {
+      "answer": "Panama",
+      "matches": ["Panama", "Panamá"]
+    },
+    {
+      "answer": "Saint Kitts and Nevis",
+      "matches": ["Saint Kitts and Nevis", "Saint Kitts", "Nevis", "St Kitts"]
+    },
+    {
+      "answer": "Saint Lucia",
+      "matches": ["Saint Lucia", "St Lucia"]
+    },
+    {
+      "answer": "Saint Vincent and the Grenadines",
+      "matches": ["Saint Vincent and the Grenadines", "Saint Vincent", "St Vincent", "Grenadines"]
+    },
+    {
+      "answer": "Trinidad and Tobago",
+      "matches": ["Trinidad and Tobago", "Trinidad", "Tobago"]
+    },
+    {
+      "answer": "United States",
+      "matches": [
+        "United States",
+        "America",
+        "Estados Unidos",
+        "États-Unis",
+        "(multiple names)",
+        "‘Amelika Hui Pū ‘ia",
+        "USA"
+      ]
+    }
+  ],
+  "settings": {
+    "requireWhitespaces": false,
+    "requireCapitalization": false,
+    "requireOrder": false,
+    "numberOfPauses": -1,
+    "showHints": false,
+    "allowOverride": true
+  }
+}

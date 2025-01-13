@@ -1,0 +1,136 @@
+{
+  "id": "north-america-capitals",
+  "meta": {
+    "name": "North American Capitals",
+    "description": "Name the capital of every North American country.",
+    "difficulty": 1,
+    "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_and_their_capitals_in_native_languages",
+    "author": "FjellOverflow",
+    "lastUpdated": "2025-01-13"
+  },
+  "items": [
+    {
+      "hint": "Capital of Antigua and Barbuda",
+      "answer": "Saint John's",
+      "matches": ["St. John's", "Saint John's", "Saint Johns", "St Johns"]
+    },
+    {
+      "hint": "Capital of The Bahamas",
+      "answer": "Nassau",
+      "matches": ["Nassau"]
+    },
+    {
+      "hint": "Capital of Barbados",
+      "answer": "Bridgetown",
+      "matches": ["Bridgetown"]
+    },
+    {
+      "hint": "Capital of Belize",
+      "answer": "Belmopan",
+      "matches": ["Belmopan"]
+    },
+    {
+      "hint": "Capital of Canada",
+      "answer": "Ottawa",
+      "matches": ["Ottawa"]
+    },
+    {
+      "hint": "Capital of Costa Rica",
+      "answer": "San José",
+      "matches": ["San José", "San Jose"]
+    },
+    {
+      "hint": "Capital of Cuba",
+      "answer": "Havana",
+      "matches": ["Havana", "La Habana"]
+    },
+    {
+      "hint": "Capital of Dominica",
+      "answer": "Roseau",
+      "matches": ["Roseau"]
+    },
+    {
+      "hint": "Capital of Dominican Republic",
+      "answer": "Santo Domingo",
+      "matches": ["Santo Domingo"]
+    },
+    {
+      "hint": "Capital of El Salvador",
+      "answer": "San Salvador",
+      "matches": ["San Salvador"]
+    },
+    {
+      "hint": "Capital of Grenada",
+      "answer": "St. George's",
+      "matches": ["St. George's", "Saint George's", "St Georges", "Saint Georges"]
+    },
+    {
+      "hint": "Capital of Guatemala",
+      "answer": "Guatemala City",
+      "matches": ["Guatemala City", "Ciudad de Guatemala"]
+    },
+    {
+      "hint": "Capital of Haiti",
+      "answer": "Port-au-Prince",
+      "matches": ["Port-au-Prince", "Pòtoprens", "Port au Prince"]
+    },
+    {
+      "hint": "Capital of Honduras",
+      "answer": "Tegucigalpa",
+      "matches": ["Tegucigalpa"]
+    },
+    {
+      "hint": "Capital of Jamaica",
+      "answer": "Kingston",
+      "matches": ["Kingston"]
+    },
+    {
+      "hint": "Capital of Mexico",
+      "answer": "Mexico City",
+      "matches": ["Mexico City", "Ciudad de México", "Āltepētl Mēxihco"]
+    },
+    {
+      "hint": "Capital of Nicaragua",
+      "answer": "Managua",
+      "matches": ["Managua"]
+    },
+    {
+      "hint": "Capital of Panama",
+      "answer": "Panama City",
+      "matches": ["Panama City", "Ciudad de Panamá"]
+    },
+    {
+      "hint": "Capital of Saint Kitts and Nevis",
+      "answer": "Basseterre",
+      "matches": ["Basseterre"]
+    },
+    {
+      "hint": "Capital of Saint Lucia",
+      "answer": "Castries",
+      "matches": ["Castries"]
+    },
+    {
+      "hint": "Capital of Saint Vincent and the Grenadines",
+      "answer": "Kingstown",
+      "matches": ["Kingstown"]
+    },
+    {
+      "hint": "Capital of Trinidad and Tobago",
+      "answer": "Port of Spain",
+      "matches": ["Port of Spain"]
+    },
+    {
+      "hint": "Capital of United States",
+      "answer": "Washington, D.C.",
+      "matches": ["Washington D.C.", "Washington", "Wakinekona", "Wasinetona"]
+    }
+  ],
+  "settings": {
+    "requireWhitespaces": false,
+    "requireCapitalization": false,
+    "requireOrder": false,
+    "numberOfPauses": -1,
+    "showHints": true,
+    "allowOverride": true
+  }
+}
