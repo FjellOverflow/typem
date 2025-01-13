@@ -1,8 +1,12 @@
 {
   "name": "typem",
-  "description": "Type down all list items as fast as you can.",
+  "description": "Typem (\"Type them\") is a memorization game that challenges the player to type out list items as quickly as possible.",
   "type": "module",
-  "version": "0.0.2",
+  "homepage": "https://github.com/FjellOverflow/typem",
+  "bugs": {
+    "url": "https://github.com/FjellOverflow/typem/issues"
+  },
+  "version": "0.0.1",
   "private": true,
   "author": "FjellOverflow",
   "license": "GPL-3.0-only",
