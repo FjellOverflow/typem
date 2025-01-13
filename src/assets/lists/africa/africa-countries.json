@@ -1,0 +1,275 @@
+{
+  "id": "africa-countries",
+  "meta": {
+    "name": "African Countries",
+    "description": "Name all the countries of Africa.",
+    "difficulty": 1,
+    "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_and_their_capitals_in_native_languages",
+    "author": "FjellOverflow",
+    "lastUpdated": "2025-01-13"
+  },
+  "items": [
+    {
+      "answer": "Algeria",
+      "matches": ["Algeria", "Dzayer", "ⴷⵣⴰⵢⴻⵔ", "Al-Jazā'ir", "الجزائر"]
+    },
+    {
+      "answer": "Angola",
+      "matches": ["Angola", "Ngola"]
+    },
+    {
+      "answer": "Benin",
+      "matches": ["Benin", "Bénin"]
+    },
+    {
+      "answer": "Botswana",
+      "matches": ["Botswana"]
+    },
+    {
+      "answer": "Burkina Faso",
+      "matches": ["Burkina Faso"]
+    },
+    {
+      "answer": "Burundi",
+      "matches": ["Uburundi", "Burundi"]
+    },
+    {
+      "answer": "Cameroon",
+      "matches": ["Cameroun", "Cameroon"]
+    },
+    {
+      "answer": "Cape Verde",
+      "matches": ["Cape Verde", "Cabo Verde"]
+    },
+    {
+      "answer": "Central African Republic",
+      "matches": ["Central African Republic", "Centrafrique", "Bêafrîka", "Central Africa", "CAR"]
+    },
+    {
+      "answer": "Chad",
+      "matches": ["Chad", "Tchad", "Tšād", "تشاد"]
+    },
+    {
+      "answer": "Comoros",
+      "matches": ["Comoros", "Komori", "Juzur al-Qumur", "جزر القمر", "Comores"]
+    },
+    {
+      "answer": "Republic of the Congo",
+      "matches": [
+        "Republic of the Congo",
+        "République du Congo",
+        "Repubilika ya Kôngo",
+        "Republíki ya Kongó",
+        "Congo"
+      ]
+    },
+    {
+      "answer": "Democratic Republic of the Congo",
+      "matches": [
+        "Democratic Republic of the Congo",
+        "République démocratique du Congo",
+        "Republíki ya Kongó Demokratíki",
+        "Repubilika ya Kôngo ya Dimokalasi",
+        "Jamhuri ya Kidemokrasia ya Kongo",
+        "Congo"
+      ]
+    },
+    {
+      "answer": "Djibouti",
+      "matches": ["Jībūtī", "جيبوتي", "Djibouti", "Jabuuti", "Gabuuti"]
+    },
+    {
+      "answer": "Egypt",
+      "matches": ["Egypt", "Misr", "Masr", "مصر"]
+    },
+    {
+      "answer": "Equatorial Guinea",
+      "matches": [
+        "Equatorial Guinea",
+        "Guinea Ecuatorial",
+        "Guinée équatoriale",
+        "Guiné Equatorial"
+      ]
+    },
+    {
+      "answer": "Eritrea",
+      "matches": ["Eritrea", "Iritriya", "إرتريا", "Ertra", "ኤርትራ"]
+    },
+    {
+      "answer": "Eswatini",
+      "matches": ["Eswatini", "Swaziland", "eSwatini"]
+    },
+    {
+      "answer": "Ethiopia",
+      "matches": ["Ethiopia", "Ityop'ia", "ኢትዮጵያ"]
+    },
+    {
+      "answer": "Gabon",
+      "matches": ["Gabon"]
+    },
+    {
+      "answer": "The Gambia",
+      "matches": ["The Gambia", "Kambiya", "ߞߊߡߓߌߦߊ", "Gambi", "𞤘𞤢𞤥𞤦𞤭", "Gámbi", "Gambia"]
+    },
+    {
+      "answer": "Ghana",
+      "matches": ["Ghana", "Gaana", "Gana", "Gana"]
+    },
+    {
+      "answer": "Guinea",
+      "matches": ["Guinea", "Guinée", "Gine", "ߖߌ߬ߣߍ߫", "Gine", "𞤘𞤭𞤲𞤫"]
+    },
+    {
+      "answer": "Guinea-Bissau",
+      "matches": [
+        "Guinea-Bissau",
+        "Guiné-Bissau",
+        "Gine-Bisaawo",
+        "𞤘𞤭𞤲𞤫 𞤄𞤭𞤧𞤢𞥄𞤱𞤮",
+        "Gine-Bisawo",
+        "ߖߌ߬ߣߍ߫ ߓߌߛߊߥߏ߫",
+        "Guinea Bissau"
+      ]
+    },
+    {
+      "answer": "Côte d'Ivoire",
+      "matches": ["Côte d'Ivoire", "Ivory Coast"]
+    },
+    {
+      "answer": "Kenya",
+      "matches": ["Kenya"]
+    },
+    {
+      "answer": "Lesotho",
+      "matches": ["Lesotho"]
+    },
+    {
+      "answer": "Liberia",
+      "matches": ["Liberia"]
+    },
+    {
+      "answer": "Libya",
+      "matches": ["Libya", "ⵍⵉⴱⵢⴰ", "Lībiyā", "ليبيا"]
+    },
+    {
+      "answer": "Madagascar",
+      "matches": ["Madagasikara", "Madagascar"]
+    },
+    {
+      "answer": "Malawi",
+      "matches": ["Malawi", "Malaŵi"]
+    },
+    {
+      "answer": "Mali",
+      "matches": ["Mali", "ߡߊ߬ߟߌ", "Maali", "𞤃𞤢𞥄𞤤𞤭"]
+    },
+    {
+      "answer": "Mauritania",
+      "matches": ["Mauritania", "Muritan", "Agawec", "ⵎⵓⵔⵉⵜⴰⵏ", "ⴰⴳⴰⵡⵛ", "Mūrītānyā", "موريتانيا"]
+    },
+    {
+      "answer": "Mauritius",
+      "matches": ["Mauritius", "Maurice", "Moris"]
+    },
+    {
+      "answer": "Morocco",
+      "matches": ["Morocco", "Amerruk", "Elmeɣrib", "ⴰⵎⵔⵔⵓⴽ", "ⵍⵎⵖⵔⵉⴱ", "Al-maɣréb", "المغرب"]
+    },
+    {
+      "answer": "Mozambique",
+      "matches": ["Mozambique", "Moçambique", "Muzambhiki"]
+    },
+    {
+      "answer": "Namibia",
+      "matches": ["Namibia", "Namibia", "Namibië", "Namibia", "Namibia"]
+    },
+    {
+      "answer": "Niger",
+      "matches": ["Niger", "Nijar"]
+    },
+    {
+      "answer": "Nigeria",
+      "matches": ["Nigeria", "Nijeriya", "Naìjíríyà", "Nàìjíríà"]
+    },
+    {
+      "answer": "Rwanda",
+      "matches": ["Rwanda"]
+    },
+    {
+      "answer": "São Tomé and Príncipe",
+      "matches": ["São Tomé and Príncipe", "São Tomé e Príncipe", "Sao Tome", "Principe"]
+    },
+    {
+      "answer": "Senegal",
+      "matches": ["Senegal", "Sénégal", "Senegaal"]
+    },
+    {
+      "answer": "Seychelles",
+      "matches": ["Sesel", "Seychelles", "Seychelles"]
+    },
+    {
+      "answer": "Sierra Leone",
+      "matches": ["Sierra Leone"]
+    },
+    {
+      "answer": "Somalia",
+      "matches": ["Somalia", "Soomaaliya", "aş-Şūmāl", "الصومال"]
+    },
+    {
+      "answer": "South Africa",
+      "matches": [
+        "South Africa",
+        "Suid-Afrika",
+        "iNingizimu Afrika",
+        "uMzantsi Afrika",
+        "Afrika-Borwa",
+        "Afrika Borwa",
+        "Aforika Borwa",
+        "Afurika Tshipembe",
+        "Afrika Dzonga",
+        "iNingizimu Afrika",
+        "iSewula Afrika"
+      ]
+    },
+    {
+      "answer": "South Sudan",
+      "matches": ["South Sudan", "Paguot Thudän", "Sudan Kusini"]
+    },
+    {
+      "answer": "Sudan",
+      "matches": ["Sudan", "As-Sudan", "السودان"]
+    },
+    {
+      "answer": "Tanzania",
+      "matches": ["Tanzania"]
+    },
+    {
+      "answer": "Togo",
+      "matches": ["Togo", "Togo", "Togo"]
+    },
+    {
+      "answer": "Tunisia",
+      "matches": ["Tunisia", "Tunes", "ⵜⵓⵏⵙ", "Tūns", "تونس"]
+    },
+    {
+      "answer": "Uganda",
+      "matches": ["Uganda"]
+    },
+    {
+      "answer": "Zambia",
+      "matches": ["Zambia"]
+    },
+    {
+      "answer": "Zimbabwe",
+      "matches": ["Zimbabwe"]
+    }
+  ],
+  "settings": {
+    "requireWhitespaces": false,
+    "requireCapitalization": false,
+    "requireOrder": false,
+    "numberOfPauses": -1,
+    "showHints": false,
+    "allowOverride": true
+  }
+}

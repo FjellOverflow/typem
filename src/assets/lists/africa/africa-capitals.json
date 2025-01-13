@@ -1,0 +1,309 @@
+{
+  "id": "africa-capitals",
+  "meta": {
+    "name": "African Capitals",
+    "description": "Name the capital of every country in Africa.",
+    "difficulty": 1,
+    "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_and_their_capitals_in_native_languages",
+    "author": "FjellOverflow",
+    "lastUpdated": "2025-01-13"
+  },
+  "items": [
+    {
+      "hint": "Capital of Algeria",
+      "answer": "Algiers",
+      "matches": ["Algiers", "Dzayer", "ⴷⵣⴰⵢⴻⵔ", "Al-Jazā'ir", "الجزائر"]
+    },
+    {
+      "hint": "Capital of Angola",
+      "answer": "Luanda",
+      "matches": ["Luanda", "Lwanda"]
+    },
+    {
+      "hint": "Capital of Benin",
+      "answer": "Porto-Novo",
+      "matches": ["Porto-Novo", "Porto Novo"]
+    },
+    {
+      "hint": "Capital of Botswana",
+      "answer": "Gaborone",
+      "matches": ["Gaborone"]
+    },
+    {
+      "hint": "Capital of Burkina Faso",
+      "answer": "Ouagadougou",
+      "matches": ["Ouagadougou"]
+    },
+    {
+      "hint": "Capital of Burundi",
+      "answer": "Gitega",
+      "matches": ["Gitega"]
+    },
+    {
+      "hint": "Capital of Cameroon",
+      "answer": "Yaoundé",
+      "matches": ["Yaoundé", "Yaounde"]
+    },
+    {
+      "hint": "Capital of Cape Verde",
+      "answer": "Praia",
+      "matches": ["Praia"]
+    },
+    {
+      "hint": "Capital of Central African Republic",
+      "answer": "Bangui",
+      "matches": ["Bangui", "Bangî"]
+    },
+    {
+      "hint": "Capital of Chad",
+      "answer": "N'Djamena",
+      "matches": ["N'Djamena", "Ndjamena", "Nijāmīnā", "نجامينا"]
+    },
+    {
+      "hint": "Capital of Comoros",
+      "answer": "Moroni",
+      "matches": ["Moroni", "موروني"]
+    },
+    {
+      "hint": "Capital of Republic of the Congo",
+      "answer": "Brazzaville",
+      "matches": ["Brazzaville", "Balazavile"]
+    },
+    {
+      "hint": "Capital of Democratic Republic of the Congo",
+      "answer": "Kinshasa",
+      "matches": ["Kinshasa", "Kinsasa", "Kinsásá"]
+    },
+    {
+      "hint": "Capital of Côte d'Ivoire",
+      "answer": "Yamoussoukro",
+      "matches": ["Yamoussoukro"]
+    },
+    {
+      "hint": "Capital of Djibouti",
+      "answer": "Djibouti",
+      "matches": ["Djibouti", "Jībūtī", "جيبوتي", "Jabuuti", "Gabuuti"]
+    },
+    {
+      "hint": "Capital of Egypt",
+      "answer": "Cairo",
+      "matches": ["Cairo", "Al-Qāhirah", "القاهرة"]
+    },
+    {
+      "hint": "Capital of Equatorial Guinea",
+      "answer": "Malabo",
+      "matches": ["Malabo"]
+    },
+    {
+      "hint": "Capital of Eritrea",
+      "answer": "Asmara",
+      "matches": ["Asmara", "Asmaraa", "أسمرا", "Asmära", "አሥመራ"]
+    },
+    {
+      "hint": "Capital of Eswatini",
+      "answer": "Mbabane",
+      "matches": ["Mbabane"]
+    },
+    {
+      "hint": "Capital of Ethiopia",
+      "answer": "Addis Ababa",
+      "matches": ["Addis Ababa", "Addis Abäba", "አዲስ አበ"]
+    },
+    {
+      "hint": "Capital of Gabon",
+      "answer": "Libreville",
+      "matches": ["Libreville"]
+    },
+    {
+      "hint": "Capital of The Gambia",
+      "answer": "Banjul",
+      "matches": ["Banjul", "ߓߊ߲߬ߖߎߟ", "Bannjulu", "𞤄𞤢𞤲𞥆𞤶𞤵𞤤𞤵"]
+    },
+    {
+      "hint": "Capital of Ghana",
+      "answer": "Accra",
+      "matches": ["Accra", "Nkran"]
+    },
+    {
+      "hint": "Capital of Guinea",
+      "answer": "Conakry",
+      "matches": ["Conakry", "Kɔnakrí", "ߞߐߣߊߞߙߌ߫", "Konaakiri", "𞤑𞤮𞤲𞤢𞥄𞤳𞤭𞤪𞤭"]
+    },
+    {
+      "hint": "Capital of Guinea-Bissau",
+      "answer": "Bissau",
+      "matches": ["Bissau", "Bisaawo", "𞤄𞤭𞤧𞤢𞥄𞤱𞤮", "Bisawo", "ߓߌߛߊߥߏ߫"]
+    },
+    {
+      "hint": "Capital of Kenya",
+      "answer": "Nairobi",
+      "matches": ["Nairobi"]
+    },
+    {
+      "hint": "Capital of Lesotho",
+      "answer": "Maseru",
+      "matches": ["Maseru"]
+    },
+    {
+      "hint": "Capital of Liberia",
+      "answer": "Monrovia",
+      "matches": ["Monrovia"]
+    },
+    {
+      "hint": "Capital of Libya",
+      "answer": "Tripoli",
+      "matches": ["Tripoli", "Ṭrables", "ⵟⵔⴰⴱⵍⴻⵙ", "Tarabulus", "طرابلس"]
+    },
+    {
+      "hint": "Capital of Madagascar",
+      "answer": "Antananarivo",
+      "matches": ["Antananarivo", "Antananarivo", "Tananarive"]
+    },
+    {
+      "hint": "Capital of Malawi",
+      "answer": "Lilongwe",
+      "matches": ["Lilongwe"]
+    },
+    {
+      "hint": "Capital of Mali",
+      "answer": "Bamako",
+      "matches": ["Bamakɔ", "ߓߡߊ߬ߞߐ߬", "Bamako", "𞤄𞤢𞤥𞤢𞤳𞤮"]
+    },
+    {
+      "hint": "Capital of Mauritania",
+      "answer": "Nouakchott",
+      "matches": [
+        "Nouakchott",
+        "Nwakcuṭ",
+        "anu ukcuḍ",
+        "ⵏⵡⴰⴽⵛⵓⵟ",
+        "ⴰⵏⵓ ⵓⴽⵛⵓⴹ",
+        "nwakšūṭ",
+        "نواكشوط",
+        "أنو ؤكشوض"
+      ]
+    },
+    {
+      "hint": "Capital of Mauritius",
+      "answer": "Port Louis",
+      "matches": ["Port Louis", "Port-Louis", "Porlwi"]
+    },
+    {
+      "hint": "Capital of Morocco",
+      "answer": "Rabat",
+      "matches": ["Rabat", "Errbaṭ", "ⵔⵔⴱⴰⵟ", "Ar-ribaaṭ", "الرباط"]
+    },
+    {
+      "hint": "Capital of Mozambique",
+      "answer": "Maputo",
+      "matches": ["Maputo"]
+    },
+    {
+      "hint": "Capital of Namibia",
+      "answer": "Windhoek",
+      "matches": ["Windhoek", "Windhuk", "Windhoek", "/Ae-//Gams", "Otjomuise"]
+    },
+    {
+      "hint": "Capital of Niger",
+      "answer": "Niamey",
+      "matches": ["Niamey", "Yamai"]
+    },
+    {
+      "hint": "Capital of Nigeria",
+      "answer": "Abuja",
+      "matches": ["Abuja", "Abuja", "Àbújá"]
+    },
+    {
+      "hint": "Capital of Rwanda",
+      "answer": "Kigali",
+      "matches": ["Kigali"]
+    },
+    {
+      "hint": "Capital of São Tomé and Príncipe",
+      "answer": "São Tomé",
+      "matches": ["São Tomé", "Sao Tome"]
+    },
+    {
+      "hint": "Capital of Senegal",
+      "answer": "Dakar",
+      "matches": ["Dakar", "Ndakaaru"]
+    },
+    {
+      "hint": "Capital of Seychelles",
+      "answer": "Victoria",
+      "matches": ["Victoria", "Port Victoria"]
+    },
+    {
+      "hint": "Capital of Sierra Leone",
+      "answer": "Freetown",
+      "matches": ["Freetown"]
+    },
+    {
+      "hint": "Capital of Somalia",
+      "answer": "Mogadishu",
+      "matches": ["Mogadishu", "Muqdisho", "Maqadīshū", "مقديشو"]
+    },
+    {
+      "hint": "Capital of South Africa",
+      "answer": "Cape Town",
+      "matches": [
+        "Cape Town",
+        "Kaapstad",
+        "Pretoria",
+        "iPitoli",
+        "Pitori",
+        "iPitori",
+        "iKapa",
+        "Bloemfontein"
+      ]
+    },
+    {
+      "hint": "Capital of South Sudan",
+      "answer": "Juba",
+      "matches": ["Juba"]
+    },
+    {
+      "hint": "Capital of Sudan",
+      "answer": "Khartoum",
+      "matches": ["Khartoum", "Al-Khartûm", "الخرطوم"]
+    },
+    {
+      "hint": "Capital of Tanzania",
+      "answer": "Dodoma",
+      "matches": ["Dodoma"]
+    },
+    {
+      "hint": "Capital of Togo",
+      "answer": "Lomé",
+      "matches": ["Lomé", "Lome", "Loma"]
+    },
+    {
+      "hint": "Capital of Tunisia",
+      "answer": "Tunis",
+      "matches": ["Tunis", "Tunes", "ⵜⵓⵏⵙ", "Tūns", "تونس"]
+    },
+    {
+      "hint": "Capital of Uganda",
+      "answer": "Kampala",
+      "matches": ["Kampala"]
+    },
+    {
+      "hint": "Capital of Zambia",
+      "answer": "Lusaka",
+      "matches": ["Lusaka"]
+    },
+    {
+      "hint": "Capital of Zimbabwe",
+      "answer": "Harare",
+      "matches": ["Harare"]
+    }
+  ],
+  "settings": {
+    "requireWhitespaces": false,
+    "requireCapitalization": false,
+    "requireOrder": false,
+    "numberOfPauses": -1,
+    "showHints": true,
+    "allowOverride": true
+  }
+}
