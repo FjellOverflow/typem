@@ -8,7 +8,7 @@
     "category": "geography",
     "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_and_their_capitals_in_native_languages",
     "author": "FjellOverflow",
-    "lastUpdated": "2025-01-13"
+    "lastUpdated": "2025-01-14"
   },
   "items": [
     {
@@ -60,6 +60,11 @@
       "hint": "Capital of East Timor",
       "answer": "Díli",
       "matches": ["Díli", "Dili"]
+    },
+    {
+      "hint": "Capital of Georgia",
+      "answer": "Tbilisi",
+      "matches": ["Tbilisi", "თბილისი"]
     },
     {
       "hint": "Capital of India",

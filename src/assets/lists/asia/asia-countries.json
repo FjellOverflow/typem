@@ -8,7 +8,7 @@
     "category": "geography",
     "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_and_their_capitals_in_native_languages",
     "author": "FjellOverflow",
-    "lastUpdated": "2025-01-13"
+    "lastUpdated": "2025-01-14"
   },
   "items": [
     {
@@ -50,6 +50,10 @@
     {
       "answer": "East Timor",
       "matches": ["East Timor", "Timor Lorosa'e", "Timor-Leste", "Timor"]
+    },
+    {
+      "answer": "Georgia",
+      "matches": ["Georgia", "Sak'art'velo", "საქართველო"]
     },
     {
       "answer": "India",
