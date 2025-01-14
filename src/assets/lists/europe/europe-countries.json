@@ -8,7 +8,7 @@
     "category": "geography",
     "source": "https://en.wikipedia.org/wiki/Europe",
     "author": "FjellOverflow",
-    "lastUpdated": "2024-12-10"
+    "lastUpdated": "2024-12-14"
   },
   "items": [
     {
@@ -42,6 +42,10 @@
     {
       "answer": "Croatia",
       "matches": ["Croatia", "Hrvatska"]
+    },
+    {
+      "answer": "Cyprus",
+      "matches": ["Cyprus", "Kypros", "Κύπρος", "Kıbrıs"]
     },
     {
       "answer": "Czechia",

@@ -8,7 +8,7 @@
     "category": "geography",
     "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_and_their_capitals_in_native_languages",
     "author": "FjellOverflow",
-    "lastUpdated": "2024-12-10"
+    "lastUpdated": "2024-12-14"
   },
   "items": [
     {
@@ -50,6 +50,11 @@
       "hint": "Capital of Croatia",
       "answer": "Zagreb",
       "matches": ["Zagreb"]
+    },
+    {
+      "hint": "Capital of Cyprus",
+      "answer": "Nicosia",
+      "matches": ["Nicosia", "Lefkosia", "Λευκωσία", "Lefkoşa"]
     },
     {
       "hint": "Capital of Czechia",
