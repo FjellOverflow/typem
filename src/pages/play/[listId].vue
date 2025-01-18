@@ -1,5 +1,5 @@
 <script lang="ts">
-import { useListLoader } from '@/assets/lists/loader'
+import { useListLoader } from '@/plugins/listLoader'
 export { useListLoader }
 </script>
 

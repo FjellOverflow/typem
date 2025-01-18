@@ -2,14 +2,11 @@ import { ItemListSchema, type IItemList } from '@/types'
 import { NavigationResult } from 'unplugin-vue-router/data-loaders'
 import { defineBasicLoader } from 'unplugin-vue-router/data-loaders/basic'
 
-const isLoaded = new Promise((r) => {
-  loadLists().then(() => r(true))
-})
-
 const lists: IItemList[] = []
 
-async function loadLists() {
+const isLoaded = new Promise(async (resolve) => {
   const files = import.meta.glob('@/assets/lists/**/[^.]*.json')
+
   const promises = Object.entries(files).map(([fileName, file]) =>
     file().then((loadedFile) => {
       try {
@@ -21,18 +18,12 @@ async function loadLists() {
     }),
   )
 
-  await Promise.all(promises).then((results) => {
-    lists.push(...results.filter((r) => !!r))
-  })
-
+  const results = await Promise.all(promises)
+  lists.push(...results.filter((r) => !!r))
   lists.sort((l1, l2) => l1.meta.name.localeCompare(l2.meta.name))
-}
 
-async function getLists() {
-  await isLoaded
-
-  return lists
-}
+  resolve(true)
+})
 
 export async function getListById(listId: string): Promise<IItemList> {
   await isLoaded
@@ -44,6 +35,12 @@ export async function getListById(listId: string): Promise<IItemList> {
   throw new Error(`List with id "${listId}" does not exist.`)
 }
 
+export const useListsLoader = defineBasicLoader('/', async () => {
+  await isLoaded
+
+  return lists
+})
+
 export const useListLoader = defineBasicLoader('/play/[listId]', async (to) => {
   try {
     return await getListById(to.params.listId)
@@ -52,5 +49,3 @@ export const useListLoader = defineBasicLoader('/play/[listId]', async (to) => {
     return new NavigationResult('/')
   }
 })
-
-export const useListsLoader = defineBasicLoader('/', async () => getLists())

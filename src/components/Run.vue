@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { getListById } from '@/assets/lists/loader'
 import { useHistory } from '@/composables/history'
+import { getListById } from '@/plugins/listLoader'
 import { getSecondsPerItem, formatDuration } from '@/plugins/util'
 import { type IItemList, type IRun } from '@/types'
 import { BanIcon, CheckIcon, TrashIcon, TrophyIcon } from 'lucide-vue-next'
