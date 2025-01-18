@@ -1,8 +1,12 @@
 <script setup lang="ts">
 import { BugIcon, HouseIcon, RotateCcwIcon } from 'lucide-vue-next'
-import packageJson from '../../package.json'
+import packageJson from '../../../package.json'
 import logo from '@/assets/logo.svg'
 import { usePlaythroughs } from '@/composables/playthroughs'
+
+const popUp = useTemplateRef('popUp')
+
+defineExpose({ open: () => popUp.value?.open() })
 
 const {
   name: packageName,
@@ -13,31 +17,28 @@ const {
   bugs: { url: bugReportUrl },
 } = packageJson
 
-const appInfoModal = useTemplateRef('appInfoDialog')
 const confirmResetModal = useTemplateRef('confirmResetModal')
 
 const { deleteAllPlaythroughs } = usePlaythroughs()
-
-defineExpose({ open: () => appInfoModal.value?.showModal() })
 </script>
 <template>
-  <dialog ref="appInfoDialog" class="modal">
-    <div class="modal-box border rounded-lg w-xl flex flex-col gap-4">
-      <div class="text-4xl flex gap-4 capitalize">
-        <img :src="logo" class="h-10" /> {{ packageName }}
-      </div>
+  <PopUp ref="popUp">
+    <template #title>
+      <div class="flex gap-4 capitalize"><img :src="logo" class="h-10" /> {{ packageName }}</div>
+    </template>
+    <template #body>
       <div class="text-xl flex flex-col gap-2">
         <div>{{ packageDescription }}</div>
       </div>
       <div class="flex gap-4 justify-around my-4">
         <a :href="homepageUrl" target="_blank">
           <button class="btn btn-outline btn-primary text-sm font-medium">
-            <HouseIcon /> Homepage
+            <HouseIcon /> {{ $t('index.info.homepage') }}
           </button>
         </a>
         <a :href="bugReportUrl" target="_blank">
           <button class="btn btn-outline btn-warning text-sm font-medium">
-            <BugIcon /> Report bug
+            <BugIcon /> {{ $t('index.info.issues') }}
           </button></a
         >
 
@@ -61,16 +62,13 @@ defineExpose({ open: () => appInfoModal.value?.showModal() })
           @click="confirmResetModal?.showModal()"
           class="btn btn-outline btn-error text-sm font-medium"
         >
-          <RotateCcwIcon /> Reset history
+          <RotateCcwIcon /> {{ $t('index.info.resetHistory') }}
         </button>
       </div>
       <div class="text-lg opacity-65 gap-4 flex justify-around">
-        <div>Version {{ packageVersion }}</div>
-        <div>Created by {{ packageAuthor }}</div>
+        <div>{{ $t('index.info.version', { version: packageVersion }) }}</div>
+        <div>{{ $t('index.info.author', { author: packageAuthor }) }}</div>
       </div>
-    </div>
-    <form method="dialog" class="modal-backdrop">
-      <button>close</button>
-    </form>
-  </dialog>
+    </template>
+  </PopUp>
 </template>

@@ -23,6 +23,22 @@
       "message": "You named all {number} items in {duration}."
     }
   },
+  "index": {
+    "info": {
+      "homepage": "Homepage",
+      "issues": "Report bug",
+      "version": "Version {version}",
+      "author": "Created by {author}",
+      "resetHistory": "Reset history"
+    }
+  },
+  "list": {
+    "info": {
+      "createdBy": "Created by",
+      "lastUpdate": "Last update",
+      "source": "Source"
+    }
+  },
 
   "play": {
     "start": "Let's play"

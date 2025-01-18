@@ -1,12 +1,13 @@
 <script lang="ts">
 import { useListsLoader } from '@/plugins/listLoader'
+import AppInfoPopUp from '@/components/popUps/AppInfoPopUp.vue'
 export { useListsLoader }
 </script>
 
 <script setup lang="ts">
 import { ShuffleIcon, ListIcon, HeartIcon, CalendarClockIcon, InfoIcon } from 'lucide-vue-next'
 
-const appInfoDialog = useTemplateRef('appInfoDialog')
+const appInfoPopUp = useTemplateRef('appInfoPopUp')
 
 const { data: lists } = useListsLoader()
 const route = useRoute()
@@ -46,10 +47,10 @@ const randomListUrl = computed(() => {
     </template>
     <template #end>
       <ThemeToggle />
-      <button @click="appInfoDialog?.open()" class="btn btn-ghost">
+      <button @click="appInfoPopUp?.open()" class="btn btn-ghost">
         <InfoIcon />
       </button>
-      <AppInfoDialog ref="appInfoDialog" />
+      <AppInfoPopUp ref="appInfoPopUp" />
     </template>
   </NavBar>
   <div class="mx-auto flex w-full max-w-[90%] flex-col justify-start md:max-w-3xl">

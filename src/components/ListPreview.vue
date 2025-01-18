@@ -13,7 +13,7 @@ import {
   TimerIcon,
 } from 'lucide-vue-next'
 
-const infoModal = useTemplateRef('infoModal')
+const listInfoPopUp = useTemplateRef('listInfoPopUp')
 
 const props = withDefaults(
   defineProps<{
@@ -92,17 +92,10 @@ const difficultyLabel = computed(() => {
         >
           <HeartIcon :class="{ 'fill-primary': isFavorite(list) }" />
         </button>
-        <button @click="infoModal?.showModal()" class="btn btn-ghost">
+        <button @click="listInfoPopUp?.open()" class="btn btn-ghost">
           <InfoIcon />
         </button>
-        <dialog ref="infoModal" class="modal">
-          <div class="modal-box border">
-            <ListInfo :list />
-          </div>
-          <form method="dialog" class="modal-backdrop">
-            <button>close</button>
-          </form>
-        </dialog>
+        <ListInfoPopUp :list ref="listInfoPopUp" />
       </div>
     </div>
   </div>
