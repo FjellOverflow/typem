@@ -15,6 +15,18 @@
     "pageTitle": "Favorites",
     "noData": "No lists marked favorite yet."
   },
+  "play": {
+    "start": "I'm ready!",
+    "restart": "Restart",
+    "finished": {
+      "title": "You did it!",
+      "message": "You named all {number} items in {duration}."
+    }
+  },
+
+  "play": {
+    "start": "Let's play"
+  },
   "checkedItems": {
     "label": "Checked items"
   },
@@ -30,9 +42,6 @@
     "next": "Next",
     "previous": "Previous",
     "none": "No hint available"
-  },
-  "play": {
-    "label": "Let's play"
   },
   "settings": {
     "label": "Settings",
@@ -58,12 +67,6 @@
       "label": "Require right ordering",
       "tooltip": "If enabled, requires you match the items in the same order as defined."
     }
-  },
-  "starter": {
-    "label": "I'm ready!"
-  },
-  "restart": {
-    "label": "Restart"
   },
   "timer": {
     "seconds": {

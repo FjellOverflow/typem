@@ -15,6 +15,7 @@ import { PartyPopperIcon, RotateCwIcon, ThumbsUpIcon } from 'lucide-vue-next'
 const { data: list } = useListLoader()
 
 const pageTitle = useTitle(`${list.value.meta.name} - Typem`)
+window.scrollTo(0, 0)
 
 watch(list, (newList) => {
   reset()
@@ -100,7 +101,7 @@ function onStop() {
 
   if (numberOfMatches === 0) return
 
-  const newRun = {
+  const newPlaythrough = {
     listId: list.value.id,
     seconds: timer.value.seconds,
     finished: isDone.value,
@@ -108,13 +109,13 @@ function onStop() {
     timestamp: new Date().toISOString(),
   }
   if (
-    newRun.finished &&
+    newPlaythrough.finished &&
     bestListPlaythrough.value?.finished &&
-    newRun.seconds < bestListPlaythrough.value.seconds
+    newPlaythrough.seconds < bestListPlaythrough.value.seconds
   )
-    newRecordDialog.value?.open(newRun, bestListPlaythrough.value)
+    newRecordDialog.value?.open(newPlaythrough, bestListPlaythrough.value)
 
-  allPlaythroughs.value.push(newRun)
+  allPlaythroughs.value.push(newPlaythrough)
 }
 
 function onInput() {
@@ -139,14 +140,14 @@ function onInput() {
           class="btn btn-outline btn-primary text-xl font-medium"
           @click="init"
         >
-          <ThumbsUpIcon /> {{ $t('starter.label') }}
+          <ThumbsUpIcon /> {{ $t('play.start') }}
         </button>
         <button
           v-if="isInitialized && isStopped"
           class="btn btn-outline btn-primary text-xl font-medium"
           @click="reset"
         >
-          <RotateCwIcon /> {{ $t('restart.label') }}
+          <RotateCwIcon /> {{ $t('play.restart') }}
         </button>
       </template>
     </ListPreview>
@@ -186,11 +187,15 @@ function onInput() {
       <div v-else class="border border-success rounded-lg col-span-5 p-4">
         <div class="flex gap-4 items-end text-success">
           <PartyPopperIcon :size="36" />
-          <span class="text-3xl">You did it!</span>
-          <span class="text-xl"
-            >You named all {{ list.items.length }} items in
-            {{ formatDuration(timer.seconds) }}.</span
-          >
+          <span class="text-3xl">{{ $t('play.finished.title') }}</span>
+          <span class="text-xl">
+            {{
+              $t('play.finished.message', {
+                number: list.items.length,
+                duration: formatDuration(timer.seconds),
+              })
+            }}
+          </span>
         </div>
       </div>
     </template>
