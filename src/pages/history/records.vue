@@ -21,14 +21,7 @@ const records = computed(() =>
     .filter((p) => !!p),
 )
 
-const groups = computed(() =>
-  groupByDate(
-    records.value.map((r) => ({
-      ...r,
-      date: new Date(r.timestamp),
-    })),
-  ),
-)
+const groups = computed(() => groupByDate(records.value))
 </script>
 <template>
   <DateGroup v-for="group in groups" :key="group.date.toISOString()" :date="group.date">

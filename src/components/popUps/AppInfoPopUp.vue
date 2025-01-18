@@ -17,7 +17,7 @@ const {
   bugs: { url: bugReportUrl },
 } = packageJson
 
-const confirmResetModal = useTemplateRef('confirmResetModal')
+const confirmDeleteAllDialog = useTemplateRef('confirmDeleteAllDialog')
 
 const { deleteAllPlaythroughs } = usePlaythroughs()
 </script>
@@ -41,28 +41,22 @@ const { deleteAllPlaythroughs } = usePlaythroughs()
             <BugIcon /> {{ $t('index.info.issues') }}
           </button></a
         >
+        <ConfirmDialog
+          ref="confirmDeleteAllDialog"
+          sentiment="error"
+          @confirm="deleteAllPlaythroughs"
+        >
+          <template #title> {{ $t('index.info.resetHistory.dialog.title') }} </template>
+          <template #body>
+            {{ $t('index.info.resetHistory.dialog.message') }}
+          </template>
+        </ConfirmDialog>
 
-        <dialog ref="confirmResetModal" class="modal">
-          <div class="modal-box border rounded-lg">
-            <h3 class="text-lg font-bold">Are you sure?</h3>
-            <p class="py-4">
-              This action removes ALL past runs. Once reset, the history can not be recovered.
-            </p>
-            <div class="modal-action">
-              <form method="dialog">
-                <button @click="deleteAllPlaythroughs" class="btn btn-error btn-outline mr-4">
-                  Confirm
-                </button>
-                <button class="btn btn-outline">Close</button>
-              </form>
-            </div>
-          </div>
-        </dialog>
         <button
-          @click="confirmResetModal?.showModal()"
+          @click="confirmDeleteAllDialog?.open()"
           class="btn btn-outline btn-error text-sm font-medium"
         >
-          <RotateCcwIcon /> {{ $t('index.info.resetHistory') }}
+          <RotateCcwIcon /> {{ $t('index.info.resetHistory.button') }}
         </button>
       </div>
       <div class="text-lg opacity-65 gap-4 flex justify-around">

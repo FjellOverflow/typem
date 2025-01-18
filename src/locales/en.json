@@ -29,7 +29,13 @@
       "issues": "Report bug",
       "version": "Version {version}",
       "author": "Created by {author}",
-      "resetHistory": "Reset history"
+      "resetHistory": {
+        "button": "Reset history",
+        "dialog": {
+          "title": "Are you sure?",
+          "message": "This action removes ALL past playthroughs. Once reset, they can not be recovered."
+        }
+      }
     }
   },
   "list": {
@@ -39,10 +45,15 @@
       "source": "Source"
     }
   },
-
-  "play": {
-    "start": "Let's play"
+  "dialog": {
+    "confirm": "Confirm",
+    "cancel": "Cancel"
   },
+  "newRecord": {
+    "title": "New record: {duration}",
+    "message": "You beat your previous record from {date} by {seconds}."
+  },
+
   "checkedItems": {
     "label": "Checked items"
   },

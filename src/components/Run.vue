@@ -5,7 +5,7 @@ import { getSecondsPerItem, formatDuration } from '@/plugins/util'
 import { type IList, type IListPlaythrough } from '@/types'
 import { BanIcon, CheckIcon, TrashIcon, TrophyIcon } from 'lucide-vue-next'
 
-const confirmDeletionModal = useTemplateRef('confirmDeletionModal')
+const confirmDeletionDialog = useTemplateRef('confirmDeletionDialog')
 
 const props = defineProps<{
   run: IListPlaythrough
@@ -62,21 +62,15 @@ async function loadList() {
       </div>
 
       <div class="flex justify-end">
-        <dialog ref="confirmDeletionModal" class="modal">
-          <div class="modal-box border rounded-lg">
-            <h3 class="text-lg font-bold">Are you sure?</h3>
-            <p class="py-4">Once deleted, the run can not be recovered.</p>
-            <div class="modal-action">
-              <form method="dialog">
-                <button @click="deletePlaythrough(run)" class="btn btn-error btn-outline mr-4">
-                  Confirm
-                </button>
-                <button class="btn btn-outline">Close</button>
-              </form>
-            </div>
-          </div>
-        </dialog>
-        <button @click="confirmDeletionModal?.showModal()" class="btn btn-ghost">
+        <ConfirmDialog
+          ref="confirmDeletionDialog"
+          @confirm="deletePlaythrough(run)"
+          sentiment="error"
+        >
+          <template #title> Are you sure? </template>
+          <template #body> Once deleted, the run can not be recovered. </template>
+        </ConfirmDialog>
+        <button @click="confirmDeletionDialog?.open()" class="btn btn-ghost">
           <TrashIcon />
         </button>
       </div>

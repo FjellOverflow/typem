@@ -10,12 +10,7 @@ const allFinishedPlaythroughs = computed(() => allPlaythroughs.value.filter((r) 
 const numberOfVisiblePlaythroughs = ref(10)
 
 const groups = computed(() =>
-  groupByDate(
-    allFinishedPlaythroughs.value.slice(0, numberOfVisiblePlaythroughs.value).map((r) => ({
-      ...r,
-      date: new Date(r.timestamp),
-    })),
-  ),
+  groupByDate(allFinishedPlaythroughs.value.slice(0, numberOfVisiblePlaythroughs.value)),
 )
 </script>
 <template>

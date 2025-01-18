@@ -3,7 +3,7 @@ import { formatDuration } from '@/plugins/util'
 import { type IListPlaythrough } from '@/types'
 import { PartyPopperIcon } from 'lucide-vue-next'
 
-const newRecordModal = useTemplateRef('newRecordModal')
+const confirmDialog = useTemplateRef('confirmDialog')
 
 const oldBestRun = ref<IListPlaythrough>()
 const newBestRun = ref<IListPlaythrough>()
@@ -17,29 +17,26 @@ function open(newRun: IListPlaythrough, oldRun: IListPlaythrough) {
   oldBestRun.value = oldRun
   newBestRun.value = newRun
 
-  newRecordModal.value?.showModal()
+  confirmDialog.value?.open()
 }
 
 defineExpose({ open })
 </script>
 <template>
-  <dialog ref="newRecordModal" class="modal">
-    <div class="modal-box border rounded-lg">
-      <div class="text-4xl flex gap-4">
-        <PartyPopperIcon :size="40" /> New record: {{ formatDuration(newBestRun?.seconds || 0) }}
+  <ConfirmDialog ref="confirmDialog" :show-cancel-btn="false">
+    <template #title>
+      <div class="flex gap-4">
+        <PartyPopperIcon :size="40" />
+        {{ $t('newRecord.title', { duration: formatDuration(newBestRun?.seconds || 0) }) }}
       </div>
-      <div class="text-xl mt-4 flex flex-col gap-2">
-        <div>
-          You beat your previous record from
-          {{ new Date(oldBestRun?.timestamp || '').toLocaleDateString() }} by
-          {{ formatDuration(improvement) }}.
-        </div>
-      </div>
-      <div class="modal-action">
-        <form method="dialog">
-          <button class="btn btn-outline">Close</button>
-        </form>
-      </div>
-    </div>
-  </dialog>
+    </template>
+    <template #body>
+      {{
+        $t('newRecord.message', {
+          date: new Date(oldBestRun?.timestamp || '').toLocaleDateString(),
+          seconds: formatDuration(improvement),
+        })
+      }}
+    </template>
+  </ConfirmDialog>
 </template>
