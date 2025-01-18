@@ -17,7 +17,6 @@ export function useFavorites() {
   }
 
   return {
-    favorites,
     isFavorite,
     toggleFavorite,
   }

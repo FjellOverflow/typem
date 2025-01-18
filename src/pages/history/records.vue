@@ -7,19 +7,18 @@ export { useListsLoader }
 <script setup lang="ts">
 import { useTitle } from '@vueuse/core'
 
-useTitle('Records - Typem')
+const { t } = useI18n()
+useTitle(`${t('history.records.pageTitle')} - Typem`)
 
 const { data: lists } = useListsLoader()
 
 const { getBestListPlaythrough } = usePlaythroughs()
 
-const records = computed(() => {
-  const listIds = [...new Set(lists.value.map((list) => list.id))]
-
-  return listIds
+const records = computed(() =>
+  [...new Set(lists.value.map((list) => list.id))]
     .map((listId) => getBestListPlaythrough(listId))
-    .filter((runOrUndefind) => !!runOrUndefind)
-})
+    .filter((p) => !!p),
+)
 </script>
 <template>
   <Runs :runs="records" />

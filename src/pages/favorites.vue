@@ -7,7 +7,8 @@ export { useListsLoader }
 import { useTitle } from '@vueuse/core'
 import { useFavorites } from '@/composables/favorites'
 
-useTitle('Favorites - Typem')
+const { t } = useI18n()
+useTitle(`${t('favorites.pageTitle')} - Typem`)
 
 const { data: lists } = useListsLoader()
 
@@ -16,5 +17,5 @@ const { isFavorite } = useFavorites()
 const favorites = computed(() => lists.value.filter(isFavorite))
 </script>
 <template>
-  <Lists :lists="favorites" no-data-text="No list marked favorite yet" />
+  <Lists :lists="favorites" :no-data-text="$t('favorites.noData')" />
 </template>

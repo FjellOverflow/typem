@@ -18,8 +18,12 @@ const checkInput =
     return potentialMatches.some((m) => m === processedInput)
   }
 
-export function useChecking(rawItems: IListItem[], settings: ISettings, onDone: () => void) {
-  const checkFun = checkInput(settings.requireWhitespaces, settings.requireCapitalization)
+export function useChecking(
+  rawItems: IListItem[],
+  { requireWhitespaces, requireCapitalization }: ISettings,
+  onDone: () => void,
+) {
+  const checkFun = checkInput(requireWhitespaces, requireCapitalization)
 
   const items = ref<ICheckableListItem[]>([
     ...rawItems.map((item) => ({ ...item, checked: false })),
@@ -44,8 +48,12 @@ export function useChecking(rawItems: IListItem[], settings: ISettings, onDone: 
   }
 }
 
-export function useOrderedChecking(rawItems: IListItem[], settings: ISettings, onDone: () => void) {
-  const checkFun = checkInput(settings.requireWhitespaces, settings.requireCapitalization)
+export function useOrderedChecking(
+  rawItems: IListItem[],
+  { requireWhitespaces, requireCapitalization }: ISettings,
+  onDone: () => void,
+) {
+  const checkFun = checkInput(requireWhitespaces, requireCapitalization)
 
   const items = ref<ICheckableListItem[]>([
     ...rawItems.map((item) => ({ ...item, checked: false })),
