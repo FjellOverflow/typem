@@ -1,9 +1,9 @@
 import '@/assets/style.css'
 
 import App from '@/App.vue'
+import { DataLoaderPlugin } from 'unplugin-vue-router/data-loaders'
 import router from '@/plugins/router'
 import i18n from '@/plugins/i18n'
-import { DataLoaderPlugin } from 'unplugin-vue-router/data-loaders'
 
 const app = createApp(App)
 

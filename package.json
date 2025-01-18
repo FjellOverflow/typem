@@ -1,15 +1,15 @@
 {
   "name": "typem",
+  "version": "0.0.1",
+  "private": true,
   "description": "Type out the list items as quickly as possible.",
-  "type": "module",
   "homepage": "https://github.com/FjellOverflow/typem",
   "bugs": {
     "url": "https://github.com/FjellOverflow/typem/issues"
   },
-  "version": "0.0.1",
-  "private": true,
-  "author": "FjellOverflow",
   "license": "GPL-3.0-only",
+  "author": "FjellOverflow",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "run-p typecheck \"build-only {@}\" --",
@@ -23,26 +23,24 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "vite": "^5.4.11",
+    "@tsconfig/node22": "^22.0.0",
     "@vitejs/plugin-vue": "^5.2.0",
-    "vite-plugin-vue-layouts": "^0.11.0",
-    "unplugin-vue-components": "^0.27.4",
-    "unplugin-auto-import": "^0.18.5",
-    "tailwindcss": "^3.4.15",
-    "autoprefixer": "^10.4.20",
-    "unplugin-vue-router": "^0.10.8",
     "@vue/tsconfig": "^0.5.1",
-    "vue-i18n": "^10.0.4",
-    "daisyui": "^4.12.14",
-    "lucide-vue-next": "^0.462.0",
     "@vueuse/core": "^12.0.0",
     "@vueuse/router": "^12.0.0",
-    "zod": "^3.23.8",
-    "@tsconfig/node22": "^22.0.0"
+    "autoprefixer": "^10.4.20",
+    "daisyui": "^4.12.14",
+    "lucide-vue-next": "^0.462.0",
+    "tailwindcss": "^3.4.15",
+    "unplugin-auto-import": "^0.18.5",
+    "unplugin-vue-components": "^0.27.4",
+    "unplugin-vue-router": "^0.10.8",
+    "vite": "^5.4.11",
+    "vite-plugin-vue-layouts": "^0.11.0",
+    "vue-i18n": "^10.0.4",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
-    "vue": "^3.5.13",
-    "vue-router": "^4.4.5",
     "@types/jsdom": "^21.1.7",
     "@types/node": "^22.9.1",
     "@vitest/eslint-plugin": "1.1.7",
@@ -60,6 +58,8 @@
     "start-server-and-test": "^2.0.8",
     "typescript": "~5.6.3",
     "vitest": "^2.1.5",
+    "vue": "^3.5.13",
+    "vue-router": "^4.4.5",
     "vue-tsc": "^2.1.10"
   }
 }
