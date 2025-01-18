@@ -1,7 +1,7 @@
-import type { ICheckableItem, IItem, ISettings } from '@/types'
+import type { ICheckableListItem, IListItem, ISettings } from '@/types'
 
 const checkInput =
-  (withWhitespaces: boolean, withCapitalization: boolean) => (input: string, item: IItem) => {
+  (withWhitespaces: boolean, withCapitalization: boolean) => (input: string, item: IListItem) => {
     let processedInput = `${input}`
     let potentialMatches = [...item.matches]
 
@@ -18,10 +18,12 @@ const checkInput =
     return potentialMatches.some((m) => m === processedInput)
   }
 
-export function useChecking(rawItems: IItem[], settings: ISettings, onDone: () => void) {
+export function useChecking(rawItems: IListItem[], settings: ISettings, onDone: () => void) {
   const checkFun = checkInput(settings.requireWhitespaces, settings.requireCapitalization)
 
-  const items = ref<ICheckableItem[]>([...rawItems.map((item) => ({ ...item, checked: false }))])
+  const items = ref<ICheckableListItem[]>([
+    ...rawItems.map((item) => ({ ...item, checked: false })),
+  ])
 
   function check(input: string) {
     const matchedItem = items.value
@@ -42,10 +44,12 @@ export function useChecking(rawItems: IItem[], settings: ISettings, onDone: () =
   }
 }
 
-export function useOrderedChecking(rawItems: IItem[], settings: ISettings, onDone: () => void) {
+export function useOrderedChecking(rawItems: IListItem[], settings: ISettings, onDone: () => void) {
   const checkFun = checkInput(settings.requireWhitespaces, settings.requireCapitalization)
 
-  const items = ref<ICheckableItem[]>([...rawItems.map((item) => ({ ...item, checked: false }))])
+  const items = ref<ICheckableListItem[]>([
+    ...rawItems.map((item) => ({ ...item, checked: false })),
+  ])
 
   function check(input: string) {
     const item = items.value.filter((item) => !item.checked)[0]

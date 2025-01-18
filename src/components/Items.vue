@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import type { ICheckableItem, IItem } from '@/types'
+import type { ICheckableListItem, IListItem } from '@/types'
 import { ListCheckIcon } from 'lucide-vue-next'
 
 const isOpen = ref(false)
 
 const props = defineProps<{
-  items: ICheckableItem[]
+  items: ICheckableListItem[]
   isStopped?: boolean
-  highlighted?: IItem
+  highlighted?: IListItem
 }>()
 
 const numberOfItemsChecked = computed(() => props.items.filter((item) => item.checked).length)

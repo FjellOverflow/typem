@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { IItemList } from '@/types'
+import type { IList } from '@/types'
 import { ExternalLinkIcon } from 'lucide-vue-next'
 
 defineProps<{
-  list: IItemList
+  list: IList
 }>()
 </script>
 <template>

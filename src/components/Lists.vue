@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { matchKeyword } from '@/plugins/util'
-import type { IItemList } from '@/types'
+import type { IList } from '@/types'
 import {
   ArrowDownNarrowWideIcon,
   ArrowDownWideNarrowIcon,
@@ -11,7 +11,7 @@ import { useRouteQuery } from '@vueuse/router'
 
 const props = withDefaults(
   defineProps<{
-    lists: IItemList[]
+    lists: IList[]
     noDataText?: string
   }>(),
   {

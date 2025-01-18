@@ -1,19 +1,19 @@
 <script setup lang="ts">
 import { formatDuration } from '@/plugins/util'
-import { type IRun } from '@/types'
+import { type IListPlaythrough } from '@/types'
 import { PartyPopperIcon } from 'lucide-vue-next'
 
 const newRecordModal = useTemplateRef('newRecordModal')
 
-const oldBestRun = ref<IRun>()
-const newBestRun = ref<IRun>()
+const oldBestRun = ref<IListPlaythrough>()
+const newBestRun = ref<IListPlaythrough>()
 
 const improvement = computed(() => {
   if (!oldBestRun.value || !newBestRun.value) return 0
   return oldBestRun.value?.seconds - newBestRun.value?.seconds
 })
 
-function open(newRun: IRun, oldRun: IRun) {
+function open(newRun: IListPlaythrough, oldRun: IListPlaythrough) {
   oldBestRun.value = oldRun
   newBestRun.value = newRun
 

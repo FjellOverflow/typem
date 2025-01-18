@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import type { ICheckableItem } from '@/types'
+import type { ICheckableListItem } from '@/types'
 import { ArrowLeftIcon, ArrowRightIcon, LightbulbIcon } from 'lucide-vue-next'
 
 const emit = defineEmits<{
   move: []
 }>()
 
-const props = defineProps<{ items: ICheckableItem[]; canCycle: boolean }>()
+const props = defineProps<{ items: ICheckableListItem[]; canCycle: boolean }>()
 
 const offset = ref(0)
 

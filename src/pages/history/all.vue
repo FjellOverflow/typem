@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import { useHistory } from '@/composables/history'
-import type { IRun } from '@/types'
+import { usePlaythroughs } from '@/composables/playthroughs'
+import type { IListPlaythrough } from '@/types'
 import { EllipsisIcon } from 'lucide-vue-next'
 
-const { allRuns } = useHistory()
+const { allPlaythroughs } = usePlaythroughs()
 
 const numberOfVisibleRuns = ref(10)
 
-const visibleRuns = computed(() => allRuns.value.slice(0, numberOfVisibleRuns.value))
+const visibleRuns = computed(() => allPlaythroughs.value.slice(0, numberOfVisibleRuns.value))
 
 const groups = computed(() => {
-  const dateMap = new Map<string, { date: Date; runs: IRun[] }>()
+  const dateMap = new Map<string, { date: Date; runs: IListPlaythrough[] }>()
 
   visibleRuns.value.forEach((run) => {
     const date = new Date(run.timestamp)
@@ -47,7 +47,7 @@ const groups = computed(() => {
 
   <div class="p-8 mb-8 flex justify-center">
     <button
-      v-if="numberOfVisibleRuns < allRuns.length"
+      v-if="numberOfVisibleRuns < allPlaythroughs.length"
       @click="numberOfVisibleRuns += 10"
       class="btn btn-outline"
     >

@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import { useHistory } from '@/composables/history'
-import type { IRun } from '@/types'
+import { usePlaythroughs } from '@/composables/playthroughs'
+import type { IListPlaythrough } from '@/types'
 import { EllipsisIcon } from 'lucide-vue-next'
 
-const { allRuns } = useHistory()
-const allFinishedRuns = computed(() => allRuns.value.filter((r) => r.finished))
+const { allPlaythroughs } = usePlaythroughs()
+const allFinishedRuns = computed(() => allPlaythroughs.value.filter((r) => r.finished))
 
 const numberOfVisibleRuns = ref(10)
 
 const visibleRuns = computed(() => allFinishedRuns.value.slice(0, numberOfVisibleRuns.value))
 
 const groups = computed(() => {
-  const dateMap = new Map<string, { date: Date; runs: IRun[] }>()
+  const dateMap = new Map<string, { date: Date; runs: IListPlaythrough[] }>()
 
   visibleRuns.value.forEach((run) => {
     const date = new Date(run.timestamp)

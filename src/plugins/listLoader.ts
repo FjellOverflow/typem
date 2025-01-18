@@ -1,8 +1,8 @@
-import { ItemListSchema, type IItemList } from '@/types'
+import { ListSchema, type IList } from '@/types'
 import { NavigationResult } from 'unplugin-vue-router/data-loaders'
 import { defineBasicLoader } from 'unplugin-vue-router/data-loaders/basic'
 
-const lists: IItemList[] = []
+const lists: IList[] = []
 
 const isLoaded = new Promise(async (resolve) => {
   const files = import.meta.glob('@/assets/lists/**/[^.]*.json')
@@ -10,7 +10,7 @@ const isLoaded = new Promise(async (resolve) => {
   const promises = Object.entries(files).map(([fileName, file]) =>
     file().then((loadedFile) => {
       try {
-        const list = ItemListSchema.parse((loadedFile as { default: unknown }).default)
+        const list = ListSchema.parse((loadedFile as { default: unknown }).default)
         return list
       } catch (e) {
         console.error(`Encountered ${(e as Error).name} when loading ${fileName}. Skipping file.`)
@@ -25,7 +25,7 @@ const isLoaded = new Promise(async (resolve) => {
   resolve(true)
 })
 
-export async function getListById(listId: string): Promise<IItemList> {
+export async function getListById(listId: string): Promise<IList> {
   await isLoaded
 
   const list = lists.find(({ id }) => id === listId)

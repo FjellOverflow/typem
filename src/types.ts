@@ -1,7 +1,5 @@
 import { z } from 'zod'
 
-// TODO: rename types
-
 export const defaultSettings = {
   requireWhitespaces: false,
   requireCapitalization: false,
@@ -21,14 +19,14 @@ export const SettingsSchema = z.object({
 })
 export type ISettings = z.infer<typeof SettingsSchema>
 
-export const ItemSchema = z.object({
+export const ListItemSchema = z.object({
   hint: z.string().optional(),
   answer: z.string(),
   matches: z.array(z.string()),
 })
-export type IItem = z.infer<typeof ItemSchema>
+export type IListItem = z.infer<typeof ListItemSchema>
 
-export const ItemListSchema = z.object({
+export const ListSchema = z.object({
   id: z.string(),
   meta: z.object({
     name: z.string(),
@@ -40,19 +38,20 @@ export const ItemListSchema = z.object({
     tags: z.array(z.string()),
     category: z.string(),
   }),
-  items: z.array(ItemSchema),
+  items: z.array(ListItemSchema),
   settings: SettingsSchema.default(defaultSettings),
 })
-export type IItemList = z.infer<typeof ItemListSchema>
+export type IList = z.infer<typeof ListSchema>
 
-export type ICheckableItem = IItem & {
+export type ICheckableListItem = IListItem & {
   checked: boolean
 }
 
-export interface IRun {
-  listId: string
-  seconds: number
-  finished: boolean
-  numberOfMatches: number
-  timestamp: string
-}
+export const ListPlaythroughSchema = z.object({
+  listId: z.string(),
+  seconds: z.number(),
+  finished: z.boolean(),
+  numberOfMatches: z.number(),
+  timestamp: z.string(),
+})
+export type IListPlaythrough = z.infer<typeof ListPlaythroughSchema>

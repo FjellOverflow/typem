@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { useFavorites } from '@/composables/favorites'
-import { useListHistory } from '@/composables/history'
+import { useListPlaythroughs } from '@/composables/playthroughs'
 import { getSecondsPerItem, formatDuration } from '@/plugins/util'
-import type { IItemList } from '@/types'
+import type { IList } from '@/types'
 import {
   HeartIcon,
   InfoIcon,
@@ -17,7 +17,7 @@ const infoModal = useTemplateRef('infoModal')
 
 const props = withDefaults(
   defineProps<{
-    list: IItemList
+    list: IList
     showDetails?: boolean
   }>(),
   {
@@ -27,7 +27,7 @@ const props = withDefaults(
 
 const { t } = useI18n()
 
-const { bestListRun } = useListHistory(props.list.id)
+const { bestListPlaythrough } = useListPlaythroughs(props.list.id)
 const { isFavorite, toggleFavorite } = useFavorites()
 
 const difficultyLabel = computed(() => {
@@ -61,18 +61,20 @@ const difficultyLabel = computed(() => {
       </div>
 
       <div
-        v-if="bestListRun"
+        v-if="bestListPlaythrough"
         class="tooltip tooltip-bottom cursor-default"
-        :data-tip="getSecondsPerItem(bestListRun.numberOfMatches, bestListRun.seconds)"
+        :data-tip="
+          getSecondsPerItem(bestListPlaythrough.numberOfMatches, bestListPlaythrough.seconds)
+        "
       >
         <div class="flex gap-2 opacity-65">
-          <template v-if="bestListRun.finished">
+          <template v-if="bestListPlaythrough.finished">
             <TimerIcon />
-            <span> {{ formatDuration(bestListRun.seconds) }}</span>
+            <span> {{ formatDuration(bestListPlaythrough.seconds) }}</span>
           </template>
           <template v-else>
             <ListCheckIcon />
-            <span> {{ `${bestListRun.numberOfMatches}/${list.items.length}` }}</span>
+            <span> {{ `${bestListPlaythrough.numberOfMatches}/${list.items.length}` }}</span>
           </template>
         </div>
       </div>

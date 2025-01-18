@@ -1,13 +1,13 @@
 <script lang="ts">
 import { useListLoader } from '@/plugins/listLoader'
+import { useListPlaythroughs } from '@/composables/playthroughs'
 export { useListLoader }
 </script>
 
 <script setup lang="ts">
 import { formatDuration } from '@/plugins/util'
-import type { ICheckableItem, IItem } from '@/types'
+import type { ICheckableListItem, IListItem } from '@/types'
 import { useTitle } from '@vueuse/core'
-import { useHistory, useListHistory } from '@/composables/history'
 import { useChecking, useOrderedChecking } from '@/composables/checking'
 import { useTimer } from '@/composables/timer'
 import { PartyPopperIcon, RotateCwIcon, ThumbsUpIcon } from 'lucide-vue-next'
@@ -28,8 +28,7 @@ const settingsCard = useTemplateRef('settingsCard')
 const itemsCard = useTemplateRef('itemsCard')
 const newRecordDialog = useTemplateRef('newRecordDialog')
 
-const { allRuns } = useHistory()
-const { bestListRun } = useListHistory(list.value.id)
+const { allPlaythroughs, bestListPlaythrough } = useListPlaythroughs(list.value.id)
 
 const settings = ref({ ...list.value.settings })
 const checker = ref()
@@ -41,7 +40,7 @@ const isStopped = ref(false)
 const isDone = ref(false)
 
 const input = ref('')
-const newMatch = ref<IItem | undefined>()
+const newMatch = ref<IListItem | undefined>()
 
 function init() {
   settings.value.allowOverride = false
@@ -95,7 +94,9 @@ function onStop() {
 
   itemsCard.value?.open()
 
-  const numberOfMatches = checker.value?.items.filter((item: ICheckableItem) => item.checked).length
+  const numberOfMatches = checker.value?.items.filter(
+    (item: ICheckableListItem) => item.checked,
+  ).length
 
   if (numberOfMatches === 0) return
 
@@ -106,10 +107,14 @@ function onStop() {
     numberOfMatches,
     timestamp: new Date().toISOString(),
   }
-  if (newRun.finished && bestListRun.value?.finished && newRun.seconds < bestListRun.value.seconds)
-    newRecordDialog.value?.open(newRun, bestListRun.value)
+  if (
+    newRun.finished &&
+    bestListPlaythrough.value?.finished &&
+    newRun.seconds < bestListPlaythrough.value.seconds
+  )
+    newRecordDialog.value?.open(newRun, bestListPlaythrough.value)
 
-  allRuns.value.push(newRun)
+  allPlaythroughs.value.push(newRun)
 }
 
 function onInput() {

@@ -1,19 +1,19 @@
 <script setup lang="ts">
-import { useHistory } from '@/composables/history'
+import { usePlaythroughs } from '@/composables/playthroughs'
 import { getListById } from '@/plugins/listLoader'
 import { getSecondsPerItem, formatDuration } from '@/plugins/util'
-import { type IItemList, type IRun } from '@/types'
+import { type IList, type IListPlaythrough } from '@/types'
 import { BanIcon, CheckIcon, TrashIcon, TrophyIcon } from 'lucide-vue-next'
 
 const confirmDeletionModal = useTemplateRef('confirmDeletionModal')
 
 const props = defineProps<{
-  run: IRun
+  run: IListPlaythrough
 }>()
 
-const { getBestRun, deleteRun } = useHistory()
+const { getBestListPlaythrough, deletePlaythrough } = usePlaythroughs()
 
-const list = ref<IItemList>()
+const list = ref<IList>()
 const isRecord = ref(false)
 
 loadList()
@@ -25,7 +25,7 @@ async function loadList() {
 
   if (result) {
     list.value = result
-    const record = getBestRun(result.id)
+    const record = getBestListPlaythrough(result.id)
     isRecord.value = !!record && record.seconds === props.run.seconds
   }
 }
@@ -68,7 +68,7 @@ async function loadList() {
             <p class="py-4">Once deleted, the run can not be recovered.</p>
             <div class="modal-action">
               <form method="dialog">
-                <button @click="deleteRun(run)" class="btn btn-error btn-outline mr-4">
+                <button @click="deletePlaythrough(run)" class="btn btn-error btn-outline mr-4">
                   Confirm
                 </button>
                 <button class="btn btn-outline">Close</button>

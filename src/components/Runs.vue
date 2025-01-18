@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { IRun } from '@/types'
+import type { IListPlaythrough } from '@/types'
 
 const props = defineProps<{
-  runs: IRun[]
+  runs: IListPlaythrough[]
 }>()
 
 const sortedRuns = computed(() => {

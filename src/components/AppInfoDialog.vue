@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { BugIcon, HouseIcon, RotateCcwIcon } from 'lucide-vue-next'
 import packageJson from '../../package.json'
-import { useHistory } from '@/composables/history'
 import logo from '@/assets/logo.svg'
+import { usePlaythroughs } from '@/composables/playthroughs'
 
 const {
   name: packageName,
@@ -16,7 +16,7 @@ const {
 const appInfoModal = useTemplateRef('appInfoDialog')
 const confirmResetModal = useTemplateRef('confirmResetModal')
 
-const { resetAll } = useHistory()
+const { deleteAllPlaythroughs } = usePlaythroughs()
 
 defineExpose({ open: () => appInfoModal.value?.showModal() })
 </script>
@@ -49,7 +49,9 @@ defineExpose({ open: () => appInfoModal.value?.showModal() })
             </p>
             <div class="modal-action">
               <form method="dialog">
-                <button @click="resetAll" class="btn btn-error btn-outline mr-4">Confirm</button>
+                <button @click="deleteAllPlaythroughs" class="btn btn-error btn-outline mr-4">
+                  Confirm
+                </button>
                 <button class="btn btn-outline">Close</button>
               </form>
             </div>
