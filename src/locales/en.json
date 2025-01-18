@@ -24,6 +24,7 @@
     }
   },
   "index": {
+    "random": "Random",
     "info": {
       "homepage": "Homepage",
       "issues": "Report bug",

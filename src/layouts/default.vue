@@ -33,14 +33,14 @@ const randomListUrl = computed(() => {
           <NavLink to="/"><ListIcon /> All </NavLink>
         </li>
         <li>
-          <NavLink :to="randomListUrl"> <ShuffleIcon /> Random </NavLink>
+          <NavLink :to="randomListUrl"> <ShuffleIcon /> {{ $t('index.random') }} </NavLink>
         </li>
         <li>
-          <NavLink to="/favorites"><HeartIcon /> Favorites </NavLink>
+          <NavLink to="/favorites"><HeartIcon /> {{ $t('favorites.pageTitle') }} </NavLink>
         </li>
         <li>
           <NavLink to="/history" :active="route.name.startsWith('/history')">
-            <CalendarClockIcon /> History
+            <CalendarClockIcon /> {{ $t('history.pageTitle') }}
           </NavLink>
         </li>
       </ul>

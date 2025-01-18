@@ -16,6 +16,10 @@ const groups = computed(() =>
     <Runs :runs="group.items" />
   </DateGroup>
 
+  <div v-if="groups.length === 0" class="w-full flex justify-center text-3xl mt-8">
+    {{ $t('No playthroughs yet.') }}
+  </div>
+
   <div class="p-8 flex justify-center">
     <button
       v-if="numberOfVisiblePlaythroughs < allPlaythroughs.length"
