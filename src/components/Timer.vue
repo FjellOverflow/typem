@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { formatSeconds } from '@/plugins/util'
+import { formatDuration } from '@/plugins/util'
 import { PauseIcon, PlayIcon, SquareIcon } from 'lucide-vue-next'
 
 const props = defineProps<{
@@ -15,7 +15,7 @@ defineEmits<{
   stop: []
 }>()
 
-const displayTime = computed(() => formatSeconds(props.seconds))
+const displayTime = computed(() => formatDuration(props.seconds))
 
 const isStoppable = computed(
   () => (props.numberOfPauses === 0 || !props.isRunning) && props.seconds > 0,

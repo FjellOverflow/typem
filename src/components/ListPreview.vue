@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useFavorites } from '@/composables/favorites'
 import { useListHistory } from '@/composables/history'
-import { calculateSecondsPerItems, formatSeconds } from '@/plugins/util'
+import { getSecondsPerItem, formatDuration } from '@/plugins/util'
 import type { IItemList } from '@/types'
 import {
   HeartIcon,
@@ -63,12 +63,12 @@ const difficultyLabel = computed(() => {
       <div
         v-if="bestListRun"
         class="tooltip tooltip-bottom cursor-default"
-        :data-tip="calculateSecondsPerItems(bestListRun.numberOfMatches, bestListRun.seconds)"
+        :data-tip="getSecondsPerItem(bestListRun.numberOfMatches, bestListRun.seconds)"
       >
         <div class="flex gap-2 opacity-65">
           <template v-if="bestListRun.finished">
             <TimerIcon />
-            <span> {{ formatSeconds(bestListRun.seconds) }}</span>
+            <span> {{ formatDuration(bestListRun.seconds) }}</span>
           </template>
           <template v-else>
             <ListCheckIcon />

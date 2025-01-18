@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { getListById } from '@/assets/lists/loader'
 import { useHistory } from '@/composables/history'
-import { calculateSecondsPerItems, formatSeconds } from '@/plugins/util'
+import { getSecondsPerItem, formatDuration } from '@/plugins/util'
 import { type IItemList, type IRun } from '@/types'
 import { BanIcon, CheckIcon, TrashIcon, TrophyIcon } from 'lucide-vue-next'
 
@@ -37,9 +37,9 @@ async function loadList() {
         <RouterLink :to="`/play/${list.id}`">{{ list.meta.name }}</RouterLink>
       </span>
       <div class="flex flex-col items-end">
-        <span> {{ formatSeconds(run.seconds) }}</span>
+        <span> {{ formatDuration(run.seconds) }}</span>
         <span class="opacity-65 text-base">
-          {{ calculateSecondsPerItems(run.numberOfMatches, run.seconds) }}
+          {{ getSecondsPerItem(run.numberOfMatches, run.seconds) }}
         </span>
       </div>
     </div>

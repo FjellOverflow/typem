@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { formatSeconds } from '@/plugins/util'
+import { formatDuration } from '@/plugins/util'
 import { type IRun } from '@/types'
 import { PartyPopperIcon } from 'lucide-vue-next'
 
@@ -26,13 +26,13 @@ defineExpose({ open })
   <dialog ref="newRecordModal" class="modal">
     <div class="modal-box border rounded-lg">
       <div class="text-4xl flex gap-4">
-        <PartyPopperIcon :size="40" /> New record: {{ formatSeconds(newBestRun?.seconds || 0) }}
+        <PartyPopperIcon :size="40" /> New record: {{ formatDuration(newBestRun?.seconds || 0) }}
       </div>
       <div class="text-xl mt-4 flex flex-col gap-2">
         <div>
           You beat your previous record from
           {{ new Date(oldBestRun?.timestamp || '').toLocaleDateString() }} by
-          {{ formatSeconds(improvement) }}.
+          {{ formatDuration(improvement) }}.
         </div>
       </div>
       <div class="modal-action">

@@ -4,7 +4,7 @@ export { useListLoader }
 </script>
 
 <script setup lang="ts">
-import { formatSeconds } from '@/plugins/util'
+import { formatDuration } from '@/plugins/util'
 import type { ICheckableItem, IItem } from '@/types'
 import { useTitle } from '@vueuse/core'
 import { useHistory, useListHistory } from '@/composables/history'
@@ -184,7 +184,7 @@ function onInput() {
           <span class="text-3xl">You did it!</span>
           <span class="text-xl"
             >You named all {{ list.items.length }} items in
-            {{ formatSeconds(timer.seconds) }}.</span
+            {{ formatDuration(timer.seconds) }}.</span
           >
         </div>
       </div>
