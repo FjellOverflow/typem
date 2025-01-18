@@ -1,6 +1,7 @@
 <script lang="ts">
 import { useListsLoader } from '@/plugins/listLoader'
 import { usePlaythroughs } from '@/composables/playthroughs'
+import { groupByDate } from '@/plugins/util'
 export { useListsLoader }
 </script>
 
@@ -19,7 +20,18 @@ const records = computed(() =>
     .map((listId) => getBestListPlaythrough(listId))
     .filter((p) => !!p),
 )
+
+const groups = computed(() =>
+  groupByDate(
+    records.value.map((r) => ({
+      ...r,
+      date: new Date(r.timestamp),
+    })),
+  ),
+)
 </script>
 <template>
-  <Runs :runs="records" />
+  <DateGroup v-for="group in groups" :key="group.date.toISOString()" :date="group.date">
+    <Runs :runs="group.items" />
+  </DateGroup>
 </template>

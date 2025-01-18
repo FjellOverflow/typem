@@ -22,3 +22,16 @@ export function getSecondsPerItem(numberOfItems: number, seconds: number) {
 
   return `${secondsPerItem.toFixed(2)} seconds/item`
 }
+
+export function groupByDate<T extends { date: Date }>(items: T[]): { date: Date; items: T[] }[] {
+  const groupsMap = new Map<string, { date: Date; items: T[] }>()
+
+  items.forEach((item) => {
+    const dateStr = item.date.toDateString()
+
+    if (!groupsMap.has(dateStr)) groupsMap.set(dateStr, { date: new Date(dateStr), items: [item] })
+    else groupsMap.get(dateStr)?.items.push(item)
+  })
+
+  return [...groupsMap.values()].sort((g1, g2) => g2.date.getTime() - g1.date.getTime())
+}

@@ -1,4 +1,20 @@
 {
+  "history": {
+    "pageTitle": "History",
+    "nav": {
+      "all": "All",
+      "finished": "Finished",
+      "records": "Records"
+    },
+    "loadMore": "Load more",
+    "records": {
+      "pageTitle": "Records"
+    }
+  },
+  "favorites": {
+    "pageTitle": "Favorites",
+    "noData": "No lists marked favorite yet."
+  },
   "checkedItems": {
     "label": "Checked items"
   },
