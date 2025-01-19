@@ -7,5 +7,5 @@ export { useListsLoader }
 const { data: lists } = useListsLoader()
 </script>
 <template>
-  <Lists :lists />
+  <ListsList :lists />
 </template>

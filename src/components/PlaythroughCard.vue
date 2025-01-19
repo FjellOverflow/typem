@@ -4,11 +4,12 @@ import { getListById } from '@/plugins/listLoader'
 import { getSecondsPerItem, formatDuration } from '@/plugins/util'
 import { type IList, type IListPlaythrough } from '@/types'
 import { BanIcon, CheckIcon, TrashIcon, TrophyIcon } from 'lucide-vue-next'
+import DeletePlaythroughDialog from './dialogs/DeletePlaythroughDialog.vue'
 
 const confirmDeletionDialog = useTemplateRef('confirmDeletionDialog')
 
 const props = defineProps<{
-  run: IListPlaythrough
+  playthrough: IListPlaythrough
 }>()
 
 const { getBestListPlaythrough, deletePlaythrough } = usePlaythroughs()
@@ -18,15 +19,15 @@ const isRecord = ref(false)
 
 loadList()
 
-watch(props.run, loadList)
+watch(props.playthrough, loadList)
 
 async function loadList() {
-  const result = await getListById(props.run.listId)
+  const result = await getListById(props.playthrough.listId)
 
   if (result) {
     list.value = result
     const record = getBestListPlaythrough(result.id)
-    isRecord.value = !!record && record.seconds === props.run.seconds
+    isRecord.value = !!record && record.seconds === props.playthrough.seconds
   }
 }
 </script>
@@ -37,9 +38,9 @@ async function loadList() {
         <RouterLink :to="`/play/${list.id}`">{{ list.meta.name }}</RouterLink>
       </span>
       <div class="flex flex-col items-end">
-        <span> {{ formatDuration(run.seconds) }}</span>
+        <span> {{ formatDuration(playthrough.seconds) }}</span>
         <span class="opacity-65 text-base">
-          {{ getSecondsPerItem(run.numberOfMatches, run.seconds) }}
+          {{ getSecondsPerItem(playthrough.numberOfMatches, playthrough.seconds) }}
         </span>
       </div>
     </div>
@@ -51,28 +52,29 @@ async function loadList() {
             <TrophyIcon :size="14" /> {{ $t('Record') }}
           </div>
           <div class="mx-auto" />
-          <div v-if="run.finished" class="badge badge-outline badge-success h-7 p-2 flex gap-1">
+          <div
+            v-if="playthrough.finished"
+            class="badge badge-outline badge-success h-7 p-2 flex gap-1"
+          >
             <CheckIcon :size="14" /> {{ $t('Finished') }}
           </div>
           <div v-else class="badge badge-outline badge-error h-7 p-2 flex gap-1">
             <BanIcon :size="14" />
-            {{ $t('Matched {number}', { number: `${run.numberOfMatches}/${list.items.length}` }) }}
+            {{
+              $t('Matched {number}', {
+                number: `${playthrough.numberOfMatches}/${list.items.length}`,
+              })
+            }}
           </div>
         </div>
-        <span class="opacity-50">{{ new Date(run.timestamp).toLocaleString() }}</span>
+        <span class="opacity-50">{{ new Date(playthrough.timestamp).toLocaleString() }}</span>
       </div>
 
       <div class="flex justify-end">
-        <ConfirmDialog
+        <DeletePlaythroughDialog
           ref="confirmDeletionDialog"
-          @confirm="deletePlaythrough(run)"
-          sentiment="error"
-        >
-          <template #title> {{ $t('Are you sure?') }} </template>
-          <template #body>
-            {{ $t('Once deleted, the playthrough can not be recovered.') }}
-          </template>
-        </ConfirmDialog>
+          @confirm="deletePlaythrough(playthrough)"
+        />
         <button @click="confirmDeletionDialog?.open()" class="btn btn-ghost">
           <TrashIcon />
         </button>

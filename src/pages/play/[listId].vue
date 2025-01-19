@@ -133,7 +133,7 @@ function onInput() {
 <template>
   <NewRecordDialog ref="newRecordDialog" />
   <div class="grid grid-cols-5 items-center gap-4 py-4">
-    <ListPreview :list class="col-span-5" :show-details="!isInitialized">
+    <ListPreviewCard :list class="col-span-5" :show-details="!isInitialized">
       <template #action>
         <button
           v-if="!isInitialized"
@@ -150,23 +150,23 @@ function onInput() {
           <RotateCwIcon /> {{ $t('Restart') }}
         </button>
       </template>
-    </ListPreview>
+    </ListPreviewCard>
 
     <template v-if="isInitialized">
       <template v-if="!isDone">
-        <Hint
+        <HintCard
           v-if="!isStopped && settings.showHints"
           :items="checker?.items || []"
           :can-cycle="!settings.requireOrder"
           class="col-span-5"
           @move="inputField?.focus()"
         />
-        <Timer
+        <TimerCard
           ref="timerCard"
           :seconds="timer?.seconds || 0"
+          :numberOfPauses="timer?.remainingPauses || 0"
           :isStopped
           :isRunning
-          :numberOfPauses="timer?.remainingPauses || 0"
           @start="onStart"
           @pause="onPause"
           @stop="onStop"
@@ -200,14 +200,14 @@ function onInput() {
       </div>
     </template>
 
-    <Items
+    <ItemsTable
       ref="itemsCard"
       :items="checker?.items || list.items"
+      :highlighted="newMatch"
       :isStopped
       class="col-span-5"
-      :highlighted="newMatch"
     />
 
-    <Settings v-model="settings" ref="settingsCard" class="col-span-5" />
+    <SettingsCard ref="settingsCard" v-model="settings" class="col-span-5" />
   </div>
 </template>

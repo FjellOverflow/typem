@@ -52,12 +52,29 @@ const difficultyLabel = computed(() => {
       <slot name="action" />
     </div>
     <div v-if="showDetails" class="col-span-3 flex items-center gap-8">
-      <div class="flex gap-2 opacity-65">
-        <ListIcon /> <span>{{ $t('{number} items', { number: list.items.length }) }}</span>
+      <div
+        class="tooltip tooltip-bottom cursor-default"
+        :data-tip="
+          $t('{items} and more', {
+            items: list.items
+              .slice(0, 3)
+              .map((i) => `${i.answer}`)
+              .join(', '),
+          })
+        "
+      >
+        <div class="flex gap-2 opacity-65">
+          <ListIcon /> <span>{{ $t('{number} items', { number: list.items.length }) }}</span>
+        </div>
       </div>
-      <div class="flex gap-2 opacity-65">
-        <StarIcon v-for="i in list.meta.difficulty" :key="i" />
-        <span> {{ difficultyLabel }}</span>
+      <div
+        class="tooltip tooltip-bottom cursor-default"
+        :data-tip="$t('Difficulties are Easy, Medium and Hard')"
+      >
+        <div class="flex gap-2 opacity-65">
+          <StarIcon v-for="i in list.meta.difficulty" :key="i" />
+          <span> {{ difficultyLabel }}</span>
+        </div>
       </div>
 
       <div
@@ -85,16 +102,20 @@ const difficultyLabel = computed(() => {
       </div>
       <div class="mx-auto" />
       <div class="flex gap-1">
-        <button
-          @click="toggleFavorite(list)"
-          class="btn btn-ghost"
-          :class="{ 'text-primary': isFavorite(list) }"
-        >
-          <HeartIcon :class="{ 'fill-primary': isFavorite(list) }" />
-        </button>
-        <button @click="listInfoPopUp?.open()" class="btn btn-ghost">
-          <InfoIcon />
-        </button>
+        <div class="tooltip tooltip-bottom" :data-tip="$t('Mark as favorite')">
+          <button
+            @click="toggleFavorite(list)"
+            class="btn btn-ghost"
+            :class="{ 'text-primary': isFavorite(list) }"
+          >
+            <HeartIcon :class="{ 'fill-primary': isFavorite(list) }" />
+          </button>
+        </div>
+        <div class="tooltip tooltip-bottom" :data-tip="$t('More about the list')">
+          <button @click="listInfoPopUp?.open()" class="btn btn-ghost">
+            <InfoIcon />
+          </button>
+        </div>
         <ListInfoPopUp :list ref="listInfoPopUp" />
       </div>
     </div>

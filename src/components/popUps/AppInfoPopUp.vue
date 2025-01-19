@@ -41,20 +41,10 @@ const { deleteAllPlaythroughs } = usePlaythroughs()
             <BugIcon /> {{ $t('Report bug') }}
           </button></a
         >
-        <ConfirmDialog
+        <DeleteAllPlaythroughsDialog
           ref="confirmDeleteAllDialog"
-          sentiment="error"
           @confirm="deleteAllPlaythroughs"
-        >
-          <template #title> {{ $t('Are you sure?') }} </template>
-          <template #body>
-            {{
-              $t(
-                'This action removes ALL past playthroughs. Once reset, they can not be recovered.',
-              )
-            }}
-          </template>
-        </ConfirmDialog>
+        />
 
         <button
           @click="confirmDeleteAllDialog?.open()"

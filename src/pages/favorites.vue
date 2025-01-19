@@ -17,5 +17,5 @@ const { isFavorite } = useFavorites()
 const favorites = computed(() => lists.value.filter(isFavorite))
 </script>
 <template>
-  <Lists :lists="favorites" :no-data-text="$t('No lists marked favorite yet.')" />
+  <ListsList :lists="favorites" :no-data-text="$t('No lists marked favorite yet.')" />
 </template>
