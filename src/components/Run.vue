@@ -48,14 +48,15 @@ async function loadList() {
       <div class="col-span-3 flex justify-between items-end">
         <div class="flex gap-2">
           <div v-if="isRecord" class="badge badge-outline badge-primary h-7 p-2 flex gap-1">
-            <TrophyIcon :size="14" /> Record
+            <TrophyIcon :size="14" /> {{ $t('Record') }}
           </div>
           <div class="mx-auto" />
           <div v-if="run.finished" class="badge badge-outline badge-success h-7 p-2 flex gap-1">
-            <CheckIcon :size="14" /> Finished
+            <CheckIcon :size="14" /> {{ $t('Finished') }}
           </div>
           <div v-else class="badge badge-outline badge-error h-7 p-2 flex gap-1">
-            <BanIcon :size="14" /> Matched {{ run.numberOfMatches }}/{{ list.items.length }}
+            <BanIcon :size="14" />
+            {{ $t('Matched {number}', { number: `${run.numberOfMatches}/${list.items.length}` }) }}
           </div>
         </div>
         <span class="opacity-50">{{ new Date(run.timestamp).toLocaleString() }}</span>
@@ -67,8 +68,10 @@ async function loadList() {
           @confirm="deletePlaythrough(run)"
           sentiment="error"
         >
-          <template #title> Are you sure? </template>
-          <template #body> Once deleted, the run can not be recovered. </template>
+          <template #title> {{ $t('Are you sure?') }} </template>
+          <template #body>
+            {{ $t('Once deleted, the playthrough can not be recovered.') }}
+          </template>
         </ConfirmDialog>
         <button @click="confirmDeletionDialog?.open()" class="btn btn-ghost">
           <TrashIcon />

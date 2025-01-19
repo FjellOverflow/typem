@@ -33,14 +33,14 @@ const isStoppable = computed(
         class="btn btn-outline"
         @click="$emit('pause')"
       >
-        <PauseIcon /> {{ $t('timer.pause.label') }}
+        <PauseIcon /> {{ $t('Pause') }}
         {{ numberOfPauses >= 0 ? `(${numberOfPauses})` : '' }}
       </button>
       <button v-else class="btn btn-outline" @click="$emit('start')">
-        <PlayIcon /> {{ $t(seconds === 0 ? 'timer.start.label' : 'timer.resume.label') }}
+        <PlayIcon /> {{ $t(seconds === 0 ? 'Start' : 'Resume') }}
       </button>
       <button v-if="isStoppable" class="btn btn-outline" @click="$emit('stop')">
-        <SquareIcon /> {{ $t('timer.stop.label') }}
+        <SquareIcon /> {{ $t('Give up') }}
       </button>
     </template>
   </div>

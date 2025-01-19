@@ -31,14 +31,14 @@ defineExpose({ open: () => confirmDialog.value?.showModal() })
         <form method="dialog">
           <div class="flex gap-4">
             <button v-if="showCancelBtn" class="btn btn-outline" @click="$emit('cancel')">
-              {{ $t('dialog.cancel') }}
+              {{ $t('Cancel') }}
             </button>
             <button
               class="btn btn-outline"
               :class="sentiment ? `btn-${sentiment}` : ''"
               @click="$emit('confirm')"
             >
-              {{ $t('dialog.confirm') }}
+              {{ $t('Confirm') }}
             </button>
           </div>
         </form>

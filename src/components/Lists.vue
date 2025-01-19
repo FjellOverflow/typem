@@ -79,12 +79,12 @@ function resetFilters() {
     />
     <select class="select select-bordered w-48 capitalize" v-model="filterTag">
       <option v-for="tag in availableTags" :key="tag" :value="tag" class="capitalize">
-        Tag: {{ tag }}
+        {{ $t('Tag') }}: {{ tag }}
       </option>
     </select>
     <select class="select select-bordered w-48" v-model="sortBy">
-      <option value="name">Sort by name</option>
-      <option value="difficulty">Sort by difficulty</option>
+      <option value="name">{{ $t('Sort by name') }}</option>
+      <option value="difficulty">{{ $t('Sort by difficulty') }}</option>
     </select>
     <button class="btn btn-ghost" @click="toggleSortDirection">
       <ArrowDownNarrowWideIcon v-if="sortDirection === 'asc'" />
@@ -96,7 +96,7 @@ function resetFilters() {
       @click="resetFilters"
       :disabled="!filtersActive"
     >
-      <XIcon /> Clear
+      <XIcon /> {{ $t('Clear') }}
     </button>
   </div>
   <ListPreview v-for="list in filteredLists" :key="list.id" :list class="mt-4 last:mb-8">
@@ -105,7 +105,7 @@ function resetFilters() {
         class="btn btn-outline btn-primary text-xl font-medium"
         @click="$router.push(`/play/${list.id}`)"
       >
-        {{ $t('play.label') }} <Gamepad2Icon />
+        {{ $t("Let's play!") }} <Gamepad2Icon />
       </button>
     </template>
   </ListPreview>

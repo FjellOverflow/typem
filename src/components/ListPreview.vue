@@ -31,11 +31,11 @@ const { bestListPlaythrough } = useListPlaythroughs(props.list.id)
 const { isFavorite, toggleFavorite } = useFavorites()
 
 const difficultyLabel = computed(() => {
-  if (props.list.meta.difficulty === 3) return t('difficulty.hard')
+  if (props.list.meta.difficulty === 3) return t('Hard')
 
-  if (props.list.meta.difficulty === 2) return t('difficulty.medium')
+  if (props.list.meta.difficulty === 2) return t('Medium')
 
-  return t('difficulty.easy')
+  return t('Easy')
 })
 </script>
 <template>
@@ -53,7 +53,7 @@ const difficultyLabel = computed(() => {
     </div>
     <div v-if="showDetails" class="col-span-3 flex items-center gap-8">
       <div class="flex gap-2 opacity-65">
-        <ListIcon /> <span>{{ list.items.length }} items</span>
+        <ListIcon /> <span>{{ $t('{number} items', { number: list.items.length }) }}</span>
       </div>
       <div class="flex gap-2 opacity-65">
         <StarIcon v-for="i in list.meta.difficulty" :key="i" />
@@ -81,7 +81,7 @@ const difficultyLabel = computed(() => {
 
       <div v-if="!list.settings.allowOverride" class="flex gap-2 opacity-65">
         <LockIcon />
-        <span>{{ $t('settings.cannotOverride') }}</span>
+        <span>{{ $t('Predefined settings') }}</span>
       </div>
       <div class="mx-auto" />
       <div class="flex gap-1">

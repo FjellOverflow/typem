@@ -21,10 +21,10 @@ defineProps<{
         <span class="text-2xl">{{ list.meta.description }}</span>
         <div class="flex justify-between mt-4 text-base">
           <span>
-            {{ $t('list.info.createdBy') }} <i>{{ list.meta.author }}</i>
+            {{ $t('Created by') }} <i>{{ list.meta.author }}</i>
           </span>
           <span>
-            {{ $t('list.info.lastUpdate') }}:
+            {{ $t('Last update') }}:
             <i>{{ new Date(list.meta.lastUpdated).toLocaleDateString() }}</i>
           </span>
           <a
@@ -34,7 +34,7 @@ defineProps<{
             noopener
             :href="list.meta.source"
           >
-            <i>{{ $t('list.info.source') }}</i>
+            <i>{{ $t('Source') }}</i>
             <ExternalLinkIcon :size="14" />
           </a>
         </div>

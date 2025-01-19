@@ -34,23 +34,35 @@ defineExpose({
       <div class="flex gap-2 items-center">
         <LockIcon v-if="!settings.allowOverride" />
         <SettingsIcon v-else />
-        {{ $t('settings.label') }}
+        {{ $t('Settings') }}
       </div>
     </template>
     <template #content>
       <div class="grid grid-cols-2 gap-4">
         <div>
-          <Tooltip :label="$t('settings.showHints.tooltip')">
+          <Tooltip
+            :label="
+              $t(
+                'Show the hint or question for the item. Example: What is the capital of Germany?.',
+              )
+            "
+          >
             <Toggle
               v-model="settings.showHints"
-              :label="$t('settings.showHints.label')"
+              :label="$t('Show hints')"
               :disabled="!settings.allowOverride"
             />
           </Tooltip>
-          <Tooltip :label="$t('settings.allowPauses.tooltip')">
+          <Tooltip
+            :label="
+              $t(
+                'Allow pausing the timer during the quiz. If allowed, choose between 1 to 5 or a infinite number of pauses.',
+              )
+            "
+          >
             <Toggle
               :model-value="settings.numberOfPauses !== 0"
-              :label="$t('settings.allowPauses.label')"
+              :label="$t('Allow pauses')"
               :disabled="!settings.allowOverride"
               @update:model-value="onUpdateAllowPauses"
             />
@@ -67,24 +79,38 @@ defineExpose({
           </div>
         </div>
         <div>
-          <Tooltip :label="$t('settings.requireWhitespaces.tooltip')">
+          <Tooltip
+            :label="
+              $t(
+                'If enabled, requires you to type out all whitespaces. If disabled, whitespaces can be omitted, for example BuenosAires matches Buenos Aires.',
+              )
+            "
+          >
             <Checkbox
               v-model="settings.requireWhitespaces"
-              :label="$t('settings.requireWhitespaces.label')"
+              :label="$t('Require whitespaces')"
               :disabled="!settings.allowOverride"
             />
           </Tooltip>
-          <Tooltip :label="$t('settings.requireCapitalization.tooltip')">
+          <Tooltip
+            :label="
+              $t(
+                'If enabled, requires you to use capital and lowercase letters. If disabled, capitalization is ignored, for example berlin matches Berlin.',
+              )
+            "
+          >
             <Checkbox
               v-model="settings.requireCapitalization"
-              :label="$t('settings.requireCapitalization.label')"
+              :label="$t('Require proper capitalization')"
               :disabled="!settings.allowOverride"
             />
           </Tooltip>
-          <Tooltip :label="$t('settings.requireOrder.tooltip')">
+          <Tooltip
+            :label="$t('If enabled, requires you match the items in the same order as defined.')"
+          >
             <Checkbox
               v-model="settings.requireOrder"
-              :label="$t('settings.requireOrder.label')"
+              :label="$t('Require right ordering')"
               :disabled="!settings.allowOverride"
             />
           </Tooltip>

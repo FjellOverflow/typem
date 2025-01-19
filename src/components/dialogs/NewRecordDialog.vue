@@ -27,12 +27,12 @@ defineExpose({ open })
     <template #title>
       <div class="flex gap-4">
         <PartyPopperIcon :size="40" />
-        {{ $t('newRecord.title', { duration: formatDuration(newBestRun?.seconds || 0) }) }}
+        {{ $t('New record: {duration}', { duration: formatDuration(newBestRun?.seconds || 0) }) }}
       </div>
     </template>
     <template #body>
       {{
-        $t('newRecord.message', {
+        $t('You beat your previous record from {date} by {seconds}.', {
           date: new Date(oldBestRun?.timestamp || '').toLocaleDateString(),
           seconds: formatDuration(improvement),
         })

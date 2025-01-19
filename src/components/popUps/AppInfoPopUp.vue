@@ -33,12 +33,12 @@ const { deleteAllPlaythroughs } = usePlaythroughs()
       <div class="flex gap-4 justify-around my-4">
         <a :href="homepageUrl" target="_blank">
           <button class="btn btn-outline btn-primary text-sm font-medium">
-            <HouseIcon /> {{ $t('index.info.homepage') }}
+            <HouseIcon /> {{ $t('Homepage') }}
           </button>
         </a>
         <a :href="bugReportUrl" target="_blank">
           <button class="btn btn-outline btn-warning text-sm font-medium">
-            <BugIcon /> {{ $t('index.info.issues') }}
+            <BugIcon /> {{ $t('Report bug') }}
           </button></a
         >
         <ConfirmDialog
@@ -46,9 +46,13 @@ const { deleteAllPlaythroughs } = usePlaythroughs()
           sentiment="error"
           @confirm="deleteAllPlaythroughs"
         >
-          <template #title> {{ $t('index.info.resetHistory.dialog.title') }} </template>
+          <template #title> {{ $t('Are you sure?') }} </template>
           <template #body>
-            {{ $t('index.info.resetHistory.dialog.message') }}
+            {{
+              $t(
+                'This action removes ALL past playthroughs. Once reset, they can not be recovered.',
+              )
+            }}
           </template>
         </ConfirmDialog>
 
@@ -56,12 +60,12 @@ const { deleteAllPlaythroughs } = usePlaythroughs()
           @click="confirmDeleteAllDialog?.open()"
           class="btn btn-outline btn-error text-sm font-medium"
         >
-          <RotateCcwIcon /> {{ $t('index.info.resetHistory.button') }}
+          <RotateCcwIcon /> {{ $t('Reset history') }}
         </button>
       </div>
       <div class="text-lg opacity-65 gap-4 flex justify-around">
-        <div>{{ $t('index.info.version', { version: packageVersion }) }}</div>
-        <div>{{ $t('index.info.author', { author: packageAuthor }) }}</div>
+        <div>{{ $t('Version {version}', { version: packageVersion }) }}</div>
+        <div>{{ $t('Created by {author}', { author: packageAuthor }) }}</div>
       </div>
     </template>
   </PopUp>

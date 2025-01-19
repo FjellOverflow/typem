@@ -1,111 +1,64 @@
 {
-  "history": {
-    "pageTitle": "History",
-    "nav": {
-      "all": "All",
-      "finished": "Finished",
-      "records": "Records"
-    },
-    "loadMore": "Load more",
-    "records": {
-      "pageTitle": "Records"
-    }
-  },
-  "favorites": {
-    "pageTitle": "Favorites",
-    "noData": "No lists marked favorite yet."
-  },
-  "play": {
-    "start": "I'm ready!",
-    "restart": "Restart",
-    "finished": {
-      "title": "You did it!",
-      "message": "You named all {number} items in {duration}."
-    }
-  },
-  "index": {
-    "random": "Random",
-    "info": {
-      "homepage": "Homepage",
-      "issues": "Report bug",
-      "version": "Version {version}",
-      "author": "Created by {author}",
-      "resetHistory": {
-        "button": "Reset history",
-        "dialog": {
-          "title": "Are you sure?",
-          "message": "This action removes ALL past playthroughs. Once reset, they can not be recovered."
-        }
-      }
-    }
-  },
-  "list": {
-    "info": {
-      "createdBy": "Created by",
-      "lastUpdate": "Last update",
-      "source": "Source"
-    }
-  },
-  "dialog": {
-    "confirm": "Confirm",
-    "cancel": "Cancel"
-  },
-  "newRecord": {
-    "title": "New record: {duration}",
-    "message": "You beat your previous record from {date} by {seconds}."
-  },
-
-  "checkedItems": {
-    "label": "Checked items"
-  },
-  "difficulty": {
-    "easy": "Easy",
-    "medium": "Medium",
-    "hard": "Hard"
-  },
-  "items": {
-    "label": "Items"
-  },
-  "hint": {
-    "next": "Next",
-    "previous": "Previous",
-    "none": "No hint available"
-  },
-  "settings": {
-    "label": "Settings",
-    "canOverride": "Custom settings",
-    "cannotOverride": "Predefined settings",
-    "showHints": {
-      "label": "Show hints",
-      "tooltip": "Show the hint or question for the item. Example: \"What is the capital of Germany?\"."
-    },
-    "allowPauses": {
-      "label": "Allow pauses",
-      "tooltip": "Allow pausing the timer during the quiz. If allowed, choose between 1 to 5 or a infinite number of pauses."
-    },
-    "requireWhitespaces": {
-      "label": "Require whitespaces",
-      "tooltip": "If enabled, requires you to type out all whitespaces. If disabled, whitespaces can be omitted, for example \"BuenosAires\" matches \"Buenos Aires\"."
-    },
-    "requireCapitalization": {
-      "label": "Require proper capitalization",
-      "tooltip": "If enabled, requires you to use capital and lowercase letters. If disabled, capitalization is ignored, for example \"berlin\" matches \"Berlin\"."
-    },
-    "requireOrder": {
-      "label": "Require right ordering",
-      "tooltip": "If enabled, requires you match the items in the same order as defined."
-    }
-  },
-  "timer": {
-    "seconds": {
-      "short": "sec"
-    },
-    "minutes": {
-      "short": "min"
-    },
-    "start": { "label": "Start" },
-    "pause": { "label": "Pause" },
-    "resume": { "label": "Resume" },
-    "stop": { "label": "Give up" }
-  }
+  "{number} items": "{number} items",
+  "All": "All",
+  "Allow pauses": "Allow pauses",
+  "Allow pausing the timer during the quiz. If allowed, choose between 1 to 5 or a infinite number of pauses.": "Allow pausing the timer during the quiz. If allowed, choose between 1 to 5 or a infinite number of pauses.",
+  "Are you sure?": "Are you sure?",
+  "Cancel": "Cancel",
+  "Clear": "Clear",
+  "Confirm": "Confirm",
+  "Created by {author}": "Created by {author}",
+  "Created by": "Created by",
+  "Easy": "Easy",
+  "Favorites": "Favorites",
+  "Finished": "Finished",
+  "Give up": "Give up",
+  "Hard": "Hard",
+  "History": "History",
+  "Homepage": "Homepage",
+  "I'm ready!": "I'm ready!",
+  "If enabled, requires you match the items in the same order as defined.": "If enabled, requires you match the items in the same order as defined.",
+  "If enabled, requires you to type out all whitespaces. If disabled, whitespaces can be omitted, for example BuenosAires matches Buenos Aires.": "If enabled, requires you to type out all whitespaces. If disabled, whitespaces can be omitted, for example \"BuenosAires\" matches \"Buenos Aires\".",
+  "If enabled, requires you to use capital and lowercase letters. If disabled, capitalization is ignored, for example berlin matches Berlin.": "If enabled, requires you to use capital and lowercase letters. If disabled, capitalization is ignored, for example \"berlin\" matches \"Berlin\".",
+  "Items": "Items",
+  "Last update": "Last update",
+  "Let's play!": "Let's play!",
+  "Load more": "Load more",
+  "Matched {number}": "Matched {number}",
+  "Medium": "Medium",
+  "New record: {duration}": "New record: {duration}",
+  "Next": "Next",
+  "No hint available": "No hint available",
+  "No lists marked favorite yet.": "No lists marked favorite yet.",
+  "No playthroughs yet.": "No playthroughs yet.",
+  "Once deleted, the playthrough can not be recovered.": "Once deleted, the playthrough can not be recovered.",
+  "Pause": "Pause",
+  "Predefined settings": "Predefined settings",
+  "Previous": "Previous",
+  "Random": "Random",
+  "Record": "Record",
+  "Records": "Records",
+  "Report bug": "Report bug",
+  "Require proper capitalization": "Require proper capitalization",
+  "Require right ordering": "Require right ordering",
+  "Require whitespaces": "Require whitespaces",
+  "Reset history": "Reset history",
+  "Restart": "Restart",
+  "Resume": "Resume",
+  "Settings": "Settings",
+  "Show hints": "Show hints",
+  "Show the hint or question for the item. Example: What is the capital of Germany?.": "Show the hint or question for the item. Example: \"What is the capital of Germany?\".",
+  "Sort by difficulty": "Sort by difficulty",
+  "Sort by name": "Sort by name",
+  "Source": "Source",
+  "Start": "Start",
+  "Tag": "Tag",
+  "This action removes ALL past playthroughs. Once reset, they can not be recovered.": "This action removes ALL past playthroughs. Once reset, they can not be recovered.",
+  "Version {version}": "Version {version}",
+  "You beat your previous record from {date} by {seconds}.": "You beat your previous record from {date} by {seconds}.",
+  "You did it!": "You did it!",
+  "You named all {number} items in {duration}.": "You named all {number} items in {duration}.",
+  "min": "min",
+  "item": "item",
+  "sec": "sec"
 }

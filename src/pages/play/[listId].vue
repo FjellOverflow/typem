@@ -140,14 +140,14 @@ function onInput() {
           class="btn btn-outline btn-primary text-xl font-medium"
           @click="init"
         >
-          <ThumbsUpIcon /> {{ $t('play.start') }}
+          <ThumbsUpIcon /> {{ $t("I'm ready!") }}
         </button>
         <button
           v-if="isInitialized && isStopped"
           class="btn btn-outline btn-primary text-xl font-medium"
           @click="reset"
         >
-          <RotateCwIcon /> {{ $t('play.restart') }}
+          <RotateCwIcon /> {{ $t('Restart') }}
         </button>
       </template>
     </ListPreview>
@@ -187,10 +187,10 @@ function onInput() {
       <div v-else class="border border-success rounded-lg col-span-5 p-4">
         <div class="flex gap-4 items-end text-success">
           <PartyPopperIcon :size="36" />
-          <span class="text-3xl">{{ $t('play.finished.title') }}</span>
+          <span class="text-3xl">{{ $t('You did it!') }}</span>
           <span class="text-xl">
             {{
-              $t('play.finished.message', {
+              $t('You named all {number} items in {duration}.', {
                 number: list.items.length,
                 duration: formatDuration(timer.seconds),
               })

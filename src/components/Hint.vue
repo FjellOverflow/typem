@@ -39,16 +39,16 @@ const nextItem = computed(() => uncheckedItems.value[offset.value])
 <template>
   <div class="border rounded-lg p-4 text-2xl flex justify-between">
     <button v-if="canCycle" class="btn btn-outline text-xl font-medium" @click="onClickPrevious">
-      <ArrowLeftIcon /> {{ $t('hint.previous') }}
+      <ArrowLeftIcon /> {{ $t('Previous') }}
     </button>
 
     <div class="flex gap-4 items-center">
       <LightbulbIcon :size="36" />
-      {{ nextItem?.hint || $t('hint.none') }}
+      {{ nextItem?.hint || $t('No hint available') }}
     </div>
 
     <button v-if="canCycle" class="btn btn-outline text-xl font-medium" @click="onClickNext">
-      <ArrowRightIcon /> {{ $t('hint.next') }}
+      <ArrowRightIcon /> {{ $t('Next') }}
     </button>
   </div>
 </template>

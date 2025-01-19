@@ -27,7 +27,7 @@ const groups = computed(() =>
       class="btn btn-outline"
     >
       <EllipsisIcon />
-      {{ $t('history.loadMore') }}
+      {{ $t('Load more') }}
     </button>
   </div>
 </template>

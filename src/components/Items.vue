@@ -24,7 +24,7 @@ defineExpose({
     <template #title>
       <div class="flex gap-2 items-center">
         <ListCheckIcon />
-        {{ `${$t('items.label')} (${numberOfItemsChecked}/${items.length})` }}
+        {{ `${$t('Items')} (${numberOfItemsChecked}/${items.length})` }}
       </div>
     </template>
     <template #content>

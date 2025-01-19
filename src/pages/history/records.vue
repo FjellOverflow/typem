@@ -9,7 +9,7 @@ export { useListsLoader }
 import { useTitle } from '@vueuse/core'
 
 const { t } = useI18n()
-useTitle(`${t('history.records.pageTitle')} - Typem`)
+useTitle(`${t('Records')} - Typem`)
 
 const { data: lists } = useListsLoader()
 
