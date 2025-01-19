@@ -48,23 +48,50 @@ async function loadList() {
     <div class="text-lg font-medium grid grid-cols-4 w-full">
       <div class="col-span-3 flex justify-between items-end">
         <div class="flex gap-2">
-          <div v-if="isRecord" class="badge badge-outline badge-primary h-7 p-2 flex gap-1">
-            <TrophyIcon :size="14" /> {{ $t('Record') }}
+          <div
+            v-if="isRecord"
+            class="tooltip tooltip-bottom cursor-default"
+            :data-tip="
+              playthrough.finished
+                ? $t('This is your fastest time finishing the list!')
+                : $t('This is the playthrough in which you named the most items!')
+            "
+          >
+            <div class="badge badge-outline badge-primary h-7 p-2 flex gap-1">
+              <TrophyIcon :size="14" /> {{ $t('Record') }}
+            </div>
           </div>
+
           <div class="mx-auto" />
+
           <div
             v-if="playthrough.finished"
-            class="badge badge-outline badge-success h-7 p-2 flex gap-1"
+            class="tooltip tooltip-bottom cursor-default"
+            :data-tip="$t('You named all items on the list!')"
           >
-            <CheckIcon :size="14" /> {{ $t('Finished') }}
+            <div class="badge badge-outline badge-success h-7 p-2 flex gap-1">
+              <CheckIcon :size="14" /> {{ $t('Finished') }}
+            </div>
           </div>
-          <div v-else class="badge badge-outline badge-error h-7 p-2 flex gap-1">
-            <BanIcon :size="14" />
-            {{
-              $t('Matched {number}', {
-                number: `${playthrough.numberOfMatches}/${list.items.length}`,
+
+          <div
+            v-else
+            class="tooltip tooltip-bottom cursor-default"
+            :data-tip="
+              $t('You only named {actual} of {total} items', {
+                actual: playthrough.numberOfMatches,
+                total: list.items.length,
               })
-            }}
+            "
+          >
+            <div class="badge badge-outline badge-error h-7 p-2 flex gap-1">
+              <BanIcon :size="14" />
+              {{
+                $t('Matched {number}', {
+                  number: `${playthrough.numberOfMatches}/${list.items.length}`,
+                })
+              }}
+            </div>
           </div>
         </div>
         <span class="opacity-50">{{ new Date(playthrough.timestamp).toLocaleString() }}</span>
@@ -75,9 +102,11 @@ async function loadList() {
           ref="confirmDeletionDialog"
           @confirm="deletePlaythrough(playthrough)"
         />
-        <button @click="confirmDeletionDialog?.open()" class="btn btn-ghost">
-          <TrashIcon />
-        </button>
+        <div class="tooltip tooltip-bottom" :data-tip="$t('Delete playthrough')">
+          <button @click="confirmDeletionDialog?.open()" class="btn btn-ghost">
+            <TrashIcon />
+          </button>
+        </div>
       </div>
     </div>
   </div>
