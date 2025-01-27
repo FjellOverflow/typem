@@ -108,7 +108,7 @@ function resetFilters() {
   <ListPreviewCard v-for="list in filteredLists" :key="list.id" :list class="mt-4 last:mb-8">
     <template #action>
       <button
-        class="btn btn-outline btn-primary text-xl font-medium"
+        class="btn btn-outline btn-primary font-medium sm:text-xl"
         @click="$router.push(`/play/${list.id}`)"
       >
         {{ $t("Let's play!") }} <Gamepad2Icon />

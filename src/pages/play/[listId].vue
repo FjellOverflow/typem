@@ -137,7 +137,7 @@ function onInput() {
       <template #action>
         <button
           v-if="!isInitialized"
-          class="btn btn-outline btn-primary text-xl font-medium"
+          class="btn btn-outline btn-primary sm:text-xl font-medium"
           @click="init"
         >
           <ThumbsUpIcon /> {{ $t("I'm ready!") }}
