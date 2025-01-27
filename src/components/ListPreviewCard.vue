@@ -41,10 +41,10 @@ const difficultyLabel = computed(() => {
 <template>
   <div class="border rounded-lg p-4 grid grid-cols-3 gap-4">
     <div class="col-span-3 sm:col-span-2 flex flex-col gap-2">
-      <span class="text-3xl font-medium">
+      <span class="text-2xl lg:text-3xl font-medium">
         {{ list.meta.name }}
       </span>
-      <span v-if="showDetails" class="text-xl font-medium">
+      <span v-if="showDetails" class="lg:text-xl font-medium">
         {{ list.meta.description }}
       </span>
     </div>
