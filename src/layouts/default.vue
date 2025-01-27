@@ -30,7 +30,7 @@ const randomListUrl = computed(() => {
     <template #center>
       <ul class="menu menu-horizontal gap-2">
         <li>
-          <NavLink to="/"><ListIcon /> All </NavLink>
+          <NavLink to="/"><ListIcon /> {{ $t('All') }} </NavLink>
         </li>
         <li>
           <NavLink :to="randomListUrl"> <ShuffleIcon /> {{ $t('Random') }} </NavLink>
