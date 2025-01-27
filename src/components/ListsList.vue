@@ -116,7 +116,10 @@ function resetFilters() {
     </template>
   </ListPreviewCard>
 
-  <div v-if="filteredLists.length === 0" class="w-full flex justify-center text-3xl mt-8">
+  <div
+    v-if="filteredLists.length === 0"
+    class="w-full flex justify-center text-2xl lg:text-3xl mt-8"
+  >
     {{ filtersActive ? $t('No lists matching filters.') : noDataText }}
   </div>
 </template>
