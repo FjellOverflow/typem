@@ -75,7 +75,7 @@ function resetFilters() {
     <input
       v-model="filterKeyword"
       type="text"
-      placeholder="Type to filter"
+      :placeholder="$t('Type to filter')"
       class="input input-bordered w-48"
     />
 
