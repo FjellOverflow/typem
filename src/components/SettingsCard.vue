@@ -10,7 +10,7 @@ const numberOfPauses = computed(() =>
   settings.value.numberOfPauses >= 0 ? settings.value.numberOfPauses : 6,
 )
 
-function onUpdateAllowPauses(newVal: boolean) {
+function onUpdateAllowPauses(newVal: boolean | undefined) {
   settings.value.numberOfPauses = newVal ? -1 : 0
 }
 
@@ -38,7 +38,7 @@ defineExpose({
       </div>
     </template>
     <template #content>
-      <div class="grid grid-cols-2 gap-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 sm:gap-4">
         <div>
           <Tooltip
             :label="

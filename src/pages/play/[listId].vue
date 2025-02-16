@@ -132,8 +132,8 @@ function onInput() {
 </script>
 <template>
   <NewRecordDialog ref="newRecordDialog" />
-  <div class="grid grid-cols-5 items-center gap-4 py-4">
-    <ListPreviewCard :list class="col-span-5" :show-details="!isInitialized">
+  <div class="grid grid-cols-2 sm:grid-cols-5 items-center gap-4 py-4">
+    <ListPreviewCard :list class="col-span-2 sm:col-span-5" :show-details="!isInitialized">
       <template #action>
         <button
           v-if="!isInitialized"
@@ -158,7 +158,7 @@ function onInput() {
           v-if="!isStopped && settings.showHints"
           :items="checker?.items || []"
           :can-cycle="!settings.requireOrder"
-          class="col-span-5"
+          class="col-span-2 sm:col-span-5"
           @move="inputField?.focus()"
         />
         <TimerCard
@@ -178,13 +178,17 @@ function onInput() {
           :disabled="isStopped"
           type="text"
           :placeholder="!isRunning && !isStopped ? 'Type to start' : undefined"
-          class="input input-bordered w-full h-16 text-2xl col-span-3"
-          :class="{ 'input-primary': !isStopped, 'input-success': newMatch }"
+          class="input input-bordered w-full h-16 text-2xl col-span-2 sm:col-span-3"
+          :class="{
+            'input-primary': !isStopped,
+            'input-success': newMatch,
+            'hidden sm:block': isStopped,
+          }"
           @input="onInput"
         />
       </template>
 
-      <div v-else class="border border-success rounded-lg col-span-5 p-4">
+      <div v-else class="border border-success rounded-lg col-span-2 sm:col-span-5 p-4">
         <div class="flex gap-4 items-end text-success">
           <PartyPopperIcon :size="36" />
           <span class="text-3xl">{{ $t('You did it!') }}</span>
@@ -205,9 +209,9 @@ function onInput() {
       :items="checker?.items || list.items"
       :highlighted="newMatch"
       :isStopped
-      class="col-span-5"
+      class="col-span-2 sm:col-span-5"
     />
 
-    <SettingsCard ref="settingsCard" v-model="settings" class="col-span-5" />
+    <SettingsCard ref="settingsCard" v-model="settings" class="col-span-2 sm:col-span-5" />
   </div>
 </template>

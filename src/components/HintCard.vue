@@ -37,18 +37,24 @@ function setOffset(newOffset: number) {
 const nextItem = computed(() => uncheckedItems.value[offset.value])
 </script>
 <template>
-  <div class="border rounded-lg p-4 text-2xl flex justify-between">
-    <button v-if="canCycle" class="btn btn-outline text-xl font-medium" @click="onClickPrevious">
-      <ArrowLeftIcon /> {{ $t('Previous') }}
-    </button>
-
-    <div class="flex gap-4 items-center">
+  <div class="border rounded-lg p-4 text-2xl">
+    <div class="flex sm:hidden gap-4 items-center mb-4">
       <LightbulbIcon :size="36" />
       {{ nextItem?.hint || $t('No hint available') }}
     </div>
+    <div class="flex justify-between">
+      <button v-if="canCycle" class="btn btn-outline text-xl font-medium" @click="onClickPrevious">
+        <ArrowLeftIcon /> {{ $t('Previous') }}
+      </button>
 
-    <button v-if="canCycle" class="btn btn-outline text-xl font-medium" @click="onClickNext">
-      <ArrowRightIcon /> {{ $t('Next') }}
-    </button>
+      <div class="hidden sm:flex gap-4 items-center">
+        <LightbulbIcon :size="36" />
+        {{ nextItem?.hint || $t('No hint available') }}
+      </div>
+
+      <button v-if="canCycle" class="btn btn-outline text-xl font-medium" @click="onClickNext">
+        <ArrowRightIcon /> {{ $t('Next') }}
+      </button>
+    </div>
   </div>
 </template>

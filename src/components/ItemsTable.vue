@@ -30,7 +30,11 @@ defineExpose({
     <template #content>
       <ul
         class="grid list-none mt-4 gap-2"
-        :class="[smallerLayout ? 'grid-cols-5' : 'grid-cols-4']"
+        :class="[
+          smallerLayout
+            ? 'grid-cols-2 sm:grid-cols-4 md:grid-cols-5'
+            : 'grid-cols-2 md:grid-cols-4',
+        ]"
       >
         <li
           v-for="item in items"
