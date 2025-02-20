@@ -11,7 +11,7 @@ const route = useRoute()
 <template>
   <RouterLink
     :to
-    class="btn text-2xl"
+    class="btn sm:text-2xl text-base px-1 sm:px-4"
     :class="[route.name === to || active ? 'btn-outline' : 'btn-ghost']"
   >
     <slot />

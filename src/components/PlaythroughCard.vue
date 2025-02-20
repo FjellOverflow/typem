@@ -33,20 +33,20 @@ async function loadList() {
 </script>
 <template>
   <div v-if="list" class="border rounded-lg p-4 flex flex-col gap-4">
-    <div class="text-3xl font-medium flex justify-between">
+    <div class="text-2xl sm:text-3xl font-medium flex justify-between">
       <span class="underline">
         <RouterLink :to="`/play/${list.id}`">{{ list.meta.name }}</RouterLink>
       </span>
-      <div class="flex flex-col items-end">
+      <div class="flex flex-col items-end text-xl sm:text-3xl">
         <span> {{ formatDuration(playthrough.seconds) }}</span>
-        <span class="opacity-65 text-base">
+        <span class="opacity-65 text-xs sm:text-base items-end">
           {{ getSecondsPerItem(playthrough.numberOfMatches, playthrough.seconds) }}
         </span>
       </div>
     </div>
 
     <div class="text-lg font-medium grid grid-cols-4 w-full">
-      <div class="col-span-3 flex justify-between items-end">
+      <div class="col-span-3 flex justify-between sm:items-end items-center">
         <div class="flex gap-2">
           <div
             v-if="isRecord"
@@ -94,7 +94,9 @@ async function loadList() {
             </div>
           </div>
         </div>
-        <span class="opacity-50">{{ new Date(playthrough.timestamp).toLocaleString() }}</span>
+        <span class="hidden sm:block opacity-50">{{
+          new Date(playthrough.timestamp).toLocaleString()
+        }}</span>
       </div>
 
       <div class="flex justify-end">
