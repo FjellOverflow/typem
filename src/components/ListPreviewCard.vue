@@ -40,6 +40,7 @@ const difficultyLabel = computed(() => {
 </script>
 <template>
   <div class="border rounded-lg p-4 grid grid-cols-3 gap-4">
+    <ListInfoPopUp :list ref="listInfoPopUp" />
     <div class="col-span-3 sm:col-span-2 flex flex-col gap-2">
       <span class="text-2xl lg:text-3xl font-medium">
         {{ list.meta.name }}
@@ -117,7 +118,6 @@ const difficultyLabel = computed(() => {
             <InfoIcon />
           </button>
         </div>
-        <ListInfoPopUp :list ref="listInfoPopUp" />
       </div>
     </div>
     <div class="sm:hidden col-span-3 flex gap-2">
@@ -139,7 +139,6 @@ const difficultyLabel = computed(() => {
             <InfoIcon />
           </button>
         </div>
-        <ListInfoPopUp :list ref="listInfoPopUp" />
       </template>
     </div>
   </div>
