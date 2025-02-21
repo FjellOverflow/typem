@@ -28,7 +28,7 @@ const randomListUrl = computed(() => {
 <template>
   <NavBar>
     <template #center>
-      <ul class="menu menu-horizontal gap-2">
+      <ul class="menu menu-horizontal gap-2 xl:flex hidden">
         <li>
           <NavLink to="/"><ListIcon /> {{ $t('All') }} </NavLink>
         </li>
@@ -46,11 +46,13 @@ const randomListUrl = computed(() => {
       </ul>
     </template>
     <template #end>
-      <ThemeToggle />
-      <button @click="appInfoPopUp?.open()" class="btn btn-ghost">
-        <InfoIcon />
-      </button>
-      <AppInfoPopUp ref="appInfoPopUp" />
+      <div class="xl:block hidden">
+        <ThemeToggle />
+        <button @click="appInfoPopUp?.open()" class="btn btn-ghost">
+          <InfoIcon />
+        </button>
+        <AppInfoPopUp ref="appInfoPopUp" />
+      </div>
     </template>
   </NavBar>
   <div class="mx-auto flex w-full max-w-[90%] flex-col justify-start md:max-w-3xl">
