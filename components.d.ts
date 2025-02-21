@@ -20,6 +20,7 @@ declare module 'vue' {
     ListInfoPopUp: typeof import('./src/components/popUps/ListInfoPopUp.vue')['default']
     ListPreviewCard: typeof import('./src/components/ListPreviewCard.vue')['default']
     ListsList: typeof import('./src/components/ListsList.vue')['default']
+    MobileDropdown: typeof import('./src/components/layout/MobileDropdown.vue')['default']
     NavBar: typeof import('./src/components/layout/NavBar.vue')['default']
     NavLink: typeof import('./src/components/layout/NavLink.vue')['default']
     NewRecordDialog: typeof import('./src/components/dialogs/NewRecordDialog.vue')['default']
