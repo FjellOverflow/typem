@@ -189,10 +189,11 @@ function onInput() {
       </template>
 
       <div v-else class="border border-success rounded-lg col-span-2 sm:col-span-5 p-4">
-        <div class="flex gap-4 items-end text-success">
+        <div class="flex sm:gap-4 gap-2 items-end text-success">
           <PartyPopperIcon :size="36" />
-          <span class="text-3xl">{{ $t('You did it!') }}</span>
-          <span class="text-xl">
+          <span class="text-2xl sm:text-3xl">{{ $t('You did it!') }}</span>
+
+          <span class="sm:text-xl text-lg">
             {{
               $t('You named all {number} items in {duration}.', {
                 number: list.items.length,

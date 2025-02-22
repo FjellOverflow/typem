@@ -20,11 +20,11 @@ defineExpose({ open: () => confirmDialog.value?.showModal() })
 </script>
 <template>
   <dialog ref="confirmDialog" class="modal">
-    <div class="modal-box border rounded-lg w-xl flex flex-col gap-4">
-      <div class="text-4xl">
+    <div class="modal-box border rounded-lg w-[85%] flex flex-col gap-4">
+      <div class="sm:text-4xl text-3xl">
         <slot name="title" />
       </div>
-      <div class="text-xl">
+      <div class="text-lg sm:text-xl">
         <slot name="body" />
       </div>
       <div class="modal-action">

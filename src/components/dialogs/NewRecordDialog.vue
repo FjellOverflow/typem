@@ -26,7 +26,7 @@ defineExpose({ open })
   <ConfirmDialog ref="confirmDialog" :show-cancel-btn="false">
     <template #title>
       <div class="flex gap-4">
-        <PartyPopperIcon :size="40" />
+        <PartyPopperIcon class="h-8 sm:h-10" />
         {{
           $t('New record: {duration}', {
             duration: formatDuration(newBestPlaythrough?.seconds || 0),

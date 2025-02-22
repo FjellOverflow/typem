@@ -16,7 +16,7 @@ const groups = computed(() =>
     <PlaythroughsList :playthroughs="group.items" />
   </DateGroup>
 
-  <div v-if="groups.length === 0" class="w-full flex justify-center text-3xl mt-8">
+  <div v-if="groups.length === 0" class="w-full flex justify-center text-2xl sm:text-3xl mt-8">
     {{ $t('No playthroughs yet.') }}
   </div>
 
