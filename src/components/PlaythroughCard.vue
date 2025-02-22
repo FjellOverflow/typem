@@ -50,7 +50,7 @@ async function loadList() {
         <div class="flex gap-2">
           <div
             v-if="isRecord"
-            class="tooltip tooltip-bottom cursor-default"
+            class="tooltip tooltip-bottom before:max-w-36 cursor-default"
             :data-tip="
               playthrough.finished
                 ? $t('This is your fastest time finishing the list!')
@@ -66,7 +66,7 @@ async function loadList() {
 
           <div
             v-if="playthrough.finished"
-            class="tooltip tooltip-bottom cursor-default"
+            class="tooltip tooltip-bottom before:max-w-36 cursor-default"
             :data-tip="$t('You named all items on the list!')"
           >
             <div class="badge badge-outline badge-success h-7 p-2 flex gap-1">
@@ -76,7 +76,7 @@ async function loadList() {
 
           <div
             v-else
-            class="tooltip tooltip-bottom cursor-default"
+            class="tooltip tooltip-bottom before:max-w-36 cursor-default"
             :data-tip="
               $t('You only named {actual} of {total} items', {
                 actual: playthrough.numberOfMatches,
@@ -104,7 +104,7 @@ async function loadList() {
           ref="confirmDeletionDialog"
           @confirm="deletePlaythrough(playthrough)"
         />
-        <div class="tooltip tooltip-bottom" :data-tip="$t('Delete playthrough')">
+        <div class="tooltip tooltip-bottom before:max-w-28" :data-tip="$t('Delete playthrough')">
           <button @click="confirmDeletionDialog?.open()" class="btn btn-ghost">
             <TrashIcon />
           </button>

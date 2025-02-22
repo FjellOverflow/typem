@@ -54,7 +54,7 @@ const difficultyLabel = computed(() => {
     </div>
     <div v-if="showDetails" class="col-span-3 flex flex-wrap items-center gap-3 sm:gap-8">
       <div
-        class="tooltip tooltip-bottom cursor-default"
+        class="tooltip tooltip-bottom before:max-w-36 cursor-default"
         :data-tip="
           $t('{items} and more', {
             items: list.items
@@ -70,7 +70,7 @@ const difficultyLabel = computed(() => {
       </div>
 
       <div
-        class="tooltip tooltip-bottom cursor-default"
+        class="tooltip tooltip-bottom before:max-w-36 cursor-default"
         :data-tip="$t('Difficulties are Easy, Medium and Hard')"
       >
         <div class="flex gap-2 opacity-65">
@@ -81,7 +81,7 @@ const difficultyLabel = computed(() => {
 
       <div
         v-if="bestListPlaythrough"
-        class="tooltip tooltip-bottom cursor-default"
+        class="tooltip tooltip-bottom before:max-w-36 cursor-default"
         :data-tip="
           getSecondsPerItem(bestListPlaythrough.numberOfMatches, bestListPlaythrough.seconds)
         "
@@ -125,7 +125,7 @@ const difficultyLabel = computed(() => {
         <slot name="action" />
       </div>
       <template v-if="showDetails">
-        <div class="tooltip tooltip-bottom ml-2" :data-tip="$t('Mark as favorite')">
+        <div class="tooltip tooltip-bottom before:max-w-28 ml-2" :data-tip="$t('Mark as favorite')">
           <button
             @click="toggleFavorite(list)"
             class="btn btn-ghost"
@@ -134,7 +134,7 @@ const difficultyLabel = computed(() => {
             <HeartIcon :class="{ 'fill-primary': isFavorite(list) }" />
           </button>
         </div>
-        <div class="tooltip tooltip-bottom" :data-tip="$t('More about the list')">
+        <div class="tooltip tooltip-bottom before:max-w-28" :data-tip="$t('More about the list')">
           <button @click="listInfoPopUp?.open()" class="btn btn-ghost">
             <InfoIcon />
           </button>

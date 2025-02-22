@@ -19,7 +19,7 @@ withDefaults(
       <slot />
     </div>
     <div class="flex flex-col justify-center">
-      <div class="tooltip tooltip-bottom" :data-tip="label">
+      <div class="tooltip tooltip-bottom before:max-w-48" :data-tip="label">
         <LightbulbIcon
           v-if="type === 'hint'"
           :size
