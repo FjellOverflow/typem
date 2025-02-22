@@ -1,13 +1,8 @@
 <script setup lang="ts">
 import { matchKeyword } from '@/plugins/util'
 import { type IList } from '@/types'
-import {
-  ArrowDownNarrowWideIcon,
-  ArrowDownWideNarrowIcon,
-  Gamepad2Icon,
-  XIcon,
-} from 'lucide-vue-next'
 import { useRouteQuery } from '@vueuse/router'
+import { FilterIcon, Gamepad2Icon } from 'lucide-vue-next'
 
 const props = withDefaults(
   defineProps<{
@@ -24,6 +19,14 @@ const filterTag = useRouteQuery('tag', 'any')
 const sortBy = useRouteQuery<'name' | 'difficulty' | 'length'>('sortBy', 'name')
 const sortDirection = useRouteQuery<'asc' | 'desc'>('sortDir', 'asc')
 
+const filtersActive = computed(
+  () =>
+    !!filterKeyword.value ||
+    sortBy.value !== 'name' ||
+    sortDirection.value !== 'asc' ||
+    filterTag.value !== 'any',
+)
+
 const availableTags = computed(() => [
   'any',
   ...new Set(
@@ -33,18 +36,6 @@ const availableTags = computed(() => [
       .sort(),
   ),
 ])
-
-function toggleSortDirection() {
-  sortDirection.value = sortDirection.value === 'asc' ? 'desc' : 'asc'
-}
-
-const filtersActive = computed(
-  () =>
-    !!filterKeyword.value ||
-    sortBy.value !== 'name' ||
-    sortDirection.value !== 'asc' ||
-    filterTag.value !== 'any',
-)
 
 const filteredLists = computed(() => {
   const lists = props.lists
@@ -62,48 +53,37 @@ const filteredLists = computed(() => {
 
   return lists
 })
-
-function resetFilters() {
-  filterKeyword.value = ''
-  filterTag.value = 'any'
-  sortBy.value = 'name'
-  sortDirection.value = 'asc'
-}
 </script>
 <template>
-  <div class="flex w-full my-2 gap-4">
-    <input
-      v-model="filterKeyword"
-      type="text"
-      :placeholder="$t('Type to filter')"
-      class="input input-bordered w-48"
+  <div class="hidden md:flex w-full my-2 gap-4">
+    <ListFilters
+      v-model:keyword="filterKeyword"
+      v-model:tag="filterTag"
+      v-model:sortBy="sortBy"
+      v-model:sortDir="sortDirection"
+      :tags="availableTags"
     />
-
-    <select v-model="filterTag" class="select select-bordered w-48 capitalize">
-      <option v-for="tag in availableTags" :key="tag" :value="tag" class="capitalize">
-        {{ $t('Tag') }}: {{ tag }}
-      </option>
-    </select>
-
-    <select v-model="sortBy" class="select select-bordered w-48">
-      <option value="name">{{ $t('Sort by name') }}</option>
-      <option value="difficulty">{{ $t('Sort by difficulty') }}</option>
-      <option value="length">{{ $t('Sort by length') }}</option>
-    </select>
-
-    <button class="btn btn-ghost" @click="toggleSortDirection">
-      <ArrowDownNarrowWideIcon v-if="sortDirection === 'asc'" />
-      <ArrowDownWideNarrowIcon v-else />
-    </button>
-
-    <button
-      :disabled="!filtersActive"
-      class="ml-auto btn btn-outline text-xl font-medium"
-      @click="resetFilters"
-    >
-      <XIcon /> {{ $t('Clear') }}
-    </button>
   </div>
+
+  <CollapsibleBox class="md:hidden" :model-value="false">
+    <template #title>
+      <div class="flex gap-2 items-center">
+        <FilterIcon />
+        {{ $t('Filters') }}
+      </div>
+    </template>
+    <template #content>
+      <div class="flex flex-col gap-4 p-2">
+        <ListFilters
+          v-model:keyword="filterKeyword"
+          v-model:tag="filterTag"
+          v-model:sortBy="sortBy"
+          v-model:sortDir="sortDirection"
+          :tags="availableTags"
+        />
+      </div>
+    </template>
+  </CollapsibleBox>
 
   <ListPreviewCard v-for="list in filteredLists" :key="list.id" :list class="mt-4 last:mb-8">
     <template #action>
