@@ -55,7 +55,7 @@ const filteredLists = computed(() => {
 })
 </script>
 <template>
-  <div class="hidden md:flex w-full my-2 gap-4">
+  <div class="hidden md:flex w-full gap-4">
     <ListFilters
       v-model:keyword="filterKeyword"
       v-model:tag="filterTag"

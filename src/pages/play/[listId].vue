@@ -132,7 +132,7 @@ function onInput() {
 </script>
 <template>
   <NewRecordDialog ref="newRecordDialog" />
-  <div class="grid grid-cols-2 sm:grid-cols-5 items-center gap-4 py-4">
+  <div class="grid grid-cols-2 sm:grid-cols-5 items-center gap-4">
     <ListPreviewCard :list class="col-span-2 sm:col-span-5" :show-details="!isInitialized">
       <template #action>
         <button
