@@ -17,7 +17,7 @@ defineProps<{
     </template>
     <template #body>
       <div class="flex flex-col gap-2">
-        <span class="opacity-40 text-xl"> ({{ list.id }}) </span>
+        <span class="opacity-40 text-xl"> {{ list.meta.tags.map((t) => `#${t}`).join(', ') }}</span>
         <span class="text-xl sm:text-2xl">{{ list.meta.description }}</span>
         <div class="flex sm:flex-row flex-col gap-3 justify-between mt-4 text-base">
           <span>
