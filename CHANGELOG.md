@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.0.2](https://github.com/FjellOverflow/typem/compare/v0.0.1...v0.0.2) (2025-02-27)
+
+
+### Features
+
+* option to show raw list object in listInfoPopUp ([ac3df9f](https://github.com/FjellOverflow/typem/commit/ac3df9f27e7af120d48527ec00089357c6427953))
+* show tags instead of id in listInfoPopUp ([fac5ebc](https://github.com/FjellOverflow/typem/commit/fac5ebc9f34d4733dfa0b09d1f9f7e17856d4cd7))
+
+
+### Bug Fixes
+
+* standardize top margins on differtent main views ([2e85714](https://github.com/FjellOverflow/typem/commit/2e857149ab0dcf005aa059c1623314f66d86c029))
+
 ## 0.0.1 (2025-02-22)
 
 
