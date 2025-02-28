@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useHotkey } from '@/composables/hotkey'
 import type { ICheckableListItem } from '@/types'
 import { ArrowLeftIcon, ArrowRightIcon, LightbulbIcon } from 'lucide-vue-next'
 
@@ -9,8 +10,10 @@ const emit = defineEmits<{
 const props = defineProps<{ items: ICheckableListItem[]; canCycle: boolean }>()
 
 const offset = ref(0)
-
 const uncheckedItems = computed(() => props.items.filter((item) => !item.checked))
+
+useHotkey('ArrowRight', onClickNext)
+useHotkey('ArrowLeft', onClickPrevious)
 
 watch(uncheckedItems, () => setOffset(offset.value))
 
@@ -43,26 +46,22 @@ const nextItem = computed(() => uncheckedItems.value[offset.value])
       {{ nextItem?.hint || $t('No hint available') }}
     </div>
     <div class="flex justify-between">
-      <button
-        v-if="canCycle"
-        class="btn btn-outline text-lg sm:text-xl font-medium"
-        @click="onClickPrevious"
-      >
-        <ArrowLeftIcon /> {{ $t('Previous') }}
-      </button>
+      <div v-if="canCycle" class="tooltip tooltip-bottom" data-tip="CTRL + LeftArrow">
+        <button class="btn btn-outline text-lg sm:text-xl font-medium" @click="onClickPrevious">
+          <ArrowLeftIcon /> {{ $t('Previous') }}
+        </button>
+      </div>
 
       <div class="hidden sm:flex gap-4 items-center">
         <LightbulbIcon :size="36" />
         {{ nextItem?.hint || $t('No hint available') }}
       </div>
 
-      <button
-        v-if="canCycle"
-        class="btn btn-outline text-lg sm:text-xl font-medium"
-        @click="onClickNext"
-      >
-        <ArrowRightIcon /> {{ $t('Next') }}
-      </button>
+      <div v-if="canCycle" class="tooltip tooltip-bottom" data-tip="CTRL + RightArrow">
+        <button class="btn btn-outline text-lg sm:text-xl font-medium" @click="onClickNext">
+          <ArrowRightIcon /> {{ $t('Next') }}
+        </button>
+      </div>
     </div>
   </div>
 </template>

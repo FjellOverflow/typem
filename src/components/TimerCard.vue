@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useHotkey } from '@/composables/hotkey'
 import { formatDuration } from '@/plugins/util'
 import { PauseIcon, PlayIcon, SquareIcon } from 'lucide-vue-next'
 
@@ -9,13 +10,14 @@ const props = defineProps<{
   isStopped?: boolean
 }>()
 
-defineEmits<{
+const emit = defineEmits<{
   start: []
   pause: []
   stop: []
 }>()
 
 const displayTime = computed(() => formatDuration(props.seconds))
+useHotkey('x', () => emit('pause'))
 
 const isStoppable = computed(
   () => (props.numberOfPauses === 0 || !props.isRunning) && props.seconds > 0,
@@ -27,15 +29,12 @@ const isStoppable = computed(
       <span>{{ displayTime }}</span>
     </div>
     <template v-if="!isStopped">
-      <button
-        v-if="isRunning"
-        :disabled="numberOfPauses === 0"
-        class="btn btn-outline"
-        @click="$emit('pause')"
-      >
-        <PauseIcon /> {{ $t('Pause') }}
-        {{ numberOfPauses >= 0 ? `(${numberOfPauses})` : '' }}
-      </button>
+      <div v-if="isRunning" class="tooltip tooltip-bottom" data-tip="CTRL + X">
+        <button :disabled="numberOfPauses === 0" class="btn btn-outline" @click="$emit('pause')">
+          <PauseIcon /> {{ $t('Pause') }}
+          {{ numberOfPauses >= 0 ? `(${numberOfPauses})` : '' }}
+        </button>
+      </div>
       <button v-else class="btn btn-outline" @click="$emit('start')">
         <PlayIcon /> {{ $t(seconds === 0 ? 'Start' : 'Resume') }}
       </button>
