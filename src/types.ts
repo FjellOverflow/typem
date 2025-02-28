@@ -7,6 +7,7 @@ export const defaultSettings = {
   numberOfPauses: -1,
   showHints: false,
   allowOverride: true,
+  shuffle: false,
 }
 
 export const SettingsSchema = z.object({
@@ -16,6 +17,7 @@ export const SettingsSchema = z.object({
   numberOfPauses: z.number().default(defaultSettings.numberOfPauses),
   showHints: z.boolean().default(defaultSettings.showHints),
   allowOverride: z.boolean().default(defaultSettings.allowOverride),
+  shuffle: z.boolean().default(defaultSettings.shuffle),
 })
 export type ISettings = z.infer<typeof SettingsSchema>
 

@@ -106,11 +106,18 @@ defineExpose({
             />
           </Tooltip>
           <Tooltip
-            :label="$t('If enabled, requires you match the items in the same order as defined.')"
+            :label="$t('If enabled, requires you match the items in the same order as shown.')"
           >
             <Checkbox
               v-model="settings.requireOrder"
               :label="$t('Require right ordering')"
+              :disabled="!settings.allowOverride"
+            />
+          </Tooltip>
+          <Tooltip :label="$t('If enabled, will show items in randomized order.')">
+            <Checkbox
+              v-model="settings.shuffle"
+              :label="$t('Shuffle items')"
               :disabled="!settings.allowOverride"
             />
           </Tooltip>

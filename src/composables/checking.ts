@@ -1,5 +1,13 @@
 import type { ICheckableListItem, IListItem, ISettings } from '@/types'
 
+const shuffleItems = <T>(items: T[]): T[] => {
+  for (let i = items.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[items[i], items[j]] = [items[j], items[i]]
+  }
+  return items
+}
+
 const checkInput =
   (withWhitespaces: boolean, withCapitalization: boolean) => (input: string, item: IListItem) => {
     let processedInput = `${input}`
@@ -20,7 +28,7 @@ const checkInput =
 
 export function useChecking(
   rawItems: IListItem[],
-  { requireWhitespaces, requireCapitalization }: ISettings,
+  { requireWhitespaces, requireCapitalization, shuffle }: ISettings,
   onDone: () => void,
 ) {
   const checkFun = checkInput(requireWhitespaces, requireCapitalization)
@@ -28,6 +36,8 @@ export function useChecking(
   const items = ref<ICheckableListItem[]>([
     ...rawItems.map((item) => ({ ...item, checked: false })),
   ])
+
+  if (shuffle) shuffleItems(items.value)
 
   function check(input: string) {
     const matchedItem = items.value
@@ -50,7 +60,7 @@ export function useChecking(
 
 export function useOrderedChecking(
   rawItems: IListItem[],
-  { requireWhitespaces, requireCapitalization }: ISettings,
+  { requireWhitespaces, requireCapitalization, shuffle }: ISettings,
   onDone: () => void,
 ) {
   const checkFun = checkInput(requireWhitespaces, requireCapitalization)
@@ -58,6 +68,8 @@ export function useOrderedChecking(
   const items = ref<ICheckableListItem[]>([
     ...rawItems.map((item) => ({ ...item, checked: false })),
   ])
+
+  if (shuffle) shuffleItems(items.value)
 
   function check(input: string) {
     const item = items.value.filter((item) => !item.checked)[0]
