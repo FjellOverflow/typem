@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.0.3](https://github.com/FjellOverflow/typem/compare/v0.0.2...v0.0.3) (2025-03-03)
+
+
+### Features
+
+* filter and sort history ([52d8820](https://github.com/FjellOverflow/typem/commit/52d8820c9679ef3b55ab39156ea710abd082549f))
+* keyboard shortcuts ([d1d026c](https://github.com/FjellOverflow/typem/commit/d1d026c01782098fa06a5a066b75d55ed2bf756c))
+* setting to shuffle items ([82253bc](https://github.com/FjellOverflow/typem/commit/82253bc212d38b8bb4719b3f5cc1ff23230cb97e))
+
 ## [0.0.2](https://github.com/FjellOverflow/typem/compare/v0.0.1...v0.0.2) (2025-02-27)
 
 
