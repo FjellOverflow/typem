@@ -7,17 +7,8 @@ function sortPlaythroughByMatchesAndSeconds(p1: IListPlaythrough, p2: IListPlayt
   return p1.seconds - p2.seconds
 }
 
-function sortPlaythroughsByTimestamp(
-  { timestamp: t1 }: IListPlaythrough,
-  { timestamp: t2 }: IListPlaythrough,
-) {
-  const [d1, d2] = [new Date(t1), new Date(t2)]
-
-  return d2.getTime() - d1.getTime()
-}
-
 function validatePlaythroughs(objects: unknown[]): IListPlaythrough[] {
-  const verified = objects
+  return objects
     .map((o) => {
       try {
         return ListPlaythroughSchema.parse(o)
@@ -26,8 +17,6 @@ function validatePlaythroughs(objects: unknown[]): IListPlaythrough[] {
       }
     })
     .filter((o) => !!o)
-
-  return verified.sort(sortPlaythroughsByTimestamp)
 }
 
 export function usePlaythroughs() {

@@ -7,7 +7,7 @@ useTitle(`${t('History')} - Typem`)
 import { ListCheckIcon, ListIcon, TrophyIcon } from 'lucide-vue-next'
 </script>
 <template>
-  <div class="grid grid-cols-3 gap-2 sm:gap-4 mb-2 sm:mb-4">
+  <div class="grid grid-cols-3 gap-2 sm:gap-4 mb-4 sm:mb-4">
     <NavLink to="/history/all"><ListIcon class="w-4 sm:w-6" /> {{ $t('All') }} </NavLink>
     <NavLink to="/history/finished"
       ><ListCheckIcon class="w-4 sm:w-6" /> {{ $t('Finished') }}
