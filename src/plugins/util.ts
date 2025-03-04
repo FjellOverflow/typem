@@ -24,3 +24,15 @@ export function getSecondsPerItem(numberOfItems: number, seconds: number) {
 
   return `${secondsPerItem.toFixed(2)} ${t('sec')}/${t('item')}`
 }
+
+export function downloadJSON(obj: unknown, fileName: string) {
+  const jsonBlob = new Blob([JSON.stringify(obj)], { type: 'application/json' })
+  const url = URL.createObjectURL(jsonBlob)
+  const a = document.createElement('a')
+  a.href = url
+  a.download = `${fileName}.json`
+  document.body.appendChild(a)
+  a.click()
+  window.URL.revokeObjectURL(url)
+  document.body.removeChild(a)
+}

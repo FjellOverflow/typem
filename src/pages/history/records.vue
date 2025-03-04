@@ -1,13 +1,13 @@
 <script lang="ts">
 import { useListsLoader } from '@/plugins/listLoader'
-import { usePlaythroughs } from '@/composables/playthroughs'
-import { useRouteQuery } from '@vueuse/router'
-import { FilterIcon } from 'lucide-vue-next'
 export { useListsLoader }
 </script>
 
 <script setup lang="ts">
 import { useTitle } from '@vueuse/core'
+import { usePlaythroughs } from '@/composables/playthroughs'
+import { useRouteQuery } from '@vueuse/router'
+import { FilterIcon } from 'lucide-vue-next'
 
 const { t } = useI18n()
 useTitle(`${t('Records')} - Typem`)

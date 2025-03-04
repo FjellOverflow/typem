@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const popUp = useTemplateRef('popUp')
 
-defineExpose({ open: () => popUp.value?.showModal() })
+defineExpose({ open: () => popUp.value?.showModal(), close: () => popUp.value?.close() })
 </script>
 <template>
   <dialog ref="popUp" class="modal">
