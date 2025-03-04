@@ -36,5 +36,6 @@ declare module 'vue' {
     TimerCard: typeof import('./src/components/TimerCard.vue')['default']
     Toggle: typeof import('./src/components/inputs/Toggle.vue')['default']
     Tooltip: typeof import('./src/components/inputs/Tooltip.vue')['default']
+    UploadHistoryJsonDialog: typeof import('./src/components/dialogs/UploadHistoryJsonDialog.vue')['default']
   }
 }

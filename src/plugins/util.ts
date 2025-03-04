@@ -36,3 +36,14 @@ export function downloadJSON(obj: unknown, fileName: string) {
   window.URL.revokeObjectURL(url)
   document.body.removeChild(a)
 }
+
+export async function uploadJSON(file: File) {
+  const content = await new Promise((resolve, reject) => {
+    const fileReader = new FileReader()
+    fileReader.onload = (event) => resolve(event.target?.result)
+    fileReader.onerror = (error) => reject(error)
+    fileReader.readAsText(file)
+  })
+
+  return JSON.parse(content as string)
+}

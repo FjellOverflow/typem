@@ -46,7 +46,21 @@ export function usePlaythroughs() {
     allPlaythroughs.value = []
   }
 
-  return { allPlaythroughs, getBestListPlaythrough, deletePlaythrough, deleteAllPlaythroughs }
+  function importPlaythroughs(importedObj: unknown) {
+    if (!Array.isArray(importedObj)) return
+
+    const newPlaythroughs = validatePlaythroughs([...importedObj])
+
+    if (newPlaythroughs.length > 0) allPlaythroughs.value = newPlaythroughs
+  }
+
+  return {
+    allPlaythroughs,
+    getBestListPlaythrough,
+    deletePlaythrough,
+    deleteAllPlaythroughs,
+    importPlaythroughs,
+  }
 }
 
 export function useListPlaythroughs(listId: string) {

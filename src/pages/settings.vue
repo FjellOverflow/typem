@@ -7,13 +7,14 @@ export { useListsLoader }
 import { usePlaythroughs } from '@/composables/playthroughs'
 import { downloadJSON } from '@/plugins/util'
 import { useTitle } from '@vueuse/core'
-import { DownloadIcon, RotateCcwIcon, TrophyIcon } from 'lucide-vue-next'
+import { DownloadIcon, RotateCcwIcon, TrophyIcon, UploadIcon } from 'lucide-vue-next'
 
 const { t } = useI18n()
 useTitle(`${t('Settings')} - Typem`)
 
 const { data: lists } = useListsLoader()
 const confirmDeleteAllDialog = useTemplateRef('confirmDeleteAllDialog')
+const uploadHistoryJsonDialog = useTemplateRef('uploadHistoryJsonDialog')
 
 const { allPlaythroughs, deleteAllPlaythroughs, getBestListPlaythrough } = usePlaythroughs()
 
@@ -32,6 +33,8 @@ function onClickDownloadRecords() {
 <template>
   <div class="sm:mb-4">
     <DeleteAllPlaythroughsDialog ref="confirmDeleteAllDialog" @confirm="deleteAllPlaythroughs" />
+
+    <UploadHistoryJsonDialog ref="uploadHistoryJsonDialog" />
 
     <CollapsibleBox :model-value="true">
       <template #title>
@@ -56,6 +59,12 @@ function onClickDownloadRecords() {
             @click="onClickDownloadRecords"
           >
             <TrophyIcon class="h-5 sm:h-6" /> {{ $t('Export records only') }}
+          </button>
+          <button
+            class="btn btn-outline text-sm font-medium sm:w-auto w-2/3"
+            @click="uploadHistoryJsonDialog?.open()"
+          >
+            <UploadIcon class="h-5 sm:h-6" /> {{ $t('Import from JSON') }}
           </button>
           <button
             class="btn btn-outline text-sm font-medium sm:w-auto w-2/3"
