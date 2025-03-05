@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.0.4](https://github.com/FjellOverflow/typem/compare/v0.0.3...v0.0.4) (2025-03-05)
+
+
+### Features
+
+* import history from JSON ([0f4dfad](https://github.com/FjellOverflow/typem/commit/0f4dfad540de3329713e260981e3567966ea529d))
+* settings page, history exports ([730276e](https://github.com/FjellOverflow/typem/commit/730276eafde6ffc4571afa49ac3ffd965522f6c9))
+* upload custom lists, toasts ([f3c8914](https://github.com/FjellOverflow/typem/commit/f3c89144757c068c7a1081217a8f285c6de0d7eb))
+
 ## [0.0.3](https://github.com/FjellOverflow/typem/compare/v0.0.2...v0.0.3) (2025-03-03)
 
 
