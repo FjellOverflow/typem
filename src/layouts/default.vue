@@ -30,6 +30,7 @@ function closeDropdown() {
 </script>
 
 <template>
+  <Toasts />
   <NavBar>
     <template #center>
       <ul class="menu menu-horizontal gap-2 xl:flex hidden">

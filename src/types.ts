@@ -39,6 +39,7 @@ export const ListSchema = z.object({
     source: z.string(),
     tags: z.array(z.string()),
     category: z.string(),
+    isCustom: z.boolean().default(false),
   }),
   items: z.array(ListItemSchema),
   settings: SettingsSchema.default(defaultSettings),

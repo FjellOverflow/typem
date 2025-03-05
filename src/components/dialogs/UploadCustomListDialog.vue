@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { usePlaythroughs } from '@/composables/playthroughs'
+import { useCustomLists } from '@/composables/customLists'
 import { useToasts } from '@/composables/toasts'
 import { uploadJSON } from '@/plugins/util'
 
@@ -10,7 +10,7 @@ const fileInputVisible = ref(true)
 
 const { t } = useI18n()
 const { sendToast } = useToasts()
-const { importPlaythroughs } = usePlaythroughs()
+const { importList } = useCustomLists()
 
 function onUpload(e: Event) {
   uploadedFile.value = [...((e.target as HTMLInputElement).files || [])][0]
@@ -21,7 +21,7 @@ async function onConfirmUpload() {
   if (uploadedFile.value) {
     try {
       const result = await uploadJSON(uploadedFile.value)
-      success = importPlaythroughs(result)
+      success = importList(result)
     } catch (e) {
       console.error(e)
     }
@@ -53,13 +53,11 @@ defineExpose({ open: () => confirmDialog.value?.showModal() })
   <dialog ref="confirmDialog" class="modal">
     <div class="modal-box border rounded-lg w-[85%] flex flex-col gap-4">
       <div class="sm:text-4xl text-3xl">
-        {{ $t('Overwrite history?') }}
+        {{ $t('Import custom list') }}
       </div>
       <div class="text-lg sm:text-xl">
         {{
-          $t(
-            'This action replaces ALL past playthroughs. Once new playthroughs are imported, the old playthroughs can not be recovered.',
-          )
+          $t('You can upload a custom list that shows up among the built-in lists and is playable.')
         }}
       </div>
       <div class="mt-4">

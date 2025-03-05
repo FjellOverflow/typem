@@ -12,7 +12,10 @@ declare module 'vue' {
     Checkbox: typeof import('./src/components/inputs/Checkbox.vue')['default']
     CollapsibleBox: typeof import('./src/components/layout/CollapsibleBox.vue')['default']
     ConfirmDialog: typeof import('./src/components/dialogs/ConfirmDialog.vue')['default']
+    CustomListCard: typeof import('./src/components/CustomListCard.vue')['default']
+    DeleteAllCustomListsDialog: typeof import('./src/components/dialogs/DeleteAllCustomListsDialog.vue')['default']
     DeleteAllPlaythroughsDialog: typeof import('./src/components/dialogs/DeleteAllPlaythroughsDialog.vue')['default']
+    DeleteCustomListDialog: typeof import('./src/components/dialogs/DeleteCustomListDialog.vue')['default']
     DeletePlaythroughDialog: typeof import('./src/components/dialogs/DeletePlaythroughDialog.vue')['default']
     HintCard: typeof import('./src/components/HintCard.vue')['default']
     ItemsTable: typeof import('./src/components/ItemsTable.vue')['default']
@@ -34,8 +37,10 @@ declare module 'vue' {
     SettingsCard: typeof import('./src/components/SettingsCard.vue')['default']
     ThemeToggle: typeof import('./src/components/layout/ThemeToggle.vue')['default']
     TimerCard: typeof import('./src/components/TimerCard.vue')['default']
+    Toasts: typeof import('./src/components/layout/Toasts.vue')['default']
     Toggle: typeof import('./src/components/inputs/Toggle.vue')['default']
     Tooltip: typeof import('./src/components/inputs/Tooltip.vue')['default']
+    UploadCustomListDialog: typeof import('./src/components/dialogs/UploadCustomListDialog.vue')['default']
     UploadHistoryJsonDialog: typeof import('./src/components/dialogs/UploadHistoryJsonDialog.vue')['default']
   }
 }

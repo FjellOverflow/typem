@@ -46,12 +46,17 @@ export function usePlaythroughs() {
     allPlaythroughs.value = []
   }
 
-  function importPlaythroughs(importedObj: unknown) {
-    if (!Array.isArray(importedObj)) return
+  function importPlaythroughs(importedObj: unknown): boolean {
+    if (!Array.isArray(importedObj)) return false
 
     const newPlaythroughs = validatePlaythroughs([...importedObj])
 
-    if (newPlaythroughs.length > 0) allPlaythroughs.value = newPlaythroughs
+    if (newPlaythroughs.length > 0) {
+      allPlaythroughs.value = newPlaythroughs
+      return true
+    }
+
+    return false
   }
 
   return {

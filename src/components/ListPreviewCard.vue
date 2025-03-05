@@ -44,6 +44,9 @@ const difficultyLabel = computed(() => {
     <div class="col-span-3 sm:col-span-2 flex flex-col gap-2">
       <span class="text-2xl lg:text-3xl font-medium">
         {{ list.meta.name }}
+        <span v-if="list.meta.isCustom" class="badge badge-outline badge-primary align-middle">{{
+          $t('Custom')
+        }}</span>
       </span>
       <span v-if="showDetails" class="lg:text-xl font-medium">
         {{ list.meta.description }}

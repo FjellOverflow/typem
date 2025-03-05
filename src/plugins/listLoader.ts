@@ -1,8 +1,13 @@
+import { useCustomLists } from '@/composables/customLists'
 import { ListSchema, type IList } from '@/types'
 import { NavigationResult } from 'unplugin-vue-router/data-loaders'
 import { defineBasicLoader } from 'unplugin-vue-router/data-loaders/basic'
 
-const lists: IList[] = []
+const { lists: customLists } = useCustomLists()
+
+const builtInLists: IList[] = []
+
+const lists = computed(() => [...builtInLists, ...customLists.value])
 
 const isLoaded = new Promise(async (resolve) => {
   const files = import.meta.glob('@/assets/lists/**/[^.]*.json')
@@ -19,8 +24,7 @@ const isLoaded = new Promise(async (resolve) => {
   )
 
   const results = await Promise.all(promises)
-  lists.push(...results.filter((r) => !!r))
-  lists.sort((l1, l2) => l1.meta.name.localeCompare(l2.meta.name))
+  builtInLists.push(...results.filter((r) => !!r))
 
   resolve(true)
 })
@@ -28,7 +32,7 @@ const isLoaded = new Promise(async (resolve) => {
 export async function getListById(listId: string): Promise<IList> {
   await isLoaded
 
-  const list = lists.find(({ id }) => id === listId)
+  const list = lists.value.find(({ id }) => id === listId)
 
   if (list) return list
 
@@ -38,7 +42,7 @@ export async function getListById(listId: string): Promise<IList> {
 export const useListsLoader = defineBasicLoader('/', async () => {
   await isLoaded
 
-  return lists
+  return lists.value
 })
 
 export const useListLoader = defineBasicLoader('/play/[listId]', async (to) => {
