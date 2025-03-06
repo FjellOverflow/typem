@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { BugIcon, HouseIcon, SettingsIcon } from 'lucide-vue-next'
+import { BugIcon, DownloadIcon, HouseIcon, SettingsIcon } from 'lucide-vue-next'
 import packageJson from '../../../package.json'
 import logo from '@/assets/logo.svg'
+import { pwaInstallPromptEvent } from '@/plugins/pwaInstall'
 
 const popUp = useTemplateRef('popUp')
 
@@ -25,14 +26,23 @@ const {
       <div class="text-lg sm:text-xl flex flex-col gap-2">
         <div>{{ packageDescription }}</div>
       </div>
-      <div class="flex flex-col sm:flex-row gap-4 justify-around my-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
+        <div v-if="pwaInstallPromptEvent" class="text-center">
+          <button
+            ref="pwaInstallButton"
+            class="btn btn-outline btn-primary text-sm font-medium w-3/4"
+            @click="pwaInstallPromptEvent.prompt()"
+          >
+            <DownloadIcon class="h-5 sm:h-6" /> {{ $t('Install as app') }}
+          </button>
+        </div>
         <a :href="homepageUrl" target="_blank" class="text-center">
-          <button class="btn btn-outline text-sm font-medium sm:w-auto w-2/3">
+          <button class="btn btn-outline text-sm font-medium w-3/4">
             <HouseIcon class="h-5 sm:h-6" /> {{ $t('Homepage') }}
           </button>
         </a>
         <a :href="bugReportUrl" target="_blank" class="text-center">
-          <button class="btn btn-outline text-sm font-medium sm:w-auto w-2/3">
+          <button class="btn btn-outline text-sm font-medium w-3/4">
             <BugIcon class="h-5 sm:h-6" /> {{ $t('Report bug') }}
           </button></a
         >
@@ -40,7 +50,7 @@ const {
         <div class="text-center">
           <RouterLink
             to="/settings"
-            class="btn btn-outline btn-primary text-sm font-medium sm:w-auto w-2/3"
+            class="btn btn-outline text-sm font-medium w-3/4"
             @click="popUp?.close()"
           >
             <SettingsIcon class="h-5 sm:h-6" /> {{ $t('Settings') }}
