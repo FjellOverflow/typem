@@ -42,6 +42,12 @@ export default defineConfig({
             type: 'image/png',
             purpose: 'maskable',
           },
+          {
+            src: '/web-app-manifest-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'any',
+          },
         ],
         theme_color: '#7480ff',
         background_color: '#ffffff',
