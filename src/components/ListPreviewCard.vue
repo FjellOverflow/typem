@@ -30,6 +30,10 @@ const { t } = useI18n()
 const { bestListPlaythrough } = useListPlaythroughs(props.list.id)
 const { isFavorite, toggleFavorite } = useFavorites()
 
+const imageUrl = computed(() =>
+  props.list.meta.imageUrl ? new URL(props.list.meta.imageUrl, import.meta.url).href : undefined,
+)
+
 const difficultyLabel = computed(() => {
   if (props.list.meta.difficulty === 3) return t('Hard')
 
@@ -41,20 +45,30 @@ const difficultyLabel = computed(() => {
 <template>
   <div class="border rounded-lg p-4 grid grid-cols-3 gap-4">
     <ListInfoPopUp :list ref="listInfoPopUp" />
-    <div class="col-span-3 sm:col-span-2 flex flex-col gap-2">
-      <span class="text-2xl lg:text-3xl font-medium">
-        {{ list.meta.name }}
-        <span v-if="list.meta.isCustom" class="badge badge-outline badge-primary align-middle">{{
-          $t('Custom')
-        }}</span>
-      </span>
-      <span v-if="showDetails" class="lg:text-xl font-medium">
-        {{ list.meta.description }}
-      </span>
+    <div class="col-span-3 sm:col-span-2 grid grid-cols-4 items-center">
+      <img
+        v-if="imageUrl"
+        :src="imageUrl"
+        class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 p-2 md:p-3"
+        style="border-radius: 16px"
+      />
+      <div class="col-span-3 flex flex-col gap-2" :class="imageUrl ? 'col-span-3' : 'col-span-4'">
+        <span class="text-2xl lg:text-3xl font-medium">
+          {{ list.meta.name }}
+          <span v-if="list.meta.isCustom" class="badge badge-outline badge-primary align-middle">{{
+            $t('Custom')
+          }}</span>
+        </span>
+        <span v-if="showDetails" class="lg:text-xl font-medium">
+          {{ list.meta.description }}
+        </span>
+      </div>
     </div>
+
     <div class="sm:col-span-1 sm:flex hidden flex-col justify-center">
       <slot name="action" />
     </div>
+
     <div v-if="showDetails" class="col-span-3 flex flex-wrap items-center gap-3 sm:gap-8">
       <div
         class="tooltip tooltip-bottom before:max-w-36 cursor-default"

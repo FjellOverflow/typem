@@ -17,6 +17,10 @@ const { getBestListPlaythrough, deletePlaythrough } = usePlaythroughs()
 const list = ref<IList>()
 const isRecord = ref(false)
 
+const imageUrl = computed(() =>
+  list.value?.meta.imageUrl ? new URL(list.value.meta.imageUrl, import.meta.url).href : undefined,
+)
+
 loadList()
 
 watch(props.playthrough, loadList)
@@ -34,9 +38,18 @@ async function loadList() {
 <template>
   <div v-if="list" class="border rounded-lg p-4 flex flex-col gap-4">
     <div class="text-2xl sm:text-3xl font-medium flex justify-between">
-      <span class="underline">
-        <RouterLink :to="`/play/${list.id}`">{{ list.meta.name }}</RouterLink>
-      </span>
+      <div class="w-auto flex gap-2 sm:gap-4 items-center">
+        <img
+          v-if="imageUrl"
+          :src="imageUrl"
+          class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 p-2 md:p-3"
+          style="border-radius: 16px"
+        />
+        <span class="underline">
+          <RouterLink :to="`/play/${list.id}`">{{ list.meta.name }}</RouterLink>
+        </span>
+      </div>
+
       <div class="flex flex-col items-end text-xl sm:text-3xl">
         <span> {{ formatDuration(playthrough.seconds) }}</span>
         <span class="opacity-65 text-xs sm:text-base items-end">

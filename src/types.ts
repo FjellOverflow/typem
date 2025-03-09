@@ -40,6 +40,7 @@ export const ListSchema = z.object({
     tags: z.array(z.string()),
     category: z.string(),
     isCustom: z.boolean().default(false),
+    imageUrl: z.string().optional(),
   }),
   items: z.array(ListItemSchema),
   settings: SettingsSchema.default(defaultSettings),
