@@ -36,6 +36,16 @@ const {
             <DownloadIcon class="h-5 sm:h-6" /> {{ $t('Install as app') }}
           </button>
         </div>
+        <div class="text-center">
+          <RouterLink
+            to="/settings"
+            class="btn btn-outline text-sm font-medium w-3/4"
+            @click="popUp?.close()"
+          >
+            <SettingsIcon class="h-5 sm:h-6" /> {{ $t('Settings') }}
+          </RouterLink>
+        </div>
+
         <a :href="homepageUrl" target="_blank" class="text-center">
           <button class="btn btn-outline text-sm font-medium w-3/4">
             <HouseIcon class="h-5 sm:h-6" /> {{ $t('Homepage') }}
@@ -46,16 +56,6 @@ const {
             <BugIcon class="h-5 sm:h-6" /> {{ $t('Report bug') }}
           </button></a
         >
-
-        <div class="text-center">
-          <RouterLink
-            to="/settings"
-            class="btn btn-outline text-sm font-medium w-3/4"
-            @click="popUp?.close()"
-          >
-            <SettingsIcon class="h-5 sm:h-6" /> {{ $t('Settings') }}
-          </RouterLink>
-        </div>
       </div>
       <div class="text-lg opacity-65 gap-2 sm:gap-4 flex sm:flex-row flex-col justify-around">
         <div>{{ $t('Version {version}', { version: packageVersion }) }}</div>
