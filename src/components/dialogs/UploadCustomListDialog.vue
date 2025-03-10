@@ -51,7 +51,7 @@ defineExpose({ open: () => confirmDialog.value?.showModal() })
 </script>
 <template>
   <dialog ref="confirmDialog" class="modal">
-    <div class="modal-box border rounded-lg w-[85%] flex flex-col gap-4">
+    <div class="modal-box border rounded-md w-[85%] flex flex-col gap-4">
       <div class="sm:text-4xl text-3xl">
         {{ $t('Import custom list') }}
       </div>

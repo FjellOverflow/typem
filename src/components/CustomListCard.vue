@@ -10,7 +10,7 @@ const { removeCustomList } = useCustomLists()
 defineProps<{ list: IList }>()
 </script>
 <template>
-  <div class="border rounded-lg p-2 flex items-center">
+  <div class="border rounded-md p-2 flex items-center">
     <DeleteCustomListDialog ref="confirmListDeletionDialog" @confirm="removeCustomList(list)" />
     <RouterLink class="underline text-xl lg:text-2xl font-medium" :to="`/play/${list.id}`">
       {{ list.meta.name }}

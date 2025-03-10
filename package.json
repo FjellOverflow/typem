@@ -24,15 +24,15 @@
     "release": "eslint . && prettier --check src && commit-and-tag-version --sign"
   },
   "dependencies": {
+    "@tailwindcss/postcss": "^4.0.12",
     "@tsconfig/node22": "^22.0.0",
     "@vitejs/plugin-vue": "^5.2.1",
     "@vue/tsconfig": "^0.7.0",
     "@vueuse/core": "^12.7.0",
     "@vueuse/router": "^12.7.0",
-    "autoprefixer": "^10.4.20",
-    "daisyui": "^4.12.24",
+    "daisyui": "^5.0.0",
     "lucide-vue-next": "^0.476.0",
-    "tailwindcss": "^3.4.17",
+    "tailwindcss": "^4.0.12",
     "unplugin-auto-import": "^19.1.1",
     "unplugin-vue-components": "^28.4.1",
     "unplugin-vue-router": "^0.11.2",

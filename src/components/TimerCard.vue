@@ -24,7 +24,7 @@ const isStoppable = computed(
 )
 </script>
 <template>
-  <div class="border border-yellow rounded-lg grid grid-cols-2 p-4 gap-2">
+  <div class="border border-yellow rounded-md grid grid-cols-2 p-4 gap-2">
     <div class="col-span-2 text-3xl sm:text-4xl font-medium flex items-center justify-items-center">
       <span>{{ displayTime }}</span>
     </div>

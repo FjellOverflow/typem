@@ -36,13 +36,13 @@ async function loadList() {
 }
 </script>
 <template>
-  <div v-if="list" class="border rounded-lg p-4 flex flex-col gap-4">
+  <div v-if="list" class="border rounded-md p-4 flex flex-col gap-4">
     <div class="text-2xl sm:text-3xl font-medium flex justify-between">
       <div class="w-auto flex gap-2 sm:gap-4 items-center">
         <img
           v-if="imageUrl"
           :src="imageUrl"
-          class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 border rounded-lg"
+          class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 border rounded-md"
           style="border-radius: 16px"
         />
         <span class="underline">

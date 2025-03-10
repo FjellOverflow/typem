@@ -37,7 +37,7 @@ const showRaw = ref(false)
     </template>
 
     <template v-if="showRaw" #body>
-      <div class="bg-neutral rounded-lg p-4">
+      <div class="bg-neutral rounded-md p-4">
         <code class="text-sm break-all">{{ JSON.stringify(list, null, 2) }}</code>
       </div>
     </template>

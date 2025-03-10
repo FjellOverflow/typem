@@ -34,7 +34,7 @@ function toggleSortDirection() {
   </select>
 
   <div class="flex md:w-48 w-full">
-    <select v-model="sortBy" class="select select-bordered flex-grow">
+    <select v-model="sortBy" class="select select-bordered grow">
       <option value="date">{{ $t('Sort by date') }}</option>
       <option value="speed">{{ $t('Sort by speed') }}</option>
       <option value="duration">{{ $t('Sort by duration') }}</option>

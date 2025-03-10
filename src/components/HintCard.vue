@@ -40,7 +40,7 @@ function setOffset(newOffset: number) {
 const nextItem = computed(() => uncheckedItems.value[offset.value])
 </script>
 <template>
-  <div class="border rounded-lg p-4 sm:text-2xl text-xl">
+  <div class="border rounded-md p-4 sm:text-2xl text-xl">
     <div class="flex sm:hidden gap-4 items-center mb-4">
       <LightbulbIcon :size="24" />
       {{ nextItem?.hint || $t('No hint available') }}

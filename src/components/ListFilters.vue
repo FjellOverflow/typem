@@ -44,7 +44,7 @@ function resetFilters() {
   </select>
 
   <div class="flex md:w-48 w-full">
-    <select v-model="sortBy" class="select select-bordered flex-grow">
+    <select v-model="sortBy" class="select select-bordered grow">
       <option value="name">{{ $t('Sort by name') }}</option>
       <option value="difficulty">{{ $t('Sort by difficulty') }}</option>
       <option value="length">{{ $t('Sort by length') }}</option>

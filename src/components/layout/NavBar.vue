@@ -2,7 +2,7 @@
 import logo from '@/assets/logo.svg'
 </script>
 <template>
-  <div class="navbar rounded-lg border px-4 my-4 md:max-w-3xl lg:max-w-[75%] mx-auto max-w-[90%]">
+  <div class="navbar rounded-md border px-4 my-4 md:max-w-3xl lg:max-w-[75%] mx-auto max-w-[90%]">
     <div class="navbar-start flex gap-2 items-center">
       <img :src="logo" class="h-10 sm:h-14" />
     </div>

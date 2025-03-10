@@ -197,7 +197,7 @@ function onInput() {
         />
       </template>
 
-      <div v-else class="border border-success rounded-lg col-span-2 sm:col-span-5 p-4">
+      <div v-else class="border border-success rounded-md col-span-2 sm:col-span-5 p-4">
         <div class="flex sm:gap-4 gap-2 items-end text-success">
           <PartyPopperIcon :size="36" />
           <span class="text-2xl sm:text-3xl">{{ $t('You did it!') }}</span>

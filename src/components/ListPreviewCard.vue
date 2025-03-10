@@ -43,13 +43,13 @@ const difficultyLabel = computed(() => {
 })
 </script>
 <template>
-  <div class="border rounded-lg p-4 grid grid-cols-3 gap-4">
+  <div class="border rounded-md p-4 grid grid-cols-3 gap-4">
     <ListInfoPopUp :list ref="listInfoPopUp" />
     <div class="col-span-3 sm:col-span-2 grid grid-cols-4 items-center">
       <img
         v-if="imageUrl"
         :src="imageUrl"
-        class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 border rounded-lg"
+        class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 border rounded-md"
         style="border-radius: 16px"
       />
       <div class="col-span-3 flex flex-col gap-2" :class="imageUrl ? 'col-span-3' : 'col-span-4'">

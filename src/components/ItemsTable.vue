@@ -43,7 +43,7 @@ defineExpose({
           :class="{ 'text-sm': smallerLayout, 'text-base': !smallerLayout }"
         >
           <div
-            class="overflow-visible border rounded-lg py-1 px-2"
+            class="overflow-visible border rounded-md py-1 px-2"
             :class="{
               'border-success': highlighted?.answer === item.answer,
               'border-error': isStopped && !item.checked,
