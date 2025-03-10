@@ -1,0 +1,84 @@
+{
+  "id": "estonia-counties",
+  "meta": {
+    "name": "Estonian Counties",
+    "description": "Name all Estonian Counties.",
+    "difficulty": 3,
+    "tags": ["estonia", "counties"],
+    "category": "geography",
+    "source": "https://en.wikipedia.org/wiki/Counties_of_Estonia",
+    "author": "FjellOverflow",
+    "lastUpdated": "2025-03-10",
+    "imageUrl": "/images/estonia.svg"
+  },
+  "items": [
+    {
+      "answer": "Harju",
+      "matches": ["Harju"]
+    },
+    {
+      "answer": "Hiiu",
+      "matches": ["Hiiu"]
+    },
+    {
+      "answer": "Ida-Viru",
+      "matches": ["Ida-Viru", "Ida Viru"]
+    },
+    {
+      "answer": "Jõgeva",
+      "matches": ["Jõgeva", "Jogeva"]
+    },
+    {
+      "answer": "Järva",
+      "matches": ["Järva"]
+    },
+    {
+      "answer": "Lääne",
+      "matches": ["Lääne", "Laane"]
+    },
+    {
+      "answer": "Lääne-Viru",
+      "matches": ["Lääne-Viru", "Laane-Viru", "Lääne Viru", "Laane Viru"]
+    },
+    {
+      "answer": "Põlva",
+      "matches": ["Põlva", "Polva"]
+    },
+    {
+      "answer": "Pärnu",
+      "matches": ["Pärnu", "Parnu"]
+    },
+    {
+      "answer": "Rapla",
+      "matches": ["Rapla"]
+    },
+    {
+      "answer": "Saare",
+      "matches": ["Saare"]
+    },
+    {
+      "answer": "Tartu",
+      "matches": ["Tartu"]
+    },
+    {
+      "answer": "Valga",
+      "matches": ["Valga"]
+    },
+    {
+      "answer": "Viljandi",
+      "matches": ["Viljandi"]
+    },
+    {
+      "answer": "Võru",
+      "matches": ["Võru", "Voru"]
+    }
+  ],
+  "settings": {
+    "requireWhitespaces": false,
+    "requireCapitalization": false,
+    "requireOrder": false,
+    "numberOfPauses": -1,
+    "showHints": false,
+    "allowOverride": true
+  }
+}

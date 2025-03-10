@@ -1,0 +1,80 @@
+{
+  "id": "estonia-100k",
+  "meta": {
+    "name": "Estonian Cities: 10k",
+    "description": "Name all Estonian cities with more than 10.000 inhabitants.",
+    "difficulty": 3,
+    "tags": ["estonia", "cities"],
+    "category": "geography",
+    "source": "https://citypopulation.de/en/estonia/cities/",
+    "author": "FjellOverflow",
+    "lastUpdated": "2025-03-10",
+    "imageUrl": "/images/estonia.svg"
+  },
+  "items": [
+    {
+      "answer": "Tallinn",
+      "matches": ["Tallinn"]
+    },
+    {
+      "answer": "Tartu",
+      "matches": ["Tartu"]
+    },
+    {
+      "answer": "Narva",
+      "matches": ["Narva"]
+    },
+    {
+      "answer": "Pärnu",
+      "matches": ["Pärnu", "Parnu"]
+    },
+    {
+      "answer": "Kohtla-Järve",
+      "matches": ["Kohtla-Järve", "Kohtla-Jarve", "Kohtla Järve", "Kohtla Jarve"]
+    },
+    {
+      "answer": "Viljandi",
+      "matches": ["Viljandi"]
+    },
+    {
+      "answer": "Maardu",
+      "matches": ["Maardu"]
+    },
+    {
+      "answer": "Rakvere",
+      "matches": ["Rakvere"]
+    },
+    {
+      "answer": "Kuressaare",
+      "matches": ["Kuressaare"]
+    },
+    {
+      "answer": "Sillamäe",
+      "matches": ["Sillamäe", "Sillamae"]
+    },
+    {
+      "answer": "Valga",
+      "matches": ["Valga"]
+    },
+    {
+      "answer": "Võru",
+      "matches": ["Võru", "Voru"]
+    },
+    {
+      "answer": "Keila",
+      "matches": ["Keila"]
+    },
+    {
+      "answer": "Jõhvi",
+      "matches": ["Jõhvi", "Johvi"]
+    }
+  ],
+  "settings": {
+    "requireWhitespaces": false,
+    "requireCapitalization": false,
+    "requireOrder": false,
+    "numberOfPauses": -1,
+    "showHints": false,
+    "allowOverride": true
+  }
+}
