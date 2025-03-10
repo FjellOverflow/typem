@@ -5,12 +5,20 @@ export { useListsLoader }
 </script>
 
 <script setup lang="ts">
-import { ShuffleIcon, ListIcon, HeartIcon, CalendarClockIcon, InfoIcon } from 'lucide-vue-next'
+import {
+  ShuffleIcon,
+  ListIcon,
+  HeartIcon,
+  CalendarClockIcon,
+  InfoIcon,
+  ArrowUp,
+} from 'lucide-vue-next'
 
 const appInfoPopUp = useTemplateRef('appInfoPopUp')
 
 const { data: lists } = useListsLoader()
 const route = useRoute()
+const scrollPosition = ref(0)
 
 const randomListUrl = computed(() => {
   const currentRoute = route.path
@@ -27,10 +35,26 @@ const randomListUrl = computed(() => {
 function closeDropdown() {
   ;(document.activeElement as HTMLElement | null)?.blur()
 }
+
+function scrollToTop() {
+  document.body.scrollTop = 0
+  document.documentElement.scrollTop = 0
+}
+
+document.addEventListener('scroll', () => {
+  scrollPosition.value = document.body.scrollTop || document.documentElement.scrollTop
+})
 </script>
 
 <template>
   <Toasts />
+  <div class="fixed! right-2 bottom-2 sm:right-4 sm:bottom-4 md:right-8 md:bottom-8">
+    <div v-if="scrollPosition > 100" class="tooltip tooltip-top" :data-tip="$t('Back to top')">
+      <button @click="scrollToTop" class="btn btn-ghost">
+        <ArrowUp />
+      </button>
+    </div>
+  </div>
   <NavBar>
     <template #center>
       <ul class="menu menu-horizontal gap-2 xl:flex hidden">
