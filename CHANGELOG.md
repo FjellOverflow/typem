@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.0.5](https://github.com/FjellOverflow/typem/compare/v0.0.4...v0.0.5) (2025-03-10)
+
+
+### Features
+
+* borders, no padding on list preview images ([ec9d4c3](https://github.com/FjellOverflow/typem/commit/ec9d4c3940ed62272e079212a876ebe626ae91c5))
+* preview images for all builtin lists ([cfdc107](https://github.com/FjellOverflow/typem/commit/cfdc107b4178421032826515d484950fa4aec01a))
+* preview images for lists ([8bfab20](https://github.com/FjellOverflow/typem/commit/8bfab20047105052143a3b219aec71e4465bea66))
+* PWA install button ([b6c47d2](https://github.com/FjellOverflow/typem/commit/b6c47d2ea81c1bb0131da47cc61058169e7d096b))
+* PWA support ([aa1eef1](https://github.com/FjellOverflow/typem/commit/aa1eef1f1e2c240b44d853e81e9e92e681528366))
+
+
+### Bug Fixes
+
+* missing PWA icon ([b7358e8](https://github.com/FjellOverflow/typem/commit/b7358e83a3651509e84c1da392b57812dcb72bcb))
+* move vite-plugin-pwa from devDeps to deps ([77a2845](https://github.com/FjellOverflow/typem/commit/77a28451ec92aea36a58835cc5b7d250817ef4c1))
+* reorder buttons in InfoPopUp ([105cea7](https://github.com/FjellOverflow/typem/commit/105cea7b18dfea7d215e487f6c635c584338e15c))
+
 ## [0.0.4](https://github.com/FjellOverflow/typem/compare/v0.0.3...v0.0.4) (2025-03-05)
 
 
