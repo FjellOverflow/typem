@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.0](https://github.com/FjellOverflow/typem/compare/v0.0.5...v0.1.0) (2025-03-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* migrate to Tailwind 4 and daisyUI 5
+
+### Features
+
+* migrate to Tailwind 4 and daisyUI 5 ([ed5f5a9](https://github.com/FjellOverflow/typem/commit/ed5f5a938360b019fd462877abf75ebeee4cd1ff))
+* scroll back to top button ([2f1fc2a](https://github.com/FjellOverflow/typem/commit/2f1fc2aff748767dd0b9b020d3fe2934b8448854))
+
 ## [0.0.5](https://github.com/FjellOverflow/typem/compare/v0.0.4...v0.0.5) (2025-03-10)
 
 
