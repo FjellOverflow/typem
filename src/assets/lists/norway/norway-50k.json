@@ -1,0 +1,68 @@
+{
+  "id": "norway-100k",
+  "meta": {
+    "name": "Norwegian Cities: 50k",
+    "description": "Name all Norwegian cities with more than 50.000 inhabitants.",
+    "difficulty": 3,
+    "tags": ["norway", "cities"],
+    "category": "geography",
+    "source": "https://www.ssb.no/befolkning/folketall/statistikk/tettsteders-befolkning-og-areal",
+    "author": "FjellOverflow",
+    "lastUpdated": "2025-03-10",
+    "imageUrl": "/images/norway.svg"
+  },
+  "items": [
+    {
+      "answer": "Oslo",
+      "matches": ["Oslo", "Bærum", "Barum", "Asker", "Lillestrøm", "Lillestrom"]
+    },
+    {
+      "answer": "Bergen",
+      "matches": ["Bergen"]
+    },
+    {
+      "answer": "Stavanger/Sandnes",
+      "matches": ["Stavanger", "Sandnes"]
+    },
+    {
+      "answer": "Trondheim",
+      "matches": ["Trondheim"]
+    },
+    {
+      "answer": "Drammen",
+      "matches": ["Drammen"]
+    },
+    {
+      "answer": "Fredrikstad/Sarpsborg",
+      "matches": ["Fredrikstad", "Sarpsborg"]
+    },
+    {
+      "answer": "Porsgrunn/Skien",
+      "matches": ["Skien", "Porsgrunn"]
+    },
+    {
+      "answer": "Kristiansand",
+      "matches": ["Kristiansand"]
+    },
+    {
+      "answer": "Tønsberg",
+      "matches": ["Tønsberg", "Tonsberg"]
+    },
+    {
+      "answer": "Ålesund",
+      "matches": ["Ålesund", "Alesund"]
+    },
+    {
+      "answer": "Moss",
+      "matches": ["Moss"]
+    }
+  ],
+  "settings": {
+    "requireWhitespaces": false,
+    "requireCapitalization": false,
+    "requireOrder": false,
+    "numberOfPauses": -1,
+    "showHints": false,
+    "allowOverride": true
+  }
+}

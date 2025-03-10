@@ -1,0 +1,84 @@
+{
+  "id": "norway-counties",
+  "meta": {
+    "name": "Norwegian Counties",
+    "description": "Name all Norwegian Counties.",
+    "difficulty": 3,
+    "tags": ["norway", "counties"],
+    "category": "geography",
+    "source": "https://en.wikipedia.org/wiki/Counties_of_Norway",
+    "author": "FjellOverflow",
+    "lastUpdated": "2025-03-10",
+    "imageUrl": "/images/norway.svg"
+  },
+  "items": [
+    {
+      "answer": "Agder",
+      "matches": ["Agder"]
+    },
+    {
+      "answer": "Akershus",
+      "matches": ["Akershus"]
+    },
+    {
+      "answer": "Buskerud",
+      "matches": ["Buskerud"]
+    },
+    {
+      "answer": "Finnmark",
+      "matches": ["Finnmark"]
+    },
+    {
+      "answer": "Østfold",
+      "matches": ["Østfold", "Ostfold"]
+    },
+    {
+      "answer": "Innlandet",
+      "matches": ["Innlandet"]
+    },
+    {
+      "answer": "Møre og Romsdal",
+      "matches": ["Møre og Romsdal", "More og Romsdal"]
+    },
+    {
+      "answer": "Nordland",
+      "matches": ["Nordland"]
+    },
+    {
+      "answer": "Oslo",
+      "matches": ["Oslo"]
+    },
+    {
+      "answer": "Rogaland",
+      "matches": ["Rogaland"]
+    },
+    {
+      "answer": "Telemark",
+      "matches": ["Telemark"]
+    },
+    {
+      "answer": "Troms",
+      "matches": ["Troms"]
+    },
+    {
+      "answer": "Trøndelag",
+      "matches": ["Trøndelag", "Trondelag"]
+    },
+    {
+      "answer": "Vestfold",
+      "matches": ["Vestfold"]
+    },
+    {
+      "answer": "Vestland",
+      "matches": ["Vestland"]
+    }
+  ],
+  "settings": {
+    "requireWhitespaces": false,
+    "requireCapitalization": false,
+    "requireOrder": false,
+    "numberOfPauses": -1,
+    "showHints": false,
+    "allowOverride": true
+  }
+}
