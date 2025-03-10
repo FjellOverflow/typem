@@ -49,7 +49,7 @@ const difficultyLabel = computed(() => {
       <img
         v-if="imageUrl"
         :src="imageUrl"
-        class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 p-2 md:p-3"
+        class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 border rounded-lg"
         style="border-radius: 16px"
       />
       <div class="col-span-3 flex flex-col gap-2" :class="imageUrl ? 'col-span-3' : 'col-span-4'">
