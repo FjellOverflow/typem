@@ -1,0 +1,224 @@
+{
+  "id": "us-states",
+  "meta": {
+    "name": "U.S. States",
+    "description": "Name all U.S. states.",
+    "difficulty": 2,
+    "tags": ["us", "regions", "north-america"],
+    "category": "geography",
+    "source": "https://simple.wikipedia.org/wiki/List_of_U.S._states",
+    "author": "FjellOverflow",
+    "lastUpdated": "2025-03-11",
+    "imageUrl": "/images/us.svg"
+  },
+  "items": [
+    {
+      "answer": "Alabama",
+      "matches": ["Alabama"]
+    },
+    {
+      "answer": "Alaska",
+      "matches": ["Alaska"]
+    },
+    {
+      "answer": "Arizona",
+      "matches": ["Arizona"]
+    },
+    {
+      "answer": "Arkansas",
+      "matches": ["Arkansas"]
+    },
+    {
+      "answer": "California",
+      "matches": ["California"]
+    },
+    {
+      "answer": "Colorado",
+      "matches": ["Colorado"]
+    },
+    {
+      "answer": "Connecticut",
+      "matches": ["Connecticut"]
+    },
+    {
+      "answer": "Delaware",
+      "matches": ["Delaware"]
+    },
+    {
+      "answer": "Florida",
+      "matches": ["Florida"]
+    },
+    {
+      "answer": "Georgia",
+      "matches": ["Georgia"]
+    },
+    {
+      "answer": "Hawaii",
+      "matches": ["Hawaii"]
+    },
+    {
+      "answer": "Idaho",
+      "matches": ["Idaho"]
+    },
+    {
+      "answer": "Illinois",
+      "matches": ["Illinois"]
+    },
+    {
+      "answer": "Indiana",
+      "matches": ["Indiana"]
+    },
+    {
+      "answer": "Iowa",
+      "matches": ["Iowa"]
+    },
+    {
+      "answer": "Kansas",
+      "matches": ["Kansas"]
+    },
+    {
+      "answer": "Kentucky",
+      "matches": ["Kentucky"]
+    },
+    {
+      "answer": "Louisiana",
+      "matches": ["Louisiana"]
+    },
+    {
+      "answer": "Maine",
+      "matches": ["Maine"]
+    },
+    {
+      "answer": "Maryland",
+      "matches": ["Maryland"]
+    },
+    {
+      "answer": "Massachusetts",
+      "matches": ["Massachusetts"]
+    },
+    {
+      "answer": "Michigan",
+      "matches": ["Michigan"]
+    },
+    {
+      "answer": "Minnesota",
+      "matches": ["Minnesota"]
+    },
+    {
+      "answer": "Mississippi",
+      "matches": ["Mississippi"]
+    },
+    {
+      "answer": "Missouri",
+      "matches": ["Missouri"]
+    },
+    {
+      "answer": "Montana",
+      "matches": ["Montana"]
+    },
+    {
+      "answer": "Nebraska",
+      "matches": ["Nebraska"]
+    },
+    {
+      "answer": "Nevada",
+      "matches": ["Nevada"]
+    },
+    {
+      "answer": "New Hampshire",
+      "matches": ["New Hampshire"]
+    },
+    {
+      "answer": "New Jersey",
+      "matches": ["New Jersey"]
+    },
+    {
+      "answer": "New Mexico",
+      "matches": ["New Mexico"]
+    },
+    {
+      "answer": "New York",
+      "matches": ["New York"]
+    },
+    {
+      "answer": "North Carolina",
+      "matches": ["North Carolina"]
+    },
+    {
+      "answer": "North Dakota",
+      "matches": ["North Dakota"]
+    },
+    {
+      "answer": "Ohio",
+      "matches": ["Ohio"]
+    },
+    {
+      "answer": "Oklahoma",
+      "matches": ["Oklahoma"]
+    },
+    {
+      "answer": "Oregon",
+      "matches": ["Oregon"]
+    },
+    {
+      "answer": "Pennsylvania",
+      "matches": ["Pennsylvania"]
+    },
+    {
+      "answer": "Rhode Island",
+      "matches": ["Rhode Island"]
+    },
+    {
+      "answer": "South Carolina",
+      "matches": ["South Carolina"]
+    },
+    {
+      "answer": "South Dakota",
+      "matches": ["South Dakota"]
+    },
+    {
+      "answer": "Tennessee",
+      "matches": ["Tennessee"]
+    },
+    {
+      "answer": "Texas",
+      "matches": ["Texas"]
+    },
+    {
+      "answer": "Utah",
+      "matches": ["Utah"]
+    },
+    {
+      "answer": "Vermont",
+      "matches": ["Vermont"]
+    },
+    {
+      "answer": "Virginia",
+      "matches": ["Virginia"]
+    },
+    {
+      "answer": "Washington",
+      "matches": ["Washington"]
+    },
+    {
+      "answer": "West Virginia",
+      "matches": ["West Virginia"]
+    },
+    {
+      "answer": "Wisconsin",
+      "matches": ["Wisconsin"]
+    },
+    {
+      "answer": "Wyoming",
+      "matches": ["Wyoming"]
+    }
+  ],
+  "settings": {
+    "requireWhitespaces": false,
+    "requireCapitalization": false,
+    "requireOrder": false,
+    "numberOfPauses": -1,
+    "showHints": false,
+    "allowOverride": true
+  }
+}

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000">
+  <defs>
+    <marker id="a" markerHeight="30" markerWidth="30">
+      <path fill="#fff" d="m14 0 9 27L0 10h28L5 27z"/>
+    </marker>
+  </defs>
+  <path fill="#bd3d44" d="M0 0h1333.3v1000H0"/>
+  <path stroke="#fff" stroke-width="77.1" d="M0 115.2h1333.3M0 268.7h1333.3M0 423h1333.3M0 577.1h1333.3M0 731.3h1333.3M0 885.4h1333.3"/>
+  <path fill="#192f5d" d="M0 0h760v538.5H0"/>
+  <path fill="none" marker-mid="url(#a)" d="m156 0 33.3 23h127.1 127 127.2 127 125L254 77h127 127.2 125 127l-570.8 54.3h127 127.2 127 127.1 125L254 185.4h127H508h125 127.1l-570.8 54.2h127 127.2 127 127.1 125L254 293.8h127H508h125 127.1l-570.8 52h127 127.1 127.1 127 125L253.9 400H381 508h125 127l-570.7 54.2h127 127.1 127 127.2 125z" transform="translate(-156)"/>
+</svg>

@@ -1,0 +1,176 @@
+{
+  "id": "us-500k",
+  "meta": {
+    "name": "U.S. Cities: 500k",
+    "description": "Name all U.S. cities with more than 500.000 inhabitants.",
+    "difficulty": 3,
+    "tags": ["us", "cities", "north-america"],
+    "category": "geography",
+    "source": "https://simple.wikipedia.org/wiki/List_of_United_States_cities_by_population",
+    "author": "FjellOverflow",
+    "lastUpdated": "2025-03-11",
+    "imageUrl": "/images/us.svg"
+  },
+  "items": [
+    {
+      "answer": "New York",
+      "matches": ["New York"]
+    },
+    {
+      "answer": "Los Angeles",
+      "matches": ["Los Angeles"]
+    },
+    {
+      "answer": "Chicago",
+      "matches": ["Chicago"]
+    },
+    {
+      "answer": "Houston",
+      "matches": ["Houston"]
+    },
+    {
+      "answer": "Phoenix",
+      "matches": ["Phoenix"]
+    },
+    {
+      "answer": "Philadelphia",
+      "matches": ["Philadelphia"]
+    },
+    {
+      "answer": "San Antonio",
+      "matches": ["San Antonio"]
+    },
+    {
+      "answer": "San Diego",
+      "matches": ["San Diego"]
+    },
+    {
+      "answer": "Dallas",
+      "matches": ["Dallas"]
+    },
+    {
+      "answer": "Jacksonville",
+      "matches": ["Jacksonville"]
+    },
+    {
+      "answer": "Austin",
+      "matches": ["Austin"]
+    },
+    {
+      "answer": "Fort Worth",
+      "matches": ["Fort Worth"]
+    },
+    {
+      "answer": "San Jose",
+      "matches": ["San Jose"]
+    },
+    {
+      "answer": "Columbus",
+      "matches": ["Columbus"]
+    },
+    {
+      "answer": "Charlotte",
+      "matches": ["Charlotte"]
+    },
+    {
+      "answer": "Indianapolis",
+      "matches": ["Indianapolis"]
+    },
+    {
+      "answer": "San Francisco",
+      "matches": ["San Francisco"]
+    },
+    {
+      "answer": "Seattle",
+      "matches": ["Seattle"]
+    },
+    {
+      "answer": "Denver",
+      "matches": ["Denver"]
+    },
+    {
+      "answer": "Oklahoma City",
+      "matches": ["Oklahoma City"]
+    },
+    {
+      "answer": "Nashville",
+      "matches": ["Nashville"]
+    },
+    {
+      "answer": "Washington",
+      "matches": ["Washington"]
+    },
+    {
+      "answer": "El Paso",
+      "matches": ["El Paso"]
+    },
+    {
+      "answer": "Las Vegas",
+      "matches": ["Las Vegas"]
+    },
+    {
+      "answer": "Boston",
+      "matches": ["Boston"]
+    },
+    {
+      "answer": "Detroit",
+      "matches": ["Detroit"]
+    },
+    {
+      "answer": "Portland",
+      "matches": ["Portland"]
+    },
+    {
+      "answer": "Louisville",
+      "matches": ["Louisville"]
+    },
+    {
+      "answer": "Memphis",
+      "matches": ["Memphis"]
+    },
+    {
+      "answer": "Baltimore",
+      "matches": ["Baltimore"]
+    },
+    {
+      "answer": "Milwaukee",
+      "matches": ["Milwaukee"]
+    },
+    {
+      "answer": "Albuquerque",
+      "matches": ["Albuquerque"]
+    },
+    {
+      "answer": "Tucson",
+      "matches": ["Tucson"]
+    },
+    {
+      "answer": "Fresno",
+      "matches": ["Fresno"]
+    },
+    {
+      "answer": "Sacramento",
+      "matches": ["Sacramento"]
+    },
+    {
+      "answer": "Mesa",
+      "matches": ["Mesa"]
+    },
+    {
+      "answer": "Atlanta",
+      "matches": ["Atlanta"]
+    },
+    {
+      "answer": "Kansas City",
+      "matches": ["Kansas City"]
+    }
+  ],
+  "settings": {
+    "requireWhitespaces": false,
+    "requireCapitalization": false,
+    "requireOrder": false,
+    "numberOfPauses": -1,
+    "showHints": false,
+    "allowOverride": true
+  }
+}

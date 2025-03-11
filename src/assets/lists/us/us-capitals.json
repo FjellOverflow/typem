@@ -1,0 +1,274 @@
+{
+  "id": "us-capitals",
+  "meta": {
+    "name": "U.S. Capitals",
+    "description": "Name the capital of every U.S. state.",
+    "difficulty": 3,
+    "tags": ["us", "capitals", "north-america"],
+    "category": "geography",
+    "source": "https://simple.wikipedia.org/wiki/List_of_U.S._states",
+    "author": "FjellOverflow",
+    "lastUpdated": "2025-03-11",
+    "imageUrl": "/images/us.svg"
+  },
+  "items": [
+    {
+      "hint": "Capital of Alabama",
+      "answer": "Montgomery",
+      "matches": ["Montgomery"]
+    },
+    {
+      "hint": "Capital of Alaska",
+      "answer": "Juneau",
+      "matches": ["Juneau"]
+    },
+    {
+      "hint": "Capital of Arizona",
+      "answer": "Phoenix",
+      "matches": ["Phoenix"]
+    },
+    {
+      "hint": "Capital of Arkansas",
+      "answer": "Little Rock",
+      "matches": ["Little Rock"]
+    },
+    {
+      "hint": "Capital of California",
+      "answer": "Sacramento",
+      "matches": ["Sacramento"]
+    },
+    {
+      "hint": "Capital of Colorado",
+      "answer": "Denver",
+      "matches": ["Denver"]
+    },
+    {
+      "hint": "Capital of Connecticut",
+      "answer": "Hartford",
+      "matches": ["Hartford"]
+    },
+    {
+      "hint": "Capital of Delaware",
+      "answer": "Dover",
+      "matches": ["Dover"]
+    },
+    {
+      "hint": "Capital of Florida",
+      "answer": "Tallahassee",
+      "matches": ["Tallahassee"]
+    },
+    {
+      "hint": "Capital of Georgia",
+      "answer": "Atlanta",
+      "matches": ["Atlanta"]
+    },
+    {
+      "hint": "Capital of Hawaii",
+      "answer": "Honolulu",
+      "matches": ["Honolulu"]
+    },
+    {
+      "hint": "Capital of Idaho",
+      "answer": "Boise",
+      "matches": ["Boise"]
+    },
+    {
+      "hint": "Capital of Illinois",
+      "answer": "Springfield",
+      "matches": ["Springfield"]
+    },
+    {
+      "hint": "Capital of Indiana",
+      "answer": "Indianapolis",
+      "matches": ["Indianapolis"]
+    },
+    {
+      "hint": "Capital of Iowa",
+      "answer": "Des Moines",
+      "matches": ["Des Moines"]
+    },
+    {
+      "hint": "Capital of Kansas",
+      "answer": "Topeka",
+      "matches": ["Topeka"]
+    },
+    {
+      "hint": "Capital of Kentucky",
+      "answer": "Frankfort",
+      "matches": ["Frankfort"]
+    },
+    {
+      "hint": "Capital of Louisiana",
+      "answer": "Baton Rouge",
+      "matches": ["Baton Rouge"]
+    },
+    {
+      "hint": "Capital of Maine",
+      "answer": "Augusta",
+      "matches": ["Augusta"]
+    },
+    {
+      "hint": "Capital of Maryland",
+      "answer": "Annapolis",
+      "matches": ["Annapolis"]
+    },
+    {
+      "hint": "Capital of Massachusetts",
+      "answer": "Boston",
+      "matches": ["Boston"]
+    },
+    {
+      "hint": "Capital of Michigan",
+      "answer": "Lansing",
+      "matches": ["Lansing"]
+    },
+    {
+      "hint": "Capital of Minnesota",
+      "answer": "Saint Paul",
+      "matches": ["Saint Paul"]
+    },
+    {
+      "hint": "Capital of Mississippi",
+      "answer": "Jackson",
+      "matches": ["Jackson"]
+    },
+    {
+      "hint": "Capital of Missouri",
+      "answer": "Jefferson City",
+      "matches": ["Jefferson City"]
+    },
+    {
+      "hint": "Capital of Montana",
+      "answer": "Helena",
+      "matches": ["Helena"]
+    },
+    {
+      "hint": "Capital of Nebraska",
+      "answer": "Lincoln",
+      "matches": ["Lincoln"]
+    },
+    {
+      "hint": "Capital of Nevada",
+      "answer": "Carson City",
+      "matches": ["Carson City"]
+    },
+    {
+      "hint": "Capital of New Hampshire",
+      "answer": "Concord",
+      "matches": ["Concord"]
+    },
+    {
+      "hint": "Capital of New Jersey",
+      "answer": "Trenton",
+      "matches": ["Trenton"]
+    },
+    {
+      "hint": "Capital of New Mexico",
+      "answer": "Santa Fe",
+      "matches": ["Santa Fe"]
+    },
+    {
+      "hint": "Capital of New York",
+      "answer": "Albany",
+      "matches": ["Albany"]
+    },
+    {
+      "hint": "Capital of North Carolina",
+      "answer": "Raleigh",
+      "matches": ["Raleigh"]
+    },
+    {
+      "hint": "Capital of North Dakota",
+      "answer": "Bismarck",
+      "matches": ["Bismarck"]
+    },
+    {
+      "hint": "Capital of Ohio",
+      "answer": "Columbus",
+      "matches": ["Columbus"]
+    },
+    {
+      "hint": "Capital of Oklahoma",
+      "answer": "Oklahoma City",
+      "matches": ["Oklahoma City"]
+    },
+    {
+      "hint": "Capital of Oregon",
+      "answer": "Salem",
+      "matches": ["Salem"]
+    },
+    {
+      "hint": "Capital of Pennsylvania",
+      "answer": "Harrisburg",
+      "matches": ["Harrisburg"]
+    },
+    {
+      "hint": "Capital of Rhode Island",
+      "answer": "Providence",
+      "matches": ["Providence"]
+    },
+    {
+      "hint": "Capital of South Carolina",
+      "answer": "Columbia",
+      "matches": ["Columbia"]
+    },
+    {
+      "hint": "Capital of South Dakota",
+      "answer": "Pierre",
+      "matches": ["Pierre"]
+    },
+    {
+      "hint": "Capital of Tennessee",
+      "answer": "Nashville",
+      "matches": ["Nashville"]
+    },
+    {
+      "hint": "Capital of Texas",
+      "answer": "Austin",
+      "matches": ["Austin"]
+    },
+    {
+      "hint": "Capital of Utah",
+      "answer": "Salt Lake City",
+      "matches": ["Salt Lake City"]
+    },
+    {
+      "hint": "Capital of Vermont",
+      "answer": "Montpelier",
+      "matches": ["Montpelier"]
+    },
+    {
+      "hint": "Capital of Virginia",
+      "answer": "Richmond",
+      "matches": ["Richmond"]
+    },
+    {
+      "hint": "Capital of Washington",
+      "answer": "Olympia",
+      "matches": ["Olympia"]
+    },
+    {
+      "hint": "Capital of West Virginia",
+      "answer": "Charleston",
+      "matches": ["Charleston"]
+    },
+    {
+      "hint": "Capital of Wisconsin",
+      "answer": "Madison",
+      "matches": ["Madison"]
+    },
+    {
+      "hint": "Capital of Wyoming",
+      "answer": "Cheyenne",
+      "matches": ["Cheyenne"]
+    }
+  ],
+  "settings": {
+    "requireWhitespaces": false,
+    "requireCapitalization": false,
+    "requireOrder": false,
+    "numberOfPauses": -1,
+    "showHints": true,
+    "allowOverride": true
+  }
+}
