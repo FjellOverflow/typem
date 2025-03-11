@@ -4,7 +4,7 @@
     "name": "Norwegian Counties",
     "description": "Name all Norwegian Counties.",
     "difficulty": 3,
-    "tags": ["norway", "counties"],
+    "tags": ["norway", "regions", "europe"],
     "category": "geography",
     "source": "https://en.wikipedia.org/wiki/Counties_of_Norway",
     "author": "FjellOverflow",

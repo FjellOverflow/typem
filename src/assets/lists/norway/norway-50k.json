@@ -4,7 +4,7 @@
     "name": "Norwegian Cities: 50k",
     "description": "Name all Norwegian cities with more than 50.000 inhabitants.",
     "difficulty": 3,
-    "tags": ["norway", "cities"],
+    "tags": ["norway", "cities", "europe"],
     "category": "geography",
     "source": "https://www.ssb.no/befolkning/folketall/statistikk/tettsteders-befolkning-og-areal",
     "author": "FjellOverflow",

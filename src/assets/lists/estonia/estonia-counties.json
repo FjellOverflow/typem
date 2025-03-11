@@ -4,7 +4,7 @@
     "name": "Estonian Counties",
     "description": "Name all Estonian Counties.",
     "difficulty": 3,
-    "tags": ["estonia", "counties"],
+    "tags": ["estonia", "regions", "europe"],
     "category": "geography",
     "source": "https://en.wikipedia.org/wiki/Counties_of_Estonia",
     "author": "FjellOverflow",

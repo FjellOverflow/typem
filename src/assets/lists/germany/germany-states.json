@@ -4,7 +4,7 @@
     "name": "German States",
     "description": "Name all German federal states.",
     "difficulty": 2,
-    "tags": ["germany", "regions"],
+    "tags": ["germany", "regions", "europe"],
     "category": "geography",
     "source": "https://citypopulation.de/en/germany/cities/",
     "author": "FjellOverflow",

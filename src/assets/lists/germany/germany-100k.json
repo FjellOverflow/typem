@@ -4,7 +4,7 @@
     "name": "German Cities: 100k",
     "description": "Name all German cities with more than 100.000 inhabitants.",
     "difficulty": 3,
-    "tags": ["germany", "cities"],
+    "tags": ["germany", "cities", "europe"],
     "category": "geography",
     "source": "https://citypopulation.de/en/germany/cities/",
     "author": "FjellOverflow",
