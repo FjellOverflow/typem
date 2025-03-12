@@ -1,6 +1,5 @@
 <script lang="ts">
 import { useListsLoader } from '@/plugins/listLoader'
-import AppInfoPopUp from '@/components/popUps/AppInfoPopUp.vue'
 export { useListsLoader }
 </script>
 
@@ -12,12 +11,17 @@ import {
   CalendarClockIcon,
   InfoIcon,
   ArrowUp,
+  HelpCircleIcon,
 } from 'lucide-vue-next'
+import AppInfoPopUp from '@/components/popUps/AppInfoPopUp.vue'
+import { useHelp } from '@/composables/help'
 
 const appInfoPopUp = useTemplateRef('appInfoPopUp')
 
 const { data: lists } = useListsLoader()
 const route = useRoute()
+const { openHelp } = useHelp()
+
 const scrollPosition = ref(0)
 
 const randomListUrl = computed(() => {
@@ -76,10 +80,13 @@ document.addEventListener('scroll', () => {
     </template>
     <template #end>
       <AppInfoPopUp ref="appInfoPopUp" />
-      <div class="xl:block hidden">
+      <div class="xl:flex hidden gap-2">
         <ThemeToggle />
         <button @click="appInfoPopUp?.open()" class="btn btn-ghost">
           <InfoIcon />
+        </button>
+        <button @click="openHelp" class="btn btn-ghost">
+          <HelpCircleIcon />
         </button>
       </div>
 
@@ -102,8 +109,11 @@ document.addEventListener('scroll', () => {
         </ul>
         <div class="flex gap-2">
           <ThemeToggle />
-          <button @click="appInfoPopUp?.open()" class="btn btn-ghost">
-            <InfoIcon />
+          <button @click="appInfoPopUp?.open()" class="btn btn-ghost btn-sm sm:btn-md">
+            <InfoIcon class="w-4 sm:w-6" />
+          </button>
+          <button @click="openHelp" class="btn btn-ghost btn-sm sm:btn-md">
+            <HelpCircleIcon class="w-4 sm:w-6" />
           </button>
         </div>
       </MobileDropdown>
