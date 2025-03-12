@@ -119,7 +119,7 @@ document.addEventListener('scroll', () => {
       </MobileDropdown>
     </template>
   </NavBar>
-  <div class="mx-auto flex w-full max-w-[90%] flex-col justify-start md:max-w-3xl">
+  <div id="main" class="mx-auto flex w-full max-w-[90%] flex-col justify-start md:max-w-3xl">
     <RouterView />
   </div>
 </template>

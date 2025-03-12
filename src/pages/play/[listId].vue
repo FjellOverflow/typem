@@ -222,6 +222,11 @@ function onInput() {
       class="col-span-2 sm:col-span-5"
     />
 
-    <SettingsCard ref="settingsCard" v-model="settings" class="col-span-2 sm:col-span-5" />
+    <SettingsCard
+      id="settings"
+      ref="settingsCard"
+      v-model="settings"
+      class="col-span-2 sm:col-span-5"
+    />
   </div>
 </template>

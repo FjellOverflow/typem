@@ -28,7 +28,7 @@ dialog.shepherd-element {
 }
 
 .shepherd-header {
-  @apply flex items-start justify-end;
+  @apply flex items-start justify-between;
 }
 
 .shepherd-text {

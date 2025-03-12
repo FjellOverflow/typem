@@ -43,7 +43,7 @@ const difficultyLabel = computed(() => {
 })
 </script>
 <template>
-  <div class="border rounded-md p-4 grid grid-cols-3 gap-4">
+  <div :id="`list-preview-${list.id}`" class="border rounded-md p-4 grid grid-cols-3 gap-4">
     <ListInfoPopUp :list ref="listInfoPopUp" />
     <div class="col-span-3 sm:col-span-2 grid grid-cols-4 items-center">
       <img
