@@ -1,1 +1,59 @@
-{}
+{
+  "steps": {
+    "0": {
+      "title": "Welcome to Typem!",
+      "text": "Typem (\"Type them\") is a time-based game where you try to type out a list of items as quick as you can. It's designed to grow your knowledge, strengthen your memorization skills and be fun!"
+    },
+    "1": {
+      "title": "Explore Lists",
+      "text": "In the main view, browse through all the available lists and choose one to play."
+    },
+    "2": {
+      "title": "Your First Round",
+      "text": "Let's explore this list. Click on the \"Let's play\"-button or \"Next\" to start your first round."
+    },
+    "3": {
+      "title": "The Game View",
+      "text": "In the game view, you'll see the list you just selected."
+    },
+    "4": {
+      "title": "Customization",
+      "text": "Customize the game to your liking in the settings. For example, adjust how often you can pause the game."
+    },
+    "5": {
+      "title": "Ready to Play",
+      "text": "Click on the \"I'm ready\"-button or \"Next\" to start the game."
+    },
+    "6": {
+      "title": "Guess an item",
+      "text": "Type the name of the first planet. Hint: it starts with \"M\" and ends with \"-ercury\""
+    },
+    "7": {
+      "title": "Guess another item",
+      "text": "Good Job! Now type the name of the next planet. Hint: it starts with \"V\" and ends with \"-enus\""
+    },
+    "8": {
+      "title": "Running timer",
+      "text": "While playing, the timer is running. To finish the game for now, click the \"Give up\"-button or \"Next\"."
+    },
+    "9": {
+      "title": "Game Over",
+      "text": "When the game ends, the timer stops, and you can see your final time."
+    },
+    "10": {
+      "title": "Game Review",
+      "text": "During the game, all your matches will be shown in the item box. Once the game is over, all remaining items will be revealed."
+    },
+    "11": {
+      "title": "Track Your Progress",
+      "text": "In the \"History\" tab, you can view statistics from all your past rounds."
+    },
+    "12": {
+      "title": "You're All Set!",
+      "text": "You're all set to start playing! I hope you have fun using the app!"
+    }
+  },
+  "Finish the tour": "Finish the tour",
+  "Skip": "Skip",
+  "Start the tour": "Start the tour"
+}

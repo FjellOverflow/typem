@@ -68,6 +68,9 @@ function init() {
   isInitialized.value = true
 
   setTimeout(() => {
+    document
+      .querySelector(`#list-preview-${list.value.id}`)
+      ?.dispatchEvent(new CustomEvent('oninit'))
     settingsCard.value?.close()
     itemsCard.value?.open()
     inputField.value?.focus()
@@ -147,6 +150,7 @@ function onInput() {
     <ListPreviewCard :list class="col-span-2 sm:col-span-5" :show-details="!isInitialized">
       <template #action>
         <button
+          id="initButton"
           v-if="!isInitialized"
           class="btn btn-outline btn-primary sm:text-xl font-medium"
           @click="init"
