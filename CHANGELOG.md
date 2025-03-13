@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.1](https://github.com/FjellOverflow/typem/compare/v0.1.0...v0.1.1) (2025-03-13)
+
+
+### Features
+
+* add id tags for tours ([c0980e7](https://github.com/FjellOverflow/typem/commit/c0980e7631471d3039bf0ee9d67a9dd46dfbe612))
+* add new tags to lists ([7e6a66d](https://github.com/FjellOverflow/typem/commit/7e6a66da0cde65a55fb74e39d28362cf3a8828c0))
+* add US lists ([3842d37](https://github.com/FjellOverflow/typem/commit/3842d3763286960c6b04cca250d133ab57232757))
+* implement user help with tour ([ebdf49b](https://github.com/FjellOverflow/typem/commit/ebdf49b117fe546461d8e3ee386cdd25036c95b2))
+* more user tour waypoints ([b443d67](https://github.com/FjellOverflow/typem/commit/b443d6786bce9a51b58573c1f935f16ed06c8552))
+* user tours with shepherd ([7b6c987](https://github.com/FjellOverflow/typem/commit/7b6c98778491f9a35c644dc33bc5203f3aded2f9))
+
+
+### Bug Fixes
+
+* broken btn coloring in dialogs ([0140485](https://github.com/FjellOverflow/typem/commit/0140485eedee45d6ebe0a123778aeefd5537dc81))
+* mobile menu width ([c94d600](https://github.com/FjellOverflow/typem/commit/c94d60008dc369fdc2d4b73a6dcb38d7018e7133))
+
 ## [0.1.0](https://github.com/FjellOverflow/typem/compare/v0.0.5...v0.1.0) (2025-03-10)
 
 
