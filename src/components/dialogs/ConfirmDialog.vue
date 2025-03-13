@@ -9,7 +9,7 @@ defineEmits<{
 withDefaults(
   defineProps<{
     showCancelBtn?: boolean
-    sentiment?: 'error' | 'success'
+    sentiment?: 'btn-error' | 'btn-success'
   }>(),
   {
     showCancelBtn: true,
@@ -35,7 +35,7 @@ defineExpose({ open: () => confirmDialog.value?.showModal() })
             </button>
             <button
               class="btn btn-outline"
-              :class="sentiment ? `btn-${sentiment}` : ''"
+              :class="sentiment ? sentiment : ''"
               @click="$emit('confirm')"
             >
               {{ $t('Confirm') }}

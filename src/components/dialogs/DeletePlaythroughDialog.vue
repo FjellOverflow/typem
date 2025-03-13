@@ -7,7 +7,7 @@ defineEmits<{
 defineExpose({ open: () => confirmDialog.value?.open() })
 </script>
 <template>
-  <ConfirmDialog ref="confirmDialog" @confirm="$emit('confirm')" sentiment="error">
+  <ConfirmDialog ref="confirmDialog" @confirm="$emit('confirm')" sentiment="btn-error">
     <template #title> {{ $t('Are you sure?') }} </template>
     <template #body>
       {{ $t('Once deleted, the playthrough can not be recovered.') }}
