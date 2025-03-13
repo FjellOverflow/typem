@@ -1,8 +1,9 @@
-import Shepherd from 'shepherd.js'
+import Shepherd, { type StepOptions } from 'shepherd.js'
 import '@/assets/shepherd.css'
 
 export function useHelp() {
   const { t } = useI18n()
+
   const hasDoneTour = useStorage<boolean>('completedHelp', false)
 
   const tour = new Shepherd.Tour({
@@ -11,18 +12,17 @@ export function useHelp() {
 
   tour.options.defaultStepOptions = {
     cancelIcon: { enabled: true },
-    buttons: [
-      {
-        text: t('Back'),
-        action: tour.back,
-      },
-      {
-        text: t('Next'),
-        action: tour.next,
-        classes: 'shepherd-button-next',
-      },
-    ],
   }
+
+  const steps: StepOptions[] = []
+
+  tour.addSteps(
+    steps.map((s, i) => ({
+      title: t(`help.steps.${i}.title`),
+      text: t(`help.steps.${i}.text`),
+      ...s,
+    })),
+  )
 
   tour.on('cancel', () => (hasDoneTour.value = true))
   tour.on('complete', () => (hasDoneTour.value = true))

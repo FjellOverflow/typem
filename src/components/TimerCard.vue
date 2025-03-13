@@ -38,7 +38,7 @@ const isStoppable = computed(
       <button v-else class="btn btn-outline" @click="$emit('start')">
         <PlayIcon /> {{ $t(seconds === 0 ? 'Start' : 'Resume') }}
       </button>
-      <button v-if="isStoppable" class="btn btn-outline" @click="$emit('stop')">
+      <button id="giveUpBtn" v-if="isStoppable" class="btn btn-outline" @click="$emit('stop')">
         <SquareIcon /> {{ $t('Give up') }}
       </button>
     </template>

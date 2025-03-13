@@ -136,6 +136,8 @@ function onInput() {
     input.value = ''
     newMatch.value = matchedItem
     setTimeout(() => (newMatch.value = undefined), 1000)
+
+    inputField.value?.dispatchEvent(new CustomEvent('onmatch'))
   }
 }
 </script>
@@ -171,6 +173,7 @@ function onInput() {
           @move="inputField?.focus()"
         />
         <TimerCard
+          id="timerCard"
           ref="timerCard"
           :seconds="timer?.seconds || 0"
           :numberOfPauses="timer?.remainingPauses || 0"
@@ -182,11 +185,12 @@ function onInput() {
           class="col-span-2"
         />
         <input
+          id="inputField"
           ref="inputField"
           v-model="input"
           :disabled="isStopped"
           type="text"
-          :placeholder="!isRunning && !isStopped ? 'Type to start' : undefined"
+          :placeholder="!isRunning && !isStopped ? $t('Type to start') : undefined"
           class="input input-bordered w-full h-16 text-2xl col-span-2 sm:col-span-3"
           :class="{
             'input-primary': !isStopped,
@@ -215,6 +219,7 @@ function onInput() {
     </template>
 
     <ItemsTable
+      id="itemsCard"
       ref="itemsCard"
       :items="checker?.items || list.items"
       :highlighted="newMatch"
@@ -223,7 +228,7 @@ function onInput() {
     />
 
     <SettingsCard
-      id="settings"
+      id="settingsCard"
       ref="settingsCard"
       v-model="settings"
       class="col-span-2 sm:col-span-5"
