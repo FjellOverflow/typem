@@ -28,7 +28,7 @@ const checkInput =
 
 export function useChecking(
   rawItems: IListItem[],
-  { requireWhitespaces, requireCapitalization, shuffle }: ISettings,
+  { requireWhitespaces, requireCapitalization, requireOrder, shuffle }: ISettings,
   onDone: () => void,
 ) {
   const checkFun = checkInput(requireWhitespaces, requireCapitalization)
@@ -40,46 +40,17 @@ export function useChecking(
   if (shuffle) shuffleItems(items.value)
 
   function check(input: string) {
-    const matchedItem = items.value
-      .filter((item) => !item.checked)
-      .find((item) => checkFun(input, item))
+    let availableItems = items.value.filter((item) => !item.checked)
+
+    if (requireOrder) availableItems = [availableItems[0]]
+
+    const matchedItem = availableItems.find((item) => checkFun(input, item))
 
     if (matchedItem) {
       matchedItem.checked = true
       if (items.value.every((item) => item.checked)) onDone()
 
       return matchedItem
-    }
-  }
-
-  return {
-    items,
-    check,
-  }
-}
-
-export function useOrderedChecking(
-  rawItems: IListItem[],
-  { requireWhitespaces, requireCapitalization, shuffle }: ISettings,
-  onDone: () => void,
-) {
-  const checkFun = checkInput(requireWhitespaces, requireCapitalization)
-
-  const items = ref<ICheckableListItem[]>([
-    ...rawItems.map((item) => ({ ...item, checked: false })),
-  ])
-
-  if (shuffle) shuffleItems(items.value)
-
-  function check(input: string) {
-    const item = items.value.filter((item) => !item.checked)[0]
-
-    if (!item) return
-
-    if (checkFun(input, item)) {
-      item.checked = true
-      if (items.value.every((item) => item.checked)) onDone()
-      return item
     }
   }
 

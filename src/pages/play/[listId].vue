@@ -9,7 +9,7 @@ export { useListLoader }
 import { formatDuration } from '@/plugins/util'
 import type { ICheckableListItem, IListItem } from '@/types'
 import { useTitle } from '@vueuse/core'
-import { useChecking, useOrderedChecking } from '@/composables/checking'
+import { useChecking } from '@/composables/checking'
 import { useTimer } from '@/composables/timer'
 import { PartyPopperIcon, RotateCwIcon, ThumbsUpIcon } from 'lucide-vue-next'
 
@@ -56,14 +56,10 @@ function init() {
   settings.value.allowOverride = false
 
   timer.value = useTimer(settings.value.numberOfPauses)
-  checker.value = (settings.value.requireOrder ? useOrderedChecking : useChecking)(
-    list.value.items,
-    settings.value,
-    () => {
-      isDone.value = true
-      onStop()
-    },
-  )
+  checker.value = useChecking(list.value.items, settings.value, () => {
+    isDone.value = true
+    onStop()
+  })
 
   isInitialized.value = true
 
