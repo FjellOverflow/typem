@@ -1,0 +1,27 @@
+---
+name: check
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  format:
+    uses: ./.github/setup-and-run-script.yaml
+    with:
+      script: 'format'
+
+  lint:
+    uses: ./.github/setup-and-run-script.yaml
+    with:
+      script: 'lint'
+
+  typecheck:
+    uses: ./.github/setup-and-run-script.yaml
+    with:
+      script: 'typecheck'
+
+  build:
+    uses: ./.github/setup-and-run-script.yaml
+    with:
+      script: 'build-only'
