@@ -8,7 +8,7 @@
     "category": "geography",
     "source": "https://en.wikipedia.org/wiki/Counties_of_Estonia",
     "author": "FjellOverflow",
-    "lastUpdated": "2025-03-10",
+    "lastUpdated": "2025-03-15",
     "imageUrl": "/images/estonia.svg"
   },
   "items": [
@@ -30,7 +30,7 @@
     },
     {
       "answer": "Järva",
-      "matches": ["Järva"]
+      "matches": ["Järva", "Jarva"]
     },
     {
       "answer": "Lääne",
