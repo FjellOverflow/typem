@@ -2,24 +2,22 @@ import { useChecking } from '@/composables/checking'
 import type { IListItem, ISettings } from '@/types'
 import { describe, it, expect, vi } from 'vitest'
 
-const mockItem0: IListItem = {
+const item0: IListItem = {
   answer: 'answer0',
   matches: ['answer0'],
 }
 
-const mockItem1: IListItem = {
+const item1: IListItem = {
   answer: 'answer 1',
   matches: ['answer 1'],
 }
 
-const mockItem2: IListItem = {
+const item2: IListItem = {
   answer: 'Answer2',
   matches: ['Answer2'],
 }
 
-const exampleItems = [mockItem0, mockItem1, mockItem2]
-
-const basicSettings: ISettings = {
+const settings: ISettings = {
   requireWhitespaces: false,
   requireCapitalization: false,
   requireOrder: false,
@@ -31,15 +29,15 @@ const basicSettings: ISettings = {
 
 describe('checking composable', () => {
   it('checks', () => {
-    const { check, items } = useChecking(exampleItems, basicSettings, () => undefined)
+    const { check, items } = useChecking([item0, item1], settings, () => undefined)
 
-    expect(items.value).toHaveLength(3)
+    expect(items.value).toHaveLength(2)
     expect(items.value.filter((i) => i.checked)).toHaveLength(0)
 
-    expect(check('answer0')).toEqual({ ...mockItem0, checked: true })
+    expect(check('answer1')).toEqual({ ...item1, checked: true })
     expect(items.value.filter((i) => i.checked)).toHaveLength(1)
 
-    expect(check('answer1')).toEqual({ ...mockItem1, checked: true })
+    expect(check('answer0')).toEqual({ ...item0, checked: true })
     expect(items.value.filter((i) => i.checked)).toHaveLength(2)
 
     expect(check('false answer')).toEqual(undefined)
@@ -47,12 +45,12 @@ describe('checking composable', () => {
   })
 
   it('checks twice', () => {
-    const { check, items } = useChecking([mockItem0, mockItem0], basicSettings, () => undefined)
+    const { check, items } = useChecking([item0, item0], settings, () => undefined)
 
-    expect(check('answer0')).toEqual({ ...mockItem0, checked: true })
+    expect(check('answer0')).toEqual({ ...item0, checked: true })
     expect(items.value.filter((i) => i.checked)).toHaveLength(1)
 
-    expect(check('answer0')).toEqual({ ...mockItem0, checked: true })
+    expect(check('answer0')).toEqual({ ...item0, checked: true })
     expect(items.value.filter((i) => i.checked)).toHaveLength(2)
 
     expect(check('answer0')).toEqual(undefined)
@@ -60,15 +58,18 @@ describe('checking composable', () => {
   })
 
   it("doesn't check twice", () => {
-    const { check } = useChecking(exampleItems, basicSettings, () => undefined)
+    const { check, items } = useChecking([item0], settings, () => undefined)
 
-    expect(check('answer0')).toEqual({ ...mockItem0, checked: true })
+    expect(check('answer0')).toEqual({ ...item0, checked: true })
+    expect(items.value.filter((i) => i.checked)).toHaveLength(1)
+
     expect(check('answer0')).toEqual(undefined)
+    expect(items.value.filter((i) => i.checked)).toHaveLength(1)
   })
 
   it('calls callback', () => {
     const callback = vi.fn()
-    const { check } = useChecking(exampleItems, basicSettings, callback)
+    const { check } = useChecking([item0, item1, item2], settings, callback)
 
     check('answer0')
     check('answer1')
@@ -78,26 +79,61 @@ describe('checking composable', () => {
   })
 
   it('requires whitespace', () => {
-    const { check } = useChecking(
-      exampleItems,
-      { ...basicSettings, requireWhitespaces: true },
+    const { check, items } = useChecking(
+      [item1],
+      { ...settings, requireWhitespaces: true },
       () => undefined,
     )
 
     expect(check('answer1')).toEqual(undefined)
+    expect(items.value.filter((i) => i.checked)).toHaveLength(0)
 
-    expect(check('answer 1')).toEqual({ ...mockItem1, checked: true })
+    expect(check('answer 1')).toEqual({ ...item1, checked: true })
+    expect(items.value.filter((i) => i.checked)).toHaveLength(1)
   })
 
   it('requires capitalization', () => {
-    const { check } = useChecking(
-      exampleItems,
-      { ...basicSettings, requireCapitalization: true },
+    const { check, items } = useChecking(
+      [item2],
+      { ...settings, requireCapitalization: true },
       () => undefined,
     )
 
     expect(check('answer2')).toEqual(undefined)
+    expect(items.value.filter((i) => i.checked)).toHaveLength(0)
 
-    expect(check('Answer2')).toEqual({ ...mockItem2, checked: true })
+    expect(check('Answer2')).toEqual({ ...item2, checked: true })
+    expect(items.value.filter((i) => i.checked)).toHaveLength(1)
+  })
+
+  it('requires order', () => {
+    const { check, items } = useChecking(
+      [item0, item1],
+      { ...settings, requireOrder: true },
+      () => undefined,
+    )
+
+    expect(check('answer 1')).toEqual(undefined)
+    expect(items.value.filter((i) => i.checked)).toHaveLength(0)
+
+    expect(check('answer0')).toEqual({ ...item0, checked: true })
+    expect(items.value.filter((i) => i.checked)).toHaveLength(1)
+
+    expect(check('answer 1')).toEqual({ ...item1, checked: true })
+    expect(items.value.filter((i) => i.checked)).toHaveLength(2)
+  })
+
+  it('requires shuffled order', () => {
+    const { check, items } = useChecking(
+      [item0, item1, item2],
+      { ...settings, requireOrder: true, shuffle: true },
+      () => undefined,
+    )
+
+    items.value.forEach((i, index) => {
+      expect(check(i.matches[0])).toEqual({ ...i, checked: true })
+
+      expect(items.value.filter((i) => i.checked)).toHaveLength(index + 1)
+    })
   })
 })
