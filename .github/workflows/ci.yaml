@@ -25,3 +25,8 @@ jobs:
     uses: ./.github/workflows/setup-and-run-script.yaml
     with:
       script: 'build-only'
+
+  unit-tests:
+    uses: ./.github/workflows/setup-and-run-script.yaml
+    with:
+      script: 'test:unit'

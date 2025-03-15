@@ -9,7 +9,7 @@ on:
         type: string
 
 jobs:
-  common-steps:
+  setup-and-run-script:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
