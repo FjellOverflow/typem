@@ -21,6 +21,8 @@
   &ensp;
   <img src="https://img.shields.io/github/license/FjellOverflow/typem?label=License&color=success"/>
   &ensp;
+  <img src="https://img.shields.io/github/actions/workflow/status/FjellOverflow/typem/ci.yaml?branch=main&label=CI"/>
+  &ensp;
   <img src="https://img.shields.io/github/actions/workflow/status/FjellOverflow/typem/cd.yaml?branch=main&label=Build"/>
 </p>
 
