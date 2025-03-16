@@ -1,4 +1,4 @@
-export interface Toast {
+interface Toast {
   message: string
   sentiment: `alert-${'info' | 'success' | 'warning' | 'error'}`
 }
@@ -6,7 +6,7 @@ export interface Toast {
 const _nextId = ref(0)
 const toasts = ref<(Toast & { id: number })[]>([])
 
-export function useToasts() {
+export function useToasts(timeout = 5000) {
   function sendToast(toast: Toast) {
     const id = _nextId.value++
 
@@ -17,7 +17,7 @@ export function useToasts() {
     setTimeout(() => {
       const index = toasts.value.findIndex((t) => t.id === id)
       toasts.value.splice(index, 1)
-    }, 5000)
+    }, timeout)
   }
 
   return {
