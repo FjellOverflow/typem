@@ -4,7 +4,12 @@ import { useStorage } from '@vueuse/core'
 function sortPlaythroughByMatchesAndSeconds(p1: IListPlaythrough, p2: IListPlaythrough) {
   if (p1.numberOfMatches !== p2.numberOfMatches) return p2.numberOfMatches - p1.numberOfMatches
 
-  return p1.seconds - p2.seconds
+  if (p1.seconds !== p2.seconds) return p1.seconds - p2.seconds
+
+  if (p1.timestamp !== p2.timestamp)
+    return new Date(p1.timestamp).getTime() - new Date(p2.timestamp).getTime()
+
+  return Number(p2.finished) - Number(p1.finished)
 }
 
 function validatePlaythroughs(objects: unknown[]): IListPlaythrough[] {
@@ -81,7 +86,6 @@ export function useListPlaythroughs(listId: string) {
   )
 
   return {
-    allPlaythroughs,
     allListPlaythroughs,
     bestListPlaythrough,
   }

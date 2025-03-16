@@ -1,6 +1,6 @@
 <script lang="ts">
 import { useListLoader } from '@/plugins/listLoader'
-import { useListPlaythroughs } from '@/composables/playthroughs'
+import { useListPlaythroughs, usePlaythroughs } from '@/composables/playthroughs'
 import { useHotkey } from '@/composables/hotkey'
 export { useListLoader }
 </script>
@@ -30,7 +30,8 @@ const settingsCard = useTemplateRef('settingsCard')
 const itemsCard = useTemplateRef('itemsCard')
 const newRecordDialog = useTemplateRef('newRecordDialog')
 
-const { allPlaythroughs, bestListPlaythrough } = useListPlaythroughs(list.value.id)
+const { allPlaythroughs } = usePlaythroughs()
+const { bestListPlaythrough } = useListPlaythroughs(list.value.id)
 
 useHotkey('q', () => {
   if (isInitialized.value && !isDone.value) {
