@@ -29,7 +29,7 @@ const list = {
 describe('customLists composable', () => {
   beforeEach(() => localStorage.clear())
 
-  it('imports', async () => {
+  it('imports', () => {
     const { lists, importList } = useCustomLists()
 
     expect(lists.value).toHaveLength(0)
@@ -55,7 +55,7 @@ describe('customLists composable', () => {
     expect(lists.value).toHaveLength(1)
   })
 
-  it('removes', async () => {
+  it('removes', () => {
     const { lists, importList, removeCustomList } = useCustomLists()
 
     expect(lists.value).toHaveLength(0)
@@ -70,7 +70,7 @@ describe('customLists composable', () => {
     expect(lists.value).toHaveLength(1)
   })
 
-  it('removes all', async () => {
+  it('removes all', () => {
     const { lists, importList, removeAllCustomLists } = useCustomLists()
 
     expect(lists.value).toHaveLength(0)

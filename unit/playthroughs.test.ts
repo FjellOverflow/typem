@@ -69,7 +69,7 @@ describe('playthroughs composable', () => {
     expect(getBestListPlaythrough('list0')).toEqual(playthrough6)
   })
 
-  it('deletes ', async () => {
+  it('deletes ', () => {
     const { allPlaythroughs, deletePlaythrough } = usePlaythroughs()
 
     const playthrough0 = generatedPlaythrough()
@@ -85,7 +85,7 @@ describe('playthroughs composable', () => {
     expect(allPlaythroughs.value).toEqual(expect.arrayContaining([playthrough1]))
   })
 
-  it('deletes all', async () => {
+  it('deletes all', () => {
     const { allPlaythroughs, deleteAllPlaythroughs } = usePlaythroughs()
 
     allPlaythroughs.value.push(generatedPlaythrough())
@@ -98,7 +98,7 @@ describe('playthroughs composable', () => {
     expect(allPlaythroughs.value).toHaveLength(0)
   })
 
-  it('imports', async () => {
+  it('imports', () => {
     const { allPlaythroughs, importPlaythroughs } = usePlaythroughs()
 
     expect(allPlaythroughs.value).toHaveLength(0)

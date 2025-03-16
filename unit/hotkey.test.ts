@@ -2,7 +2,7 @@ import { describe, it, expect, vi } from 'vitest'
 import { useHotkey } from '@/composables/hotkey'
 
 describe('hotkey composable', () => {
-  it('calls callback', async () => {
+  it('calls callback', () => {
     const callback = vi.fn()
 
     useHotkey('f', callback)

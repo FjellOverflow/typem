@@ -29,7 +29,7 @@ const list0 = {
 const list1 = { ...list0, id: 'list1' }
 
 describe('favorites composable', () => {
-  it('toggles favorite', async () => {
+  it('toggles favorite', () => {
     const { toggleFavorite, isFavorite } = useFavorites()
 
     expect(isFavorite(list0)).toBe(false)
