@@ -13,7 +13,7 @@
   "scripts": {
     "dev": "vite",
     "build": "run-p typecheck \"build-only {@}\" --",
-    "preview": "vite preview",
+    "preview": "vite build && vite preview",
     "test:unit": "vitest run",
     "test:unit:dev": "vitest",
     "test:e2e": "start-server-and-test preview http://localhost:4173 'cypress run --e2e'",
