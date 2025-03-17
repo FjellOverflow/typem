@@ -19,11 +19,11 @@ export function useCustomLists() {
     return true
   }
 
-  function removeAllCustomLists() {
+  function deleteAllCustomLists() {
     lists.value = []
   }
 
-  function removeCustomList(list: IList) {
+  function deleteCustomList(list: IList) {
     const index = lists.value.findIndex((l) => l.id === list.id)
 
     if (index >= 0) lists.value.splice(index, 1)
@@ -32,7 +32,7 @@ export function useCustomLists() {
   return {
     importList,
     lists,
-    removeAllCustomLists,
-    removeCustomList,
+    deleteAllCustomLists,
+    deleteCustomList,
   }
 }

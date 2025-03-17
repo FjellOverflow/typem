@@ -21,7 +21,7 @@ const confirmDeleteAllCustomListsDialog = useTemplateRef('confirmDeleteAllCustom
 const uploadHistoryJsonDialog = useTemplateRef('uploadHistoryJsonDialog')
 const uploadCustomListDialog = useTemplateRef('uploadCustomListDialog')
 
-const { removeAllCustomLists, lists: customLists } = useCustomLists()
+const { deleteAllCustomLists, lists: customLists } = useCustomLists()
 const { allPlaythroughs, deleteAllPlaythroughs, getBestListPlaythrough } = usePlaythroughs()
 
 function onClickDownloadAll() {
@@ -44,7 +44,7 @@ function onClickDownloadRecords() {
     />
     <DeleteAllCustomListsDialog
       ref="confirmDeleteAllCustomListsDialog"
-      @confirm="removeAllCustomLists"
+      @confirm="deleteAllCustomLists"
     />
 
     <UploadHistoryJsonDialog ref="uploadHistoryJsonDialog" />

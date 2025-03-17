@@ -56,7 +56,7 @@ describe('customLists composable', () => {
   })
 
   it('removes', () => {
-    const { lists, importList, removeCustomList } = useCustomLists()
+    const { lists, importList, deleteCustomList } = useCustomLists()
 
     expect(lists.value).toHaveLength(0)
 
@@ -65,13 +65,13 @@ describe('customLists composable', () => {
 
     expect(lists.value).toHaveLength(2)
 
-    removeCustomList({ ...list, id: 'custom-list0' })
+    deleteCustomList({ ...list, id: 'custom-list0' })
 
     expect(lists.value).toHaveLength(1)
   })
 
   it('removes all', () => {
-    const { lists, importList, removeAllCustomLists } = useCustomLists()
+    const { lists, importList, deleteAllCustomLists } = useCustomLists()
 
     expect(lists.value).toHaveLength(0)
 
@@ -80,7 +80,7 @@ describe('customLists composable', () => {
 
     expect(lists.value).toHaveLength(2)
 
-    removeAllCustomLists()
+    deleteAllCustomLists()
 
     expect(lists.value).toHaveLength(0)
   })
