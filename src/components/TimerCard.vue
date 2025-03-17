@@ -17,7 +17,7 @@ const emit = defineEmits<{
 }>()
 
 const displayTime = computed(() => formatDuration(props.seconds))
-useHotkey('x', () => emit('pause'))
+useHotkey('x', () => props.numberOfPauses !== 0 && emit('pause'))
 
 const isStoppable = computed(
   () => (props.numberOfPauses === 0 || !props.isRunning) && props.seconds > 0,
