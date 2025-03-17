@@ -30,3 +30,8 @@ jobs:
     uses: ./.github/workflows/setup-and-run-script.yaml
     with:
       script: 'test:unit'
+
+  e2e-tests:
+    uses: ./.github/workflows/setup-and-run-script.yaml
+    with:
+      script: 'test:e2e'
