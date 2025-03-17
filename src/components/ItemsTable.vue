@@ -43,7 +43,7 @@ defineExpose({
           :class="{ 'text-sm': smallerLayout, 'text-base': !smallerLayout }"
         >
           <div
-            class="overflow-visible border rounded-md py-1 px-2"
+            class="overflow-visible border rounded-md py-1 px-2 flex justify-center"
             :class="{
               'border-success': highlighted?.answer === item.answer,
               'border-error': isStopped && !item.checked,
@@ -68,8 +68,9 @@ defineExpose({
                   'text-success': highlighted?.answer === item.answer,
                   'text-error': isStopped && !item.checked,
                 }"
-                >{{ item.answer }}</span
               >
+                {{ item.answer }}
+              </span>
             </template>
             <div v-else :class="[smallerLayout ? 'h-5' : 'h-6']"></div>
           </div>
