@@ -1,6 +1,7 @@
 import { ListPlaythroughSchema, type IListPlaythrough } from '@/types'
 import { useStorage } from '@vueuse/core'
 import { useToasts } from '@/composables/toasts'
+import i18n from '@/plugins/i18n'
 
 function sortPlaythroughByMatchesAndSeconds(p1: IListPlaythrough, p2: IListPlaythrough) {
   if (p1.numberOfMatches !== p2.numberOfMatches) return p2.numberOfMatches - p1.numberOfMatches
@@ -26,7 +27,6 @@ function validatePlaythroughs(objects: unknown[]): IListPlaythrough[] {
 }
 
 export function usePlaythroughs() {
-  const { t } = useI18n()
   const { sendToast } = useToasts()
 
   const allPlaythroughs = useStorage<IListPlaythrough[]>('history', [])
@@ -51,12 +51,12 @@ export function usePlaythroughs() {
     if (playthroughIndex > -1) {
       allPlaythroughs.value.splice(playthroughIndex, 1)
       sendToast({
-        message: t('Deleted playthrough'),
+        message: i18n.global.t('Deleted playthrough'),
         sentiment: 'alert-success',
       })
     } else {
       sendToast({
-        message: t("Couldn't delete playthrough"),
+        message: i18n.global.t("Couldn't delete playthrough"),
         sentiment: 'alert-error',
       })
     }
@@ -65,7 +65,7 @@ export function usePlaythroughs() {
   function deleteAllPlaythroughs() {
     allPlaythroughs.value = []
     sendToast({
-      message: t('Deleted all playthroughs'),
+      message: i18n.global.t('Deleted all playthroughs'),
       sentiment: 'alert-success',
     })
   }
