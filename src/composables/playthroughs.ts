@@ -1,5 +1,6 @@
 import { ListPlaythroughSchema, type IListPlaythrough } from '@/types'
 import { useStorage } from '@vueuse/core'
+import { useToasts } from '@/composables/toasts'
 
 function sortPlaythroughByMatchesAndSeconds(p1: IListPlaythrough, p2: IListPlaythrough) {
   if (p1.numberOfMatches !== p2.numberOfMatches) return p2.numberOfMatches - p1.numberOfMatches
@@ -25,6 +26,9 @@ function validatePlaythroughs(objects: unknown[]): IListPlaythrough[] {
 }
 
 export function usePlaythroughs() {
+  const { t } = useI18n()
+  const { sendToast } = useToasts()
+
   const allPlaythroughs = useStorage<IListPlaythrough[]>('history', [])
 
   allPlaythroughs.value = validatePlaythroughs([...allPlaythroughs.value])
@@ -44,11 +48,26 @@ export function usePlaythroughs() {
       (p) => JSON.stringify(p) === JSON.stringify(playthrough),
     )
 
-    if (playthroughIndex > -1) allPlaythroughs.value.splice(playthroughIndex, 1)
+    if (playthroughIndex > -1) {
+      allPlaythroughs.value.splice(playthroughIndex, 1)
+      sendToast({
+        message: t('Deleted playthrough'),
+        sentiment: 'alert-success',
+      })
+    } else {
+      sendToast({
+        message: t("Couldn't delete playthrough"),
+        sentiment: 'alert-error',
+      })
+    }
   }
 
   function deleteAllPlaythroughs() {
     allPlaythroughs.value = []
+    sendToast({
+      message: t('Deleted all playthroughs'),
+      sentiment: 'alert-success',
+    })
   }
 
   function importPlaythroughs(importedObj: unknown): boolean {

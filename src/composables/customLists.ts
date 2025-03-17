@@ -1,6 +1,10 @@
 import { ListSchema, type IList } from '@/types'
+import { useToasts } from '@/composables/toasts'
+import i18n from '@/plugins/i18n'
 
 export function useCustomLists() {
+  const { sendToast } = useToasts()
+
   const lists = useStorage<IList[]>('customLists', [])
 
   function importList(o: unknown): boolean {
@@ -21,12 +25,27 @@ export function useCustomLists() {
 
   function deleteAllCustomLists() {
     lists.value = []
+    sendToast({
+      message: i18n.global.t('Deleted all custom lists'),
+      sentiment: 'alert-success',
+    })
   }
 
   function deleteCustomList(list: IList) {
     const index = lists.value.findIndex((l) => l.id === list.id)
 
-    if (index >= 0) lists.value.splice(index, 1)
+    if (index >= 0) {
+      lists.value.splice(index, 1)
+      sendToast({
+        message: i18n.global.t('Deleted custom list'),
+        sentiment: 'alert-success',
+      })
+    } else {
+      sendToast({
+        message: i18n.global.t("Couldn't delete custom list"),
+        sentiment: 'alert-error',
+      })
+    }
   }
 
   return {
