@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.2](https://github.com/FjellOverflow/typem/compare/v0.1.1...v0.1.2) (2025-03-17)
+
+
+### Features
+
+* show toasts after item deletions ([ada325e](https://github.com/FjellOverflow/typem/commit/ada325e15d4b7226a6d303282298e1bb803fdfe3))
+
+
+### Bug Fixes
+
+* access i18n without composable ([359d0e1](https://github.com/FjellOverflow/typem/commit/359d0e1e5c0958a2005e9aed19c356d3b9b027c5))
+* can't pause with hotkey when no pausing allowed ([d6164e4](https://github.com/FjellOverflow/typem/commit/d6164e4b1383389463651f543264808cd33e6472))
+* center items within item boxes ([91022f2](https://github.com/FjellOverflow/typem/commit/91022f2b8edf6d0333c42fddfcdcc99a38d7aa4c))
+* spelling error in list ([b23c27f](https://github.com/FjellOverflow/typem/commit/b23c27f72be67ff2358ebe82fa5744d15a8b6898))
+
 ## [0.1.1](https://github.com/FjellOverflow/typem/compare/v0.1.0...v0.1.1) (2025-03-13)
 
 
