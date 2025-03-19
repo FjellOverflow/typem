@@ -49,16 +49,26 @@ function resetFilters() {
       <option value="difficulty">{{ $t('Sort by difficulty') }}</option>
       <option value="length">{{ $t('Sort by length') }}</option>
     </select>
-    <button class="ml-4 btn btn-ghost md:hidden" @click="toggleSortDirection">
+    <div
+      class="ml-4 tooltip tooltip-bottom md:hidden"
+      :data-tip="sortDirection === 'asc' ? $t('Sort ascending') : $t('Sort descending')"
+    >
+      <button class="btn btn-ghost" @click="toggleSortDirection">
+        <ArrowDownNarrowWideIcon v-if="sortDirection === 'asc'" />
+        <ArrowDownWideNarrowIcon v-else />
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="tooltip tooltip-bottom md:block hidden"
+    :data-tip="sortDirection === 'asc' ? $t('Sort ascending') : $t('Sort descending')"
+  >
+    <button class="btn btn-ghost md:block hidden" @click="toggleSortDirection">
       <ArrowDownNarrowWideIcon v-if="sortDirection === 'asc'" />
       <ArrowDownWideNarrowIcon v-else />
     </button>
   </div>
-
-  <button class="btn btn-ghost md:block hidden" @click="toggleSortDirection">
-    <ArrowDownNarrowWideIcon v-if="sortDirection === 'asc'" />
-    <ArrowDownWideNarrowIcon v-else />
-  </button>
 
   <button
     :disabled="!filtersActive"

@@ -39,17 +39,26 @@ function toggleSortDirection() {
       <option value="speed">{{ $t('Sort by speed') }}</option>
       <option value="duration">{{ $t('Sort by duration') }}</option>
     </select>
-    <button class="ml-4 btn btn-ghost md:hidden" @click="toggleSortDirection">
+    <div
+      class="ml-4 tooltip tooltip-bottom md:hidden"
+      :data-tip="sortDirection === 'asc' ? $t('Sort ascending') : $t('Sort descending')"
+    >
+      <button class="btn btn-ghost" @click="toggleSortDirection">
+        <ArrowDownNarrowWideIcon v-if="sortDirection === 'asc'" />
+        <ArrowDownWideNarrowIcon v-else />
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="tooltip tooltip-bottom md:block hidden"
+    :data-tip="sortDirection === 'asc' ? $t('Sort ascending') : $t('Sort descending')"
+  >
+    <button class="btn btn-ghost" @click="toggleSortDirection">
       <ArrowDownNarrowWideIcon v-if="sortDirection === 'asc'" />
       <ArrowDownWideNarrowIcon v-else />
     </button>
   </div>
-
-  <button class="btn btn-ghost md:block hidden" @click="toggleSortDirection">
-    <ArrowDownNarrowWideIcon v-if="sortDirection === 'asc'" />
-    <ArrowDownWideNarrowIcon v-else />
-  </button>
-
   <button
     :disabled="!filtersActive"
     class="md:ml-auto mx-auto btn btn-outline text-xl font-medium md:w-auto w-1/2"
