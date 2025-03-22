@@ -10,7 +10,7 @@ function toggleTheme() {
 }
 </script>
 <template>
-  <button class="btn btn-ghost btn-sm sm:btn-md" @click="toggleTheme">
+  <button id="themeToggle" class="btn btn-ghost btn-sm sm:btn-md" @click="toggleTheme">
     <SunIcon class="w-4 sm:w-6" v-if="theme === 'light'" />
     <MoonIcon class="w-4 sm:w-6" v-else />
   </button>

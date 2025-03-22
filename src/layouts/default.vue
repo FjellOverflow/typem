@@ -82,7 +82,7 @@ document.addEventListener('scroll', () => {
       <AppInfoPopUp ref="appInfoPopUp" />
       <div class="xl:flex hidden gap-2">
         <ThemeToggle />
-        <button @click="appInfoPopUp?.open()" class="btn btn-ghost">
+        <button id="appInfoPopUpBtn" @click="appInfoPopUp?.open()" class="btn btn-ghost">
           <InfoIcon />
         </button>
         <button @click="openHelp" class="btn btn-ghost">
@@ -109,7 +109,11 @@ document.addEventListener('scroll', () => {
         </ul>
         <div class="flex gap-2">
           <ThemeToggle />
-          <button @click="appInfoPopUp?.open()" class="btn btn-ghost btn-sm sm:btn-md">
+          <button
+            id="appInfoPopUpBtn"
+            @click="appInfoPopUp?.open()"
+            class="btn btn-ghost btn-sm sm:btn-md"
+          >
             <InfoIcon class="w-4 sm:w-6" />
           </button>
           <button @click="openHelp" class="btn btn-ghost btn-sm sm:btn-md">
