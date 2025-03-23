@@ -93,7 +93,7 @@ describe('/play settings', () => {
   const resetGame = () => {
     cy.get('#timerCard').find('button').contains('Give up').click()
     cy.get('#list-preview-planets').find('button').contains('Restart').click()
-    cy.get('#settingsCard').click()
+    cy.get('#settingsCard').children().first().click()
   }
 
   it('respects number of pauses', () => {
@@ -174,7 +174,8 @@ describe('/play settings', () => {
     cy.get('#itemsCard').find('li').first().contains('Mercury').should('not.exist')
 
     cy.get('#list-preview-planets').find('button').contains('Restart').click()
-    cy.get('#settingsCard').click()
+
+    cy.get('#settingsCard').children().first().click()
     cy.get('#settingsCard').contains('Shuffle items').click()
     startGame()
     cy.get('#timerCard').find('button').contains('Give up').click()
@@ -235,7 +236,6 @@ describe('/play settings', () => {
   })
 
   it('respects combination of settings', () => {
-    cy.get('#settingsCard').click()
     cy.get('#settingsCard').contains('Require whitespaces').click()
     cy.get('#settingsCard').contains('Require proper capitalization').click()
     startGame()
