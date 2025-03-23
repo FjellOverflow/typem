@@ -257,6 +257,87 @@ describe('/play settings', () => {
   })
 })
 
+describe('/play game', () => {
+  it('matches some', () => {
+    cy.get('button').contains("I'm ready!").click()
+
+    cy.get('#inputField').type('mercury')
+    cy.get('#inputField').type('venus')
+    cy.get('#inputField').type('earth')
+    cy.get('#inputField').type('mars')
+
+    cy.get('#itemsCard').contains('Items (4/8)').should('exist')
+
+    cy.get('#itemsCard').contains('Mercury').should('exist')
+    cy.get('#itemsCard').contains('Venus').should('exist')
+    cy.get('#itemsCard').contains('Earth').should('exist')
+    cy.get('#itemsCard').contains('Mars').should('exist')
+  })
+
+  it('starts timer when typing', () => {
+    cy.get('#settingsCard').contains('Allow pauses').click()
+    cy.get('button').contains("I'm ready!").click()
+
+    cy.get('#inputField').type('a')
+
+    cy.get('#timerCard').find('button').contains('Start').should('not.exist')
+    cy.get('#timerCard').find('button').contains('Give up').should('not.exist')
+    cy.get('#timerCard').find('button').contains('Pause').click()
+
+    cy.get('#inputField').type('a')
+
+    cy.get('#timerCard').find('button').contains('Start').should('not.exist')
+    cy.get('#timerCard').find('button').contains('Give up').should('not.exist')
+    cy.get('#timerCard').find('button').contains('Pause').click()
+  })
+
+  it('ends game when all items named', () => {
+    cy.get('button').contains("I'm ready!").click()
+
+    cy.get('#inputField').type('mercury')
+    cy.get('#inputField').type('venus')
+    cy.get('#inputField').type('earth')
+    cy.get('#inputField').type('mars')
+    cy.get('#inputField').type('jupiter')
+    cy.get('#inputField').type('saturn')
+    cy.get('#inputField').type('uranus')
+    cy.get('#inputField').type('neptun')
+
+    cy.get('#timerCard').should('not.exist')
+    cy.get('div').contains('You did it!').should('exist')
+    cy.get('#list-preview-planets').find('button').contains('Restart').should('exist')
+  })
+
+  it('notifies on new record', () => {
+    cy.get('button').contains("I'm ready!").click()
+
+    cy.get('#inputField').type('mercury')
+    cy.get('#inputField').type('venus')
+    cy.get('#inputField').type('earth')
+    cy.get('#inputField').type('mars')
+    cy.get('#inputField').type('jupiter')
+    cy.get('#inputField').type('saturn')
+    cy.get('#inputField').type('uranus')
+    // eslint-disable-next-line cypress/no-unnecessary-waiting
+    cy.wait(1000)
+    cy.get('#inputField').type('neptun')
+
+    cy.get('#list-preview-planets').find('button').contains('Restart').click()
+    cy.get('button').contains("I'm ready!").click()
+
+    cy.get('#inputField').type('mercury')
+    cy.get('#inputField').type('venus')
+    cy.get('#inputField').type('earth')
+    cy.get('#inputField').type('mars')
+    cy.get('#inputField').type('jupiter')
+    cy.get('#inputField').type('saturn')
+    cy.get('#inputField').type('uranus')
+    cy.get('#inputField').type('neptun')
+
+    cy.get('dialog').contains('New record').should('exist')
+  })
+})
+
 beforeEach(() => {
   cy.window().then((window) => {
     window.localStorage.setItem('completedHelp', 'true')
