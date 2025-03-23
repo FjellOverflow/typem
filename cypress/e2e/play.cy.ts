@@ -84,6 +84,179 @@ describe('/play basic functionality', () => {
   })
 })
 
+describe('/play settings', () => {
+  const startGame = () => {
+    cy.get('#list-preview-planets').find('button').contains("I'm ready!").click()
+    cy.get('#timerCard').find('button').contains('Start').click()
+  }
+
+  const resetGame = () => {
+    cy.get('#timerCard').find('button').contains('Give up').click()
+    cy.get('#list-preview-planets').find('button').contains('Restart').click()
+    cy.get('#settingsCard').click()
+  }
+
+  it('respects number of pauses', () => {
+    const pauseAndResume = () => {
+      cy.get('#timerCard').find('button').contains('Pause').click()
+      cy.get('#timerCard').find('button').contains('Resume').click()
+    }
+
+    const setPauses = (i: number) => {
+      cy.get('label')
+        .contains('Allow pauses')
+        .parent()
+        .find('input')
+        .then((checkbox) => {
+          if (!checkbox.is(':checked')) {
+            cy.get('label').contains('Allow pauses').click()
+          }
+        })
+      cy.get('input[type="range"]').invoke('val', i).trigger('input')
+    }
+
+    startGame()
+
+    cy.get('#timerCard').find('button').contains('Pause').should('be.disabled')
+
+    const pauseNtimes = (n: number) => {
+      resetGame()
+      setPauses(n)
+      startGame()
+
+      for (let i = 0; i < n; i++) {
+        pauseAndResume()
+      }
+    }
+
+    pauseNtimes(1)
+    cy.get('#timerCard').find('button').contains('Pause').should('be.disabled')
+
+    pauseNtimes(2)
+    cy.get('#timerCard').find('button').contains('Pause').should('be.disabled')
+
+    pauseNtimes(3)
+    cy.get('#timerCard').find('button').contains('Pause').should('be.disabled')
+
+    pauseNtimes(4)
+    cy.get('#timerCard').find('button').contains('Pause').should('be.disabled')
+
+    pauseNtimes(5)
+    cy.get('#timerCard').find('button').contains('Pause').should('be.disabled')
+
+    resetGame()
+    cy.get('input[type="range"]').invoke('val', 6).trigger('input')
+    startGame()
+    for (let i = 0; i < 7; i++) {
+      pauseAndResume()
+    }
+    cy.get('#timerCard').find('button').contains('Pause').should('not.be.disabled')
+  })
+
+  it('shows hints', () => {
+    startGame()
+    cy.get('div').contains('1st planet').should('not.exist')
+
+    resetGame()
+
+    cy.get('#settingsCard').contains('Show hints').click()
+
+    startGame()
+    cy.get('div').contains('1st planet').should('exist')
+  })
+
+  it('shuffles', () => {
+    cy.get('#settingsCard').contains('Shuffle items').click()
+
+    startGame()
+    cy.get('#timerCard').find('button').contains('Give up').click()
+
+    cy.get('#itemsCard').find('li').first().contains('Mercury').should('not.exist')
+
+    cy.get('#list-preview-planets').find('button').contains('Restart').click()
+    cy.get('#settingsCard').click()
+    cy.get('#settingsCard').contains('Shuffle items').click()
+    startGame()
+    cy.get('#timerCard').find('button').contains('Give up').click()
+
+    cy.get('#itemsCard').find('li').first().contains('Mercury').should('exist')
+  })
+
+  it('requires capitalization', () => {
+    startGame()
+    cy.get('#inputField').type('mercury')
+    cy.get('#itemsCard').contains('Items (1/8)').should('exist')
+    resetGame()
+
+    cy.get('#settingsCard').contains('Require proper capitalization').click()
+    startGame()
+    cy.get('#inputField').type('mercury')
+
+    cy.get('#itemsCard').contains('Items (0/8)').should('exist')
+
+    cy.get('#inputField').clear()
+    cy.get('#inputField').type('Mercury')
+
+    cy.get('#itemsCard').contains('Items (1/8)').should('exist')
+  })
+
+  it('requires whitespaces', () => {
+    startGame()
+    cy.get('#inputField').type('mer cury')
+    cy.get('#itemsCard').contains('Items (1/8)').should('exist')
+    resetGame()
+
+    cy.get('#settingsCard').contains('Require whitespaces').click()
+    startGame()
+    cy.get('#inputField').type('mer cury')
+
+    cy.get('#itemsCard').contains('Items (0/8)').should('exist')
+
+    cy.get('#inputField').clear()
+    cy.get('#inputField').type('mercury')
+
+    cy.get('#itemsCard').contains('Items (1/8)').should('exist')
+  })
+
+  it('requires ordering', () => {
+    startGame()
+    cy.get('#inputField').type('venus')
+    cy.get('#itemsCard').contains('Items (0/8)').should('exist')
+    cy.get('#inputField').clear()
+    cy.get('#inputField').type('mercury')
+    cy.get('#itemsCard').contains('Items (1/8)').should('exist')
+    resetGame()
+
+    cy.get('#settingsCard').contains('Require right ordering').click()
+    startGame()
+    cy.get('#inputField').type('venus')
+
+    cy.get('#itemsCard').contains('Items (1/8)').should('exist')
+  })
+
+  it('respects combination of settings', () => {
+    cy.get('#settingsCard').click()
+    cy.get('#settingsCard').contains('Require whitespaces').click()
+    cy.get('#settingsCard').contains('Require proper capitalization').click()
+    startGame()
+
+    cy.get('#inputField').type('venus')
+    cy.get('#itemsCard').contains('Items (0/8)').should('exist')
+
+    cy.get('#inputField').clear()
+    cy.get('#inputField').type('mercury')
+    cy.get('#itemsCard').contains('Items (0/8)').should('exist')
+
+    cy.get('#inputField').clear()
+    cy.get('#inputField').type('Mer cury')
+    cy.get('#itemsCard').contains('Items (0/8)').should('exist')
+
+    cy.get('#inputField').clear()
+    cy.get('#inputField').type('Mercury')
+    cy.get('#itemsCard').contains('Items (1/8)').should('exist')
+  })
+})
+
 beforeEach(() => {
   cy.window().then((window) => {
     window.localStorage.setItem('completedHelp', 'true')
