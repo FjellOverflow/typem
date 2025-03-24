@@ -36,7 +36,7 @@ async function loadList() {
 }
 </script>
 <template>
-  <div v-if="list" class="border rounded-md p-4 flex flex-col gap-4">
+  <div v-if="list" class="playthrough-card border rounded-md p-4 flex flex-col gap-4">
     <div class="text-2xl sm:text-3xl font-medium flex justify-between">
       <div class="w-auto flex gap-2 sm:gap-4 items-center">
         <img
