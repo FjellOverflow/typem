@@ -1,6 +1,5 @@
 describe('/history', () => {
   it('adds playthrough', () => {
-    cy.visit('/#/history')
     cy.contains('No playthroughs yet').should('exist')
 
     cy.visit('/#/play/planets')
@@ -14,26 +13,30 @@ describe('/history', () => {
   })
 
   it('has all data', () => {
-    cy.visit('/#/play/planets')
-    cy.get('button').contains("I'm ready!").click()
-    cy.get('#inputField').type('mercury')
-    cy.get('#inputField').type('venus')
-    cy.get('#inputField').type('earth')
-    cy.get('#inputField').type('mars')
-    cy.get('#inputField').type('jupiter')
-    cy.get('#inputField').type('saturn')
-    cy.get('#inputField').type('uranus')
-    cy.get('#inputField').type('neptun')
-
-    cy.visit('/#/history')
+    cy.window().then((window) => {
+      window.localStorage.setItem(
+        'history',
+        JSON.stringify([
+          {
+            listId: 'planets',
+            seconds: 8,
+            finished: true,
+            numberOfMatches: 1,
+            timestamp: new Date().toISOString(),
+          },
+        ]),
+      )
+    })
 
     cy.get('.playthrough-card').contains('Record').should('exist')
     cy.get('.playthrough-card').contains('Finished').should('exist')
-    cy.get('.playthrough-card').contains('sec/item').should('exist')
+    cy.get('.playthrough-card').contains('8.0 sec').should('exist')
+    cy.get('.playthrough-card').contains('8.00 sec/item').should('exist')
     cy.get('.playthrough-card').contains(new Date().toLocaleDateString()).should('exist')
   })
 
   it("doesn't add playthrough with no matches", () => {
+    cy.contains('No playthroughs yet').should('exist')
     cy.visit('/#/play/planets')
     cy.get('button').contains("I'm ready!").click()
     cy.get('#inputField').type('m')
@@ -46,12 +49,20 @@ describe('/history', () => {
   })
 
   it('removes playthrough', () => {
-    cy.visit('/#/play/planets')
-    cy.get('button').contains("I'm ready!").click()
-    cy.get('#inputField').type('mercury')
-    cy.get('#timerCard').find('button').contains('Give up').click()
-
-    cy.visit('/#/history')
+    cy.window().then((window) => {
+      window.localStorage.setItem(
+        'history',
+        JSON.stringify([
+          {
+            listId: 'planets',
+            seconds: 8,
+            finished: true,
+            numberOfMatches: 1,
+            timestamp: new Date().toISOString(),
+          },
+        ]),
+      )
+    })
 
     cy.get('.playthrough-card').find('div[data-tip="Delete playthrough"]').find('button').click()
     cy.get('dialog').find('button').contains('Cancel').click()
@@ -67,62 +78,56 @@ describe('/history', () => {
   })
 
   it('navigates to list', () => {
-    cy.visit('/#/play/planets')
-    cy.get('button').contains("I'm ready!").click()
-    cy.get('#inputField').type('mercury')
-    cy.get('#timerCard').find('button').contains('Give up').click()
-
-    cy.visit('/#/history')
+    cy.window().then((window) => {
+      window.localStorage.setItem(
+        'history',
+        JSON.stringify([
+          {
+            listId: 'planets',
+            seconds: 8,
+            finished: true,
+            numberOfMatches: 1,
+            timestamp: new Date().toISOString(),
+          },
+        ]),
+      )
+    })
 
     cy.get('.playthrough-card').find('a').contains('Planets of the Solar System').click()
 
     cy.url().should('contain', '/play/planets')
   })
 
-  const generatePlaythroughs = () => {
-    cy.visit('/#/play/planets')
-    cy.get('button').contains("I'm ready!").click()
-
-    const startNewGame = () => {
-      cy.get('#timerCard').find('button').contains('Give up').click()
-      cy.get('button').contains('Restart').click()
-      cy.get('button').contains("I'm ready!").click()
-    }
-
-    cy.get('#inputField').type('m')
-    startNewGame()
-
-    cy.get('#inputField').type('mercury')
-    startNewGame()
-
-    cy.get('#inputField').type('mercury')
-    cy.get('#inputField').type('venus')
-    cy.get('#inputField').type('earth')
-    cy.get('#inputField').type('mars')
-    cy.get('#inputField').type('jupiter')
-    cy.get('#inputField').type('saturn')
-    cy.get('#inputField').type('uranus')
-    // eslint-disable-next-line cypress/no-unnecessary-waiting
-    cy.wait(1000)
-    cy.get('#inputField').type('neptun')
-
-    cy.get('button').contains('Restart').click()
-    cy.get('button').contains("I'm ready!").click()
-
-    cy.get('#inputField').type('mercury')
-    cy.get('#inputField').type('venus')
-    cy.get('#inputField').type('earth')
-    cy.get('#inputField').type('mars')
-    cy.get('#inputField').type('jupiter')
-    cy.get('#inputField').type('saturn')
-    cy.get('#inputField').type('uranus')
-    // eslint-disable-next-line cypress/no-unnecessary-waiting
-    cy.wait(500)
-    cy.get('#inputField').type('neptun')
-  }
-
   it('shows all, finished and records', () => {
-    generatePlaythroughs()
+    cy.window().then((window) => {
+      window.localStorage.setItem(
+        'history',
+        JSON.stringify([
+          {
+            listId: 'planets',
+            seconds: 7,
+            finished: false,
+            numberOfMatches: 1,
+            timestamp: new Date().toISOString(),
+          },
+          {
+            listId: 'planets',
+            seconds: 9,
+            finished: true,
+            numberOfMatches: 8,
+            timestamp: new Date(new Date().setMinutes(-1)).toISOString(),
+          },
+          {
+            listId: 'planets',
+            seconds: 8,
+            finished: true,
+            numberOfMatches: 8,
+            timestamp: new Date(new Date().setMinutes(-2)).toISOString(),
+          },
+        ]),
+      )
+    })
+
     cy.visit('/#/history/all')
 
     cy.get('.playthrough-card').should('have.length', 3)
@@ -146,18 +151,45 @@ describe('/history', () => {
   })
 
   it('filters', () => {
-    generatePlaythroughs()
+    cy.window().then((window) => {
+      window.localStorage.setItem(
+        'history',
+        JSON.stringify([
+          {
+            listId: 'planets',
+            seconds: 7,
+            finished: false,
+            numberOfMatches: 1,
+            timestamp: new Date().toISOString(),
+          },
+          {
+            listId: 'planets',
+            seconds: 9,
+            finished: true,
+            numberOfMatches: 8,
+            timestamp: new Date(new Date().setMinutes(-1)).toISOString(),
+          },
+          {
+            listId: 'planets',
+            seconds: 8,
+            finished: true,
+            numberOfMatches: 8,
+            timestamp: new Date(new Date().setMinutes(-2)).toISOString(),
+          },
+        ]),
+      )
+    })
     cy.visit('/#/history')
 
     cy.get('select').contains('Sort by').closest('select').select('Sort by date')
-    cy.get('.playthrough-card').first().contains('Record').should('exist')
+    cy.get('.playthrough-card').first().contains('Matched 1/8').should('exist')
     cy.get('.playthrough-card').eq(1).contains('Finished').should('exist')
-    cy.get('.playthrough-card').last().contains('Matched 1/8').should('exist')
+    cy.get('.playthrough-card').last().contains('Record').should('exist')
 
     cy.get('select').contains('Sort by').closest('select').select('Sort by speed')
     cy.get('.playthrough-card').first().contains('Record').should('exist')
-    cy.get('.playthrough-card').eq(1).contains('Matched 1/8').should('exist')
-    cy.get('.playthrough-card').last().contains('Finished').should('exist')
+    cy.get('.playthrough-card').eq(1).contains('Finished').should('exist')
+    cy.get('.playthrough-card').last().contains('Matched 1/8').should('exist')
 
     cy.get('select').contains('Sort by').closest('select').select('Sort by duration')
     cy.get('.playthrough-card').first().contains('Matched 1/8').should('exist')
@@ -167,19 +199,19 @@ describe('/history', () => {
     cy.get('div[data-tip^="Sort"]').find('button').eq(1).click()
 
     cy.get('select').contains('Sort by').closest('select').select('Sort by date')
-    cy.get('.playthrough-card').last().contains('Record').should('exist')
+    cy.get('.playthrough-card').first().contains('Record').should('exist')
     cy.get('.playthrough-card').eq(1).contains('Finished').should('exist')
-    cy.get('.playthrough-card').first().contains('Matched 1/8').should('exist')
+    cy.get('.playthrough-card').last().contains('Matched 1/8').should('exist')
 
     cy.get('select').contains('Sort by').closest('select').select('Sort by speed')
+    cy.get('.playthrough-card').first().contains('Matched 1/8').should('exist')
+    cy.get('.playthrough-card').eq(1).contains('Finished').should('exist')
     cy.get('.playthrough-card').last().contains('Record').should('exist')
-    cy.get('.playthrough-card').eq(1).contains('Matched 1/8').should('exist')
-    cy.get('.playthrough-card').first().contains('Finished').should('exist')
 
     cy.get('select').contains('Sort by').closest('select').select('Sort by duration')
-    cy.get('.playthrough-card').last().contains('Matched 1/8').should('exist')
-    cy.get('.playthrough-card').eq(1).contains('Record').should('exist')
     cy.get('.playthrough-card').first().contains('Finished').should('exist')
+    cy.get('.playthrough-card').eq(1).contains('Record').should('exist')
+    cy.get('.playthrough-card').last().contains('Matched 1/8').should('exist')
 
     cy.get('select').contains('All lists').closest('select').select('African Capitals')
 
@@ -199,4 +231,5 @@ beforeEach(() => {
   cy.window().then((window) => {
     window.localStorage.setItem('completedHelp', 'true')
   })
+  cy.visit('/#/history')
 })
