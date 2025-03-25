@@ -47,3 +47,9 @@ export async function uploadJSON(file: File) {
 
   return JSON.parse(content as string)
 }
+
+export function generateTimestampStr(): string {
+  const d = new Date()
+
+  return [d.getFullYear(), d.getMonth() + 1, d.getDate(), d.getHours(), d.getMinutes()].join('_')
+}

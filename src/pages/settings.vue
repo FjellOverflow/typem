@@ -6,7 +6,7 @@ export { useListsLoader }
 
 <script setup lang="ts">
 import { usePlaythroughs } from '@/composables/playthroughs'
-import { downloadJSON } from '@/plugins/util'
+import { downloadJSON, generateTimestampStr } from '@/plugins/util'
 import { useTitle } from '@vueuse/core'
 import { DownloadIcon, RotateCcwIcon, TrashIcon, TrophyIcon, UploadIcon } from 'lucide-vue-next'
 import { useCustomLists } from '@/composables/customLists'
@@ -25,7 +25,7 @@ const { deleteAllCustomLists, lists: customLists } = useCustomLists()
 const { allPlaythroughs, deleteAllPlaythroughs, getBestListPlaythrough } = usePlaythroughs()
 
 function onClickDownloadAll() {
-  downloadJSON(allPlaythroughs.value, `typem_history_${new Date().toISOString()}`)
+  downloadJSON(allPlaythroughs.value, `typem_history_${generateTimestampStr()}`)
 }
 
 function onClickDownloadRecords() {
@@ -33,7 +33,7 @@ function onClickDownloadRecords() {
     .map((listId) => getBestListPlaythrough(listId))
     .filter((p) => !!p)
 
-  downloadJSON(records, `typem_records_${new Date().toISOString()}`)
+  downloadJSON(records, `typem_records_${generateTimestampStr()}`)
 }
 </script>
 <template>
