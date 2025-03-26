@@ -85,7 +85,7 @@ document.addEventListener('scroll', () => {
         <button id="appInfoPopUpBtn" @click="appInfoPopUp?.open()" class="btn btn-ghost">
           <InfoIcon />
         </button>
-        <button @click="openHelp" class="btn btn-ghost">
+        <button id="openHelpBtn" @click="openHelp" class="btn btn-ghost">
           <HelpCircleIcon />
         </button>
       </div>
@@ -116,7 +116,7 @@ document.addEventListener('scroll', () => {
           >
             <InfoIcon class="w-4 sm:w-6" />
           </button>
-          <button @click="openHelp" class="btn btn-ghost btn-sm sm:btn-md">
+          <button id="openHelpBtn" @click="openHelp" class="btn btn-ghost btn-sm sm:btn-md">
             <HelpCircleIcon class="w-4 sm:w-6" />
           </button>
         </div>
