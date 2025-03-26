@@ -108,6 +108,15 @@ export function useHelp() {
           }, 500)
           r()
         }),
+      when: {
+        show() {
+          const vElement = this.getElement()
+          if (vElement)
+            vElement.focus = () => {
+              /* Do nothing */
+            }
+        },
+      },
     },
     {
       attachTo: {
@@ -122,6 +131,15 @@ export function useHelp() {
           }, 500)
           r()
         }),
+      when: {
+        show() {
+          const vElement = this.getElement()
+          if (vElement)
+            vElement.focus = () => {
+              /* Do nothing */
+            }
+        },
+      },
     },
     {
       attachTo: {
@@ -167,6 +185,7 @@ export function useHelp() {
       ],
     },
     {
+      canClickTarget: false,
       attachTo: {
         element: '#main',
         on: 'top',
