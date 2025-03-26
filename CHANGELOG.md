@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.3](https://github.com/FjellOverflow/typem/compare/v0.1.2...v0.1.3) (2025-03-26)
+
+
+### Features
+
+* add tooltips to sortDir toggles in filters ([50c109f](https://github.com/FjellOverflow/typem/commit/50c109f9e9bfc492a60c0ffc0c927715b216a828))
+
+
+### Bug Fixes
+
+* small adjustments to user tour ([a582581](https://github.com/FjellOverflow/typem/commit/a5825815c7ab701fdbeee4e81458a191fb6041a4))
+
 ## [0.1.2](https://github.com/FjellOverflow/typem/compare/v0.1.1...v0.1.2) (2025-03-17)
 
 
