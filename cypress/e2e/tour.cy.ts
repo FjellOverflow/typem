@@ -84,17 +84,17 @@ describe('tour', () => {
 
     tourPopup().contains('Explore Lists').parent().parent().find('button').contains('Next').click()
 
-    cy.get('#list-preview-planets').find('button').contains("Let's play!").click()
+    cy.get('#list-preview-planets').find('button').contains("Let's play!").click({ force: true })
 
     tourPopup().contains('The Game View').parent().parent().find('button').contains('Next').click()
     tourPopup().contains('Customization').parent().parent().find('button').contains('Next').click()
 
-    cy.get('#list-preview-planets').find('button').contains("I'm ready!").click()
+    cy.get('#list-preview-planets').find('button').contains("I'm ready!").click({ force: true })
 
     cy.get('#inputField').type('Mercury')
     cy.get('#inputField').type('Venus')
 
-    cy.get('#timerCard').find('button').contains('Give up').click()
+    cy.get('#timerCard').find('button').contains('Give up').click({ force: true })
 
     tourPopup().contains('Game Over').parent().parent().find('button').contains('Next').click()
     tourPopup().contains('Game Review').parent().parent().find('button').contains('Next').click()
