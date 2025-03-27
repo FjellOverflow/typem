@@ -171,7 +171,24 @@ describe('/play settings', () => {
     startGame()
     cy.get('#timerCard').find('button').contains('Give up').click()
 
-    cy.get('#itemsCard').find('li').first().contains('Mercury').should('not.exist')
+    // 0.2% chance first three items are in correct order when shuffled
+    cy.get('#itemsCard')
+      .find('li')
+      .first()
+      .invoke('text')
+      .then((text) => {
+        if (text.includes('Mercury')) {
+          cy.get('#itemsCard')
+            .find('li')
+            .eq(1)
+            .invoke('text')
+            .then((text) => {
+              if (text.includes('Venus')) {
+                cy.get('#itemsCard').find('li').eq(1).contains('Earth').should('not.exist')
+              }
+            })
+        }
+      })
 
     cy.get('#list-preview-planets').find('button').contains('Restart').click()
 
