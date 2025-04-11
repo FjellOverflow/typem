@@ -39,7 +39,7 @@ describe('/', () => {
 
     dialog().find('code').should('not.exist')
 
-    dialog().click(10, 10)
+    cy.get('#app').click(100, 100)
 
     dialog().should('not.be.visible')
   })
