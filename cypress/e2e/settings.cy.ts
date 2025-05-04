@@ -101,6 +101,7 @@ describe('/settings', () => {
     cy.window().then((window) => {
       window.localStorage.setItem('history', JSON.stringify(mockedHistory))
     })
+    cy.reload()
 
     historyCard().find('button').contains('Export all').click()
 
@@ -272,6 +273,7 @@ describe('/settings', () => {
         ]),
       )
     })
+    cy.reload()
 
     cy.get('div')
       .contains('Custom lists')
@@ -366,6 +368,7 @@ describe('/settings', () => {
         ]),
       )
     })
+    cy.reload()
 
     cy.get('div')
       .contains('Custom lists')

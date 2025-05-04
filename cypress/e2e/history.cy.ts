@@ -27,6 +27,7 @@ describe('/history', () => {
         ]),
       )
     })
+    cy.reload()
 
     cy.get('.playthrough-card').contains('Record').should('exist')
     cy.get('.playthrough-card').contains('Finished').should('exist')
@@ -63,6 +64,7 @@ describe('/history', () => {
         ]),
       )
     })
+    cy.reload()
 
     cy.get('.playthrough-card').find('div[data-tip="Delete playthrough"]').find('button').click()
     cy.get('dialog').find('button').contains('Cancel').click()
@@ -92,6 +94,7 @@ describe('/history', () => {
         ]),
       )
     })
+    cy.reload()
 
     cy.get('.playthrough-card').find('a').contains('Planets of the Solar System').click()
 
@@ -127,6 +130,7 @@ describe('/history', () => {
         ]),
       )
     })
+    cy.reload()
 
     cy.visit('/#/history/all')
 
@@ -179,7 +183,7 @@ describe('/history', () => {
         ]),
       )
     })
-    cy.visit('/#/history')
+    cy.reload()
 
     cy.get('select').contains('Sort by').closest('select').select('Sort by date')
     cy.get('.playthrough-card').first().contains('Matched 1/8').should('exist')
