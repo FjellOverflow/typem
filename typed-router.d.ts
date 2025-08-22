@@ -29,4 +29,68 @@ declare module 'vue-router/auto-routes' {
     '/play/[listId]': RouteRecordInfo<'/play/[listId]', '/play/:listId', { listId: ParamValue<true> }, { listId: ParamValue<false> }>,
     '/settings': RouteRecordInfo<'/settings', '/settings', Record<never, never>, Record<never, never>>,
   }
+
+  /**
+   * Route file to route info map by unplugin-vue-router.
+   * Used by the volar plugin to automatically type useRoute()
+   *
+   * Each key is a file path relative to the project root with 2 properties:
+   * - routes: union of route names of the possible routes when in this page (passed to useRoute<...>())
+   * - views: names of nested views (can be passed to <RouterView name="...">)
+   *
+   * @internal
+   */
+  export interface _RouteFileInfoMap {
+    'src/pages/index.vue': {
+      routes: '/'
+      views: never
+    }
+    'src/pages/favorites.vue': {
+      routes: '/favorites'
+      views: never
+    }
+    'src/pages/history.vue': {
+      routes: '/history' | '/history/' | '/history/all' | '/history/finished' | '/history/records'
+      views: 'default'
+    }
+    'src/pages/history/index.vue': {
+      routes: '/history/'
+      views: never
+    }
+    'src/pages/history/all.vue': {
+      routes: '/history/all'
+      views: never
+    }
+    'src/pages/history/finished.vue': {
+      routes: '/history/finished'
+      views: never
+    }
+    'src/pages/history/records.vue': {
+      routes: '/history/records'
+      views: never
+    }
+    'src/pages/play/index.vue': {
+      routes: '/play/'
+      views: never
+    }
+    'src/pages/play/[listId].vue': {
+      routes: '/play/[listId]'
+      views: never
+    }
+    'src/pages/settings.vue': {
+      routes: '/settings'
+      views: never
+    }
+  }
+
+  /**
+   * Get a union of possible route names in a certain route component file.
+   * Used by the volar plugin to automatically type useRoute()
+   *
+   * @internal
+   */
+  export type _RouteNamesForFilePath<FilePath extends string> =
+    _RouteFileInfoMap extends Record<FilePath, infer Info>
+      ? Info['routes']
+      : keyof RouteNamedMap
 }
