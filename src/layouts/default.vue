@@ -29,7 +29,7 @@ const randomListUrl = computed(() => {
   let randomUrl = currentRoute
 
   do {
-    const { id } = lists.value[Math.floor(Math.random() * lists.value.length)]
+    const id = lists.value[Math.floor(Math.random() * lists.value.length)]?.id
     randomUrl = `/play/${id}`
   } while (randomUrl === currentRoute)
 

@@ -131,7 +131,8 @@ describe('checking composable', () => {
     )
 
     items.value.forEach((i, index) => {
-      expect(check(i.matches[0])).toEqual({ ...i, checked: true })
+      if(i.matches[0])
+        expect(check(i.matches[0])).toEqual({ ...i, checked: true })
 
       expect(items.value.filter((i) => i.checked)).toHaveLength(index + 1)
     })

@@ -3,7 +3,7 @@ import type { ICheckableListItem, IListItem, ISettings } from '@/types'
 const shuffleItems = <T>(items: T[]): T[] => {
   for (let i = items.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1))
-    ;[items[i], items[j]] = [items[j], items[i]]
+    ;[items[i], items[j]] = [items[j] as T, items[i] as T]
   }
   return items
 }
@@ -42,7 +42,7 @@ export function useChecking(
   function check(input: string) {
     let availableItems = items.value.filter((item) => !item.checked)
 
-    if (requireOrder) availableItems = [availableItems[0]]
+    if (requireOrder) availableItems = availableItems[0] ? [availableItems[0]] : []
 
     const matchedItem = availableItems.find((item) => checkFun(input, item))
 
