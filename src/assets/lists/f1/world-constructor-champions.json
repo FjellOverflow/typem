@@ -1,0 +1,359 @@
+{
+  "id": "f1-wcc",
+  "meta": {
+    "name": "F1: Constructors' Champions",
+    "description": "Name all 67 Formula 1 World Constructor's Champions.",
+    "difficulty": 3,
+    "tags": ["f1"],
+    "category": "f1",
+    "source": "https://en.wikipedia.org/wiki/List_of_Formula_One_World_Constructors%27_Champions",
+    "author": "FjellOverflow",
+    "lastUpdated": "2025-09-09",
+    "imageUrl": "/images/f1.svg"
+  },
+  "items": [
+    {
+      "hint": "WCC 2024",
+      "answer": "McLaren",
+      "matches": ["McLaren"]
+    },
+    {
+      "hint": "WCC 2023",
+      "answer": "Red Bull",
+      "matches": ["Red Bull"]
+    },
+    {
+      "hint": "WCC 2022",
+      "answer": "Red Bull",
+      "matches": ["Red Bull"]
+    },
+    {
+      "hint": "WCC 2021",
+      "answer": "Mercedes",
+      "matches": ["Mercedes"]
+    },
+    {
+      "hint": "WCC 2020",
+      "answer": "Mercedes",
+      "matches": ["Mercedes"]
+    },
+    {
+      "hint": "WCC 2019",
+      "answer": "Mercedes",
+      "matches": ["Mercedes"]
+    },
+    {
+      "hint": "WCC 2018",
+      "answer": "Mercedes",
+      "matches": ["Mercedes"]
+    },
+    {
+      "hint": "WCC 2017",
+      "answer": "Mercedes",
+      "matches": ["Mercedes"]
+    },
+    {
+      "hint": "WCC 2016",
+      "answer": "Mercedes",
+      "matches": ["Mercedes"]
+    },
+    {
+      "hint": "WCC 2015",
+      "answer": "Mercedes",
+      "matches": ["Mercedes"]
+    },
+    {
+      "hint": "WCC 2014",
+      "answer": "Mercedes",
+      "matches": ["Mercedes"]
+    },
+    {
+      "hint": "WCC 2013",
+      "answer": "Red Bull",
+      "matches": ["Red Bull"]
+    },
+    {
+      "hint": "WCC 2012",
+      "answer": "Red Bull",
+      "matches": ["Red Bull"]
+    },
+    {
+      "hint": "WCC 2011",
+      "answer": "Red Bull",
+      "matches": ["Red Bull"]
+    },
+    {
+      "hint": "WCC 2010",
+      "answer": "Red Bull",
+      "matches": ["Red Bull"]
+    },
+    {
+      "hint": "WCC 2009",
+      "answer": "Brawn",
+      "matches": ["Brawn"]
+    },
+    {
+      "hint": "WCC 2008",
+      "answer": "Ferrari",
+      "matches": ["Ferrari"]
+    },
+    {
+      "hint": "WCC 2007",
+      "answer": "Ferrari",
+      "matches": ["Ferrari"]
+    },
+    {
+      "hint": "WCC 2006",
+      "answer": "Renault",
+      "matches": ["Renault"]
+    },
+    {
+      "hint": "WCC 2005",
+      "answer": "Renault",
+      "matches": ["Renault"]
+    },
+    {
+      "hint": "WCC 2004",
+      "answer": "Ferrari",
+      "matches": ["Ferrari"]
+    },
+    {
+      "hint": "WCC 2003",
+      "answer": "Ferrari",
+      "matches": ["Ferrari"]
+    },
+    {
+      "hint": "WCC 2002",
+      "answer": "Ferrari",
+      "matches": ["Ferrari"]
+    },
+    {
+      "hint": "WCC 2001",
+      "answer": "Ferrari",
+      "matches": ["Ferrari"]
+    },
+    {
+      "hint": "WCC 2000",
+      "answer": "Ferrari",
+      "matches": ["Ferrari"]
+    },
+    {
+      "hint": "WCC 1999",
+      "answer": "Ferrari",
+      "matches": ["Ferrari"]
+    },
+    {
+      "hint": "WCC 1998",
+      "answer": "McLaren",
+      "matches": ["McLaren"]
+    },
+    {
+      "hint": "WCC 1997",
+      "answer": "Williams",
+      "matches": ["Williams"]
+    },
+    {
+      "hint": "WCC 1996",
+      "answer": "Williams",
+      "matches": ["Williams"]
+    },
+    {
+      "hint": "WCC 1995",
+      "answer": "Benetton",
+      "matches": ["Benetton"]
+    },
+    {
+      "hint": "WCC 1994",
+      "answer": "Williams",
+      "matches": ["Williams"]
+    },
+    {
+      "hint": "WCC 1993",
+      "answer": "Williams",
+      "matches": ["Williams"]
+    },
+    {
+      "hint": "WCC 1992",
+      "answer": "Williams",
+      "matches": ["Williams"]
+    },
+    {
+      "hint": "WCC 1991",
+      "answer": "McLaren",
+      "matches": ["McLaren"]
+    },
+    {
+      "hint": "WCC 1990",
+      "answer": "McLaren",
+      "matches": ["McLaren"]
+    },
+    {
+      "hint": "WCC 1989",
+      "answer": "McLaren",
+      "matches": ["McLaren"]
+    },
+    {
+      "hint": "WCC 1988",
+      "answer": "McLaren",
+      "matches": ["McLaren"]
+    },
+    {
+      "hint": "WCC 1987",
+      "answer": "Williams",
+      "matches": ["Williams"]
+    },
+    {
+      "hint": "WCC 1986",
+      "answer": "Williams",
+      "matches": ["Williams"]
+    },
+    {
+      "hint": "WCC 1985",
+      "answer": "McLaren",
+      "matches": ["McLaren"]
+    },
+    {
+      "hint": "WCC 1984",
+      "answer": "McLaren",
+      "matches": ["McLaren"]
+    },
+    {
+      "hint": "WCC 1983",
+      "answer": "Ferrari",
+      "matches": ["Ferrari"]
+    },
+    {
+      "hint": "WCC 1982",
+      "answer": "Ferrari",
+      "matches": ["Ferrari"]
+    },
+    {
+      "hint": "WCC 1981",
+      "answer": "Williams",
+      "matches": ["Williams"]
+    },
+    {
+      "hint": "WCC 1980",
+      "answer": "Williams",
+      "matches": ["Williams"]
+    },
+    {
+      "hint": "WCC 1979",
+      "answer": "Ferrari",
+      "matches": ["Ferrari"]
+    },
+    {
+      "hint": "WCC 1978",
+      "answer": "Lotus",
+      "matches": ["Lotus"]
+    },
+    {
+      "hint": "WCC 1977",
+      "answer": "Ferrari",
+      "matches": ["Ferrari"]
+    },
+    {
+      "hint": "WCC 1976",
+      "answer": "Ferrari",
+      "matches": ["Ferrari"]
+    },
+    {
+      "hint": "WCC 1975",
+      "answer": "Ferrari",
+      "matches": ["Ferrari"]
+    },
+    {
+      "hint": "WCC 1974",
+      "answer": "McLaren",
+      "matches": ["McLaren"]
+    },
+    {
+      "hint": "WCC 1973",
+      "answer": "Lotus",
+      "matches": ["Lotus"]
+    },
+    {
+      "hint": "WCC 1972",
+      "answer": "Lotus",
+      "matches": ["Lotus"]
+    },
+    {
+      "hint": "WCC 1971",
+      "answer": "Tyrrell",
+      "matches": ["Tyrrell"]
+    },
+    {
+      "hint": "WCC 1970",
+      "answer": "Lotus",
+      "matches": ["Lotus"]
+    },
+    {
+      "hint": "WCC 1969",
+      "answer": "Matra",
+      "matches": ["Matra"]
+    },
+    {
+      "hint": "WCC 1968",
+      "answer": "Lotus",
+      "matches": ["Lotus"]
+    },
+    {
+      "hint": "WCC 1967",
+      "answer": "Brabham",
+      "matches": ["Brabham"]
+    },
+    {
+      "hint": "WCC 1966",
+      "answer": "Brabham",
+      "matches": ["Brabham"]
+    },
+    {
+      "hint": "WCC 1965",
+      "answer": "Lotus",
+      "matches": ["Lotus"]
+    },
+    {
+      "hint": "WCC 1964",
+      "answer": "Ferrari",
+      "matches": ["Ferrari"]
+    },
+    {
+      "hint": "WCC 1963",
+      "answer": "Lotus",
+      "matches": ["Lotus"]
+    },
+    {
+      "hint": "WCC 1962",
+      "answer": "BRM",
+      "matches": ["BRM"]
+    },
+    {
+      "hint": "WCC 1961",
+      "answer": "Ferrari",
+      "matches": ["Ferrari"]
+    },
+    {
+      "hint": "WCC 1960",
+      "answer": "Cooper",
+      "matches": ["Cooper"]
+    },
+    {
+      "hint": "WCC 1959",
+      "answer": "Cooper",
+      "matches": ["Cooper"]
+    },
+    {
+      "hint": "WCC 1958",
+      "answer": "Vanwall",
+      "matches": ["Vanwall"]
+    }
+  ],
+  "settings": {
+    "requireWhitespaces": false,
+    "requireCapitalization": false,
+    "requireOrder": false,
+    "numberOfPauses": -1,
+    "showHints": true,
+    "allowOverride": true
+  }
+}

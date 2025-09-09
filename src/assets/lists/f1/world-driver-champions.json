@@ -1,0 +1,399 @@
+{
+  "id": "f1-wdc",
+  "meta": {
+    "name": "F1: Drivers' Champions",
+    "description": "Name all 75 Formula 1 World Driver's Champions.",
+    "difficulty": 3,
+    "tags": ["f1"],
+    "category": "f1",
+    "source": "https://en.wikipedia.org/wiki/List_of_Formula_One_World_Drivers%27_Champions",
+    "author": "FjellOverflow",
+    "lastUpdated": "2025-09-09",
+    "imageUrl": "/images/f1.svg"
+  },
+  "items": [
+    {
+      "hint": "WDC 2024",
+      "answer": "Max Verstappen",
+      "matches": ["Max Verstappen", "Verstappen"]
+    },
+    {
+      "hint": "WDC 2023",
+      "answer": "Max Verstappen",
+      "matches": ["Max Verstappen", "Verstappen"]
+    },
+    {
+      "hint": "WDC 2022",
+      "answer": "Max Verstappen",
+      "matches": ["Max Verstappen", "Verstappen"]
+    },
+    {
+      "hint": "WDC 2021",
+      "answer": "Max Verstappen",
+      "matches": ["Max Verstappen", "Verstappen"]
+    },
+    {
+      "hint": "WDC 2020",
+      "answer": "Lewis Hamilton",
+      "matches": ["Lewis Hamilton", "Hamilton"]
+    },
+    {
+      "hint": "WDC 2019",
+      "answer": "Lewis Hamilton",
+      "matches": ["Lewis Hamilton", "Hamilton"]
+    },
+    {
+      "hint": "WDC 2018",
+      "answer": "Lewis Hamilton",
+      "matches": ["Lewis Hamilton", "Hamilton"]
+    },
+    {
+      "hint": "WDC 2017",
+      "answer": "Lewis Hamilton",
+      "matches": ["Lewis Hamilton", "Hamilton"]
+    },
+    {
+      "hint": "WDC 2016",
+      "answer": "Nico Rosberg",
+      "matches": ["Nico Rosberg", "Rosberg"]
+    },
+    {
+      "hint": "WDC 2015",
+      "answer": "Lewis Hamilton",
+      "matches": ["Lewis Hamilton", "Hamilton"]
+    },
+    {
+      "hint": "WDC 2014",
+      "answer": "Lewis Hamilton",
+      "matches": ["Lewis Hamilton", "Hamilton"]
+    },
+    {
+      "hint": "WDC 2013",
+      "answer": "Sebastian Vettel",
+      "matches": ["Sebastian Vettel", "Vettel"]
+    },
+    {
+      "hint": "WDC 2012",
+      "answer": "Sebastian Vettel",
+      "matches": ["Sebastian Vettel", "Vettel"]
+    },
+    {
+      "hint": "WDC 2011",
+      "answer": "Sebastian Vettel",
+      "matches": ["Sebastian Vettel", "Vettel"]
+    },
+    {
+      "hint": "WDC 2010",
+      "answer": "Sebastian Vettel",
+      "matches": ["Sebastian Vettel", "Vettel"]
+    },
+    {
+      "hint": "WDC 2009",
+      "answer": "Jenson Button",
+      "matches": ["Jenson Button", "Button"]
+    },
+    {
+      "hint": "WDC 2008",
+      "answer": "Lewis Hamilton",
+      "matches": ["Lewis Hamilton", "Hamilton"]
+    },
+    {
+      "hint": "WDC 2007",
+      "answer": "Kimi Räikkönen",
+      "matches": ["Kimi Räikkönen", "Kimi Raikkonen", "Räikkönen", "Raikkonen"]
+    },
+    {
+      "hint": "WDC 2006",
+      "answer": "Fernando Alonso",
+      "matches": ["Fernando Alonso", "Alonso"]
+    },
+    {
+      "hint": "WDC 2005",
+      "answer": "Fernando Alonso",
+      "matches": ["Fernando Alonso", "Alonso"]
+    },
+    {
+      "hint": "WDC 2004",
+      "answer": "Michael Schumacher",
+      "matches": ["Michael Schumacher", "Schumacher"]
+    },
+    {
+      "hint": "WDC 2003",
+      "answer": "Michael Schumacher",
+      "matches": ["Michael Schumacher", "Schumacher"]
+    },
+    {
+      "hint": "WDC 2002",
+      "answer": "Michael Schumacher",
+      "matches": ["Michael Schumacher", "Schumacher"]
+    },
+    {
+      "hint": "WDC 2001",
+      "answer": "Michael Schumacher",
+      "matches": ["Michael Schumacher", "Schumacher"]
+    },
+    {
+      "hint": "WDC 2000",
+      "answer": "Michael Schumacher",
+      "matches": ["Michael Schumacher", "Schumacher"]
+    },
+    {
+      "hint": "WDC 1999",
+      "answer": "Mika Häkkinen",
+      "matches": ["Mika Häkkinen", "Mika Hakkinen", "Häkkinen", "Hakkinen"]
+    },
+    {
+      "hint": "WDC 1998",
+      "answer": "Mika Häkkinen",
+      "matches": ["Mika Häkkinen", "Mika Hakkinen", "Häkkinen", "Hakkinen"]
+    },
+    {
+      "hint": "WDC 1997",
+      "answer": "Jacques Villeneuve",
+      "matches": ["Jacques Villeneuve", "Villeneuve"]
+    },
+    {
+      "hint": "WDC 1996",
+      "answer": "Damon Hill",
+      "matches": ["Damon Hill", "Hill"]
+    },
+    {
+      "hint": "WDC 1995",
+      "answer": "Michael Schumacher",
+      "matches": ["Michael Schumacher", "Schumacher"]
+    },
+    {
+      "hint": "WDC 1994",
+      "answer": "Michael Schumacher",
+      "matches": ["Michael Schumacher", "Schumacher"]
+    },
+    {
+      "hint": "WDC 1993",
+      "answer": "Alain Prost",
+      "matches": ["Alain Prost", "Prost"]
+    },
+    {
+      "hint": "WDC 1992",
+      "answer": "Nigel Mansell",
+      "matches": ["Nigel Mansell", "Mansell"]
+    },
+    {
+      "hint": "WDC 1991",
+      "answer": "Ayrton Senna",
+      "matches": ["Ayrton Senna", "Senna"]
+    },
+    {
+      "hint": "WDC 1990",
+      "answer": "Ayrton Senna",
+      "matches": ["Ayrton Senna", "Senna"]
+    },
+    {
+      "hint": "WDC 1989",
+      "answer": "Alain Prost",
+      "matches": ["Alain Prost", "Prost"]
+    },
+    {
+      "hint": "WDC 1988",
+      "answer": "Ayrton Senna",
+      "matches": ["Ayrton Senna", "Senna"]
+    },
+    {
+      "hint": "WDC 1987",
+      "answer": "Nelson Piquet",
+      "matches": ["Nelson Piquet", "Piquet"]
+    },
+    {
+      "hint": "WDC 1986",
+      "answer": "Alain Prost",
+      "matches": ["Alain Prost", "Prost"]
+    },
+    {
+      "hint": "WDC 1985",
+      "answer": "Alain Prost",
+      "matches": ["Alain Prost", "Prost"]
+    },
+    {
+      "hint": "WDC 1984",
+      "answer": "Niki Lauda",
+      "matches": ["Niki Lauda", "Lauda"]
+    },
+    {
+      "hint": "WDC 1983",
+      "answer": "Nelson Piquet",
+      "matches": ["Nelson Piquet", "Piquet"]
+    },
+    {
+      "hint": "WDC 1982",
+      "answer": "Keke Rosberg",
+      "matches": ["Keke Rosberg", "Rosberg"]
+    },
+    {
+      "hint": "WDC 1981",
+      "answer": "Nelson Piquet",
+      "matches": ["Nelson Piquet", "Piquet"]
+    },
+    {
+      "hint": "WDC 1980",
+      "answer": "Alan Jones",
+      "matches": ["Alan Jones", "Jones"]
+    },
+    {
+      "hint": "WDC 1979",
+      "answer": "Jody Scheckter",
+      "matches": ["Jody Scheckter", "Scheckter"]
+    },
+    {
+      "hint": "WDC 1978",
+      "answer": "Mario Andretti",
+      "matches": ["Mario Andretti", "Andretti"]
+    },
+    {
+      "hint": "WDC 1977",
+      "answer": "Niki Lauda",
+      "matches": ["Niki Lauda", "Lauda"]
+    },
+    {
+      "hint": "WDC 1976",
+      "answer": "James Hunt",
+      "matches": ["James Hunt", "Hunt"]
+    },
+    {
+      "hint": "WDC 1975",
+      "answer": "Niki Lauda",
+      "matches": ["Niki Lauda", "Lauda"]
+    },
+    {
+      "hint": "WDC 1974",
+      "answer": "Emerson Fittipaldi",
+      "matches": ["Emerson Fittipaldi", "Fittipaldi"]
+    },
+    {
+      "hint": "WDC 1973",
+      "answer": "Jackie Stewart",
+      "matches": ["Jackie Stewart", "Stewart"]
+    },
+    {
+      "hint": "WDC 1972",
+      "answer": "Emerson Fittipaldi",
+      "matches": ["Emerson Fittipaldi", "Fittipaldi"]
+    },
+    {
+      "hint": "WDC 1971",
+      "answer": "Jackie Stewart",
+      "matches": ["Jackie Stewart", "Stewart"]
+    },
+    {
+      "hint": "WDC 1970",
+      "answer": "Jochen Rindt",
+      "matches": ["Jochen Rindt", "Rindt"]
+    },
+    {
+      "hint": "WDC 1969",
+      "answer": "Jackie Stewart",
+      "matches": ["Jackie Stewart", "Stewart"]
+    },
+    {
+      "hint": "WDC 1968",
+      "answer": "Graham Hill",
+      "matches": ["Graham Hill", "Hill"]
+    },
+    {
+      "hint": "WDC 1967",
+      "answer": "Denny Hulme",
+      "matches": ["Denny Hulme", "Hulme"]
+    },
+    {
+      "hint": "WDC 1966",
+      "answer": "Jack Brabham",
+      "matches": ["Jack Brabham", "Brabham"]
+    },
+    {
+      "hint": "WDC 1965",
+      "answer": "Jim Clark",
+      "matches": ["Jim Clark", "Clark"]
+    },
+    {
+      "hint": "WDC 1964",
+      "answer": "John Surtees",
+      "matches": ["John Surtees", "Surtees"]
+    },
+    {
+      "hint": "WDC 1963",
+      "answer": "Jim Clark",
+      "matches": ["Jim Clark", "Clark"]
+    },
+    {
+      "hint": "WDC 1962",
+      "answer": "Graham Hill",
+      "matches": ["Graham Hill", "Hill"]
+    },
+    {
+      "hint": "WDC 1961",
+      "answer": "Phil Hill",
+      "matches": ["Phil Hill", "Hill"]
+    },
+    {
+      "hint": "WDC 1960",
+      "answer": "Jack Brabham",
+      "matches": ["Jack Brabham", "Brabham"]
+    },
+    {
+      "hint": "WDC 1959",
+      "answer": "Jack Brabham",
+      "matches": ["Jack Brabham", "Brabham"]
+    },
+    {
+      "hint": "WDC 1958",
+      "answer": "Mike Hawthorn",
+      "matches": ["Mike Hawthorn", "Hawthorn"]
+    },
+    {
+      "hint": "WDC 1957",
+      "answer": "Juan Manuel Fangio",
+      "matches": ["Juan Manuel Fangio", "Fangio"]
+    },
+    {
+      "hint": "WDC 1956",
+      "answer": "Juan Manuel Fangio",
+      "matches": ["Juan Manuel Fangio", "Fangio"]
+    },
+    {
+      "hint": "WDC 1955",
+      "answer": "Juan Manuel Fangio",
+      "matches": ["Juan Manuel Fangio", "Fangio"]
+    },
+    {
+      "hint": "WDC 1954",
+      "answer": "Juan Manuel Fangio",
+      "matches": ["Juan Manuel Fangio", "Fangio"]
+    },
+    {
+      "hint": "WDC 1953",
+      "answer": "Alberto Ascari",
+      "matches": ["Alberto Ascari", "Ascari"]
+    },
+    {
+      "hint": "WDC 1952",
+      "answer": "Alberto Ascari",
+      "matches": ["Alberto Ascari", "Ascari"]
+    },
+    {
+      "hint": "WDC 1951",
+      "answer": "Juan Manuel Fangio",
+      "matches": ["Juan Manuel Fangio", "Fangio"]
+    },
+    {
+      "hint": "WDC 1950",
+      "answer": "Giuseppe Farina",
+      "matches": ["Giuseppe Farina", "Farina"]
+    }
+  ],
+  "settings": {
+    "requireWhitespaces": false,
+    "requireCapitalization": false,
+    "requireOrder": false,
+    "numberOfPauses": -1,
+    "showHints": true,
+    "allowOverride": true
+  }
+}
