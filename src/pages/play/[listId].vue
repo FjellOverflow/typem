@@ -7,7 +7,7 @@ export { useListLoader }
 
 <script setup lang="ts">
 import { formatDuration } from '@/plugins/util'
-import type { ICheckableListItem, IListItem } from '@/types'
+import type { ICheckableListItem } from '@/types'
 import { useTitle } from '@vueuse/core'
 import { useChecking } from '@/composables/checking'
 import { useTimer } from '@/composables/timer'
@@ -51,7 +51,7 @@ const isStopped = ref(false)
 const isDone = ref(false)
 
 const input = ref('')
-const newMatch = ref<IListItem | undefined>()
+const newMatch = ref<ICheckableListItem | undefined>()
 
 function init() {
   settings.value.allowOverride = false

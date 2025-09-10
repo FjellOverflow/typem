@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ICheckableListItem, IListItem } from '@/types'
+import type { ICheckableListItem } from '@/types'
 import { ListCheckIcon } from 'lucide-vue-next'
 
 const isOpen = ref(false)
@@ -7,7 +7,7 @@ const isOpen = ref(false)
 const props = defineProps<{
   items: ICheckableListItem[]
   isStopped?: boolean
-  highlighted?: IListItem
+  highlighted?: ICheckableListItem
 }>()
 
 const numberOfItemsChecked = computed(() => props.items.filter((item) => item.checked).length)
@@ -45,7 +45,7 @@ defineExpose({
           <div
             class="overflow-visible border rounded-md py-1 px-2 flex justify-center"
             :class="{
-              'border-success': highlighted?.answer === item.answer,
+              'border-success': highlighted?.index === item.index,
               'border-error': isStopped && !item.checked,
             }"
           >
@@ -56,7 +56,7 @@ defineExpose({
                 type="hint"
                 :size="smallerLayout ? 17 : 20"
                 :class="{
-                  'text-success': highlighted?.answer === item.answer,
+                  'text-success': highlighted?.index === item.index,
                   'text-error': isStopped && !item.checked,
                 }"
               >
@@ -65,7 +65,7 @@ defineExpose({
               <span
                 v-else
                 :class="{
-                  'text-success': highlighted?.answer === item.answer,
+                  'text-success': highlighted?.index === item.index,
                   'text-error': isStopped && !item.checked,
                 }"
               >

@@ -48,6 +48,7 @@ export const ListSchema = z.object({
 export type IList = z.infer<typeof ListSchema>
 
 export type ICheckableListItem = IListItem & {
+  index: number
   checked: boolean
 }
 

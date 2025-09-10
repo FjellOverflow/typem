@@ -34,10 +34,10 @@ describe('checking composable', () => {
     expect(items.value).toHaveLength(2)
     expect(items.value.filter((i) => i.checked)).toHaveLength(0)
 
-    expect(check('answer1')).toEqual({ ...item1, checked: true })
+    expect(check('answer1')).toEqual({ ...item1, checked: true, index: 1 })
     expect(items.value.filter((i) => i.checked)).toHaveLength(1)
 
-    expect(check('answer0')).toEqual({ ...item0, checked: true })
+    expect(check('answer0')).toEqual({ ...item0, checked: true, index: 0 })
     expect(items.value.filter((i) => i.checked)).toHaveLength(2)
 
     expect(check('false answer')).toEqual(undefined)
@@ -47,10 +47,10 @@ describe('checking composable', () => {
   it('checks twice', () => {
     const { check, items } = useChecking([item0, item0], settings, () => undefined)
 
-    expect(check('answer0')).toEqual({ ...item0, checked: true })
+    expect(check('answer0')).toEqual({ ...item0, checked: true, index: 0 })
     expect(items.value.filter((i) => i.checked)).toHaveLength(1)
 
-    expect(check('answer0')).toEqual({ ...item0, checked: true })
+    expect(check('answer0')).toEqual({ ...item0, checked: true, index: 1 })
     expect(items.value.filter((i) => i.checked)).toHaveLength(2)
 
     expect(check('answer0')).toEqual(undefined)
@@ -60,7 +60,7 @@ describe('checking composable', () => {
   it("doesn't check twice", () => {
     const { check, items } = useChecking([item0], settings, () => undefined)
 
-    expect(check('answer0')).toEqual({ ...item0, checked: true })
+    expect(check('answer0')).toEqual({ ...item0, checked: true, index: 0 })
     expect(items.value.filter((i) => i.checked)).toHaveLength(1)
 
     expect(check('answer0')).toEqual(undefined)
@@ -88,7 +88,7 @@ describe('checking composable', () => {
     expect(check('answer1')).toEqual(undefined)
     expect(items.value.filter((i) => i.checked)).toHaveLength(0)
 
-    expect(check('answer 1')).toEqual({ ...item1, checked: true })
+    expect(check('answer 1')).toEqual({ ...item1, checked: true, index: 0 })
     expect(items.value.filter((i) => i.checked)).toHaveLength(1)
   })
 
@@ -102,7 +102,7 @@ describe('checking composable', () => {
     expect(check('answer2')).toEqual(undefined)
     expect(items.value.filter((i) => i.checked)).toHaveLength(0)
 
-    expect(check('Answer2')).toEqual({ ...item2, checked: true })
+    expect(check('Answer2')).toEqual({ ...item2, checked: true, index: 0 })
     expect(items.value.filter((i) => i.checked)).toHaveLength(1)
   })
 
@@ -116,10 +116,10 @@ describe('checking composable', () => {
     expect(check('answer 1')).toEqual(undefined)
     expect(items.value.filter((i) => i.checked)).toHaveLength(0)
 
-    expect(check('answer0')).toEqual({ ...item0, checked: true })
+    expect(check('answer0')).toEqual({ ...item0, checked: true, index: 0 })
     expect(items.value.filter((i) => i.checked)).toHaveLength(1)
 
-    expect(check('answer 1')).toEqual({ ...item1, checked: true })
+    expect(check('answer 1')).toEqual({ ...item1, checked: true, index: 1 })
     expect(items.value.filter((i) => i.checked)).toHaveLength(2)
   })
 
@@ -131,8 +131,7 @@ describe('checking composable', () => {
     )
 
     items.value.forEach((i, index) => {
-      if(i.matches[0])
-        expect(check(i.matches[0])).toEqual({ ...i, checked: true })
+      if (i.matches[0]) expect(check(i.matches[0])).toEqual({ ...i, checked: true, index })
 
       expect(items.value.filter((i) => i.checked)).toHaveLength(index + 1)
     })

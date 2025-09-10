@@ -34,10 +34,10 @@ export function useChecking(
   const checkFun = checkInput(requireWhitespaces, requireCapitalization)
 
   const items = ref<ICheckableListItem[]>([
-    ...rawItems.map((item) => ({ ...item, checked: false })),
+    ...rawItems.map((item, index) => ({ ...item, index, checked: false })),
   ])
 
-  if (shuffle) shuffleItems(items.value)
+  if (shuffle) items.value = shuffleItems(items.value).map((item, index) => ({ ...item, index }))
 
   function check(input: string) {
     let availableItems = items.value.filter((item) => !item.checked)
