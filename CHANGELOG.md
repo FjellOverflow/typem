@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.6](https://github.com/FjellOverflow/typem/compare/v0.1.5...v0.1.6) (2025-09-18)
+
+
+### Features
+
+* list tags link to filtered lists overview ([5f6e360](https://github.com/FjellOverflow/typem/commit/5f6e3605760c093bacdfa4cfbe2f3558b30b0bd5))
+
+
+### Bug Fixes
+
+* don't highlight duplicate items in list on completed match ([68f0f0d](https://github.com/FjellOverflow/typem/commit/68f0f0de625ae375d88a077470a17c91d77201a5))
+
 ## [0.1.5](https://github.com/FjellOverflow/typem/compare/v0.1.4...v0.1.5) (2025-09-09)
 
 
