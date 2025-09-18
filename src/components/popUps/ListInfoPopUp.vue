@@ -44,7 +44,16 @@ const showRaw = ref(false)
 
     <template v-else #body>
       <div class="flex flex-col gap-2">
-        <span class="opacity-40 text-xl"> {{ list.meta.tags.map((t) => `#${t}`).join(', ') }}</span>
+        <div class="opacity-40 text-xl flex gap-2">
+          <RouterLink
+            v-for="(tag, index) in list.meta.tags"
+            :key="tag"
+            :to="`/?tag=${tag}`"
+            :class="{ 'after:content-[\',\']': index < list.meta.tags.length - 1 }"
+          >
+            {{ `#${tag}` }}
+          </RouterLink>
+        </div>
         <span class="text-xl sm:text-2xl">{{ list.meta.description }}</span>
         <div class="flex sm:flex-row flex-col gap-3 justify-between mt-4 text-base">
           <span>
