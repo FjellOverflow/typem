@@ -45,7 +45,7 @@ defineExpose({
           <div
             class="overflow-visible border rounded-md py-1 px-2 flex justify-center"
             :class="{
-              'border-success': highlighted?.index === item.index,
+              'border-success': !!highlighted && highlighted.index === item.index,
               'border-error': isStopped && !item.checked,
             }"
           >
@@ -56,7 +56,7 @@ defineExpose({
                 type="hint"
                 :size="smallerLayout ? 17 : 20"
                 :class="{
-                  'text-success': highlighted?.index === item.index,
+                  'text-success': !!highlighted && highlighted.index === item.index,
                   'text-error': isStopped && !item.checked,
                 }"
               >
@@ -65,7 +65,7 @@ defineExpose({
               <span
                 v-else
                 :class="{
-                  'text-success': highlighted?.index === item.index,
+                  'text-success': !!highlighted && highlighted.index === item.index,
                   'text-error': isStopped && !item.checked,
                 }"
               >
