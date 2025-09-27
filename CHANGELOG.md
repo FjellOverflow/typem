@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.8](https://github.com/FjellOverflow/typem/compare/v0.1.7...v0.1.8) (2025-09-27)
+
+
+### Bug Fixes
+
+* don't highlight uncompleted items before start ([73915de](https://github.com/FjellOverflow/typem/commit/73915deae2a4e41817922fe08cb65be9cf33f510))
+
 ## [0.1.7](https://github.com/FjellOverflow/typem/compare/v0.1.6...v0.1.7) (2025-09-18)
 
 
