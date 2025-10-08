@@ -19,7 +19,7 @@ defineProps<{
         :checked="modelValue"
         class="checkbox"
       />
-      <span v-if="label" class="label-text ml-2">{{ label }}</span>
+      <span v-if="label" class="label-text ml-2 text-wrap">{{ label }}</span>
     </label>
   </div>
 </template>

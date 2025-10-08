@@ -5,7 +5,7 @@ defineExpose({ open: () => popUp.value?.showModal(), close: () => popUp.value?.c
 </script>
 <template>
   <dialog ref="popUp" class="modal">
-    <div class="modal-box border rounded-md w-[80%] flex flex-col gap-2 sm:gap-4">
+    <div class="modal-box border rounded-md w-[80%] flex flex-col gap-2 sm:gap-4 overflow-x-clip">
       <slot />
 
       <div class="sm:text-4xl text-3xl w-[85%]">

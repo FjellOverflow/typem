@@ -61,7 +61,9 @@ function onClickDownloadRecords() {
       </template>
 
       <template #content>
-        <div class="flex gap-4 sm:flex-row flex-col items-center sm:items-start sm:p-4 p-0">
+        <div
+          class="flex gap-4 sm:flex-row flex-col items-center sm:items-start sm:p-4 p-0 flex-wrap"
+        >
           <button
             class="btn btn-outline btn-primary text-sm font-medium sm:w-auto w-2/3"
             @click="onClickDownloadAll"

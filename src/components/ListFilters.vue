@@ -34,10 +34,10 @@ function resetFilters() {
     v-model="filterKeyword"
     type="text"
     :placeholder="$t('Type to filter')"
-    class="input input-bordered md:w-48"
+    class="input input-bordered md:w-40"
   />
 
-  <select v-model="filterTag" class="select select-bordered md:w-48 capitalize">
+  <select v-model="filterTag" class="select select-bordered md:w-44 capitalize">
     <option v-for="tag in tags" :key="tag" :value="tag" class="capitalize">
       {{ $t('Tag') }}: {{ tag }}
     </option>
