@@ -10,7 +10,6 @@ defineExpose({ open: () => popUp.value?.open() })
 
 const {
   name: packageName,
-  description: packageDescription,
   version: packageVersion,
   author: packageAuthor,
   homepage: homepageUrl,
@@ -24,7 +23,7 @@ const {
     </template>
     <template #body>
       <div class="text-lg sm:text-xl flex flex-col gap-2">
-        <div>{{ packageDescription }}</div>
+        <div>{{ $t('Type out the list items as quickly as possible.') }}</div>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
         <div v-if="pwaInstallPromptEvent" class="text-center">
