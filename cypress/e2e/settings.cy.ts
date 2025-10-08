@@ -380,7 +380,7 @@ describe('/settings', () => {
       .click()
 
     cy.get('dialog')
-      .contains('This action removes ALL custom lists. Once remoevd, they can not be recovered.')
+      .contains('This action removes ALL custom lists. Once removed, they can not be recovered.')
       .parent()
       .parent()
       .find('button')
