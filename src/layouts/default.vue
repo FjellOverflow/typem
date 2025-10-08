@@ -81,13 +81,14 @@ document.addEventListener('scroll', () => {
     <template #end>
       <AppInfoPopUp ref="appInfoPopUp" />
       <div class="xl:flex hidden gap-2">
-        <ThemeToggle />
         <button id="appInfoPopUpBtn" @click="appInfoPopUp?.open()" class="btn btn-ghost">
           <InfoIcon />
         </button>
         <button id="openHelpBtn" @click="openHelp" class="btn btn-ghost">
           <HelpCircleIcon />
         </button>
+        <LanguageToggle />
+        <ThemeToggle />
       </div>
 
       <MobileDropdown class="justify-end flex xl:hidden">
@@ -107,8 +108,7 @@ document.addEventListener('scroll', () => {
             </NavLink>
           </li>
         </ul>
-        <div class="flex gap-2">
-          <ThemeToggle />
+        <div class="flex gap-2 justify-center">
           <button
             id="appInfoPopUpBtn"
             @click="appInfoPopUp?.open()"
@@ -119,6 +119,10 @@ document.addEventListener('scroll', () => {
           <button id="openHelpBtn" @click="openHelp" class="btn btn-ghost btn-sm sm:btn-md">
             <HelpCircleIcon class="w-4 sm:w-6" />
           </button>
+        </div>
+        <div class="flex gap-2 justify-center">
+          <LanguageToggle />
+          <ThemeToggle />
         </div>
       </MobileDropdown>
     </template>

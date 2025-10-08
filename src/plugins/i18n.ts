@@ -3,7 +3,7 @@ import messages from '@/locales/index'
 
 const i18n = createI18n({
   legacy: false,
-  locale: 'en',
+  locale: localStorage.getItem('locale') || 'en',
   messages,
 })
 
