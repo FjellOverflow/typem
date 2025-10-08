@@ -1,11 +1,5 @@
-import en from './en.json'
-import enHelp from './help.en.json'
+import en from './en'
 
 export default {
-  en: {
-    ...en,
-    help: {
-      ...enHelp,
-    },
-  },
+  en,
 }
