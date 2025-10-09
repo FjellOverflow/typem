@@ -1,4 +1,5 @@
 import { z } from 'zod'
+import { LocalizedStringSchema } from './localization'
 
 export const defaultSettings = {
   requireWhitespaces: false,
@@ -31,8 +32,8 @@ export type IListItem = z.infer<typeof ListItemSchema>
 export const ListSchema = z.object({
   id: z.string(),
   meta: z.object({
-    name: z.string(),
-    description: z.string(),
+    name: LocalizedStringSchema,
+    description: LocalizedStringSchema,
     difficulty: z.number(),
     author: z.string(),
     lastUpdated: z.string().date(),
@@ -41,6 +42,7 @@ export const ListSchema = z.object({
     category: z.string(),
     isCustom: z.boolean().default(false),
     imageUrl: z.string().optional(),
+    supportedLocales: z.array(z.string()),
   }),
   items: z.array(ListItemSchema),
   settings: SettingsSchema.default(defaultSettings),
