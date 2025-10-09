@@ -9,7 +9,8 @@
     "source": "https://citypopulation.de/en/estonia/cities/",
     "author": "FjellOverflow",
     "lastUpdated": "2025-03-10",
-    "imageUrl": "/images/estonia.svg"
+    "imageUrl": "/images/estonia.svg",
+    "supportedLocales": ["en"]
   },
   "items": [
     {

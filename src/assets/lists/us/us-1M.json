@@ -9,7 +9,8 @@
     "source": "https://simple.wikipedia.org/wiki/List_of_United_States_cities_by_population",
     "author": "FjellOverflow",
     "lastUpdated": "2025-03-11",
-    "imageUrl": "/images/us.svg"
+    "imageUrl": "/images/us.svg",
+    "supportedLocales": ["en"]
   },
   "items": [
     {

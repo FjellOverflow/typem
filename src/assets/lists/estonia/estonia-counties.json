@@ -9,7 +9,8 @@
     "source": "https://en.wikipedia.org/wiki/Counties_of_Estonia",
     "author": "FjellOverflow",
     "lastUpdated": "2025-03-15",
-    "imageUrl": "/images/estonia.svg"
+    "imageUrl": "/images/estonia.svg",
+    "supportedLocales": ["en"]
   },
   "items": [
     {

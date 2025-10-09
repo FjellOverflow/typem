@@ -9,7 +9,8 @@
     "source": "https://en.wikipedia.org/wiki/List_of_Formula_One_World_Constructors%27_Champions",
     "author": "FjellOverflow",
     "lastUpdated": "2025-09-09",
-    "imageUrl": "/images/f1.svg"
+    "imageUrl": "/images/f1.svg",
+    "supportedLocales": ["en"]
   },
   "items": [
     {

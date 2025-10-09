@@ -9,7 +9,8 @@
     "source": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_and_their_capitals_in_native_languages",
     "author": "FjellOverflow",
     "lastUpdated": "2025-03-10",
-    "imageUrl": "/images/oceania.svg"
+    "imageUrl": "/images/oceania.svg",
+    "supportedLocales": ["en"]
   },
   "items": [
     {

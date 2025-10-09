@@ -9,7 +9,8 @@
     "source": "https://citypopulation.de/en/germany/cities/",
     "author": "FjellOverflow",
     "lastUpdated": "2025-03-10",
-    "imageUrl": "/images/germany.svg"
+    "imageUrl": "/images/germany.svg",
+    "supportedLocales": ["en"]
   },
   "items": [
     {

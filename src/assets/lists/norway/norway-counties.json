@@ -9,7 +9,8 @@
     "source": "https://en.wikipedia.org/wiki/Counties_of_Norway",
     "author": "FjellOverflow",
     "lastUpdated": "2025-03-10",
-    "imageUrl": "/images/norway.svg"
+    "imageUrl": "/images/norway.svg",
+    "supportedLocales": ["en"]
   },
   "items": [
     {
