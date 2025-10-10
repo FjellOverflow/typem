@@ -23,8 +23,8 @@ export const SettingsSchema = z.object({
 export type ISettings = z.infer<typeof SettingsSchema>
 
 export const ListItemSchema = z.object({
-  hint: z.string().optional(),
-  answer: z.string(),
+  hint: LocalizedStringSchema.optional(),
+  answer: LocalizedStringSchema,
   matches: z.array(z.string()),
 })
 export type IListItem = z.infer<typeof ListItemSchema>
