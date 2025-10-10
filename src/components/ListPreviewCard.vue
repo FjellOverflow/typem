@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import { useFavorites } from '@/composables/favorites'
+import { useLocalize } from '@/composables/localize'
 import { useListPlaythroughs } from '@/composables/playthroughs'
 import { getSecondsPerItem, formatDuration } from '@/plugins/util'
 import type { IList } from '@/types'
 import {
   HeartIcon,
   InfoIcon,
+  LanguagesIcon,
   ListCheckIcon,
   ListIcon,
   LockIcon,
@@ -25,7 +27,8 @@ const props = withDefaults(
   },
 )
 
-const { t } = useI18n()
+const { t, locale } = useI18n()
+const { localize } = useLocalize()
 
 const { bestListPlaythrough } = useListPlaythroughs(props.list.id)
 const { isFavorite, toggleFavorite } = useFavorites()
@@ -54,13 +57,13 @@ const difficultyLabel = computed(() => {
       />
       <div class="col-span-3 flex flex-col gap-2" :class="imageUrl ? 'col-span-3' : 'col-span-4'">
         <span class="text-2xl lg:text-3xl font-medium">
-          {{ list.meta.name }}
+          {{ localize(list.meta.name) }}
           <span v-if="list.meta.isCustom" class="badge badge-outline badge-primary align-middle">{{
             $t('Custom')
           }}</span>
         </span>
         <span v-if="showDetails" class="lg:text-xl font-medium">
-          {{ list.meta.description }}
+          {{ localize(list.meta.description) }}
         </span>
       </div>
     </div>
@@ -76,7 +79,7 @@ const difficultyLabel = computed(() => {
           $t('{items} and more', {
             items: list.items
               .slice(0, 3)
-              .map((i) => `${i.answer}`)
+              .map((i) => localize(i.answer))
               .join(', '),
           })
         "
@@ -115,9 +118,24 @@ const difficultyLabel = computed(() => {
         </div>
       </div>
 
-      <div v-if="!list.settings.allowOverride" class="flex gap-2 opacity-65">
-        <LockIcon />
-        <span>{{ $t('Predefined settings') }}</span>
+      <div
+        v-if="!list.settings.allowOverride"
+        class="tooltip tooltip-bottom before:max-w-36 cursor-default"
+        :data-tip="$t(`Predefined settings. You can't adjust the settings.`)"
+      >
+        <div class="flex gap-2 opacity-65">
+          <LockIcon />
+        </div>
+      </div>
+
+      <div
+        v-if="!list.meta.supportedLocales?.includes(locale)"
+        class="tooltip tooltip-bottom before:max-w-36 cursor-default"
+        :data-tip="$t('This list is not available in your language.')"
+      >
+        <div class="flex gap-2 text-error">
+          <LanguagesIcon />
+        </div>
       </div>
 
       <div class="ml-auto sm:flex hidden gap-1">
