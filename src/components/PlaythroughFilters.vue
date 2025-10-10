@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { useLocalize } from '@/composables/localize'
 import type { IList } from '@/types'
 import { ArrowDownNarrowWideIcon, ArrowDownWideNarrowIcon, XIcon } from 'lucide-vue-next'
 
@@ -6,11 +7,15 @@ const props = defineProps<{
   lists: IList[]
 }>()
 
+const { localize } = useLocalize()
 const filterListId = defineModel('listId')
 const sortBy = defineModel<'date' | 'speed' | 'duration'>('sortBy', { required: true })
 const sortDirection = defineModel<'asc' | 'desc'>('sortDir', { required: true })
 
-const listSelectOptions = computed(() => [{ id: '', meta: { name: 'All lists' } }, ...props.lists])
+const listSelectOptions = computed(() => [
+  { id: '', meta: { name: { en: 'All lists', de: 'Alle Listen' } } },
+  ...props.lists,
+])
 
 const filtersActive = computed(
   () => !!filterListId.value || sortBy.value !== 'date' || sortDirection.value !== 'asc',
@@ -27,9 +32,9 @@ function toggleSortDirection() {
 }
 </script>
 <template>
-  <select v-model="filterListId" class="select select-bordered md:w-60 capitalize">
-    <option v-for="list in listSelectOptions" :key="list.id" :value="list.id" class="capitalize">
-      {{ list.meta.name }}
+  <select v-model="filterListId" class="select select-bordered md:w-60">
+    <option v-for="list in listSelectOptions" :key="list.id" :value="list.id">
+      {{ localize(list.meta.name) }}
     </option>
   </select>
 
