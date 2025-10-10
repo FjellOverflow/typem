@@ -2,6 +2,7 @@
 import { useListLoader } from '@/plugins/listLoader'
 import { useListPlaythroughs, usePlaythroughs } from '@/composables/playthroughs'
 import { useHotkey } from '@/composables/hotkey'
+import { useLocalize } from '@/composables/localize'
 export { useListLoader }
 </script>
 
@@ -13,14 +14,15 @@ import { useChecking } from '@/composables/checking'
 import { useTimer } from '@/composables/timer'
 import { PartyPopperIcon, RotateCwIcon, ThumbsUpIcon } from 'lucide-vue-next'
 
+const { localize } = useLocalize()
 const { data: list } = useListLoader()
 
-const pageTitle = useTitle(`${list.value.meta.name} - Typem`)
+const pageTitle = useTitle(`${localize.value(list.value.meta.name)} - Typem`)
 window.scrollTo(0, 0)
 
 watch(list, (newList) => {
   reset()
-  pageTitle.value = `${newList.meta.name} - Typem`
+  pageTitle.value = `${localize.value(newList.meta.name)} - Typem`
   settings.value = { ...newList.settings }
   window.scrollTo(0, 0)
 })

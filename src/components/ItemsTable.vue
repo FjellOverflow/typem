@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useLocalize } from '@/composables/localize'
 import type { ICheckableListItem } from '@/types'
 import { ListCheckIcon } from 'lucide-vue-next'
 
@@ -9,6 +10,8 @@ const props = defineProps<{
   isStopped?: boolean
   highlighted?: ICheckableListItem
 }>()
+
+const { localize } = useLocalize()
 
 const numberOfItemsChecked = computed(() => props.items.filter((item) => item.checked).length)
 
@@ -37,8 +40,8 @@ defineExpose({
         ]"
       >
         <li
-          v-for="item in items"
-          :key="item.answer"
+          v-for="(item, index) in items"
+          :key="index"
           class="mb-2"
           :class="{ 'text-sm': smallerLayout, 'text-base': !smallerLayout }"
         >
@@ -52,7 +55,7 @@ defineExpose({
             <template v-if="item.checked || isStopped">
               <Tooltip
                 v-if="item.hint"
-                :label="item.hint"
+                :label="localize(item.hint)"
                 type="hint"
                 :size="smallerLayout ? 17 : 20"
                 :class="{
@@ -60,7 +63,7 @@ defineExpose({
                   'text-error': isStopped && !item.checked,
                 }"
               >
-                <span class="mr-1">{{ item.answer }}</span>
+                <span class="mr-1">{{ localize(item.answer) }}</span>
               </Tooltip>
               <span
                 v-else
@@ -69,7 +72,7 @@ defineExpose({
                   'text-error': isStopped && !item.checked,
                 }"
               >
-                {{ item.answer }}
+                {{ localize(item.answer) }}
               </span>
             </template>
             <div v-else :class="[smallerLayout ? 'h-5' : 'h-6']"></div>

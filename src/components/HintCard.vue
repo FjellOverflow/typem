@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useHotkey } from '@/composables/hotkey'
+import { useLocalize } from '@/composables/localize'
 import type { ICheckableListItem } from '@/types'
 import { ArrowLeftIcon, ArrowRightIcon, LightbulbIcon } from 'lucide-vue-next'
 
@@ -8,6 +9,8 @@ const emit = defineEmits<{
 }>()
 
 const props = defineProps<{ items: ICheckableListItem[]; canCycle: boolean }>()
+
+const { localize } = useLocalize()
 
 const offset = ref(0)
 const uncheckedItems = computed(() => props.items.filter((item) => !item.checked))
@@ -43,7 +46,7 @@ const nextItem = computed(() => uncheckedItems.value[offset.value])
   <div class="border rounded-md p-4 sm:text-2xl text-xl">
     <div class="flex sm:hidden gap-4 items-center mb-4">
       <LightbulbIcon :size="24" />
-      {{ nextItem?.hint || $t('No hint available') }}
+      {{ localize(nextItem?.hint ?? {}) || $t('No hint available') }}
     </div>
     <div class="flex justify-between">
       <div v-if="canCycle" class="tooltip tooltip-bottom" data-tip="CTRL + LeftArrow">
@@ -54,7 +57,7 @@ const nextItem = computed(() => uncheckedItems.value[offset.value])
 
       <div class="hidden sm:flex gap-4 items-center">
         <LightbulbIcon :size="36" />
-        {{ nextItem?.hint || $t('No hint available') }}
+        {{ localize(nextItem?.hint ?? {}) || $t('No hint available') }}
       </div>
 
       <div v-if="canCycle" class="tooltip tooltip-bottom" data-tip="CTRL + RightArrow">

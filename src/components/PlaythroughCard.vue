@@ -5,6 +5,7 @@ import { getSecondsPerItem, formatDuration } from '@/plugins/util'
 import { type IList, type IListPlaythrough } from '@/types'
 import { BanIcon, CheckIcon, TrashIcon, TrophyIcon } from 'lucide-vue-next'
 import DeletePlaythroughDialog from './dialogs/DeletePlaythroughDialog.vue'
+import { useLocalize } from '@/composables/localize'
 
 const confirmDeletionDialog = useTemplateRef('confirmDeletionDialog')
 
@@ -12,6 +13,7 @@ const props = defineProps<{
   playthrough: IListPlaythrough
 }>()
 
+const { localize } = useLocalize()
 const { getBestListPlaythrough, deletePlaythrough } = usePlaythroughs()
 
 const list = ref<IList>()
@@ -46,7 +48,7 @@ async function loadList() {
           style="border-radius: 16px"
         />
         <span class="underline">
-          <RouterLink :to="`/play/${list.id}`">{{ list.meta.name }}</RouterLink>
+          <RouterLink :to="`/play/${list.id}`">{{ localize(list.meta.name) }}</RouterLink>
         </span>
       </div>
 

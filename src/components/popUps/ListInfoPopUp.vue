@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useLocalize } from '@/composables/localize'
 import type { IList } from '@/types'
 import { FileCodeIcon, ExternalLinkIcon } from 'lucide-vue-next'
 
@@ -14,6 +15,8 @@ defineExpose({
 defineProps<{
   list: IList
 }>()
+
+const { localize } = useLocalize()
 
 const showRaw = ref(false)
 </script>
@@ -33,7 +36,7 @@ const showRaw = ref(false)
     </div>
 
     <template #title>
-      {{ list.meta.name }}
+      {{ localize(list.meta.name) }}
     </template>
 
     <template v-if="showRaw" #body>
@@ -54,7 +57,7 @@ const showRaw = ref(false)
             {{ `#${tag}` }}
           </RouterLink>
         </div>
-        <span class="text-xl sm:text-2xl">{{ list.meta.description }}</span>
+        <span class="text-xl sm:text-2xl">{{ localize(list.meta.description) }}</span>
         <div class="flex sm:flex-row flex-col gap-3 justify-between mt-4 text-base">
           <span>
             {{ $t('Created by') }} <i>{{ list.meta.author }}</i>
