@@ -67,16 +67,14 @@ const filteredLists = computed(() => {
       </div>
     </template>
     <template #content>
-      <div class="flex flex-col md:flex-row flex-wrap gap-4 p-2">
-        <ListFilters
-          v-model:keyword="filterKeyword"
-          v-model:tag="filterTag"
-          v-model:language="filterLanguage"
-          v-model:sortBy="sortBy"
-          v-model:sortDir="sortDirection"
-          :tags="availableTags"
-        />
-      </div>
+      <ListFilters
+        v-model:keyword="filterKeyword"
+        v-model:tag="filterTag"
+        v-model:language="filterLanguage"
+        v-model:sortBy="sortBy"
+        v-model:sortDir="sortDirection"
+        :tags="availableTags"
+      />
     </template>
   </CollapsibleBox>
 
