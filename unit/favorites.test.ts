@@ -13,6 +13,7 @@ const list0 = {
     tags: [],
     category: '',
     isCustom: false,
+    supportedLocales: ['en'],
   },
   items: [],
   settings: {
