@@ -60,11 +60,13 @@ describe('/favorites', () => {
     const stringInput = () => cy.get('input[placeholder="Type to filter"]').first()
     const tagSelect = () => cy.get('select').contains('Tag:').closest('select')
     const sortAttrSelect = () => cy.get('select').contains('Sort by').closest('select')
-    const sortDirBtn = () => cy.get('div[data-tip^="Sort"]').find('button').eq(1)
+    const sortDirBtn = () => cy.get('div[data-tip^="Sort"]').find('button')
     const clearBtn = () => cy.get('button').contains('Clear')
 
+    cy.get('.collapse').contains('Filters').parent().parent().find('input[type="checkbox"').click()
+
     stringInput().type('abc')
-    tagSelect().select('Tag: universe')
+    tagSelect().select('Tag: Universe')
     sortAttrSelect().select('Sort by length')
     sortDirBtn().click()
 
@@ -76,7 +78,7 @@ describe('/favorites', () => {
     tagSelect().should('have.value', 'any')
     sortAttrSelect().should('have.value', 'name')
 
-    tagSelect().select('Tag: universe')
+    tagSelect().select('Tag: Universe')
     listCards().should('have.length', 1)
 
     clearBtn().click()

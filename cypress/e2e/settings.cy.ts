@@ -147,6 +147,7 @@ describe('/settings', () => {
               source: 'https://en.wikipedia.org/wiki/Solar_System',
               author: 'FjellOverflow',
               lastUpdated: '2025-03-25',
+              supportedLocales: ['en'],
             },
             items: [
               {
