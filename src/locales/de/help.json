@@ -1,0 +1,59 @@
+{
+  "steps": {
+    "0": {
+      "title": "Willkommen in Typem!",
+      "text": "Typem (englisch, \"Type them\") ist ein zeitbasiertes Spiel, in dem du versuchst eine Liste von Elementen so schnell aufzuzählen, wie du kannst. Das Ziel dabei ist, dein Wissen zu erweitern, dein Gedächtnis zu trainieren und Spaß zu haben!"
+    },
+    "1": {
+      "title": "Listen erkunden",
+      "text": "In der Hauptansicht findest du alle verfügbaren Listen und kannst eine wählen um zu Spielen."
+    },
+    "2": {
+      "title": "Deine erste Runde",
+      "text": "Lass uns diese Liste probieren. Klick auf den \"Los geht's\"-Knopf oder \"Weiter\" um deine erste Runde zu starten."
+    },
+    "3": {
+      "title": "Die Spielansicht",
+      "text": "In der Spielansicht kannst du die Liste sehen, die du soeben gewählt hast."
+    },
+    "4": {
+      "title": "Einstellungen",
+      "text": "Du kannst dein Spielerlebnis nach Wunsch anpassen. Du kannst zum Beispiel einstellen, wie oft du während des Quizzes pausieren kannst."
+    },
+    "5": {
+      "title": "Bereit zu Spielen",
+      "text": "Klick auf den \"Ich bin bereit\"-Knopf oder \"Weiter\" um das Spiel zu starten."
+    },
+    "6": {
+      "title": "Nenne ein Element",
+      "text": "Tippe den Namen des ersten Planeten ein. Tip: der Name beginnt mit \"M\" und endet mit \"-ercury\"."
+    },
+    "7": {
+      "title": "Nenne ein weiteres Element",
+      "text": "Sehr gut! Tippe nun den Namen des zweiten Planeten ein. Tip: der Name beginnt mit \"V\" und endet mit \"-enus\"."
+    },
+    "8": {
+      "title": "Laufender Timer",
+      "text": "Der Timer läuft während du spielst. Um das Spiel abzuschließen, klicke den \"Aufgeben\"-Knopf oder \"Weiter\"."
+    },
+    "9": {
+      "title": "Das Spiel ist vorbei",
+      "text": "Wenn das Spiel vorbei ist, stoppt der Timer und du kannst dein Ergebnis sehen."
+    },
+    "10": {
+      "title": "Das Ergebnis",
+      "text": "Während des Spiels werden alle Elemente, die du benennst in der Elementebox angezeigt. Wenn das Spiel vorbei ist, werden auch alle übrigen Elemente enthüllt."
+    },
+    "11": {
+      "title": "Verfolge deinen Fortschritt",
+      "text": "Im \"Ergebnisse\" Tab kannst du Statistiken deiner vergangen Runden sehen."
+    },
+    "12": {
+      "title": "Du bist bereit!",
+      "text": "Nun bist du bereit loszulegen! Ich hoffe du hast Spaß mit dieser App!"
+    }
+  },
+  "Finish the tour": "Tutorial beenden",
+  "Skip": "Überspringen",
+  "Start the tour": "Tutorial beginnen"
+}
