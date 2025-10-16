@@ -1,8 +1,11 @@
 {
   "id": "planets",
   "meta": {
-    "name": "Planets of the Solar System",
-    "description": "Name all planets of the solar system in their right order.",
+    "name": { "en": "Planets of the Solar System", "de": "Planeten des Sonnensystems" },
+    "description": {
+      "en": "Name all planets of the solar system in their right order.",
+      "de": "Nenne alle Planeten des Sonnensystem in der richtigen Reihenfolge."
+    },
     "difficulty": 1,
     "tags": ["universe"],
     "category": "universe",
@@ -10,46 +13,46 @@
     "author": "FjellOverflow",
     "lastUpdated": "2025-03-10",
     "imageUrl": "/images/planets.svg",
-    "supportedLocales": ["en"]
+    "supportedLocales": ["en", "de"]
   },
   "items": [
     {
-      "hint": "1st planet",
-      "answer": "Mercury",
-      "matches": ["Mercury"]
+      "hint": { "en": "1st planet", "de": "1. Planet" },
+      "answer": { "en": "Mercury", "de": "Merkur" },
+      "matches": ["Mercury", "Merkur"]
     },
     {
-      "hint": "2nd planet",
+      "hint": { "en": "2nd planet", "de": "2. Planet" },
       "answer": "Venus",
       "matches": ["Venus"]
     },
     {
-      "hint": "3rd planet",
-      "answer": "Earth",
-      "matches": ["Earth"]
+      "hint": { "en": "3rd planet", "de": "3. Planet" },
+      "answer": { "en": "Earth", "de": "Erde" },
+      "matches": ["Earth", "Erde"]
     },
     {
-      "hint": "4th planet",
+      "hint": { "en": "4th planet", "de": "4. Planet" },
       "answer": "Mars",
       "matches": ["Mars"]
     },
     {
-      "hint": "5th planet",
+      "hint": { "en": "5th planet", "de": "5. Planet" },
       "answer": "Jupiter",
       "matches": ["Jupiter"]
     },
     {
-      "hint": "6th planet",
+      "hint": { "en": "6th planet", "de": "6. Planet" },
       "answer": "Saturn",
       "matches": ["Saturn"]
     },
     {
-      "hint": "7th planet",
+      "hint": { "en": "7th planet", "de": "7. Planet" },
       "answer": "Uranus",
       "matches": ["Uranus"]
     },
     {
-      "hint": "8th planet",
+      "hint": { "en": "8th planet", "de": "8. Planet" },
       "answer": "Neptun",
       "matches": ["Neptun"]
     }

@@ -1,8 +1,11 @@
 {
   "id": "germany-100k",
   "meta": {
-    "name": "German Cities: 100k",
-    "description": "Name all German cities with more than 100.000 inhabitants.",
+    "name": { "en": "German Cities: 100k", "de": "Deutsche Städte: 100.000" },
+    "description": {
+      "en": "Name all German cities with more than 100.000 inhabitants.",
+      "de": "Nenne alle deutschen Städt mit mehr als 100.000 Einwohnern."
+    },
     "difficulty": 3,
     "tags": ["germany", "cities", "europe"],
     "category": "geography",
@@ -10,7 +13,7 @@
     "author": "FjellOverflow",
     "lastUpdated": "2025-03-10",
     "imageUrl": "/images/germany.svg",
-    "supportedLocales": ["en"]
+    "supportedLocales": ["en", "de"]
   },
   "items": [
     {
@@ -22,11 +25,11 @@
       "matches": ["Hamburg"]
     },
     {
-      "answer": "München",
+      "answer": { "en": "Munich", "de": "München" },
       "matches": ["München", "Munchen", "Munich"]
     },
     {
-      "answer": "Köln",
+      "answer": { "en": "Cologne", "de": "Köln" },
       "matches": ["Köln", "Koln", "Cologne"]
     },
     {
@@ -62,11 +65,11 @@
       "matches": ["Dresden"]
     },
     {
-      "answer": "Nürnberg",
+      "answer": { "en": "Nuremberg", "de": "Nürnberg" },
       "matches": ["Nürnberg", "Nurnberg", "Nuremberg"]
     },
     {
-      "answer": "Hannover",
+      "answer": { "en": "Hanover", "de": "Hannover" },
       "matches": ["Hannover", "Hanover"]
     },
     {

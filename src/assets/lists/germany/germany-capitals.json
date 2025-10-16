@@ -1,8 +1,11 @@
 {
   "id": "germany-capitals",
   "meta": {
-    "name": "German Capitals",
-    "description": "Name the capital of every German federal state.",
+    "name": { "en": "German Capitals", "de": "Deutsche Hauptstädte" },
+    "description": {
+      "en": "Name the capital of every German federal state.",
+      "de": "Nenne die Hauptstadt jedes deutschen Bundesstaats."
+    },
     "difficulty": 2,
     "tags": ["germany", "capitals", "europe"],
     "category": "geography",
@@ -10,86 +13,92 @@
     "author": "FjellOverflow",
     "lastUpdated": "2025-03-10",
     "imageUrl": "/images/germany.svg",
-    "supportedLocales": ["en"]
+    "supportedLocales": ["en", "de"]
   },
   "items": [
     {
-      "hint": "Capital of Baden-Württemberg",
+      "hint": { "en": "Capital of Baden-Württemberg", "de": "Hauptstadt von Baden-Württemberg" },
       "answer": "Stuttgart",
       "matches": ["Stuttgart"]
     },
     {
-      "hint": "Capital of Bayern",
-      "answer": "München",
+      "hint": { "en": "Capital of Bavaria", "de": "Hauptstadt von Bayern" },
+      "answer": { "en": "Munich", "de": "München" },
       "matches": ["München", "Munchen", "Munich"]
     },
     {
-      "hint": "Capital of Berlin",
+      "hint": { "en": "Capital of Berlin", "de": "Hauptstadt von Berlin" },
       "answer": "Berlin",
       "matches": ["Berlin"]
     },
     {
-      "hint": "Capital of Brandenburg",
+      "hint": { "en": "Capital of Brandenburg", "de": "Hauptstadt von Brandenburg" },
       "answer": "Potsdam",
       "matches": ["Potsdam"]
     },
     {
-      "hint": "Capital of Bremen",
+      "hint": { "en": "Capital of Bremen", "de": "Hauptstadt von Bremen" },
       "answer": "Bremen",
       "matches": ["Bremen"]
     },
     {
-      "hint": "Capital of Hamburg",
+      "hint": { "en": "Capital of Hamburg", "de": "Hauptstadt von Hamburg" },
       "answer": "Hamburg",
       "matches": ["Hamburg"]
     },
     {
-      "hint": "Capital of Hessen",
+      "hint": { "en": "Capital of Hesse", "de": "Hauptstadt von Hessen" },
       "answer": "Wiesbaden",
       "matches": ["Wiesbaden"]
     },
     {
-      "hint": "Capital of Mecklenburg-Vorpommern",
+      "hint": {
+        "en": "Capital of Mecklenburg-Vorpommern",
+        "de": "Hauptstadt von Mecklenburg-Vorpommern"
+      },
       "answer": "Schwerin",
       "matches": ["Schwerin"]
     },
     {
-      "hint": "Capital of Niedersachsen",
-      "answer": "Hannover",
+      "hint": { "en": "Capital of Lower Saxony", "de": "Hauptstadt von Niedersachsen" },
+      "answer": { "en": "Hanover", "de": "Hannover" },
       "matches": ["Hannover", "Hanover"]
     },
     {
-      "hint": "Capital of Nordrhein-Westfalen",
+      "hint": {
+        "en": "Capital of North Rhine-Westphalia",
+        "de": "Hauptstadt von Nordrhein-Westfalen"
+      },
       "answer": "Düsseldorf",
       "matches": ["Düsseldorf", "Dusseldorf"]
     },
     {
-      "hint": "Capital of Rheinland-Pfalz",
+      "hint": { "en": "Capital of Rhineland-Palatinate", "de": "Hauptstadt von Rheinland-Pfalz" },
       "answer": "Mainz",
       "matches": ["Mainz"]
     },
     {
-      "hint": "Capital of Saarland",
+      "hint": { "en": "Capital of Saarland", "de": "Hauptstadt vom Saarland" },
       "answer": "Saarbrücken",
       "matches": ["Saarbrücken", "Saarbrucken"]
     },
     {
-      "hint": "Capital of Sachsen",
+      "hint": { "en": "Capital of Saxony", "de": "Hauptstadt von Sachsen" },
       "answer": "Dresden",
       "matches": ["Dresden"]
     },
     {
-      "hint": "Capital of Sachsen-Anhalt",
+      "hint": { "en": "Capital of Saxony-Anhalt", "de": "Hauptstadt von Sachsen-Anhalt" },
       "answer": "Magdeburg",
       "matches": ["Magdeburg"]
     },
     {
-      "hint": "Capital of Schleswig-Holstein",
+      "hint": { "en": "Capital of Schleswig-Holstein", "de": "Hauptstadt von Schleswig-Holstein" },
       "answer": "Kiel",
       "matches": ["Kiel"]
     },
     {
-      "hint": "Capital of Thüringen",
+      "hint": { "en": "Capital of Thuringia", "de": "Hauptstadt von Thüringen" },
       "answer": "Erfurt",
       "matches": ["Erfurt"]
     }

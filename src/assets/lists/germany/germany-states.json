@@ -1,8 +1,11 @@
 {
   "id": "germany-states",
   "meta": {
-    "name": "German States",
-    "description": "Name all German federal states.",
+    "name": { "en": "German States", "de": "Deutsche Bundesstaaten" },
+    "description": {
+      "en": "Name all German federal states.",
+      "de": "Nenne alle deutschen Bundesstaaten."
+    },
     "difficulty": 2,
     "tags": ["germany", "regions", "europe"],
     "category": "geography",
@@ -10,7 +13,7 @@
     "author": "FjellOverflow",
     "lastUpdated": "2025-03-10",
     "imageUrl": "/images/germany.svg",
-    "supportedLocales": ["en"]
+    "supportedLocales": ["en", "de"]
   },
   "items": [
     {
@@ -18,7 +21,7 @@
       "matches": ["Baden-Württemberg", "Baden Württemberg", "Baden-Wurttemberg", "BadenWurttemberg"]
     },
     {
-      "answer": "Bayern",
+      "answer": { "en": "Bavaria", "de": "Bayern" },
       "matches": ["Bayern", "Bavaria"]
     },
     {
@@ -38,7 +41,7 @@
       "matches": ["Hamburg"]
     },
     {
-      "answer": "Hessen",
+      "answer": { "en": "Hesse", "de": "Hessen" },
       "matches": ["Hessen", "Hesse"]
     },
     {
@@ -51,11 +54,11 @@
       ]
     },
     {
-      "answer": "Niedersachsen",
+      "answer": { "en": "Lower Saxony", "de": "Niedersachsen" },
       "matches": ["Niedersachsen", "Lower Saxony"]
     },
     {
-      "answer": "Nordrhein-Westfalen",
+      "answer": { "en": "North Rhine-Westphalia", "de": "Nordrhein-Westfalen" },
       "matches": [
         "Nordrhein-Westfalen",
         "Nordrhein Westfalen",
@@ -64,7 +67,7 @@
       ]
     },
     {
-      "answer": "Rheinland-Pfalz",
+      "answer": { "en": "Rhineland-Palatinate", "de": "Rheinland-Pfalz" },
       "matches": [
         "Rheinland-Pfalz",
         "Rheinland Pfalz",
@@ -77,11 +80,11 @@
       "matches": ["Saarland"]
     },
     {
-      "answer": "Sachsen",
+      "answer": { "en": "Saxony", "de": "Sachsen" },
       "matches": ["Sachsen", "Saxony"]
     },
     {
-      "answer": "Sachsen-Anhalt",
+      "answer": { "en": "Saxony-Anhalt", "de": "Sachsen-Anhalt" },
       "matches": ["Sachsen-Anhalt", "Sachsen Anhalt", "Saxony-Anhalt", "Saxony Anhalt"]
     },
     {
@@ -89,7 +92,7 @@
       "matches": ["Schleswig-Holstein", "Schleswig Holstein"]
     },
     {
-      "answer": "Thüringen",
+      "answer": { "en": "Thuringia", "de": "Thüringen" },
       "matches": ["Thüringen", "Thuringen", "Thuringia"]
     }
   ],
