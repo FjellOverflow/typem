@@ -1,10 +1,10 @@
 {
   "id": "germany-states",
   "meta": {
-    "name": { "en": "German States", "de": "Deutsche Bundesstaaten" },
+    "name": { "en": "German States", "de": "Deutsche Bundesländer" },
     "description": {
       "en": "Name all German federal states.",
-      "de": "Nenne alle deutschen Bundesstaaten."
+      "de": "Nenne alle deutschen Bundesländer."
     },
     "difficulty": 2,
     "tags": ["germany", "regions", "europe"],

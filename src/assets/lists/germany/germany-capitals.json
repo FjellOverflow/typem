@@ -4,7 +4,7 @@
     "name": { "en": "German Capitals", "de": "Deutsche Hauptstädte" },
     "description": {
       "en": "Name the capital of every German federal state.",
-      "de": "Nenne die Hauptstadt jedes deutschen Bundesstaats."
+      "de": "Nenne die Hauptstadt jedes deutschen Bundeslands."
     },
     "difficulty": 2,
     "tags": ["germany", "capitals", "europe"],
