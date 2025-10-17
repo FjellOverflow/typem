@@ -72,7 +72,9 @@ function resetFilters() {
           :key="availableLocale"
           :value="availableLocale"
         >
-          {{ $t('Language') }}: {{ $t('🇬🇧 English', {}, { locale: availableLocale }) }}
+          {{ $t('Language') }}:
+          <FlagIcon :locale="availableLocale" />
+          {{ $t('English', {}, { locale: availableLocale }) }}
         </option>
       </select>
     </div>

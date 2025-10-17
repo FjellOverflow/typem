@@ -17,6 +17,7 @@ declare module 'vue' {
     DeleteAllPlaythroughsDialog: typeof import('./src/components/dialogs/DeleteAllPlaythroughsDialog.vue')['default']
     DeleteCustomListDialog: typeof import('./src/components/dialogs/DeleteCustomListDialog.vue')['default']
     DeletePlaythroughDialog: typeof import('./src/components/dialogs/DeletePlaythroughDialog.vue')['default']
+    FlagIcon: typeof import('./src/components/FlagIcon.vue')['default']
     HintCard: typeof import('./src/components/HintCard.vue')['default']
     ItemsTable: typeof import('./src/components/ItemsTable.vue')['default']
     ListFilters: typeof import('./src/components/ListFilters.vue')['default']
