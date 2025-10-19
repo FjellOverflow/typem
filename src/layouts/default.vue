@@ -87,7 +87,7 @@ document.addEventListener('scroll', () => {
         <button id="openHelpBtn" @click="openHelp" class="btn btn-ghost">
           <HelpCircleIcon />
         </button>
-        <LocaleToggle />
+        <LocaleSwitcher />
         <ThemeToggle />
       </div>
 
@@ -121,7 +121,7 @@ document.addEventListener('scroll', () => {
           </button>
         </div>
         <div class="flex gap-2 justify-center">
-          <LocaleToggle />
+          <LocaleSwitcher />
           <ThemeToggle />
         </div>
       </MobileDropdown>

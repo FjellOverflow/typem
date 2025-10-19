@@ -42,19 +42,19 @@ describe('ui', () => {
   })
 
   it('switches locale', () => {
-    const localeToggle = () => cy.get('#localeToggle')
+    const localeSwitcher = () => cy.get('#localeSwitcher')
 
     cy.get('#list-preview-planets').contains('Planets of the Solar System')
 
-    localeToggle().click()
+    localeSwitcher().click()
 
-    localeToggle().find('.dropdown-content>').should('have.length', 2)
+    localeSwitcher().find('.dropdown-content>').should('have.length', 2)
 
-    localeToggle().contains('Deutsch').click()
+    localeSwitcher().contains('Deutsch').click()
 
     cy.get('#list-preview-planets').contains('Planeten des Sonnensystems')
 
-    localeToggle().contains('English').click()
+    localeSwitcher().contains('English').click()
 
     cy.get('#list-preview-planets').contains('Planets of the Solar System')
   })

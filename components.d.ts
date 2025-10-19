@@ -24,7 +24,7 @@ declare module 'vue' {
     ListInfoPopUp: typeof import('./src/components/popUps/ListInfoPopUp.vue')['default']
     ListPreviewCard: typeof import('./src/components/ListPreviewCard.vue')['default']
     ListsList: typeof import('./src/components/ListsList.vue')['default']
-    LocaleToggle: typeof import('./src/components/layout/LocaleToggle.vue')['default']
+    LocaleSwitcher: typeof import('./src/components/layout/LocaleSwitcher.vue')['default']
     MobileDropdown: typeof import('./src/components/layout/MobileDropdown.vue')['default']
     NavBar: typeof import('./src/components/layout/NavBar.vue')['default']
     NavLink: typeof import('./src/components/layout/NavLink.vue')['default']
