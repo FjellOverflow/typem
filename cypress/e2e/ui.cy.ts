@@ -27,7 +27,7 @@ describe('ui', () => {
     }
   })
 
-  it.only('has info pop-up', () => {
+  it('has info pop-up', () => {
     cy.get('#appInfoPopUpBtn').click()
 
     const dialog = () => cy.get('dialog').contains('typem').closest('dialog')
@@ -39,6 +39,24 @@ describe('ui', () => {
     dialog().find('a').contains('Settings').click()
 
     cy.url().should('contain', '/settings')
+  })
+
+  it('switches locale', () => {
+    const localeToggle = () => cy.get('#localeToggle')
+
+    cy.get('#list-preview-planets').contains('Planets of the Solar System')
+
+    localeToggle().click()
+
+    localeToggle().find('.dropdown-content>').should('have.length', 2)
+
+    localeToggle().contains('Deutsch').click()
+
+    cy.get('#list-preview-planets').contains('Planeten des Sonnensystems')
+
+    localeToggle().contains('English').click()
+
+    cy.get('#list-preview-planets').contains('Planets of the Solar System')
   })
 })
 

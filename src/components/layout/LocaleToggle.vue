@@ -10,7 +10,7 @@ function onClickChangeLocale(newLocale: string) {
 }
 </script>
 <template>
-  <div v-if="availableLocales.length > 1" class="dropdown">
+  <div v-if="availableLocales.length > 1" class="dropdown" id="localeToggle">
     <div tabindex="0" role="button" class="btn btn-ghost btn-sm sm:btn-md sm:text-xl">
       <FlagIcon :locale="locale as IAvailableLocale" />
     </div>
