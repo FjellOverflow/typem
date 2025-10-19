@@ -50,6 +50,7 @@ describe('/', () => {
 
     const stringInput = () => cy.get('input[placeholder="Type to filter"]').first()
     const tagSelect = () => cy.get('select').contains('Tag:').closest('select')
+    const languageSelect = () => cy.get('select').contains('Language:').closest('select')
     const sortAttrSelect = () => cy.get('select').contains('Sort by').closest('select')
     const sortDirBtn = () => cy.get('div[data-tip^="Sort"]').find('button')
     const clearBtn = () => cy.get('button').contains('Clear')
@@ -83,6 +84,10 @@ describe('/', () => {
     listCards().first().contains('Planets of the Solar System')
     sortDirBtn().click()
     listCards().last().contains('Planets of the Solar System')
+
+    languageSelect().select('de')
+    listCards().last().contains('Planets of the Solar System')
+    listCards().should('have.length', 5)
   })
 
   it('navigates', () => {
