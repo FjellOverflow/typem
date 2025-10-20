@@ -11,7 +11,6 @@ const list0 = {
     lastUpdated: new Date().toISOString(),
     source: '',
     tags: [],
-    category: '',
     isCustom: false,
     supportedLocales: ['en'],
   },

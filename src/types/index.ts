@@ -39,7 +39,6 @@ export const ListSchema = z.object({
     lastUpdated: z.string().date(),
     source: z.string(),
     tags: z.array(z.string()),
-    category: z.string(),
     isCustom: z.boolean().default(false),
     imageUrl: z.string().optional(),
     supportedLocales: z.array(z.string()),

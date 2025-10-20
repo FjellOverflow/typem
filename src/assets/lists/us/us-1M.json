@@ -5,7 +5,6 @@
     "description": "Name all U.S. cities with more than 1 million inhabitants.",
     "difficulty": 2,
     "tags": ["us", "cities", "north-america"],
-    "category": "geography",
     "source": "https://simple.wikipedia.org/wiki/List_of_United_States_cities_by_population",
     "author": "FjellOverflow",
     "lastUpdated": "2025-03-11",

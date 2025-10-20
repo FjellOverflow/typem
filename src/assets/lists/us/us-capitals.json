@@ -5,7 +5,6 @@
     "description": "Name the capital of every U.S. state.",
     "difficulty": 3,
     "tags": ["us", "capitals", "north-america"],
-    "category": "geography",
     "source": "https://simple.wikipedia.org/wiki/List_of_U.S._states",
     "author": "FjellOverflow",
     "lastUpdated": "2025-03-11",

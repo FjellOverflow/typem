@@ -11,7 +11,6 @@ const list = {
     lastUpdated: '2025-03-16',
     source: '',
     tags: [],
-    category: '',
     isCustom: false,
     supportedLocales: ['en'],
   },

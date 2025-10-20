@@ -5,7 +5,6 @@
     "description": "Name all 75 Formula 1 World Driver's Champions.",
     "difficulty": 3,
     "tags": ["f1"],
-    "category": "f1",
     "source": "https://en.wikipedia.org/wiki/List_of_Formula_One_World_Drivers%27_Champions",
     "author": "FjellOverflow",
     "lastUpdated": "2025-09-09",

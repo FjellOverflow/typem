@@ -5,7 +5,6 @@
     "description": "Name all Estonian cities with more than 10.000 inhabitants.",
     "difficulty": 3,
     "tags": ["estonia", "cities", "europe"],
-    "category": "geography",
     "source": "https://citypopulation.de/en/estonia/cities/",
     "author": "FjellOverflow",
     "lastUpdated": "2025-03-10",
