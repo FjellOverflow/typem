@@ -1,8 +1,8 @@
 {
   "id": "norway-counties",
   "meta": {
-    "name": "Norwegian Counties",
-    "description": "Name all Norwegian Counties.",
+    "name": { "en": "Norwegian Counties", "no": "Norges fylker" },
+    "description": { "en": "Name all Norwegian Counties.", "no": "Nevn alle norske fylker." },
     "difficulty": 3,
     "tags": ["norway", "regions", "europe"],
     "category": "geography",
@@ -10,7 +10,7 @@
     "author": "FjellOverflow",
     "lastUpdated": "2025-03-10",
     "imageUrl": "/images/norway.svg",
-    "supportedLocales": ["en"]
+    "supportedLocales": ["en", "no"]
   },
   "items": [
     {
@@ -63,7 +63,7 @@
     },
     {
       "answer": "Trøndelag",
-      "matches": ["Trøndelag", "Trondelag"]
+      "matches": ["Trøndelag", "Trondelag", "Trööndelage"]
     },
     {
       "answer": "Vestfold",

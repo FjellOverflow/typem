@@ -1,0 +1,59 @@
+{
+  "steps": {
+    "0": {
+      "title": "Velkommen til Typem!",
+      "text": "Typem (\"Type them\") er et tidsbasert spill hvor du skal skrive inn en liste med elementer så raskt du kan. Det er laget for å øke kunnskapen din, styrke hukommelsen og være morsomt!"
+    },
+    "1": {
+      "title": "Utforsk lister",
+      "text": "I hovedvisningen kan du bla gjennom alle tilgjengelige lister og velge en å spille."
+    },
+    "2": {
+      "title": "Din første runde",
+      "text": "La oss utforske denne listen. Klikk på \"La oss spille\"-knappen eller \"Neste\" for å starte din første runde."
+    },
+    "3": {
+      "title": "Spillvisning",
+      "text": "I spillvisningen vil du se listen du nettopp har valgt."
+    },
+    "4": {
+      "title": "Tilpasning",
+      "text": "Tilpass spillet etter eget ønske i innstillingene. For eksempel kan du justere hvor ofte du kan pause spillet."
+    },
+    "5": {
+      "title": "Klar til å spille",
+      "text": "Klikk på \"Jeg er klar!\"-knappen eller \"Neste\" for å starte spillet."
+    },
+    "6": {
+      "title": "Gjett et element",
+      "text": "Skriv inn navnet på den første planeten. Hint: den starter med \"M\" og slutter med \"-erkur\""
+    },
+    "7": {
+      "title": "Gjett et annet element",
+      "text": "Bra jobba! Skriv nå inn navnet på neste planet. Hint: den starter med \"V\" og slutter med \"-enus\""
+    },
+    "8": {
+      "title": "Tidsmåling",
+      "text": "Mens du spiller, går timeren. For å avslutte spillet for nå, klikk på \"Gi opp\"-knappen eller \"Neste\"."
+    },
+    "9": {
+      "title": "Spillet er slutt",
+      "text": "Når spillet avsluttes, stopper timeren, og du kan se din endelige tid."
+    },
+    "10": {
+      "title": "Spillgjennomgang",
+      "text": "Under spillet vil alle dine treff vises i elementboksen. Når spillet er over, vil alle gjenværende elementer bli avslørt."
+    },
+    "11": {
+      "title": "Følg fremgangen din",
+      "text": "I \"Historikk\"-fanen kan du se statistikk fra alle dine tidligere runder."
+    },
+    "12": {
+      "title": "Du er klar!",
+      "text": "Du er klar til å begynne å spille! Håper du har det gøy med appen!"
+    }
+  },
+  "Finish the tour": "Fullfør omvisningen",
+  "Skip": "Hopp over",
+  "Start the tour": "Start omvisningen"
+}

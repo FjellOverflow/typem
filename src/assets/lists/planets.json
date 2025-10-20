@@ -1,10 +1,15 @@
 {
   "id": "planets",
   "meta": {
-    "name": { "en": "Planets of the Solar System", "de": "Planeten des Sonnensystems" },
+    "name": {
+      "en": "Planets of the Solar System",
+      "de": "Planeten des Sonnensystems",
+      "no": "Planetene i solsystemet"
+    },
     "description": {
       "en": "Name all planets of the solar system in their right order.",
-      "de": "Nenne alle Planeten des Sonnensystem in der richtigen Reihenfolge."
+      "de": "Nenne alle Planeten des Sonnensystem in der richtigen Reihenfolge.",
+      "no": "Navngi alle planetene i solsystemet i riktig rekkefølge"
     },
     "difficulty": 1,
     "tags": ["universe"],
@@ -13,46 +18,46 @@
     "author": "FjellOverflow",
     "lastUpdated": "2025-03-10",
     "imageUrl": "/images/planets.svg",
-    "supportedLocales": ["en", "de"]
+    "supportedLocales": ["en", "de", "no"]
   },
   "items": [
     {
-      "hint": { "en": "1st planet", "de": "1. Planet" },
-      "answer": { "en": "Mercury", "de": "Merkur" },
+      "hint": { "en": "1st planet", "de": "1. Planet", "no": "1. planet" },
+      "answer": { "en": "Mercury", "de": "Merkur", "no": "Merkur" },
       "matches": ["Mercury", "Merkur"]
     },
     {
-      "hint": { "en": "2nd planet", "de": "2. Planet" },
+      "hint": { "en": "2nd planet", "de": "2. Planet", "no": "2. planet" },
       "answer": "Venus",
       "matches": ["Venus"]
     },
     {
-      "hint": { "en": "3rd planet", "de": "3. Planet" },
-      "answer": { "en": "Earth", "de": "Erde" },
-      "matches": ["Earth", "Erde"]
+      "hint": { "en": "3rd planet", "de": "3. Planet", "no": "3. planet" },
+      "answer": { "en": "Earth", "de": "Erde", "no": "Jorden" },
+      "matches": ["Earth", "Erde", "Jorden"]
     },
     {
-      "hint": { "en": "4th planet", "de": "4. Planet" },
+      "hint": { "en": "4th planet", "de": "4. Planet", "no": "4. planet" },
       "answer": "Mars",
       "matches": ["Mars"]
     },
     {
-      "hint": { "en": "5th planet", "de": "5. Planet" },
+      "hint": { "en": "5th planet", "de": "5. Planet", "no": "5. planet" },
       "answer": "Jupiter",
       "matches": ["Jupiter"]
     },
     {
-      "hint": { "en": "6th planet", "de": "6. Planet" },
+      "hint": { "en": "6th planet", "de": "6. Planet", "no": "6. planet" },
       "answer": "Saturn",
       "matches": ["Saturn"]
     },
     {
-      "hint": { "en": "7th planet", "de": "7. Planet" },
+      "hint": { "en": "7th planet", "de": "7. Planet", "no": "7. planet" },
       "answer": "Uranus",
       "matches": ["Uranus"]
     },
     {
-      "hint": { "en": "8th planet", "de": "8. Planet" },
+      "hint": { "en": "8th planet", "de": "8. Planet", "no": "8. planet" },
       "answer": "Neptun",
       "matches": ["Neptun"]
     }

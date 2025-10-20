@@ -1,6 +1,6 @@
 import { z } from 'zod'
 
-export const availableLocales = ['en', 'de'] as const
+export const availableLocales = ['en', 'de', 'no'] as const
 export type IAvailableLocale = (typeof availableLocales)[number]
 
 export const LocalizedStringSchema = z.union([

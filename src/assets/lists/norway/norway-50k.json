@@ -1,8 +1,11 @@
 {
   "id": "norway-100k",
   "meta": {
-    "name": "Norwegian Cities: 50k",
-    "description": "Name all Norwegian cities with more than 50.000 inhabitants.",
+    "name": { "en": "Norwegian Cities: 50k", "no": "Norske byer: 50k" },
+    "description": {
+      "en": "Name all Norwegian cities with more than 50.000 inhabitants.",
+      "no": "Nevn alle norske byer med mer enn 50.000 innbyggere."
+    },
     "difficulty": 3,
     "tags": ["norway", "cities", "europe"],
     "category": "geography",
@@ -10,7 +13,7 @@
     "author": "FjellOverflow",
     "lastUpdated": "2025-03-10",
     "imageUrl": "/images/norway.svg",
-    "supportedLocales": ["en"]
+    "supportedLocales": ["en", "no"]
   },
   "items": [
     {

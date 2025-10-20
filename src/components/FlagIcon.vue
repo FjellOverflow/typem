@@ -4,6 +4,7 @@ import type { IAvailableLocale } from '@/types/localization'
 const IsoAlpha2Map = {
   de: 'de',
   en: 'gb',
+  no: 'no',
 }
 
 const props = defineProps<{ locale: IAvailableLocale }>()
