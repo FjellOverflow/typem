@@ -14,6 +14,7 @@ const props = defineProps<{
 }>()
 
 const { localize } = useLocalize()
+const { locale } = useI18n()
 const { getBestListPlaythrough, deletePlaythrough } = usePlaythroughs()
 
 const list = ref<IList>()
@@ -110,7 +111,7 @@ async function loadList() {
           </div>
         </div>
         <span class="hidden sm:block opacity-50">{{
-          new Date(playthrough.timestamp).toLocaleString()
+          new Date(playthrough.timestamp).toLocaleString(locale)
         }}</span>
       </div>
 

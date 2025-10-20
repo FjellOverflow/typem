@@ -17,6 +17,7 @@ defineProps<{
 }>()
 
 const { localize } = useLocalize()
+const { locale } = useI18n()
 
 const showRaw = ref(false)
 </script>
@@ -64,7 +65,7 @@ const showRaw = ref(false)
           </span>
           <span>
             {{ $t('Last update') }}:
-            <i>{{ new Date(list.meta.lastUpdated).toLocaleDateString() }}</i>
+            <i>{{ new Date(list.meta.lastUpdated).toLocaleDateString(locale) }}</i>
           </span>
           <a
             class="flex gap-1 underline"

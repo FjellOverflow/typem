@@ -3,6 +3,8 @@ import { formatDuration } from '@/plugins/util'
 import { type IListPlaythrough } from '@/types'
 import { PartyPopperIcon } from 'lucide-vue-next'
 
+const { locale } = useI18n()
+
 const confirmDialog = useTemplateRef('confirmDialog')
 
 const oldBestPlaythrough = ref<IListPlaythrough>()
@@ -37,7 +39,7 @@ defineExpose({ open })
     <template #body>
       {{
         $t('You beat your previous record from {date} by {seconds}.', {
-          date: new Date(oldBestPlaythrough?.timestamp || '').toLocaleDateString(),
+          date: new Date(oldBestPlaythrough?.timestamp || '').toLocaleDateString(locale),
           seconds: formatDuration(improvement),
         })
       }}
