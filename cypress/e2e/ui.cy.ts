@@ -48,11 +48,15 @@ describe('ui', () => {
 
     localeSwitcher().click()
 
-    localeSwitcher().find('.dropdown-content>').should('have.length', 2)
+    localeSwitcher().find('.dropdown-content>').should('have.length', 3)
 
     localeSwitcher().contains('Deutsch').click()
 
     cy.get('#list-preview-planets').contains('Planeten des Sonnensystems')
+
+    localeSwitcher().contains('Norsk').click()
+
+    cy.get('#list-preview-planets').contains('Planetene i solsystemet')
 
     localeSwitcher().contains('English').click()
 
