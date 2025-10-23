@@ -2,6 +2,35 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.9](https://github.com/FjellOverflow/typem/compare/v0.1.8...v0.1.9) (2025-10-23)
+
+
+### Features
+
+* add `de` localisation ([5375341](https://github.com/FjellOverflow/typem/commit/5375341a75b73e798fe2ef769a1878c40265ba9a))
+* add `no` localization ([87009cd](https://github.com/FjellOverflow/typem/commit/87009cd7835c887c98b8b37fea97dca63317bf90))
+* improve responsiveness ([f3d103f](https://github.com/FjellOverflow/typem/commit/f3d103fd8c3c29b88e1806ba16ae3c866356ca91))
+* list filters in collapsible box ([59b1d4f](https://github.com/FjellOverflow/typem/commit/59b1d4fd3053eeacc9b656e4d796f82525e734da))
+* localize composable ([3dfd4b9](https://github.com/FjellOverflow/typem/commit/3dfd4b92e9180b97eac1a32798ba621c4ed02be2))
+* localize list items ([cf45ca9](https://github.com/FjellOverflow/typem/commit/cf45ca94e94078e23c510e6f6cf16e75a5c00a70))
+* localize list meta in UI, list items ([95f300e](https://github.com/FjellOverflow/typem/commit/95f300ebae39a74022bffff35ff5afc467595406))
+* localize list tags, filter lists by language ([30323e1](https://github.com/FjellOverflow/typem/commit/30323e180327780c5492255d0a6e8341ecc326fa))
+* localize lists ([dae028d](https://github.com/FjellOverflow/typem/commit/dae028d42ac149ff96e931a8ff3d0bfc1a2bf665))
+* set supportedLocales property on lists ([de1f82c](https://github.com/FjellOverflow/typem/commit/de1f82c402b000b70c115ec4ead4143d7ba2e48f))
+* show supportedLocales warning on list preview ([4530da3](https://github.com/FjellOverflow/typem/commit/4530da3809ba7e759f1b9b08f64e4a3d4da97eed))
+* switch application language ([3451eb0](https://github.com/FjellOverflow/typem/commit/3451eb062c05ac8065ef21333aa21131d00469c5))
+
+
+### Bug Fixes
+
+* format datetimes according to current locale ([9c44b23](https://github.com/FjellOverflow/typem/commit/9c44b230808afcbfd82179e3cd95b3a0a3e69cbf))
+* localize app description ([fb65f83](https://github.com/FjellOverflow/typem/commit/fb65f8300f3089d37af98691daecaf4d80e8251e))
+* malformed list ([a7bde8e](https://github.com/FjellOverflow/typem/commit/a7bde8eea9081469dc55e6436992d7ea91c13a53))
+* page title ([aa73b24](https://github.com/FjellOverflow/typem/commit/aa73b244011b526f27258919c6b31f37c650c23b))
+* replace flag emojis with inline images ([361d6a6](https://github.com/FjellOverflow/typem/commit/361d6a6791e8cf9fa55ab7f5ac58ca70dbf183d0))
+* spelling ([455c0b8](https://github.com/FjellOverflow/typem/commit/455c0b8dbd608dd2007e8822b6807c583173a156))
+* spelling error in `de` localisation ([0fc27f2](https://github.com/FjellOverflow/typem/commit/0fc27f28067475f6adabb664efcea46db6d11421))
+
 ## [0.1.8](https://github.com/FjellOverflow/typem/compare/v0.1.7...v0.1.8) (2025-09-27)
 
 
