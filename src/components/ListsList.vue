@@ -39,7 +39,15 @@ const availableTags = computed(() => [
 
 const filteredLists = computed(() => {
   const lists = props.lists
-    .filter((list) => matchKeyword(localize.value(list.meta.name), filterKeyword.value))
+    .filter((list) => {
+      const name = localize.value(list.meta.name)
+      const description = localize.value(list.meta.description)
+      const tags = list.meta.tags.map(localize.value)
+
+      const listKeywords = [name, description, ...tags].join(' ')
+
+      return matchKeyword(listKeywords, filterKeyword.value)
+    })
     .filter((list) => filterTag.value === 'any' || list.meta.tags.includes(filterTag.value))
     .filter(
       (list) =>
