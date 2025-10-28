@@ -4,7 +4,7 @@ import { setupLayouts } from 'virtual:generated-layouts'
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
-  routes: [...setupLayouts(routes), { path: '/:pathMatch(.*)*', redirect: '/' }],
+  routes: [...setupLayouts([...routes]), { path: '/:pathMatch(.*)*', redirect: '/' }],
 })
 
 export default router
