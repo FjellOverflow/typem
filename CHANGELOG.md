@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.10](https://github.com/FjellOverflow/typem/compare/v0.1.9...v0.1.10) (2025-10-29)
+
+
+### Features
+
+* filter lists on name, description & tags ([5d0006a](https://github.com/FjellOverflow/typem/commit/5d0006a8e16dc808f51e45cd4113626b740d9417))
+
+
+### Bug Fixes
+
+* type error ([52b6547](https://github.com/FjellOverflow/typem/commit/52b65478cd7daef984c831dc03c1f22f5042d4cd))
+
 ## [0.1.9](https://github.com/FjellOverflow/typem/compare/v0.1.8...v0.1.9) (2025-10-23)
 
 
