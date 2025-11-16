@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.1.0](https://github.com/FjellOverflow/typem/compare/v1.0.0...v1.1.0) (2025-11-16)
+
+
+### Features
+
+* filter lists by progress (`untried`, `tried`, `finished`) ([340cca2](https://github.com/FjellOverflow/typem/commit/340cca219344234c9a9040c994a1f5767a1e577b))
+
+
+### Bug Fixes
+
+* `bestListPlaythrough` not updating on list change ([0c7ab81](https://github.com/FjellOverflow/typem/commit/0c7ab81a5a6579cb572f89f2b90faa26713ee768))
+
 ## [1.0.0](https://github.com/FjellOverflow/typem/compare/v0.1.10...v1.0.0) (2025-11-12)
 
 ## [0.1.10](https://github.com/FjellOverflow/typem/compare/v0.1.9...v0.1.10) (2025-10-29)
