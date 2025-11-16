@@ -30,7 +30,6 @@ const props = withDefaults(
 const { t, locale } = useI18n()
 const { localize } = useLocalize()
 
-const { bestListPlaythrough } = useListPlaythroughs(props.list.id)
 const { isFavorite, toggleFavorite } = useFavorites()
 
 const imageUrl = computed(() =>
@@ -44,6 +43,10 @@ const difficultyLabel = computed(() => {
 
   return t('Easy')
 })
+
+const bestListPlaythrough = computed(
+  () => useListPlaythroughs(props.list.id).bestListPlaythrough.value,
+)
 </script>
 <template>
   <div :id="`list-preview-${list.id}`" class="border rounded-md p-4 grid grid-cols-3 gap-4">
