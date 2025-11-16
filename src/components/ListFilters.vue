@@ -1,10 +1,12 @@
 <script lang="ts" setup>
 import { ArrowDownNarrowWideIcon, ArrowDownWideNarrowIcon, XIcon } from 'lucide-vue-next'
 import { availableLocales } from '@/types/localization'
+import { ListProgressOptions } from '@/types'
 
 const filterKeyword = defineModel('keyword')
 const filterTag = defineModel('tag')
 const filterLanguage = defineModel('language')
+const filterProgress = defineModel('progress')
 
 const sortBy = defineModel<'name' | 'difficulty' | 'length'>('sortBy', { required: true })
 const sortDirection = defineModel<'asc' | 'desc'>('sortDir', { required: true })
@@ -21,7 +23,8 @@ const filtersActive = computed(
     sortBy.value !== 'name' ||
     sortDirection.value !== 'asc' ||
     filterTag.value !== 'any' ||
-    filterLanguage.value !== 'any',
+    filterLanguage.value !== 'any' ||
+    filterProgress.value !== 'any',
 )
 
 const sortedTags = computed(() =>
@@ -41,6 +44,7 @@ function resetFilters() {
   filterKeyword.value = ''
   filterTag.value = 'any'
   filterLanguage.value = 'any'
+  filterProgress.value = 'any'
   sortBy.value = 'name'
   sortDirection.value = 'asc'
 }
@@ -75,6 +79,21 @@ function resetFilters() {
           {{ $t('Language') }}:
           <FlagIcon :locale="availableLocale" />
           {{ $t('English', {}, { locale: availableLocale }) }}
+        </option>
+      </select>
+
+      <select v-model="filterProgress" class="select select-bordered md:w-48">
+        <option value="any">
+          {{ $t('Progress') }}:
+          {{ $t('any') }}
+        </option>
+        <option
+          v-for="listProgress in ListProgressOptions"
+          :key="listProgress"
+          :value="listProgress"
+        >
+          {{ $t('Progress') }}:
+          {{ $t(listProgress) }}
         </option>
       </select>
     </div>

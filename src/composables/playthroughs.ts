@@ -1,4 +1,4 @@
-import { ListPlaythroughSchema, type IListPlaythrough } from '@/types'
+import { ListPlaythroughSchema, type IListPlaythrough, type ListProgress } from '@/types'
 import { useStorage } from '@vueuse/core'
 import { useToasts } from '@/composables/toasts'
 import i18n from '@/plugins/i18n'
@@ -104,8 +104,16 @@ export function useListPlaythroughs(listId: string) {
       allListPlaythroughs.value.sort(sortPlaythroughByMatchesAndSeconds)[0],
   )
 
+  const listProgress = computed<ListProgress>(() => {
+    if (!bestListPlaythrough.value) return 'untried'
+    if (bestListPlaythrough.value.finished) return 'finished'
+
+    return 'tried'
+  })
+
   return {
     allListPlaythroughs,
     bestListPlaythrough,
+    listProgress,
   }
 }

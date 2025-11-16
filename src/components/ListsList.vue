@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { useLocalize } from '@/composables/localize'
+import { useListPlaythroughs } from '@/composables/playthroughs'
 import { matchKeyword } from '@/plugins/util'
-import { type IList } from '@/types'
+import { type IList, type ListProgress } from '@/types'
 import { useRouteQuery } from '@vueuse/router'
 import { FilterIcon, Gamepad2Icon } from 'lucide-vue-next'
 
@@ -20,6 +21,7 @@ const { localize } = useLocalize()
 const filterKeyword = useRouteQuery('keyword', '')
 const filterTag = useRouteQuery('tag', 'any')
 const filterLanguage = useRouteQuery('language', 'any')
+const filterProgress = useRouteQuery<ListProgress | 'any'>('progress', 'any')
 const sortBy = useRouteQuery<'name' | 'difficulty' | 'length'>('sortBy', 'name')
 const sortDirection = useRouteQuery<'asc' | 'desc'>('sortDir', 'asc')
 
@@ -29,7 +31,8 @@ const filtersActive = computed(
     sortBy.value !== 'name' ||
     sortDirection.value !== 'asc' ||
     filterTag.value !== 'any' ||
-    filterLanguage.value !== 'any',
+    filterLanguage.value !== 'any' ||
+    filterProgress.value !== 'any',
 )
 
 const availableTags = computed(() => [
@@ -53,6 +56,11 @@ const filteredLists = computed(() => {
       (list) =>
         filterLanguage.value === 'any' || list.meta.supportedLocales.includes(filterLanguage.value),
     )
+    .filter(
+      (list) =>
+        filterProgress.value === 'any' ||
+        filterProgress.value === useListPlaythroughs(list.id).listProgress.value,
+    )
 
   lists.sort((l1, l2) => {
     const [left, right] = sortDirection.value === 'desc' ? [l2, l1] : [l1, l2]
@@ -70,7 +78,7 @@ const filteredLists = computed(() => {
   <CollapsibleBox :model-value="false">
     <template #title>
       <div class="flex gap-2 items-center">
-        <FilterIcon />
+        <FilterIcon :class="{ 'fill-primary text-primary': filtersActive }" />
         {{ $t('Filters') }}
       </div>
     </template>
@@ -79,6 +87,7 @@ const filteredLists = computed(() => {
         v-model:keyword="filterKeyword"
         v-model:tag="filterTag"
         v-model:language="filterLanguage"
+        v-model:progress="filterProgress"
         v-model:sortBy="sortBy"
         v-model:sortDir="sortDirection"
         :tags="availableTags"

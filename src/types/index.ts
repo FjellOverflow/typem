@@ -61,3 +61,6 @@ export const ListPlaythroughSchema = z.object({
   timestamp: z.string(),
 })
 export type IListPlaythrough = z.infer<typeof ListPlaythroughSchema>
+
+export const ListProgressOptions = ['untried', 'tried', 'finished'] as const
+export type ListProgress = (typeof ListProgressOptions)[number]

@@ -67,6 +67,7 @@
   "Pause": "Pause",
   "Playable lists, uploaded by the user. Saved locally on this device.": "Playable lists, uploaded by the user. Saved locally on this device.",
   "Previous": "Previous",
+  "Progress": "Progress",
   "Random": "Random",
   "Record": "Record",
   "Records": "Records",
@@ -114,7 +115,10 @@
   "You named all {number} items in {duration}.": "You named all {number} items in {duration}.",
   "You only named {actual} of {total} items": "You only named {actual} of {total} items",
   "any": "Any",
+  "finished": "Finished",
   "item": "item",
   "min": "min",
-  "sec": "sec"
+  "sec": "sec",
+  "tried": "Tried",
+  "untried": "Untried"
 }

@@ -67,6 +67,7 @@
   "Pause": "Pause",
   "Playable lists, uploaded by the user. Saved locally on this device.": "Spielbare Liste, vom Nutzer hochgeladen. Lokal auf diesem Gerät spielbar.",
   "Previous": "Zurück",
+  "Progress": "Fortschritt",
   "Random": "Zufällig",
   "Record": "Rekord",
   "Records": "Rekorde",
@@ -114,7 +115,10 @@
   "You named all {number} items in {duration}.": "Du hast alle {number} Elemente in {duration} benannt.",
   "You only named {actual} of {total} items": "Du hast nur {actual} von {total} Elementen benannt",
   "any": "Alle",
+  "finished": "Vollständig",
   "item": "Element",
   "min": "min",
-  "sec": "sek"
+  "sec": "sek",
+  "tried": "Versucht",
+  "untried": "Unversucht"
 }

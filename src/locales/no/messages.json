@@ -67,6 +67,7 @@
   "Pause": "Pause",
   "Playable lists, uploaded by the user. Saved locally on this device.": "Spillbare lister, lastet opp av brukeren. Lagret lokalt på denne enheten.",
   "Previous": "Forrige",
+  "Progress": "Framgang",
   "Random": "Tilfeldig",
   "Record": "Rekord",
   "Records": "Rekorder",
@@ -114,7 +115,10 @@
   "You named all {number} items in {duration}.": "Du navnga alle {number} elementene på {duration}.",
   "You only named {actual} of {total} items": "Du navnga kun {actual} av {total} elementer",
   "any": "Alle",
+  "finished": "Fullført",
   "item": "element",
   "min": "min",
-  "sec": "sek"
+  "sec": "sek",
+  "tried": "Prøvd",
+  "untried": "Uprøvd"
 }
