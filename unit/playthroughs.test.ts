@@ -69,7 +69,7 @@ describe('playthroughs composable', () => {
     expect(getBestListPlaythrough('list0')).toEqual(playthrough6)
   })
 
-  it('deletes ', () => {
+  it('deletes', () => {
     const { allPlaythroughs, deletePlaythrough } = usePlaythroughs()
 
     const playthrough0 = generatedPlaythrough()
@@ -193,5 +193,24 @@ describe('listPlaythroughs composable', () => {
     await nextTick()
     expect(bestListPlaythrough.value).toEqual(playthrough6)
     expect(allPlaythroughs.value).toEqual(expect.arrayContaining(allListPlaythroughs.value))
+  })
+
+  it('returns listProgress by list', async () => {
+    const { allPlaythroughs } = usePlaythroughs()
+    const { listProgress } = useListPlaythroughs('list0')
+
+    expect(listProgress.value).toBe('untried')
+
+    const playthrough0 = generatedPlaythrough('list0', 100, 10)
+    allPlaythroughs.value.push(playthrough0)
+
+    await nextTick()
+    expect(listProgress.value).toBe('tried')
+
+    const playthrough1 = generatedPlaythrough('list0', 99, 42)
+    allPlaythroughs.value.push(playthrough1)
+
+    await nextTick()
+    expect(listProgress.value).toBe('finished')
   })
 })
