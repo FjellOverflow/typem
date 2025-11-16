@@ -44,13 +44,29 @@ describe('/', () => {
     dialog().should('not.be.visible')
   })
 
-  it('filters', () => {
+  it.only('filters', () => {
+    cy.window().then((window) => {
+      window.localStorage.setItem(
+        'history',
+        JSON.stringify([
+          {
+            listId: 'planets',
+            numberOfMatches: 7,
+            seconds: 10,
+            finished: false,
+            timestamp: new Date().toISOString(),
+          },
+        ]),
+      )
+    })
+
     const listCards = () => cy.get('[id^="list-preview-"]')
     listCards().should('have.length.above', 1)
 
     const stringInput = () => cy.get('input[placeholder="Type to filter"]').first()
     const tagSelect = () => cy.get('select').contains('Tag:').closest('select')
     const languageSelect = () => cy.get('select').contains('Language:').closest('select')
+    const progressSelect = () => cy.get('select').contains('Progress:').closest('select')
     const sortAttrSelect = () => cy.get('select').contains('Sort by').closest('select')
     const sortDirBtn = () => cy.get('div[data-tip^="Sort"]').find('button')
     const clearBtn = () => cy.get('button').contains('Clear')
@@ -85,9 +101,37 @@ describe('/', () => {
     sortDirBtn().click()
     listCards().last().contains('Planets of the Solar System')
 
+    clearBtn().click()
+
     languageSelect().select('de')
     listCards().last().contains('Planets of the Solar System')
     listCards().should('have.length', 5)
+
+    clearBtn().click()
+
+    progressSelect().select('Progress: Tried')
+    listCards().first().contains('Planets of the Solar System')
+    listCards().should('have.length', 1)
+
+    progressSelect().select('Progress: Finished')
+    listCards().should('have.length', 0)
+
+    cy.window().then((window) => {
+      window.localStorage.setItem(
+        'history',
+        JSON.stringify([
+          {
+            listId: 'planets',
+            numberOfMatches: 8,
+            seconds: 11,
+            finished: true,
+            timestamp: new Date().toISOString(),
+          },
+        ]),
+      )
+      cy.reload()
+      listCards().should('have.length', 1)
+    })
   })
 
   it('navigates', () => {
