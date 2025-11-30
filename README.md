@@ -1,9 +1,3 @@
-<p align="center">
-  <a href="https://typem.fjelloverflow.dev">
-    <img alt="logo" src="./src/assets/logo.svg" height="64">
-  </a>
-</p>
-
 <h1 align="center">
   <a href="https://typem.fjelloverflow.dev">Typem</a>
 </h1>
@@ -13,7 +7,9 @@
 </p>
 
 <p align="center">
-  <img src="./public/preview.png" width="85%"/>
+  <a href="https://typem.fjelloverflow.dev">
+    <img src="./public/preview.png" width="60%"/>
+  </a>
 </p>
 
 <p align="center">
