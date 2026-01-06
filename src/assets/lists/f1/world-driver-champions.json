@@ -2,16 +2,21 @@
   "id": "f1-wdc",
   "meta": {
     "name": "F1: Drivers' Champions",
-    "description": "Name all 75 Formula 1 World Driver's Champions.",
+    "description": "Name all 76 Formula 1 World Driver's Champions.",
     "difficulty": 3,
     "tags": ["f1"],
     "source": "https://en.wikipedia.org/wiki/List_of_Formula_One_World_Drivers%27_Champions",
     "author": "FjellOverflow",
-    "lastUpdated": "2025-09-09",
+    "lastUpdated": "2026-01-06",
     "imageUrl": "/images/f1.svg",
     "supportedLocales": ["en"]
   },
   "items": [
+    {
+      "hint": "WDC 2025",
+      "answer": "Lando Norris",
+      "matches": ["Lando Norris", "Norris"]
+    },
     {
       "hint": "WDC 2024",
       "answer": "Max Verstappen",
