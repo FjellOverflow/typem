@@ -1,11 +1,19 @@
 import { describe, it, expect, vi } from 'vitest'
 import { useHotkey } from '@/composables/hotkey'
+import { mount } from '@vue/test-utils'
 
 describe('hotkey composable', () => {
   it('calls callback', () => {
     const callback = vi.fn()
 
-    useHotkey('f', callback)
+    const Comp = {
+      template: '<div />',
+      setup() {
+        useHotkey('f', callback)
+      },
+    }
+
+    const wrapper = mount(Comp)
 
     const type = (key: string, ctrlKey: boolean) =>
       document.dispatchEvent(new KeyboardEvent('keydown', { key, ctrlKey }))
@@ -29,5 +37,7 @@ describe('hotkey composable', () => {
 
     type('a', true)
     expect(callback).toHaveBeenCalledTimes(2)
+
+    wrapper.unmount()
   })
 })
