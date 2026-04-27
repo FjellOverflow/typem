@@ -16,7 +16,8 @@ export function useToasts(timeout = 5000) {
 
     setTimeout(() => {
       const index = toasts.value.findIndex((t) => t.id === id)
-      toasts.value.splice(index, 1)
+
+      if (index > -1) toasts.value.splice(index, 1)
     }, timeout)
   }
 
