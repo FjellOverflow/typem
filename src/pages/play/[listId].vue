@@ -66,14 +66,14 @@ function init() {
 
   isInitialized.value = true
 
-  setTimeout(() => {
+  nextTick().then(() => {
     document
       .querySelector(`#list-preview-${list.value.id}`)
       ?.dispatchEvent(new CustomEvent('oninit'))
     settingsCard.value?.close()
     itemsCard.value?.open()
     inputField.value?.focus()
-  }, 5)
+  })
 }
 
 function reset() {
