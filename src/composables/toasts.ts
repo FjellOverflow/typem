@@ -12,8 +12,6 @@ export function useToasts(timeout = 5000) {
 
     toasts.value.unshift({ id, ...toast })
 
-    _nextId.value += 1
-
     setTimeout(() => {
       const index = toasts.value.findIndex((t) => t.id === id)
 
