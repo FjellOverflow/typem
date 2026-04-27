@@ -1,5 +1,7 @@
+import i18n from './i18n'
+
 export function formatDuration(totalSeconds: number) {
-  const { t } = useI18n()
+  const t = i18n.global.t
 
   const minutes = Math.trunc(totalSeconds / 60)
   const seconds = Math.trunc(totalSeconds - minutes * 60)
@@ -18,7 +20,7 @@ export function matchKeyword(item: string, keyword: string) {
 }
 
 export function getSecondsPerItem(numberOfItems: number, seconds: number) {
-  const { t } = useI18n()
+  const t = i18n.global.t
 
   const secondsPerItem = seconds / numberOfItems
 
