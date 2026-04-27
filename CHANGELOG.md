@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.1.2](https://github.com/FjellOverflow/typem/compare/v1.1.1...v1.1.2) (2026-04-27)
+
+
+### Bug Fixes
+
+* clean up hotkey eventlistener at unmount ([fe2769b](https://github.com/FjellOverflow/typem/commit/fe2769b977d7ab77915e84ccb175642e256b3b30))
+* prevent deletion of last toast if actual toast not found ([bb0fd74](https://github.com/FjellOverflow/typem/commit/bb0fd74236ff6924c78e58df96ee341d4bef23df))
+* prevent mutation of array in composable ([4f1e001](https://github.com/FjellOverflow/typem/commit/4f1e001a250b04fbc9ee0dd2b4f78dc311bd1c92))
+* replace composable-only function in non-composable with global import ([12c42b0](https://github.com/FjellOverflow/typem/commit/12c42b05d3603835f956037942dc810dc8dda7c1))
+* replace timeout hack with proper nextTick usage to update DOM after interaction ([c7693a5](https://github.com/FjellOverflow/typem/commit/c7693a54c8a86f9ec8508ca19f3112814ef63830))
+* toast ids were incremented in steps of 2 ([d91f99b](https://github.com/FjellOverflow/typem/commit/d91f99b3d2d7af3c7dae80769c47a69f9c26bba1))
+* validate `locale` when read from storage ([8003a35](https://github.com/FjellOverflow/typem/commit/8003a359c55ee75a77610951afbe684791af3bfd))
+
 ## [1.1.1](https://github.com/FjellOverflow/typem/compare/v1.1.0...v1.1.1) (2026-01-06)
 
 ## [1.1.0](https://github.com/FjellOverflow/typem/compare/v1.0.0...v1.1.0) (2025-11-16)
