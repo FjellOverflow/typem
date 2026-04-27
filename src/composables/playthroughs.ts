@@ -101,7 +101,7 @@ export function useListPlaythroughs(listId: string) {
 
   const bestListPlaythrough = computed(
     (): IListPlaythrough | undefined =>
-      allListPlaythroughs.value.sort(sortPlaythroughByMatchesAndSeconds)[0],
+      [...allListPlaythroughs.value].sort(sortPlaythroughByMatchesAndSeconds)[0],
   )
 
   const listProgress = computed<ListProgress>(() => {
