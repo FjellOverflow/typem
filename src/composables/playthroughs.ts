@@ -31,7 +31,10 @@ export function usePlaythroughs() {
 
   const allPlaythroughs = useStorage<IListPlaythrough[]>('history', [])
 
-  allPlaythroughs.value = validatePlaythroughs([...allPlaythroughs.value])
+  const validatedPlaythroughs = validatePlaythroughs([...allPlaythroughs.value])
+
+  if (JSON.stringify(validatedPlaythroughs) !== JSON.stringify(allPlaythroughs.value))
+    allPlaythroughs.value = validatedPlaythroughs
 
   function getBestListPlaythrough(listId: string) {
     if (allPlaythroughs.value.length === 0) return
