@@ -1,37 +1,41 @@
 ---
-name: check
+name: Check and test
 
 on:
   push:
   workflow_dispatch:
 
 jobs:
-  format:
-    uses: ./.github/workflows/setup-and-run-script.yaml
-    with:
-      script: 'format'
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-  lint:
-    uses: ./.github/workflows/setup-and-run-script.yaml
-    with:
-      script: 'lint'
+      - name: Setup mise
+        uses: jdx/mise-action@v4
 
-  typecheck:
-    uses: ./.github/workflows/setup-and-run-script.yaml
-    with:
-      script: 'typecheck'
+      - name: Run ci checks
+        run: mise ci
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-  build:
-    uses: ./.github/workflows/setup-and-run-script.yaml
-    with:
-      script: 'build-only'
+      - name: Setup mise
+        uses: jdx/mise-action@v4
 
-  unit-tests:
-    uses: ./.github/workflows/setup-and-run-script.yaml
-    with:
-      script: 'test:unit'
+      - name: Run tests
+        run: mise test
 
-  e2e-tests:
-    uses: ./.github/workflows/setup-and-run-script.yaml
-    with:
-      script: 'test:e2e'
+      - name: Upload artifacts
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: cypress-artifacts
+          path: |
+            cypress/screenshots
+            cypress/videos
+          if-no-files-found: ignore
+          include-hidden-files: true

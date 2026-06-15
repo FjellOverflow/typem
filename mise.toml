@@ -1,0 +1,27 @@
+[tools]
+node = "24"
+bun = "1.3"
+
+[tasks.setup]
+run = "bun install --frozen-lockfile"
+
+[tasks.dev]
+depends = ["setup"]
+run = "bun run dev --host"
+
+[tasks.build]
+depends = ["setup"]
+run = "bun run build"
+
+[tasks.ci]
+depends = ["setup"]
+run = ["bun run lint", "bun run typecheck"]
+
+[tasks.test]
+depends = ["setup", "build"]
+run = ["bun run test:unit", "bun run test:e2e"]
+
+[tasks.release]
+depends = ["setup", "ci", "test"]
+confirm = { message = "Are you sure you want to release?", default = "no" }
+run = "bun run release && git push --follow-tags"
