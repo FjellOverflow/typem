@@ -60,4 +60,13 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
+  // TODO: remove after vueuse > 14.3.0
+  build: {
+    rolldownOptions: {
+      onLog(level, log, defaultHandler) {
+        if (log.code === 'INVALID_ANNOTATION') return
+        else defaultHandler(level, log)
+      },
+    },
+  },
 })

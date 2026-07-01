@@ -20,8 +20,9 @@ import type {
 
 declare module 'vue-router' {
   interface TypesConfig {
-    ParamParsers:
-      | never
+    _ParamParsers: {}
+    RouteNamedMap: import('vue-router/auto-routes').RouteNamedMap
+    _RouteFileInfoMap: import('vue-router/auto-routes')._RouteFileInfoMap
   }
 }
 
@@ -121,11 +122,15 @@ declare module 'vue-router/auto-routes' {
         | '/'
       views:
         | never
+      pathParamNames:
+        | never
     }
     'src/pages/favorites.vue': {
       routes:
         | '/favorites'
       views:
+        | never
+      pathParamNames:
         | never
     }
     'src/pages/history.vue': {
@@ -137,11 +142,15 @@ declare module 'vue-router/auto-routes' {
         | '/history/records'
       views:
         | 'default'
+      pathParamNames:
+        | never
     }
     'src/pages/history/index.vue': {
       routes:
         | '/history/'
       views:
+        | never
+      pathParamNames:
         | never
     }
     'src/pages/history/all.vue': {
@@ -149,11 +158,15 @@ declare module 'vue-router/auto-routes' {
         | '/history/all'
       views:
         | never
+      pathParamNames:
+        | never
     }
     'src/pages/history/finished.vue': {
       routes:
         | '/history/finished'
       views:
+        | never
+      pathParamNames:
         | never
     }
     'src/pages/history/records.vue': {
@@ -161,11 +174,15 @@ declare module 'vue-router/auto-routes' {
         | '/history/records'
       views:
         | never
+      pathParamNames:
+        | never
     }
     'src/pages/play/index.vue': {
       routes:
         | '/play/'
       views:
+        | never
+      pathParamNames:
         | never
     }
     'src/pages/play/[listId].vue': {
@@ -173,11 +190,15 @@ declare module 'vue-router/auto-routes' {
         | '/play/[listId]'
       views:
         | never
+      pathParamNames:
+        | 'listId'
     }
     'src/pages/settings.vue': {
       routes:
         | '/settings'
       views:
+        | never
+      pathParamNames:
         | never
     }
   }
