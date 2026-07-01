@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useHotkey } from '@/composables/hotkey'
 import { formatDuration } from '@/plugins/util'
-import { PauseIcon, PlayIcon, SquareIcon } from 'lucide-vue-next'
+import { PauseIcon, PlayIcon, SquareIcon } from '@lucide/vue'
 
 const props = defineProps<{
   isRunning: boolean

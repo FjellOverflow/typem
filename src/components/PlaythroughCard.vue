@@ -3,7 +3,7 @@ import { usePlaythroughs } from '@/composables/playthroughs'
 import { getListById } from '@/plugins/listLoader'
 import { getSecondsPerItem, formatDuration } from '@/plugins/util'
 import { type IList, type IListPlaythrough } from '@/types'
-import { BanIcon, CheckIcon, TrashIcon, TrophyIcon } from 'lucide-vue-next'
+import { BanIcon, CheckIcon, TrashIcon, TrophyIcon } from '@lucide/vue'
 import DeletePlaythroughDialog from './dialogs/DeletePlaythroughDialog.vue'
 import { useLocalize } from '@/composables/localize'
 

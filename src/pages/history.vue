@@ -4,7 +4,7 @@ import { useTitle } from '@vueuse/core'
 const { t } = useI18n()
 useTitle(`${t('History')} - Typem`)
 
-import { ListCheckIcon, ListIcon, TrophyIcon } from 'lucide-vue-next'
+import { ListCheckIcon, ListIcon, TrophyIcon } from '@lucide/vue'
 </script>
 <template>
   <div class="grid grid-cols-3 gap-2 sm:gap-4 mb-4 sm:mb-4">

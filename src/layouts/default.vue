@@ -12,7 +12,7 @@ import {
   InfoIcon,
   ArrowUp,
   HelpCircleIcon,
-} from 'lucide-vue-next'
+} from '@lucide/vue'
 import AppInfoPopUp from '@/components/popUps/AppInfoPopUp.vue'
 import { useHelp } from '@/composables/help'
 

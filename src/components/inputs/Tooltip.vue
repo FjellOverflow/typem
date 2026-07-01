@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { CircleHelpIcon, LightbulbIcon } from 'lucide-vue-next'
+import { CircleHelpIcon, LightbulbIcon } from '@lucide/vue'
 
 withDefaults(
   defineProps<{

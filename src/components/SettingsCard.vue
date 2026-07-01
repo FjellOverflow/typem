@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { ISettings } from '@/types'
-import { LockIcon, SettingsIcon } from 'lucide-vue-next'
+import { LockIcon, SettingsIcon } from '@lucide/vue'
 
 const settings = defineModel<ISettings>({ required: true })
 

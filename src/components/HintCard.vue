@@ -2,7 +2,7 @@
 import { useHotkey } from '@/composables/hotkey'
 import { useLocalize } from '@/composables/localize'
 import type { ICheckableListItem } from '@/types'
-import { ArrowLeftIcon, ArrowRightIcon, LightbulbIcon } from 'lucide-vue-next'
+import { ArrowLeftIcon, ArrowRightIcon, LightbulbIcon } from '@lucide/vue'
 
 const emit = defineEmits<{
   move: []

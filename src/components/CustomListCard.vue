@@ -2,7 +2,7 @@
 import { useCustomLists } from '@/composables/customLists'
 import { useLocalize } from '@/composables/localize'
 import type { IList } from '@/types'
-import { TrashIcon } from 'lucide-vue-next'
+import { TrashIcon } from '@lucide/vue'
 
 const confirmListDeletionDialog = useTemplateRef('confirmListDeletionDialog')
 

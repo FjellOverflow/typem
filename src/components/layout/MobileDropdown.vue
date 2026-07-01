@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { MenuIcon } from 'lucide-vue-next'
+import { MenuIcon } from '@lucide/vue'
 </script>
 <template>
   <div class="dropdown dropdown-bottom dropdown-end">

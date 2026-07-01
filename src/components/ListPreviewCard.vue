@@ -13,7 +13,7 @@ import {
   LockIcon,
   StarIcon,
   TimerIcon,
-} from 'lucide-vue-next'
+} from '@lucide/vue'
 
 const listInfoPopUp = useTemplateRef('listInfoPopUp')
 

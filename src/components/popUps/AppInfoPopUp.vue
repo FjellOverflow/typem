@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { BugIcon, DownloadIcon, HouseIcon, SettingsIcon } from 'lucide-vue-next'
+import { BugIcon, DownloadIcon, HouseIcon, SettingsIcon } from '@lucide/vue'
 import packageJson from '../../../package.json'
 import logo from '@/assets/logo.svg'
 import { pwaInstallPromptEvent } from '@/plugins/pwaInstall'

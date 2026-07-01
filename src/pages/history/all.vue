@@ -6,7 +6,7 @@ export { useListsLoader }
 <script setup lang="ts">
 import { usePlaythroughs } from '@/composables/playthroughs'
 import { useRouteQuery } from '@vueuse/router'
-import { EllipsisIcon, FilterIcon } from 'lucide-vue-next'
+import { EllipsisIcon, FilterIcon } from '@lucide/vue'
 
 const { data: lists } = useListsLoader()
 const { allPlaythroughs } = usePlaythroughs()

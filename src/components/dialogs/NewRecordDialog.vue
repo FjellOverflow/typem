@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { formatDuration } from '@/plugins/util'
 import { type IListPlaythrough } from '@/types'
-import { PartyPopperIcon } from 'lucide-vue-next'
+import { PartyPopperIcon } from '@lucide/vue'
 
 const { locale } = useI18n()
 

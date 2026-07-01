@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useLocalize } from '@/composables/localize'
 import type { IList } from '@/types'
-import { FileCodeIcon, ExternalLinkIcon } from 'lucide-vue-next'
+import { FileCodeIcon, ExternalLinkIcon } from '@lucide/vue'
 
 const popUp = useTemplateRef('popUp')
 

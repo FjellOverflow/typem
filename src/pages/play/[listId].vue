@@ -12,7 +12,7 @@ import type { ICheckableListItem } from '@/types'
 import { useTitle } from '@vueuse/core'
 import { useChecking } from '@/composables/checking'
 import { useTimer } from '@/composables/timer'
-import { PartyPopperIcon, RotateCwIcon, ThumbsUpIcon } from 'lucide-vue-next'
+import { PartyPopperIcon, RotateCwIcon, ThumbsUpIcon } from '@lucide/vue'
 
 const { localize } = useLocalize()
 const { data: list } = useListLoader()

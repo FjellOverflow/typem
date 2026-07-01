@@ -7,7 +7,7 @@ export { useListsLoader }
 import { useTitle } from '@vueuse/core'
 import { usePlaythroughs } from '@/composables/playthroughs'
 import { useRouteQuery } from '@vueuse/router'
-import { FilterIcon } from 'lucide-vue-next'
+import { FilterIcon } from '@lucide/vue'
 
 const { t } = useI18n()
 useTitle(`${t('Records')} - Typem`)

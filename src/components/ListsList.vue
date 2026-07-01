@@ -4,7 +4,7 @@ import { useListPlaythroughs } from '@/composables/playthroughs'
 import { matchKeyword } from '@/plugins/util'
 import { type IList, type ListProgress } from '@/types'
 import { useRouteQuery } from '@vueuse/router'
-import { FilterIcon, Gamepad2Icon } from 'lucide-vue-next'
+import { FilterIcon, Gamepad2Icon } from '@lucide/vue'
 
 const props = withDefaults(
   defineProps<{

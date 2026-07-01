@@ -8,7 +8,7 @@ export { useListsLoader }
 import { usePlaythroughs } from '@/composables/playthroughs'
 import { downloadJSON, generateTimestampStr } from '@/plugins/util'
 import { useTitle } from '@vueuse/core'
-import { DownloadIcon, RotateCcwIcon, TrashIcon, TrophyIcon, UploadIcon } from 'lucide-vue-next'
+import { DownloadIcon, RotateCcwIcon, TrashIcon, TrophyIcon, UploadIcon } from '@lucide/vue'
 import { useCustomLists } from '@/composables/customLists'
 
 const { t } = useI18n()

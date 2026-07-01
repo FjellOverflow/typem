@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ArrowDownNarrowWideIcon, ArrowDownWideNarrowIcon, XIcon } from 'lucide-vue-next'
+import { ArrowDownNarrowWideIcon, ArrowDownWideNarrowIcon, XIcon } from '@lucide/vue'
 import { availableLocales } from '@/types/localization'
 import { ListProgressOptions } from '@/types'
 

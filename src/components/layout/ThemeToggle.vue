@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { SunIcon, MoonIcon } from 'lucide-vue-next'
+import { SunIcon, MoonIcon } from '@lucide/vue'
 
 const theme = useStorage('data-theme', 'dark')
 

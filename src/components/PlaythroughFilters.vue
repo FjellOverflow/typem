@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { useLocalize } from '@/composables/localize'
 import type { IList } from '@/types'
-import { ArrowDownNarrowWideIcon, ArrowDownWideNarrowIcon, XIcon } from 'lucide-vue-next'
+import { ArrowDownNarrowWideIcon, ArrowDownWideNarrowIcon, XIcon } from '@lucide/vue'
 
 const props = defineProps<{
   lists: IList[]

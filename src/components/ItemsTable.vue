@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useLocalize } from '@/composables/localize'
 import type { ICheckableListItem } from '@/types'
-import { ListCheckIcon } from 'lucide-vue-next'
+import { ListCheckIcon } from '@lucide/vue'
 
 const isOpen = ref(false)
 
