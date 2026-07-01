@@ -2,7 +2,7 @@ import '@/assets/style.css'
 import '../node_modules/flag-icons/css/flag-icons.min.css'
 
 import App from '@/App.vue'
-import { DataLoaderPlugin } from 'unplugin-vue-router/data-loaders'
+import { DataLoaderPlugin } from 'vue-router/experimental'
 import router from '@/plugins/router'
 import i18n from '@/plugins/i18n'
 import { checkIfInstallable } from '@/plugins/pwaInstall'

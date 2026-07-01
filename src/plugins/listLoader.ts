@@ -1,7 +1,6 @@
 import { useCustomLists } from '@/composables/customLists'
 import { ListSchema, type IList } from '@/types'
-import { NavigationResult } from 'unplugin-vue-router/data-loaders'
-import { defineBasicLoader } from 'unplugin-vue-router/data-loaders/basic'
+import { defineBasicLoader, reroute } from 'vue-router/experimental'
 
 const { lists: customLists } = useCustomLists()
 
@@ -48,6 +47,6 @@ export const useListLoader = defineBasicLoader('/play/[listId]', async (to) => {
     return await getListById(to.params.listId)
   } catch (e) {
     console.error(e)
-    return new NavigationResult('/')
+    reroute('/')
   }
 })
