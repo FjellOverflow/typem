@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.1.3](https://github.com/FjellOverflow/typem/compare/v1.1.2...v1.1.3) (2026-07-01)
+
+
+### Bug Fixes
+
+* migrate upgraded deps ([eaf0bfa](https://github.com/FjellOverflow/typem/commit/eaf0bfa501a1d6500bdbbcc0fd20f76182707c6d))
+
 ## [1.1.2](https://github.com/FjellOverflow/typem/compare/v1.1.1...v1.1.2) (2026-04-27)
 
 
