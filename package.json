@@ -47,7 +47,7 @@
     "zod": "^4.4.3"
   },
   "devDependencies": {
-    "@types/jsdom": "^28.0.3",
+    "@types/jsdom": "^30.0.0",
     "@types/node": "^26.1.2",
     "@vitest/eslint-plugin": "1.6.26",
     "@vue/eslint-config-prettier": "^10.2.0",
