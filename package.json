@@ -54,7 +54,7 @@
     "@vue/eslint-config-typescript": "^14.9.0",
     "@vue/test-utils": "^2.5.0",
     "commit-and-tag-version": "^13.2.0",
-    "cypress": "^15.21.1",
+    "cypress": "^16.0.0",
     "eslint": "^10.10.0",
     "eslint-plugin-cypress": "^7.0.2",
     "eslint-plugin-vue": "^10.11.0",
