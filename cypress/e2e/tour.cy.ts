@@ -49,7 +49,9 @@ describe('tour', () => {
     tourPopup().contains('The Game View').parent().parent().find('button').contains('Next').click()
     tourPopup().contains('Customization').parent().parent().find('button').contains('Next').click()
     tourPopup().contains('Ready to Play').parent().parent().find('button').contains('Next').click()
-    cy.get('#inputField').type('Mercury')
+    cy.get('#inputField').type('M')
+    cy.get('#giveUpBtn').should('exist')
+    cy.get('#inputField').type('ercury')
     cy.get('#inputField').type('Venus')
     tourPopup().contains('Running timer').parent().parent().find('button').contains('Next').click()
     tourPopup().contains('Game Over').parent().parent().find('button').contains('Next').click()
@@ -91,7 +93,9 @@ describe('tour', () => {
 
     cy.get('#list-preview-planets').find('button').contains("I'm ready!").click({ force: true })
 
-    cy.get('#inputField').type('Mercury')
+    cy.get('#inputField').type('M')
+    cy.get('#giveUpBtn').should('exist')
+    cy.get('#inputField').type('ercury')
     cy.get('#inputField').type('Venus')
 
     cy.get('#timerCard').find('button').contains('Give up').click({ force: true })
