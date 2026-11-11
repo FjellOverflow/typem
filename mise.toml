@@ -24,4 +24,4 @@ run = ["bun run test:unit", "bun run test:e2e"]
 [tasks.release]
 depends = ["setup", "ci", "test"]
 confirm = { message = "Are you sure you want to release?", default = "no" }
-run = "bun run release && git push --follow-tags"
+run = "bun run release"
