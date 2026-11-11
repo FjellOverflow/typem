@@ -889,11 +889,7 @@
     {
       "hint": "Capital of Sri Lanka",
       "answer": "Sri Jayawardenapura Kotte",
-      "matches": [
-        "Sri Jayawardenapura Kotte",
-        "ශ්‍රී ජයවර්ධනපුර කෝට්ටේ",
-        "ஶ்ரீ ஜெயவர்த்தனபுரம் கோட்டை"
-      ]
+      "matches": ["Sri Jayawardenapura Kotte", "ශ්‍රී ජයවර්ධනපුර කෝට්ටේ", "ஶ்ரீ ஜெயவர்த்தனபுரம் கோட்டை"]
     },
     {
       "hint": "Capital of Sudan",
