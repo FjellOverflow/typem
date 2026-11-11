@@ -30,7 +30,7 @@
     "@tsconfig/node22": "^22.0.6",
     "@vitejs/plugin-vue": "^6.0.9",
     "@vue/tsconfig": "^0.9.1",
-    "@vueuse/core": "^14.4.0",
+    "@vueuse/core": "^15.0.0",
     "@vueuse/router": "^14.4.0",
     "baseline-browser-mapping": "^2.11.24",
     "caniuse-lite": "^1.0.30001810",
