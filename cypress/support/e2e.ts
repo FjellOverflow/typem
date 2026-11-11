@@ -18,3 +18,7 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
+Cypress.on('window:before:load', (window) => {
+  delete (window.Navigator.prototype as Partial<Navigator>).serviceWorker
+})
