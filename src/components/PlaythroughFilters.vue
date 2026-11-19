@@ -1,11 +1,6 @@
 <script lang="ts" setup>
 import { useLocalize } from '@/composables/localize'
-import {
-  defaultPlaythroughQuery,
-  isDefaultPlaythroughQuery,
-  type PlaythroughSortKey,
-  type SortDirection,
-} from '@/composables/playthroughQuery'
+import { usePlaythroughQuery } from '@/composables/playthroughQuery'
 import type { IList } from '@/types'
 import { ArrowDownNarrowWideIcon, ArrowDownWideNarrowIcon, XIcon } from '@lucide/vue'
 
@@ -14,53 +9,36 @@ const props = defineProps<{
 }>()
 
 const { localize } = useLocalize()
-const filterListId = defineModel<string>('listId', { required: true })
-const sortBy = defineModel<PlaythroughSortKey>('sortBy', { required: true })
-const sortDirection = defineModel<SortDirection>('sortDir', { required: true })
+const { query, isDefault, reset } = usePlaythroughQuery()
 
 const listSelectOptions = computed(() => [
   { id: '', meta: { name: { en: 'All lists', de: 'Alle Listen' } } },
   ...props.lists,
 ])
 
-const filtersActive = computed(
-  () =>
-    !isDefaultPlaythroughQuery({
-      listId: filterListId.value,
-      sortBy: sortBy.value,
-      sortDir: sortDirection.value,
-    }),
-)
-
-function resetFilters() {
-  filterListId.value = defaultPlaythroughQuery.listId
-  sortBy.value = defaultPlaythroughQuery.sortBy
-  sortDirection.value = defaultPlaythroughQuery.sortDir
-}
-
 function toggleSortDirection() {
-  sortDirection.value = sortDirection.value === 'asc' ? 'desc' : 'asc'
+  query.sortDir = query.sortDir === 'asc' ? 'desc' : 'asc'
 }
 </script>
 <template>
-  <select v-model="filterListId" class="select select-bordered md:w-60">
+  <select v-model="query.listId" class="select select-bordered md:w-60">
     <option v-for="list in listSelectOptions" :key="list.id" :value="list.id">
       {{ localize(list.meta.name) }}
     </option>
   </select>
 
   <div class="flex md:w-48 w-full">
-    <select v-model="sortBy" class="select select-bordered grow">
+    <select v-model="query.sortBy" class="select select-bordered grow">
       <option value="date">{{ $t('Sort by date') }}</option>
       <option value="speed">{{ $t('Sort by speed') }}</option>
       <option value="duration">{{ $t('Sort by duration') }}</option>
     </select>
     <div
       class="ml-4 tooltip tooltip-bottom md:hidden"
-      :data-tip="sortDirection === 'asc' ? $t('Sort ascending') : $t('Sort descending')"
+      :data-tip="query.sortDir === 'asc' ? $t('Sort ascending') : $t('Sort descending')"
     >
       <button class="btn btn-ghost" @click="toggleSortDirection">
-        <ArrowDownNarrowWideIcon v-if="sortDirection === 'asc'" />
+        <ArrowDownNarrowWideIcon v-if="query.sortDir === 'asc'" />
         <ArrowDownWideNarrowIcon v-else />
       </button>
     </div>
@@ -68,17 +46,17 @@ function toggleSortDirection() {
 
   <div
     class="tooltip tooltip-bottom md:block hidden"
-    :data-tip="sortDirection === 'asc' ? $t('Sort ascending') : $t('Sort descending')"
+    :data-tip="query.sortDir === 'asc' ? $t('Sort ascending') : $t('Sort descending')"
   >
     <button class="btn btn-ghost" @click="toggleSortDirection">
-      <ArrowDownNarrowWideIcon v-if="sortDirection === 'asc'" />
+      <ArrowDownNarrowWideIcon v-if="query.sortDir === 'asc'" />
       <ArrowDownWideNarrowIcon v-else />
     </button>
   </div>
   <button
-    :disabled="!filtersActive"
+    :disabled="isDefault"
     class="md:ml-auto mx-auto btn btn-outline text-xl font-medium md:w-auto w-1/2"
-    @click="resetFilters"
+    @click="reset"
   >
     <XIcon /> {{ $t('Clear') }}
   </button>

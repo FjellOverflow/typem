@@ -1,12 +1,6 @@
 <script setup lang="ts">
-import {
-  defaultPlaythroughQuery,
-  queryPlaythroughs,
-  type PlaythroughSortKey,
-  type SortDirection,
-} from '@/composables/playthroughQuery'
+import { queryPlaythroughs, usePlaythroughQuery } from '@/composables/playthroughQuery'
 import type { IList, IListPlaythrough } from '@/types'
-import { useRouteQuery } from '@vueuse/router'
 import { EllipsisIcon, FilterIcon } from '@lucide/vue'
 
 const props = defineProps<{
@@ -17,16 +11,10 @@ const props = defineProps<{
 const pageSize = 10
 const numberOfVisiblePlaythroughs = ref(pageSize)
 
-const filterListId = useRouteQuery('listId', defaultPlaythroughQuery.listId)
-const sortBy = useRouteQuery<PlaythroughSortKey>('sortBy', defaultPlaythroughQuery.sortBy)
-const sortDirection = useRouteQuery<SortDirection>('sortDir', defaultPlaythroughQuery.sortDir)
+const { query } = usePlaythroughQuery()
 
 const matchingPlaythroughs = computed(() =>
-  queryPlaythroughs(props.playthroughs, props.lists, {
-    listId: filterListId.value,
-    sortBy: sortBy.value,
-    sortDir: sortDirection.value,
-  }),
+  queryPlaythroughs(props.playthroughs, props.lists, query),
 )
 
 const visiblePlaythroughs = computed(() =>
@@ -35,12 +23,7 @@ const visiblePlaythroughs = computed(() =>
 </script>
 <template>
   <div class="hidden md:flex w-full gap-4 mb-4">
-    <PlaythroughFilters
-      v-model:list-id="filterListId"
-      v-model:sort-by="sortBy"
-      v-model:sort-dir="sortDirection"
-      :lists
-    />
+    <PlaythroughFilters :lists />
   </div>
 
   <CollapsibleBox class="md:hidden mb-4" :model-value="false">
@@ -52,12 +35,7 @@ const visiblePlaythroughs = computed(() =>
     </template>
     <template #content>
       <div class="flex flex-col gap-4 p-2">
-        <PlaythroughFilters
-          v-model:list-id="filterListId"
-          v-model:sort-by="sortBy"
-          v-model:sort-dir="sortDirection"
-          :lists
-        />
+        <PlaythroughFilters :lists />
       </div>
     </template>
   </CollapsibleBox>

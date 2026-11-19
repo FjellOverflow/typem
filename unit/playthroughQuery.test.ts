@@ -2,9 +2,9 @@ import { describe, it, expect } from 'vitest'
 import {
   defaultPlaythroughQuery,
   isDefaultPlaythroughQuery,
+  PlaythroughQuerySchema,
   queryPlaythroughs,
-  type PlaythroughQuery,
-  type PlaythroughSortKey,
+  type IPlaythroughQuery,
 } from '@/composables/playthroughQuery'
 import type { IListPlaythrough } from '@/types'
 
@@ -21,7 +21,7 @@ function playthrough(overrides: Partial<IListPlaythrough> = {}): IListPlaythroug
 
 const lists = [{ id: 'list0' }, { id: 'list1' }]
 
-function query(overrides: Partial<PlaythroughQuery> = {}): PlaythroughQuery {
+function query(overrides: Partial<IPlaythroughQuery> = {}): IPlaythroughQuery {
   return { ...defaultPlaythroughQuery, ...overrides }
 }
 
@@ -74,12 +74,17 @@ describe('playthrough query', () => {
     ).toEqual([newest, oldest, middle])
   })
 
-  it('sorts by date for an unknown sort key from the URL', () => {
-    const unknownSortKey = 'colour' as PlaythroughSortKey
-
+  it('parses the URL values of a query', () => {
     expect(
-      queryPlaythroughs([oldest, newest, middle], lists, query({ sortBy: unknownSortKey })),
-    ).toEqual([newest, middle, oldest])
+      PlaythroughQuerySchema.parse({ listId: 'list1', sortBy: 'speed', sortDir: 'desc' }),
+    ).toEqual({ listId: 'list1', sortBy: 'speed', sortDir: 'desc' })
+  })
+
+  it('uses the default for a missing or unknown URL value', () => {
+    expect(PlaythroughQuerySchema.parse({})).toEqual(defaultPlaythroughQuery)
+    expect(
+      PlaythroughQuerySchema.parse({ listId: ['list0', 'list1'], sortBy: 'colour', sortDir: 'up' }),
+    ).toEqual(defaultPlaythroughQuery)
   })
 
   it('keeps only the playthroughs of the selected list', () => {

@@ -225,6 +225,86 @@ describe('/history', () => {
     cy.get('select').contains('All lists').should('have.value', '')
     cy.get('select').contains('Sort by').should('have.value', 'date')
   })
+
+  it('filters by list', () => {
+    cy.window().then((window) => {
+      window.localStorage.setItem(
+        'customLists',
+        JSON.stringify([
+          {
+            id: 'custom-our-planet',
+            meta: {
+              name: 'Our planet',
+              description: 'Name our planet',
+              difficulty: 1,
+              tags: ['universe'],
+              source: 'https://en.wikipedia.org/wiki/Solar_System',
+              author: 'FjellOverflow',
+              lastUpdated: '2025-03-25',
+              isCustom: true,
+              supportedLocales: ['en'],
+            },
+            items: [{ answer: 'Earth', matches: ['Earth'] }],
+          },
+        ]),
+      )
+      window.localStorage.setItem(
+        'history',
+        JSON.stringify([
+          {
+            listId: 'planets',
+            seconds: 8,
+            finished: true,
+            numberOfMatches: 8,
+            timestamp: new Date().toISOString(),
+          },
+          {
+            listId: 'custom-our-planet',
+            seconds: 2,
+            finished: true,
+            numberOfMatches: 1,
+            timestamp: new Date(new Date().setMinutes(-1)).toISOString(),
+          },
+        ]),
+      )
+    })
+    cy.reload()
+
+    cy.get('.playthrough-card').should('have.length', 2)
+
+    cy.get('select').contains('All lists').closest('select').select('Our planet')
+    cy.get('.playthrough-card').should('have.length', 1)
+    cy.get('.playthrough-card').contains('Our planet').should('exist')
+
+    cy.get('select').contains('All lists').closest('select').select('Planets of the Solar System')
+    cy.get('.playthrough-card').should('have.length', 1)
+    cy.get('.playthrough-card').contains('Planets of the Solar System').should('exist')
+  })
+
+  it('loads more playthroughs', () => {
+    cy.window().then((window) => {
+      window.localStorage.setItem(
+        'history',
+        JSON.stringify(
+          Array.from({ length: 11 }, (_, minute) => ({
+            listId: 'planets',
+            seconds: 8,
+            finished: true,
+            numberOfMatches: 8,
+            timestamp: new Date(Date.UTC(2026, 0, 1, 0, minute)).toISOString(),
+          })),
+        ),
+      )
+    })
+    cy.reload()
+
+    cy.get('.playthrough-card').should('have.length', 10)
+
+    cy.get('button').contains('Load more').click()
+
+    cy.get('.playthrough-card').should('have.length', 11)
+    cy.get('button').contains('Load more').should('not.exist')
+  })
 })
 
 beforeEach(() => {
