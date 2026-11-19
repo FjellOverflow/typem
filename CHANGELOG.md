@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [1.2.0](https://github-private/FjellOverflow/typem/compare/v1.1.4...v1.2.0) (2026-11-19)
+
+### Features
+
+* merge imported history instead of replacing it ([f5715c6](https://github-private/FjellOverflow/typem/commit/f5715c60cf2b90f1df21c2e46e550aa5c8876f07))
+
+### Bug Fixes
+
+* report imports without new playthroughs and clarify round naming ([5efa307](https://github-private/FjellOverflow/typem/commit/5efa307cc45e07cf623aa9d93df3a8a41e73bf28))
+* save a stopped round only once on restart ([dfaa65b](https://github-private/FjellOverflow/typem/commit/dfaa65bac6bc2c75fc326bdba6356c833bc6a610))
+* search lists by their translated tag names ([993aed6](https://github-private/FjellOverflow/typem/commit/993aed6e702e54db58f9fb1e85de3ecf9140aa61))
+* show the hint fallback for items without a hint ([80074b8](https://github-private/FjellOverflow/typem/commit/80074b8ead11313b38b8c0f4d0f310aaeea37888))
+* stop the round timer on reset and on leaving the page ([4a524eb](https://github-private/FjellOverflow/typem/commit/4a524eb9c39575499a0e051ff807192dbd937bbf))
+
 ## [1.1.4](https://github-private/FjellOverflow/typem/compare/v1.1.3...v1.1.4) (2026-11-11)
 
 ## [1.1.3](https://github.com/FjellOverflow/typem/compare/v1.1.2...v1.1.3) (2026-07-01)
