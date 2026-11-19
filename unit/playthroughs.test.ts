@@ -223,13 +223,13 @@ describe('playthrough store', () => {
       [{}],
       [{ a: 'b' }],
     ])
-      expect(importHistory(rejected)).toBe(false)
+      expect(importHistory(rejected)).toBeUndefined()
 
     expect(exportHistory()).toEqual([])
 
     const valid = playthrough()
 
-    expect(importHistory([valid, { a: 'b' }])).toBe(true)
+    expect(importHistory([valid, { a: 'b' }])).toBe(1)
     expect(playthroughs.value).toEqual([valid])
     expect(exportHistory()).toEqual([valid])
   })
@@ -241,17 +241,17 @@ describe('playthrough store', () => {
 
     addPlaythrough(local)
 
-    expect(importHistory([{ ...local, seconds: 1 }, imported, imported])).toBe(true)
+    expect(importHistory([{ ...local, seconds: 1 }, imported, imported])).toBe(1)
     expect(playthroughs.value).toEqual([local, imported])
   })
 
-  it('accepts an import that holds only known playthroughs', async () => {
+  it('adds nothing from an import that holds only known playthroughs', async () => {
     const { playthroughs, addPlaythrough, importHistory } = await loadStore()
     const local = playthrough()
 
     addPlaythrough(local)
 
-    expect(importHistory([local])).toBe(true)
+    expect(importHistory([local])).toBe(0)
     expect(playthroughs.value).toEqual([local])
   })
 })

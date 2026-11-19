@@ -16,27 +16,24 @@ function onUpload(e: Event) {
   uploadedFile.value = [...((e.target as HTMLInputElement).files || [])][0]
 }
 
+async function importUploadedFile() {
+  if (!uploadedFile.value) return undefined
+
+  try {
+    return importHistory(await uploadJSON(uploadedFile.value))
+  } catch (e) {
+    console.error(e)
+    return undefined
+  }
+}
+
 async function onConfirmUpload() {
-  let success = false
-  if (uploadedFile.value) {
-    try {
-      const result = await uploadJSON(uploadedFile.value)
-      success = importHistory(result)
-    } catch (e) {
-      console.error(e)
-    }
-  }
-  if (success) {
-    sendToast({
-      message: t('Import successful'),
-      sentiment: 'alert-success',
-    })
-  } else {
-    sendToast({
-      message: t('Import failed'),
-      sentiment: 'alert-error',
-    })
-  }
+  const addedCount = await importUploadedFile()
+
+  if (addedCount === undefined) sendToast({ message: t('Import failed'), sentiment: 'alert-error' })
+  else if (addedCount === 0)
+    sendToast({ message: t('No new playthroughs to import'), sentiment: 'alert-info' })
+  else sendToast({ message: t('Import successful'), sentiment: 'alert-success' })
 
   onClose()
 }

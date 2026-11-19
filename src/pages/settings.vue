@@ -1,10 +1,5 @@
-<script lang="ts">
-import { useListsLoader } from '@/plugins/listLoader'
-import CustomListCard from '@/components/CustomListCard.vue'
-export { useListsLoader }
-</script>
-
 <script setup lang="ts">
+import CustomListCard from '@/components/CustomListCard.vue'
 import { usePlaythroughs } from '@/composables/playthroughs'
 import { downloadJSON, generateTimestampStr } from '@/plugins/util'
 import { useTitle } from '@vueuse/core'

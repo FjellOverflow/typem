@@ -39,7 +39,7 @@ const {
   init,
   start,
   pause,
-  check,
+  type,
   stop,
   reset,
   restart,
@@ -72,7 +72,7 @@ function prepareRound() {
 }
 
 function onInput() {
-  const matchedItem = check(input.value)
+  const matchedItem = type(input.value)
 
   if (!matchedItem) return
 

@@ -69,6 +69,35 @@ describe('/settings', () => {
     cy.get('.playthrough-card').should('have.length', 2)
   })
 
+  it('reports an import without new playthroughs', () => {
+    const localPlaythrough = {
+      listId: 'planets',
+      seconds: 5,
+      finished: false,
+      numberOfMatches: 1,
+      timestamp: '2026-01-01T00:00:00.000Z',
+    }
+
+    cy.window().then((window) => {
+      window.localStorage.setItem('history', JSON.stringify([localPlaythrough]))
+    })
+    cy.reload()
+
+    historyCard().find('button').contains('Import from JSON').click()
+    const dialog = () => cy.get('dialog').contains('Import history?').parentsUntil('dialog')
+
+    dialog()
+      .find('input[type="file"]')
+      .selectFile(Cypress.Buffer.from(JSON.stringify([localPlaythrough])))
+
+    dialog().find('button').contains('Upload').click()
+
+    cy.get('.toast').contains('No new playthroughs to import').should('exist')
+
+    cy.visit('/#/history')
+    cy.get('.playthrough-card').should('have.length', 1)
+  })
+
   it("doesn't import malformed  history", () => {
     historyCard().find('button').contains('Import from JSON').click()
     const dialog = () => cy.get('dialog').contains('Import history?').parentsUntil('dialog')

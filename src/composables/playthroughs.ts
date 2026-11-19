@@ -101,13 +101,17 @@ function createPlaythroughStore() {
   function importHistory(imported: unknown) {
     const validImported = validPlaythroughsOf(imported)
 
-    if (validImported.length === 0) return false
+    if (validImported.length === 0) return undefined
+
+    let addedCount = 0
 
     for (const playthrough of validImported)
-      if (!history.value.some((entry) => isSamePlaythrough(entry, playthrough)))
+      if (!history.value.some((entry) => isSamePlaythrough(entry, playthrough))) {
         history.value.push(playthrough)
+        addedCount++
+      }
 
-    return true
+    return addedCount
   }
 
   function exportHistory() {

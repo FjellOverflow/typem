@@ -62,7 +62,7 @@ export function useRound(
     return true
   }
 
-  function check(input: string) {
+  function type(input: string) {
     start()
 
     if (phase.value !== 'running') return undefined
@@ -108,7 +108,7 @@ export function useRound(
   }
 
   function restart() {
-    if (phase.value === 'idle' || phase.value === 'finished') return false
+    if (isPhaseIn(['idle', 'finished'])) return false
 
     stop()
     reset()
@@ -134,7 +134,7 @@ export function useRound(
     init,
     start,
     pause,
-    check,
+    type,
     stop,
     reset,
     restart,

@@ -35,10 +35,10 @@ function setupRound(settings: Partial<ISettings> = {}) {
 }
 
 function nameAllItems(round: ReturnType<typeof useRound>, seconds: number) {
-  round.check('Mercury')
-  round.check('Venus')
+  round.type('Mercury')
+  round.type('Venus')
   vi.advanceTimersByTime(seconds * 1000)
-  round.check('Earth')
+  round.type('Earth')
 }
 
 const { playthroughs, deleteHistory } = usePlaythroughs()
@@ -88,7 +88,7 @@ describe('round composable', () => {
     round.init()
 
     expect(round.canStart.value).toBe(true)
-    expect(round.check('Pluto')).toBeUndefined()
+    expect(round.type('Pluto')).toBeUndefined()
     expect(round.phase.value).toBe('running')
     expect(round.canStart.value).toBe(false)
 
@@ -100,7 +100,7 @@ describe('round composable', () => {
 
     vi.advanceTimersByTime(5000)
 
-    expect(round.check('Mercury')).toMatchObject({ answer: 'Mercury', checked: true })
+    expect(round.type('Mercury')).toMatchObject({ answer: 'Mercury', checked: true })
     expect(round.phase.value).toBe('running')
 
     vi.advanceTimersByTime(1000)
@@ -128,7 +128,7 @@ describe('round composable', () => {
     const { round } = setupRound()
 
     round.init()
-    round.check('Mercury')
+    round.type('Mercury')
     vi.advanceTimersByTime(4000)
 
     expect(round.stop()).toBe(true)
@@ -143,7 +143,7 @@ describe('round composable', () => {
       }),
     ])
 
-    expect(round.check('Venus')).toBeUndefined()
+    expect(round.type('Venus')).toBeUndefined()
     expect(round.stop()).toBe(false)
     expect(playthroughs.value).toHaveLength(1)
   })
@@ -170,14 +170,14 @@ describe('round composable', () => {
     expect(playthroughs.value).toEqual([
       expect.objectContaining({ seconds: 7, finished: true, numberOfMatches: 3 }),
     ])
-    expect(round.check('Mercury')).toBeUndefined()
+    expect(round.type('Mercury')).toBeUndefined()
   })
 
   it('reports a new record only when a finished round beats a finished record', () => {
     const { round, onNewRecord } = setupRound()
 
     round.init()
-    round.check('Mercury')
+    round.type('Mercury')
     round.stop()
     round.reset()
 
@@ -207,7 +207,7 @@ describe('round composable', () => {
     const { round } = setupRound()
 
     round.init()
-    round.check('Mercury')
+    round.type('Mercury')
 
     expect(round.restart()).toBe(true)
     expect(round.phase.value).toBe('ready')
@@ -220,7 +220,7 @@ describe('round composable', () => {
     const { round } = setupRound()
 
     round.init()
-    round.check('Mercury')
+    round.type('Mercury')
     round.stop()
 
     expect(round.restart()).toBe(true)
@@ -245,7 +245,7 @@ describe('round composable', () => {
     const { round, list } = setupRound()
 
     round.init()
-    round.check('Mercury')
+    round.type('Mercury')
     list.value = listOf('moons', { showHints: true })
     await nextTick()
 
@@ -260,7 +260,7 @@ describe('round composable', () => {
     const { round, scope } = setupRound()
 
     round.init()
-    round.check('Mercury')
+    round.type('Mercury')
 
     expect(vi.getTimerCount()).toBe(1)
 
