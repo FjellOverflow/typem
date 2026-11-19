@@ -65,7 +65,11 @@ describe('customLists composable', () => {
 
     expect(lists.value).toHaveLength(2)
 
-    deleteCustomList({ ...list, id: 'custom-list0' })
+    expect(deleteCustomList({ ...list, id: 'custom-list0' })).toBe(true)
+
+    expect(lists.value).toHaveLength(1)
+
+    expect(deleteCustomList({ ...list, id: 'custom-list0' })).toBe(false)
 
     expect(lists.value).toHaveLength(1)
   })

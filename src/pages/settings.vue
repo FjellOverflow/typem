@@ -37,6 +37,11 @@ function onConfirmDeleteHistory() {
   deleteHistory()
   sendToast({ message: t('Deleted all playthroughs'), sentiment: 'alert-success' })
 }
+
+function onConfirmDeleteAllCustomLists() {
+  deleteAllCustomLists()
+  sendToast({ message: t('Deleted all custom lists'), sentiment: 'alert-success' })
+}
 </script>
 <template>
   <div class="sm:mb-4 flex flex-col gap-4">
@@ -46,7 +51,7 @@ function onConfirmDeleteHistory() {
     />
     <DeleteAllCustomListsDialog
       ref="confirmDeleteAllCustomListsDialog"
-      @confirm="deleteAllCustomLists"
+      @confirm="onConfirmDeleteAllCustomLists"
     />
 
     <UploadHistoryJsonDialog ref="uploadHistoryJsonDialog" />
