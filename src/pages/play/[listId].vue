@@ -98,6 +98,8 @@ function onPause() {
 }
 
 function onStop() {
+  if (isStopped.value) return
+
   timer.value?.stop()
 
   isRunning.value = false
