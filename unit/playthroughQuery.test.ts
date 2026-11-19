@@ -1,7 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import {
   defaultPlaythroughQuery,
-  isDefaultPlaythroughQuery,
   PlaythroughQuerySchema,
   queryPlaythroughs,
   type IPlaythroughQuery,
@@ -107,12 +106,5 @@ describe('playthrough query', () => {
     queryPlaythroughs(playthroughs, lists, query())
 
     expect(playthroughs).toEqual([oldest, newest, middle])
-  })
-
-  it('tells whether a query has the default values', () => {
-    expect(isDefaultPlaythroughQuery(query())).toBe(true)
-    expect(isDefaultPlaythroughQuery(query({ listId: 'list0' }))).toBe(false)
-    expect(isDefaultPlaythroughQuery(query({ sortBy: 'speed' }))).toBe(false)
-    expect(isDefaultPlaythroughQuery(query({ sortDir: 'desc' }))).toBe(false)
   })
 })

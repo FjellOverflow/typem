@@ -12,13 +12,6 @@ export function formatDuration(totalSeconds: number) {
   return `${minutes}:${String(seconds).padStart(2, '0')} ${t('min')}`
 }
 
-export function matchKeyword(item: string, keyword: string) {
-  const itemStr = item.replace(/ /g, '').toLowerCase()
-  const keywordStr = keyword.replace(/ /g, '').toLowerCase()
-
-  return itemStr.includes(keywordStr)
-}
-
 export function getSecondsPerItem(numberOfItems: number, seconds: number) {
   const t = i18n.global.t
 

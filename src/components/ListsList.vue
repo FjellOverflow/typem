@@ -1,9 +1,8 @@
 <script setup lang="ts">
+import { queryLists, useListQuery } from '@/composables/listQuery'
 import { useLocalize } from '@/composables/localize'
 import { usePlaythroughs } from '@/composables/playthroughs'
-import { matchKeyword } from '@/plugins/util'
-import { type IList, type ListProgress } from '@/types'
-import { useRouteQuery } from '@vueuse/router'
+import type { IList } from '@/types'
 import { FilterIcon, Gamepad2Icon } from '@lucide/vue'
 
 const props = withDefaults(
@@ -18,79 +17,24 @@ const props = withDefaults(
 
 const { localize } = useLocalize()
 const { progressOf } = usePlaythroughs()
+const { query, isDefault } = useListQuery()
 
-const filterKeyword = useRouteQuery('keyword', '')
-const filterTag = useRouteQuery('tag', 'any')
-const filterLanguage = useRouteQuery('language', 'any')
-const filterProgress = useRouteQuery<ListProgress | 'any'>('progress', 'any')
-const sortBy = useRouteQuery<'name' | 'difficulty' | 'length'>('sortBy', 'name')
-const sortDirection = useRouteQuery<'asc' | 'desc'>('sortDir', 'asc')
+const availableTags = computed(() => [...new Set(props.lists.flatMap((list) => list.meta.tags))])
 
-const filtersActive = computed(
-  () =>
-    !!filterKeyword.value ||
-    sortBy.value !== 'name' ||
-    sortDirection.value !== 'asc' ||
-    filterTag.value !== 'any' ||
-    filterLanguage.value !== 'any' ||
-    filterProgress.value !== 'any',
+const filteredLists = computed(() =>
+  queryLists(props.lists, query, { localize: localize.value, progressOf }),
 )
-
-const availableTags = computed(() => [
-  'any',
-  ...new Set(props.lists.map((l) => l.meta.tags).flat()),
-])
-
-const filteredLists = computed(() => {
-  const lists = props.lists
-    .filter((list) => {
-      const name = localize.value(list.meta.name)
-      const description = localize.value(list.meta.description)
-      const tags = list.meta.tags.map(localize.value)
-
-      const listKeywords = [name, description, ...tags].join(' ')
-
-      return matchKeyword(listKeywords, filterKeyword.value)
-    })
-    .filter((list) => filterTag.value === 'any' || list.meta.tags.includes(filterTag.value))
-    .filter(
-      (list) =>
-        filterLanguage.value === 'any' || list.meta.supportedLocales.includes(filterLanguage.value),
-    )
-    .filter(
-      (list) => filterProgress.value === 'any' || filterProgress.value === progressOf(list.id),
-    )
-
-  lists.sort((l1, l2) => {
-    const [left, right] = sortDirection.value === 'desc' ? [l2, l1] : [l1, l2]
-
-    if (sortBy.value === 'difficulty') return left.meta.difficulty - right.meta.difficulty
-    else if (sortBy.value === 'length') return left.items.length - right.items.length
-
-    return localize.value(left.meta.name).localeCompare(localize.value(right.meta.name))
-  })
-
-  return lists
-})
 </script>
 <template>
   <CollapsibleBox :model-value="false">
     <template #title>
       <div class="flex gap-2 items-center">
-        <FilterIcon :class="{ 'fill-primary text-primary': filtersActive }" />
+        <FilterIcon :class="{ 'fill-primary text-primary': !isDefault }" />
         {{ $t('Filters') }}
       </div>
     </template>
     <template #content>
-      <ListFilters
-        v-model:keyword="filterKeyword"
-        v-model:tag="filterTag"
-        v-model:language="filterLanguage"
-        v-model:progress="filterProgress"
-        v-model:sortBy="sortBy"
-        v-model:sortDir="sortDirection"
-        :tags="availableTags"
-      />
+      <ListFilters :tags="availableTags" />
     </template>
   </CollapsibleBox>
 
@@ -109,6 +53,6 @@ const filteredLists = computed(() => {
     v-if="filteredLists.length === 0"
     class="w-full flex justify-center text-2xl lg:text-3xl mt-8"
   >
-    {{ filtersActive ? $t('No lists matching filters.') : noDataText }}
+    {{ isDefault ? noDataText : $t('No lists matching filters.') }}
   </div>
 </template>

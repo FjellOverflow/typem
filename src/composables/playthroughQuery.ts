@@ -1,12 +1,9 @@
-import type { IList, IListPlaythrough } from '@/types'
-import { useRouteQuery } from '@vueuse/router'
+import { useParsedRouteQuery } from '@/composables/parsedRouteQuery'
+import { SortDirectionOptions, type IList, type IListPlaythrough } from '@/types'
 import { z } from 'zod'
 
 export const PlaythroughSortKeyOptions = ['date', 'speed', 'duration'] as const
 export type PlaythroughSortKey = (typeof PlaythroughSortKeyOptions)[number]
-
-export const SortDirectionOptions = ['asc', 'desc'] as const
-export type SortDirection = (typeof SortDirectionOptions)[number]
 
 export const PlaythroughQuerySchema = z.object({
   listId: z.string().catch(''),
@@ -16,12 +13,6 @@ export const PlaythroughQuerySchema = z.object({
 export type IPlaythroughQuery = z.infer<typeof PlaythroughQuerySchema>
 
 export const defaultPlaythroughQuery = PlaythroughQuerySchema.parse({})
-
-export function isDefaultPlaythroughQuery(query: IPlaythroughQuery) {
-  return PlaythroughQuerySchema.keyof().options.every(
-    (field) => query[field] === defaultPlaythroughQuery[field],
-  )
-}
 
 type PlaythroughComparator = (p1: IListPlaythrough, p2: IListPlaythrough) => number
 
@@ -45,29 +36,6 @@ export function queryPlaythroughs(
     .sort((p1, p2) => (query.sortDir === 'desc' ? naturalOrder(p2, p1) : naturalOrder(p1, p2)))
 }
 
-function useParsedRouteQuery<Schema extends z.ZodType<string>>(
-  field: keyof IPlaythroughQuery,
-  schema: Schema,
-) {
-  return useRouteQuery<string, z.output<Schema>>(field, schema.parse(undefined), {
-    transform: (value) => schema.parse(value),
-  })
-}
-
 export function usePlaythroughQuery() {
-  const { shape } = PlaythroughQuerySchema
-
-  const query: IPlaythroughQuery = reactive({
-    listId: useParsedRouteQuery('listId', shape.listId),
-    sortBy: useParsedRouteQuery('sortBy', shape.sortBy),
-    sortDir: useParsedRouteQuery('sortDir', shape.sortDir),
-  })
-
-  const isDefault = computed(() => isDefaultPlaythroughQuery(query))
-
-  function reset() {
-    Object.assign(query, defaultPlaythroughQuery)
-  }
-
-  return { query, isDefault, reset }
+  return useParsedRouteQuery(PlaythroughQuerySchema)
 }

@@ -44,7 +44,7 @@ describe('/', () => {
     dialog().should('not.be.visible')
   })
 
-  it.only('filters', () => {
+  it('filters', () => {
     cy.window().then((window) => {
       window.localStorage.setItem(
         'history',

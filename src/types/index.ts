@@ -64,3 +64,6 @@ export type IListPlaythrough = z.infer<typeof ListPlaythroughSchema>
 
 export const ListProgressOptions = ['untried', 'tried', 'finished'] as const
 export type ListProgress = (typeof ListProgressOptions)[number]
+
+export const SortDirectionOptions = ['asc', 'desc'] as const
+export type SortDirection = (typeof SortDirectionOptions)[number]
