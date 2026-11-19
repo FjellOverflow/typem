@@ -1,5 +1,11 @@
 <script lang="ts" setup>
 import { useLocalize } from '@/composables/localize'
+import {
+  defaultPlaythroughQuery,
+  isDefaultPlaythroughQuery,
+  type PlaythroughSortKey,
+  type SortDirection,
+} from '@/composables/playthroughQuery'
 import type { IList } from '@/types'
 import { ArrowDownNarrowWideIcon, ArrowDownWideNarrowIcon, XIcon } from '@lucide/vue'
 
@@ -8,9 +14,9 @@ const props = defineProps<{
 }>()
 
 const { localize } = useLocalize()
-const filterListId = defineModel('listId')
-const sortBy = defineModel<'date' | 'speed' | 'duration'>('sortBy', { required: true })
-const sortDirection = defineModel<'asc' | 'desc'>('sortDir', { required: true })
+const filterListId = defineModel<string>('listId', { required: true })
+const sortBy = defineModel<PlaythroughSortKey>('sortBy', { required: true })
+const sortDirection = defineModel<SortDirection>('sortDir', { required: true })
 
 const listSelectOptions = computed(() => [
   { id: '', meta: { name: { en: 'All lists', de: 'Alle Listen' } } },
@@ -18,13 +24,18 @@ const listSelectOptions = computed(() => [
 ])
 
 const filtersActive = computed(
-  () => !!filterListId.value || sortBy.value !== 'date' || sortDirection.value !== 'asc',
+  () =>
+    !isDefaultPlaythroughQuery({
+      listId: filterListId.value,
+      sortBy: sortBy.value,
+      sortDir: sortDirection.value,
+    }),
 )
 
 function resetFilters() {
-  filterListId.value = ''
-  sortBy.value = 'date'
-  sortDirection.value = 'asc'
+  filterListId.value = defaultPlaythroughQuery.listId
+  sortBy.value = defaultPlaythroughQuery.sortBy
+  sortDirection.value = defaultPlaythroughQuery.sortDir
 }
 
 function toggleSortDirection() {

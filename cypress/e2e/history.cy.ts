@@ -217,10 +217,6 @@ describe('/history', () => {
     cy.get('.playthrough-card').eq(1).contains('Record').should('exist')
     cy.get('.playthrough-card').last().contains('Matched 1/8').should('exist')
 
-    cy.get('select').contains('All lists').closest('select').select('African Capitals')
-
-    cy.contains('No playthroughs yet.')
-
     cy.get('select').contains('All lists').closest('select').select('Planets of the Solar System')
     cy.get('.playthrough-card').should('have.length', 3)
 

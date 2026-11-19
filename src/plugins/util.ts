@@ -1,5 +1,4 @@
 import i18n from './i18n'
-import type { IList, IListPlaythrough } from '@/types'
 
 export function formatDuration(totalSeconds: number) {
   const t = i18n.global.t
@@ -55,10 +54,4 @@ export function generateTimestampStr(): string {
   const d = new Date()
 
   return [d.getFullYear(), d.getMonth() + 1, d.getDate(), d.getHours(), d.getMinutes()].join('_')
-}
-
-export function playthroughsOfLists(playthroughs: IListPlaythrough[], lists: IList[]) {
-  const listIds = new Set(lists.map((list) => list.id))
-
-  return playthroughs.filter((p) => listIds.has(p.listId))
 }

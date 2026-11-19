@@ -34,6 +34,7 @@ declare module 'vue' {
     NewRecordDialog: typeof import('./src/components/dialogs/NewRecordDialog.vue')['default']
     PlaythroughCard: typeof import('./src/components/PlaythroughCard.vue')['default']
     PlaythroughFilters: typeof import('./src/components/PlaythroughFilters.vue')['default']
+    PlaythroughHistory: typeof import('./src/components/PlaythroughHistory.vue')['default']
     PlaythroughsList: typeof import('./src/components/PlaythroughsList.vue')['default']
     PopUp: typeof import('./src/components/popUps/PopUp.vue')['default']
     Range: typeof import('./src/components/inputs/Range.vue')['default']
