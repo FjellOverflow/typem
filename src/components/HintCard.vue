@@ -41,12 +41,18 @@ function setOffset(newOffset: number) {
 }
 
 const nextItem = computed(() => uncheckedItems.value[offset.value])
+
+const { t } = useI18n()
+const hintText = computed(() => {
+  const hint = nextItem.value?.hint
+  return hint ? localize.value(hint) : t('No hint available')
+})
 </script>
 <template>
   <div class="border rounded-md p-4 sm:text-2xl text-xl">
     <div class="flex sm:hidden gap-4 items-center mb-4">
       <LightbulbIcon :size="24" />
-      {{ localize(nextItem?.hint ?? {}) || $t('No hint available') }}
+      {{ hintText }}
     </div>
     <div class="flex justify-between">
       <div v-if="canCycle" class="tooltip tooltip-bottom" data-tip="CTRL + LeftArrow">
@@ -57,7 +63,7 @@ const nextItem = computed(() => uncheckedItems.value[offset.value])
 
       <div class="hidden sm:flex gap-4 items-center">
         <LightbulbIcon :size="36" />
-        {{ localize(nextItem?.hint ?? {}) || $t('No hint available') }}
+        {{ hintText }}
       </div>
 
       <div v-if="canCycle" class="tooltip tooltip-bottom" data-tip="CTRL + RightArrow">
