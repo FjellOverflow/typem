@@ -41,6 +41,7 @@ declare module 'vue' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SettingsCard: typeof import('./src/components/SettingsCard.vue')['default']
+    SortDirectionToggle: typeof import('./src/components/inputs/SortDirectionToggle.vue')['default']
     ThemeToggle: typeof import('./src/components/layout/ThemeToggle.vue')['default']
     TimerCard: typeof import('./src/components/TimerCard.vue')['default']
     Toasts: typeof import('./src/components/layout/Toasts.vue')['default']

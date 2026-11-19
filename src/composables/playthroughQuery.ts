@@ -1,4 +1,5 @@
 import { useParsedRouteQuery } from '@/composables/parsedRouteQuery'
+import { inDirection, type Comparator } from '@/plugins/util'
 import { SortDirectionOptions, type IList, type IListPlaythrough } from '@/types'
 import { z } from 'zod'
 
@@ -14,9 +15,7 @@ export type IPlaythroughQuery = z.infer<typeof PlaythroughQuerySchema>
 
 export const defaultPlaythroughQuery = PlaythroughQuerySchema.parse({})
 
-type PlaythroughComparator = (p1: IListPlaythrough, p2: IListPlaythrough) => number
-
-const naturalOrderBy: Record<PlaythroughSortKey, PlaythroughComparator> = {
+const naturalOrderBy: Record<PlaythroughSortKey, Comparator<IListPlaythrough>> = {
   date: (p1, p2) => new Date(p2.timestamp).getTime() - new Date(p1.timestamp).getTime(),
   speed: (p1, p2) => p1.seconds / p1.numberOfMatches - p2.seconds / p2.numberOfMatches,
   duration: (p1, p2) => p1.seconds - p2.seconds,
@@ -33,7 +32,7 @@ export function queryPlaythroughs(
   return playthroughs
     .filter((p) => knownListIds.has(p.listId))
     .filter((p) => !query.listId || p.listId === query.listId)
-    .sort((p1, p2) => (query.sortDir === 'desc' ? naturalOrder(p2, p1) : naturalOrder(p1, p2)))
+    .sort(inDirection(naturalOrder, query.sortDir))
 }
 
 export function usePlaythroughQuery() {

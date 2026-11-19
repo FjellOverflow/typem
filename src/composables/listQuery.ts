@@ -1,4 +1,5 @@
 import { useParsedRouteQuery } from '@/composables/parsedRouteQuery'
+import { inDirection, type Comparator } from '@/plugins/util'
 import { ListProgressOptions, SortDirectionOptions, type IList, type ListProgress } from '@/types'
 import { availableLocales, type ILocalizedString } from '@/types/localization'
 import { z } from 'zod'
@@ -26,11 +27,9 @@ export interface ListQueryContext {
   progressOf: (listId: string) => ListProgress
 }
 
-type ListComparator = (l1: IList, l2: IList) => number
-
 function naturalOrderBy(
   localize: ListQueryContext['localize'],
-): Record<ListSortKey, ListComparator> {
+): Record<ListSortKey, Comparator<IList>> {
   return {
     name: (l1, l2) => localize(l1.meta.name).localeCompare(localize(l2.meta.name)),
     difficulty: (l1, l2) => l1.meta.difficulty - l2.meta.difficulty,
@@ -65,7 +64,7 @@ export function queryLists(lists: IList[], query: IListQuery, context: ListQuery
       (list) => query.language === anyValue || list.meta.supportedLocales.includes(query.language),
     )
     .filter((list) => query.progress === anyValue || progressOf(list.id) === query.progress)
-    .sort((l1, l2) => (query.sortDir === 'desc' ? naturalOrder(l2, l1) : naturalOrder(l1, l2)))
+    .sort(inDirection(naturalOrder, query.sortDir))
 }
 
 export function useListQuery() {

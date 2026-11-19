@@ -1,4 +1,11 @@
+import type { SortDirection } from '@/types'
 import i18n from './i18n'
+
+export type Comparator<T> = (a: T, b: T) => number
+
+export function inDirection<T>(compare: Comparator<T>, direction: SortDirection): Comparator<T> {
+  return direction === 'desc' ? (a, b) => compare(b, a) : compare
+}
 
 export function formatDuration(totalSeconds: number) {
   const t = i18n.global.t

@@ -1,6 +1,11 @@
 <script lang="ts" setup>
-import { ArrowDownNarrowWideIcon, ArrowDownWideNarrowIcon, XIcon } from '@lucide/vue'
-import { anyValue, useListQuery } from '@/composables/listQuery'
+import { XIcon } from '@lucide/vue'
+import {
+  anyValue,
+  ListSortKeyOptions,
+  useListQuery,
+  type ListSortKey,
+} from '@/composables/listQuery'
 import { availableLocales } from '@/types/localization'
 import { ListProgressOptions } from '@/types'
 
@@ -15,8 +20,10 @@ const sortedTags = computed(() =>
   [...props.tags].sort((tag1, tag2) => t(tag1).localeCompare(t(tag2))),
 )
 
-function toggleSortDirection() {
-  query.sortDir = query.sortDir === 'asc' ? 'desc' : 'asc'
+const sortLabels: Record<ListSortKey, string> = {
+  name: 'Sort by name',
+  difficulty: 'Sort by difficulty',
+  length: 'Sort by length',
 }
 </script>
 <template>
@@ -30,7 +37,7 @@ function toggleSortDirection() {
       />
 
       <select v-model="query.tag" class="select select-bordered md:w-48">
-        <option :value="anyValue">{{ $t('Tag') }}: {{ $t(anyValue) }}</option>
+        <option :value="anyValue">{{ $t('Tag') }}: {{ $t('any') }}</option>
         <option v-for="tag in sortedTags" :key="tag" :value="tag">
           {{ $t('Tag') }}: {{ $t(tag) }}
         </option>
@@ -41,7 +48,7 @@ function toggleSortDirection() {
         v-model="query.language"
         class="select select-bordered md:w-48"
       >
-        <option :value="anyValue">{{ $t('Language') }}: {{ $t(anyValue) }}</option>
+        <option :value="anyValue">{{ $t('Language') }}: {{ $t('any') }}</option>
         <option
           v-for="availableLocale in availableLocales"
           :key="availableLocale"
@@ -56,7 +63,7 @@ function toggleSortDirection() {
       <select v-model="query.progress" class="select select-bordered md:w-48">
         <option :value="anyValue">
           {{ $t('Progress') }}:
-          {{ $t(anyValue) }}
+          {{ $t('any') }}
         </option>
         <option
           v-for="listProgress in ListProgressOptions"
@@ -72,19 +79,11 @@ function toggleSortDirection() {
     <div class="flex flex-col md:flex-row flex-wrap gap-4">
       <div class="flex grow">
         <select v-model="query.sortBy" class="select select-bordered">
-          <option value="name">{{ $t('Sort by name') }}</option>
-          <option value="difficulty">{{ $t('Sort by difficulty') }}</option>
-          <option value="length">{{ $t('Sort by length') }}</option>
+          <option v-for="sortKey in ListSortKeyOptions" :key="sortKey" :value="sortKey">
+            {{ $t(sortLabels[sortKey]) }}
+          </option>
         </select>
-        <div
-          class="ml-4 tooltip tooltip-bottom"
-          :data-tip="query.sortDir === 'asc' ? $t('Sort ascending') : $t('Sort descending')"
-        >
-          <button class="btn btn-ghost" @click="toggleSortDirection">
-            <ArrowDownNarrowWideIcon v-if="query.sortDir === 'asc'" />
-            <ArrowDownWideNarrowIcon v-else />
-          </button>
-        </div>
+        <SortDirectionToggle v-model="query.sortDir" class="ml-4" />
       </div>
 
       <button
