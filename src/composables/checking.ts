@@ -26,6 +26,9 @@ const checkInput =
     return potentialMatches.some((m) => m === processedInput)
   }
 
+export const toCheckableItems = (items: IListItem[]): ICheckableListItem[] =>
+  items.map((item, index) => ({ ...item, index, checked: false }))
+
 export function useChecking(
   rawItems: IListItem[],
   { requireWhitespaces, requireCapitalization, requireOrder, shuffle }: ISettings,
@@ -33,9 +36,7 @@ export function useChecking(
 ) {
   const checkFun = checkInput(requireWhitespaces, requireCapitalization)
 
-  const items = ref<ICheckableListItem[]>([
-    ...rawItems.map((item, index) => ({ ...item, index, checked: false })),
-  ])
+  const items = ref(toCheckableItems(rawItems))
 
   if (shuffle) items.value = shuffleItems(items.value).map((item, index) => ({ ...item, index }))
 

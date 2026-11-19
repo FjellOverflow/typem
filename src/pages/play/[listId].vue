@@ -1,6 +1,5 @@
 <script lang="ts">
 import { useListLoader } from '@/plugins/listLoader'
-import { usePlaythroughs } from '@/composables/playthroughs'
 import { useHotkey } from '@/composables/hotkey'
 import { useLocalize } from '@/composables/localize'
 export { useListLoader }
@@ -10,8 +9,7 @@ export { useListLoader }
 import { formatDuration } from '@/plugins/util'
 import type { ICheckableListItem } from '@/types'
 import { useTitle } from '@vueuse/core'
-import { useChecking } from '@/composables/checking'
-import { useTimer } from '@/composables/timer'
+import { useRound } from '@/composables/round'
 import { PartyPopperIcon, RotateCwIcon, ThumbsUpIcon } from '@lucide/vue'
 
 const { localize } = useLocalize()
@@ -21,9 +19,7 @@ const pageTitle = useTitle(`${localize.value(list.value.meta.name)} - Typem`)
 window.scrollTo(0, 0)
 
 watch(list, (newList) => {
-  reset()
   pageTitle.value = `${localize.value(newList.meta.name)} - Typem`
-  settings.value = { ...newList.settings }
   window.scrollTo(0, 0)
 })
 
@@ -32,40 +28,38 @@ const settingsCard = useTemplateRef('settingsCard')
 const itemsCard = useTemplateRef('itemsCard')
 const newRecordDialog = useTemplateRef('newRecordDialog')
 
-const { addPlaythrough } = usePlaythroughs()
-
-useHotkey('q', () => {
-  if (isInitialized.value && !isDone.value) {
-    onStop()
-    reset()
-    init()
-  }
-})
-
-const settings = ref({ ...list.value.settings })
-const checker = ref()
-const timer = ref()
-
-const isInitialized = ref(false)
-const isRunning = ref(false)
-const isStopped = ref(false)
-const isDone = ref(false)
+const {
+  phase,
+  canStart,
+  hasEnded,
+  settings,
+  items,
+  seconds,
+  remainingPauses,
+  init,
+  start,
+  pause,
+  check,
+  stop,
+  reset,
+  restart,
+} = useRound(list, (newRecord, beatenRecord) =>
+  newRecordDialog.value?.open(newRecord, beatenRecord),
+)
 
 const input = ref('')
 const newMatch = ref<ICheckableListItem | undefined>()
 
-onUnmounted(() => timer.value?.stop())
+watch(hasEnded, (ended) => ended && itemsCard.value?.open())
 
-function init() {
-  settings.value.allowOverride = false
+useHotkey('q', () => restart() && prepareRound())
 
-  timer.value = useTimer(settings.value.numberOfPauses)
-  checker.value = useChecking(list.value.items, settings.value, () => {
-    isDone.value = true
-    onStop()
-  })
+function onInit() {
+  if (init()) prepareRound()
+}
 
-  isInitialized.value = true
+function prepareRound() {
+  input.value = ''
 
   nextTick().then(() => {
     document
@@ -77,86 +71,33 @@ function init() {
   })
 }
 
-function reset() {
-  settings.value.allowOverride = list.value.settings.allowOverride
-  checker.value = undefined
-  timer.value?.stop()
-  timer.value = undefined
-  input.value = ''
-
-  isStopped.value = false
-  isInitialized.value = false
-  isRunning.value = false
-  isDone.value = false
-}
-
-function onStart() {
-  timer.value?.start()
-  isRunning.value = true
-}
-
-function onPause() {
-  timer.value?.pause()
-  isRunning.value = false
-}
-
-function onStop() {
-  if (isStopped.value) return
-
-  timer.value?.stop()
-
-  isRunning.value = false
-  isStopped.value = true
-
-  itemsCard.value?.open()
-
-  const numberOfMatches = checker.value?.items.filter(
-    (item: ICheckableListItem) => item.checked,
-  ).length
-
-  if (numberOfMatches === 0) return
-
-  const newPlaythrough = {
-    listId: list.value.id,
-    seconds: timer.value.seconds,
-    finished: isDone.value,
-    numberOfMatches,
-    timestamp: new Date().toISOString(),
-  }
-  const { beatenRecord } = addPlaythrough(newPlaythrough)
-
-  if (beatenRecord) newRecordDialog.value?.open(newPlaythrough, beatenRecord)
-}
-
 function onInput() {
-  if (!isRunning.value) onStart()
+  const matchedItem = check(input.value)
 
-  const matchedItem = checker.value?.check(input.value)
+  if (!matchedItem) return
 
-  if (matchedItem) {
-    input.value = ''
-    newMatch.value = matchedItem
-    setTimeout(() => (newMatch.value = undefined), 1000)
+  input.value = ''
+  newMatch.value = matchedItem
+  setTimeout(() => (newMatch.value = undefined), 1000)
 
-    inputField.value?.dispatchEvent(new CustomEvent('onmatch'))
-  }
+  inputField.value?.dispatchEvent(new CustomEvent('onmatch'))
 }
 </script>
 <template>
   <NewRecordDialog ref="newRecordDialog" />
   <div class="grid grid-cols-2 sm:grid-cols-5 items-center gap-4">
-    <ListPreviewCard :list class="col-span-2 sm:col-span-5" :show-details="!isInitialized">
+    <ListPreviewCard :list class="col-span-2 sm:col-span-5" :show-details="phase === 'idle'">
       <template #action>
         <button
           id="initButton"
-          v-if="!isInitialized"
+          v-if="phase === 'idle'"
           class="btn btn-outline btn-primary sm:text-xl font-medium"
-          @click="init"
+          @click="onInit"
         >
           <ThumbsUpIcon /> {{ $t("I'm ready!") }}
         </button>
         <button
-          v-if="isInitialized && isStopped"
+          v-if="hasEnded"
           class="btn btn-outline btn-primary text-xl font-medium"
           @click="reset"
         >
@@ -165,11 +106,11 @@ function onInput() {
       </template>
     </ListPreviewCard>
 
-    <template v-if="isInitialized">
-      <template v-if="!isDone">
+    <template v-if="phase !== 'idle'">
+      <template v-if="phase !== 'finished'">
         <HintCard
-          v-if="!isStopped && settings.showHints"
-          :items="checker?.items || []"
+          v-if="phase !== 'stopped' && settings.showHints"
+          :items
           :can-cycle="!settings.requireOrder"
           class="col-span-2 sm:col-span-5"
           @move="inputField?.focus()"
@@ -177,27 +118,27 @@ function onInput() {
         <TimerCard
           id="timerCard"
           ref="timerCard"
-          :seconds="timer?.seconds || 0"
-          :numberOfPauses="timer?.remainingPauses || 0"
-          :isStopped
-          :isRunning
-          @start="onStart"
-          @pause="onPause"
-          @stop="onStop"
+          :seconds
+          :numberOfPauses="remainingPauses"
+          :isStopped="phase === 'stopped'"
+          :isRunning="phase === 'running'"
+          @start="start"
+          @pause="pause"
+          @stop="stop"
           class="col-span-2"
         />
         <input
           id="inputField"
           ref="inputField"
           v-model="input"
-          :disabled="isStopped"
+          :disabled="phase === 'stopped'"
           type="text"
-          :placeholder="!isRunning && !isStopped ? $t('Type to start') : undefined"
+          :placeholder="canStart ? $t('Type to start') : undefined"
           class="input input-bordered w-full h-16 text-2xl col-span-2 sm:col-span-3"
           :class="{
-            'input-primary': !isStopped,
+            'input-primary': phase !== 'stopped',
             'input-success': newMatch,
-            'hidden sm:block': isStopped,
+            'hidden sm:block': phase === 'stopped',
           }"
           @input="onInput"
         />
@@ -212,7 +153,7 @@ function onInput() {
             {{
               $t('You named all {number} items in {duration}.', {
                 number: list.items.length,
-                duration: formatDuration(timer.seconds),
+                duration: formatDuration(seconds),
               })
             }}
           </span>
@@ -223,9 +164,9 @@ function onInput() {
     <ItemsTable
       id="itemsCard"
       ref="itemsCard"
-      :items="checker?.items || list.items"
+      :items
       :highlighted="newMatch"
-      :isStopped
+      :isStopped="hasEnded"
       class="col-span-2 sm:col-span-5"
     />
 
