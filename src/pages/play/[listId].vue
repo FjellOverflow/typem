@@ -54,6 +54,8 @@ const isDone = ref(false)
 const input = ref('')
 const newMatch = ref<ICheckableListItem | undefined>()
 
+onUnmounted(() => timer.value?.stop())
+
 function init() {
   settings.value.allowOverride = false
 
@@ -78,6 +80,7 @@ function init() {
 function reset() {
   settings.value.allowOverride = list.value.settings.allowOverride
   checker.value = undefined
+  timer.value?.stop()
   timer.value = undefined
   input.value = ''
 
