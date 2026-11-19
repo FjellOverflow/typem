@@ -234,13 +234,24 @@ describe('playthrough store', () => {
     expect(exportHistory()).toEqual([valid])
   })
 
-  it('replaces the history on import', async () => {
+  it('merges an imported history and keeps the local entry of a duplicate', async () => {
     const { playthroughs, addPlaythrough, importHistory } = await loadStore()
+    const local = playthrough()
     const imported = playthrough()
 
-    addPlaythrough(playthrough())
+    addPlaythrough(local)
 
-    expect(importHistory([imported])).toBe(true)
-    expect(playthroughs.value).toEqual([imported])
+    expect(importHistory([{ ...local, seconds: 1 }, imported, imported])).toBe(true)
+    expect(playthroughs.value).toEqual([local, imported])
+  })
+
+  it('accepts an import that holds only known playthroughs', async () => {
+    const { playthroughs, addPlaythrough, importHistory } = await loadStore()
+    const local = playthrough()
+
+    addPlaythrough(local)
+
+    expect(importHistory([local])).toBe(true)
+    expect(playthroughs.value).toEqual([local])
   })
 })

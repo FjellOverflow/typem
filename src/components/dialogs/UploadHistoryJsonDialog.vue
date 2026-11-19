@@ -53,12 +53,12 @@ defineExpose({ open: () => confirmDialog.value?.showModal() })
   <dialog ref="confirmDialog" class="modal">
     <div class="modal-box border rounded-md w-[85%] flex flex-col gap-4">
       <div class="sm:text-4xl text-3xl">
-        {{ $t('Overwrite history?') }}
+        {{ $t('Import history?') }}
       </div>
       <div class="text-lg sm:text-xl">
         {{
           $t(
-            'This action replaces ALL past playthroughs. Once new playthroughs are imported, the old playthroughs can not be recovered.',
+            'Imported playthroughs are added to your history. Playthroughs that are already in your history are skipped.',
           )
         }}
       </div>

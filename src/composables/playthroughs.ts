@@ -103,7 +103,9 @@ function createPlaythroughStore() {
 
     if (validImported.length === 0) return false
 
-    history.value = validImported
+    for (const playthrough of validImported)
+      if (!history.value.some((entry) => isSamePlaythrough(entry, playthrough)))
+        history.value.push(playthrough)
 
     return true
   }
