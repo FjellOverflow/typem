@@ -1,9 +1,7 @@
 import { ListPlaythroughSchema, type IListPlaythrough, type ListProgress } from '@/types'
 import { useStorage } from '@vueuse/core'
-import { useToasts } from '@/composables/toasts'
-import i18n from '@/plugins/i18n'
 
-function sortPlaythroughByMatchesAndSeconds(p1: IListPlaythrough, p2: IListPlaythrough) {
+function compareForRecord(p1: IListPlaythrough, p2: IListPlaythrough) {
   if (p1.numberOfMatches !== p2.numberOfMatches) return p2.numberOfMatches - p1.numberOfMatches
 
   if (p1.seconds !== p2.seconds) return p1.seconds - p2.seconds
@@ -14,109 +12,125 @@ function sortPlaythroughByMatchesAndSeconds(p1: IListPlaythrough, p2: IListPlayt
   return Number(p2.finished) - Number(p1.finished)
 }
 
-function validatePlaythroughs(objects: unknown[]): IListPlaythrough[] {
-  return objects
-    .map((o) => {
-      try {
-        return ListPlaythroughSchema.parse(o)
-      } catch (e) {
-        console.debug(e)
-      }
-    })
-    .filter((o) => !!o)
+function isSamePlaythrough(p1: IListPlaythrough, p2: IListPlaythrough) {
+  return p1.listId === p2.listId && p1.timestamp === p2.timestamp
 }
 
-export function usePlaythroughs() {
-  const { sendToast } = useToasts()
+function parsePlaythrough(entry: unknown) {
+  const result = ListPlaythroughSchema.safeParse(entry)
 
-  const allPlaythroughs = useStorage<IListPlaythrough[]>('history', [])
+  return result.success ? result.data : undefined
+}
 
-  const validatedPlaythroughs = validatePlaythroughs([...allPlaythroughs.value])
+function validPlaythroughsOf(entries: unknown) {
+  if (!Array.isArray(entries)) return []
 
-  if (JSON.stringify(validatedPlaythroughs) !== JSON.stringify(allPlaythroughs.value))
-    allPlaythroughs.value = validatedPlaythroughs
+  return entries.map(parsePlaythrough).filter((p) => !!p)
+}
 
-  function getBestListPlaythrough(listId: string) {
-    if (allPlaythroughs.value.length === 0) return
+function createPlaythroughStore() {
+  const history = useStorage<IListPlaythrough[]>('history', [])
 
-    const listPlaythroughs = [...allPlaythroughs.value.filter((p) => p.listId === listId)]
+  const validHistory = validPlaythroughsOf(history.value)
 
-    const sortedListPlaythroughs = listPlaythroughs.sort(sortPlaythroughByMatchesAndSeconds)
+  if (JSON.stringify(validHistory) !== JSON.stringify(history.value)) history.value = validHistory
 
-    return sortedListPlaythroughs[0]
+  const playthroughs = computed(() => history.value)
+
+  const recordsByListId = computed(() => {
+    const records = new Map<string, IListPlaythrough>()
+
+    for (const playthrough of playthroughs.value) {
+      const record = records.get(playthrough.listId)
+
+      if (!record || compareForRecord(playthrough, record) < 0)
+        records.set(playthrough.listId, playthrough)
+    }
+
+    return records
+  })
+
+  const records = computed(() => [...recordsByListId.value.values()])
+
+  function recordOf(listId: string) {
+    return recordsByListId.value.get(listId)
+  }
+
+  function isRecord(playthrough: IListPlaythrough) {
+    const record = recordOf(playthrough.listId)
+
+    return !!record && isSamePlaythrough(record, playthrough)
+  }
+
+  function progressOf(listId: string): ListProgress {
+    const record = recordOf(listId)
+
+    if (!record) return 'untried'
+    if (record.finished) return 'finished'
+
+    return 'tried'
+  }
+
+  function addPlaythrough(playthrough: IListPlaythrough) {
+    const previousRecord = recordOf(playthrough.listId)
+
+    history.value.push(playthrough)
+
+    const isNewRecord =
+      playthrough.finished &&
+      previousRecord?.finished &&
+      playthrough.seconds < previousRecord.seconds
+
+    return { beatenRecord: isNewRecord ? previousRecord : undefined }
   }
 
   function deletePlaythrough(playthrough: IListPlaythrough) {
-    const playthroughIndex = allPlaythroughs.value.findIndex(
-      (p) => JSON.stringify(p) === JSON.stringify(playthrough),
-    )
+    const index = history.value.findIndex((entry) => isSamePlaythrough(entry, playthrough))
 
-    if (playthroughIndex > -1) {
-      allPlaythroughs.value.splice(playthroughIndex, 1)
-      sendToast({
-        message: i18n.global.t('Deleted playthrough'),
-        sentiment: 'alert-success',
-      })
-    } else {
-      sendToast({
-        message: i18n.global.t("Couldn't delete playthrough"),
-        sentiment: 'alert-error',
-      })
-    }
+    if (index === -1) return false
+
+    history.value.splice(index, 1)
+
+    return true
   }
 
-  function deleteAllPlaythroughs() {
-    allPlaythroughs.value = []
-    sendToast({
-      message: i18n.global.t('Deleted all playthroughs'),
-      sentiment: 'alert-success',
-    })
+  function deleteHistory() {
+    history.value = []
   }
 
-  function importPlaythroughs(importedObj: unknown): boolean {
-    if (!Array.isArray(importedObj)) return false
+  function importHistory(imported: unknown) {
+    const validImported = validPlaythroughsOf(imported)
 
-    const newPlaythroughs = validatePlaythroughs([...importedObj])
+    if (validImported.length === 0) return false
 
-    if (newPlaythroughs.length > 0) {
-      allPlaythroughs.value = newPlaythroughs
-      return true
-    }
+    history.value = validImported
 
-    return false
+    return true
+  }
+
+  function exportHistory() {
+    return [...history.value]
   }
 
   return {
-    allPlaythroughs,
-    getBestListPlaythrough,
+    playthroughs,
+    records,
+    recordOf,
+    isRecord,
+    progressOf,
+    addPlaythrough,
     deletePlaythrough,
-    deleteAllPlaythroughs,
-    importPlaythroughs,
+    deleteHistory,
+    importHistory,
+    exportHistory,
   }
 }
 
-export function useListPlaythroughs(listId: string) {
-  const { allPlaythroughs } = usePlaythroughs()
+let store: ReturnType<typeof createPlaythroughStore> | undefined
 
-  const allListPlaythroughs = computed(() =>
-    allPlaythroughs.value.filter((p) => p.listId === listId),
-  )
+export function usePlaythroughs() {
+  // Detached, so the shared store outlives the component that first calls this.
+  store ??= effectScope(true).run(createPlaythroughStore)!
 
-  const bestListPlaythrough = computed(
-    (): IListPlaythrough | undefined =>
-      [...allListPlaythroughs.value].sort(sortPlaythroughByMatchesAndSeconds)[0],
-  )
-
-  const listProgress = computed<ListProgress>(() => {
-    if (!bestListPlaythrough.value) return 'untried'
-    if (bestListPlaythrough.value.finished) return 'finished'
-
-    return 'tried'
-  })
-
-  return {
-    allListPlaythroughs,
-    bestListPlaythrough,
-    listProgress,
-  }
+  return store
 }

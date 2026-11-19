@@ -10,7 +10,7 @@ const fileInputVisible = ref(true)
 
 const { t } = useI18n()
 const { sendToast } = useToasts()
-const { importPlaythroughs } = usePlaythroughs()
+const { importHistory } = usePlaythroughs()
 
 function onUpload(e: Event) {
   uploadedFile.value = [...((e.target as HTMLInputElement).files || [])][0]
@@ -21,7 +21,7 @@ async function onConfirmUpload() {
   if (uploadedFile.value) {
     try {
       const result = await uploadJSON(uploadedFile.value)
-      success = importPlaythroughs(result)
+      success = importHistory(result)
     } catch (e) {
       console.error(e)
     }

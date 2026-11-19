@@ -1,216 +1,246 @@
-import { describe, it, expect, beforeEach } from 'vitest'
-import { useListPlaythroughs, usePlaythroughs } from '@/composables/playthroughs'
+import { describe, it, expect, beforeEach, vi } from 'vitest'
+import { ListPlaythroughSchema, type IListPlaythrough } from '@/types'
 
-const generatedPlaythrough = (listId = 'list0', seconds = 1337, numberOfMatches = 42) => ({
-  listId,
-  numberOfMatches,
-  seconds,
-  finished: numberOfMatches === 42,
-  timestamp: new Date().toISOString(),
-})
+let clock = Date.parse('2026-01-01T00:00:00.000Z')
 
-describe('playthroughs composable', () => {
-  beforeEach(() => localStorage.clear())
+function playthrough(overrides: Partial<IListPlaythrough> = {}): IListPlaythrough {
+  clock += 1000
 
-  it('keeps list', () => {
-    const { allPlaythroughs } = usePlaythroughs()
+  return {
+    listId: 'list0',
+    seconds: 60,
+    numberOfMatches: 8,
+    finished: true,
+    timestamp: new Date(clock).toISOString(),
+    ...overrides,
+  }
+}
 
-    expect(allPlaythroughs.value).toHaveLength(0)
+async function loadStore() {
+  const { usePlaythroughs } = await import('@/composables/playthroughs')
 
-    allPlaythroughs.value.push(generatedPlaythrough())
-    expect(allPlaythroughs.value).toHaveLength(1)
+  return usePlaythroughs()
+}
+
+function storedHistory() {
+  return JSON.parse(localStorage.getItem('history') ?? '[]')
+}
+
+describe('playthrough store', () => {
+  beforeEach(() => {
+    localStorage.clear()
+    vi.resetModules()
   })
 
-  it('filters best by list', async () => {
-    const { allPlaythroughs, getBestListPlaythrough } = usePlaythroughs()
+  it('adds playthroughs and persists them', async () => {
+    const { playthroughs, addPlaythrough } = await loadStore()
+    const added = playthrough()
 
-    expect(getBestListPlaythrough('list0')).toBe(undefined)
+    expect(playthroughs.value).toEqual([])
 
-    const playthrough0 = generatedPlaythrough('list0', 100, 10)
-    allPlaythroughs.value.push(playthrough0)
-
+    addPlaythrough(added)
     await nextTick()
-    expect(getBestListPlaythrough('list0')).toEqual(playthrough0)
 
-    const playthrough1 = generatedPlaythrough('list0', 99, 10)
-    allPlaythroughs.value.push(playthrough1)
-
-    await nextTick()
-    expect(getBestListPlaythrough('list0')).toEqual(playthrough1)
-
-    const playthrough2 = generatedPlaythrough('list0', 101, 11)
-    allPlaythroughs.value.push(playthrough2)
-
-    await nextTick()
-    expect(getBestListPlaythrough('list0')).toEqual(playthrough2)
-
-    const playthrough3 = generatedPlaythrough('list0', 99, 11)
-    allPlaythroughs.value.push(playthrough3)
-
-    await nextTick()
-    expect(getBestListPlaythrough('list0')).toEqual(playthrough3)
-
-    const playthrough4 = generatedPlaythrough('list0', 98, 10)
-    allPlaythroughs.value.push(playthrough4)
-
-    await nextTick()
-    expect(getBestListPlaythrough('list0')).toEqual(playthrough3)
-
-    const playthrough5 = generatedPlaythrough('list0', 99, 11)
-    allPlaythroughs.value.push(playthrough5)
-
-    await nextTick()
-    expect(getBestListPlaythrough('list0')).toEqual(playthrough3)
-
-    const playthrough6 = { ...playthrough3, finished: true }
-    allPlaythroughs.value.push(playthrough6)
-
-    await nextTick()
-    expect(getBestListPlaythrough('list0')).toEqual(playthrough6)
+    expect(playthroughs.value).toEqual([added])
+    expect(storedHistory()).toEqual([added])
   })
 
-  it('deletes', () => {
-    const { allPlaythroughs, deletePlaythrough } = usePlaythroughs()
+  it('shares one state between callers', async () => {
+    const { usePlaythroughs } = await import('@/composables/playthroughs')
 
-    const playthrough0 = generatedPlaythrough()
-    allPlaythroughs.value.push(playthrough0)
+    usePlaythroughs().addPlaythrough(playthrough())
 
-    const playthrough1 = generatedPlaythrough()
-    allPlaythroughs.value.push(playthrough1)
-
-    expect(allPlaythroughs.value).toEqual(expect.arrayContaining([playthrough0, playthrough1]))
-
-    deletePlaythrough(playthrough0)
-
-    expect(allPlaythroughs.value).toEqual(expect.arrayContaining([playthrough1]))
+    expect(usePlaythroughs().playthroughs.value).toHaveLength(1)
   })
 
-  it('deletes all', () => {
-    const { allPlaythroughs, deleteAllPlaythroughs } = usePlaythroughs()
+  it('ranks the record by matches, then seconds, then timestamp', async () => {
+    const { recordOf, addPlaythrough } = await loadStore()
 
-    allPlaythroughs.value.push(generatedPlaythrough())
-    allPlaythroughs.value.push(generatedPlaythrough())
+    expect(recordOf('list0')).toBeUndefined()
 
-    expect(allPlaythroughs.value).toHaveLength(2)
+    const fewMatches = playthrough({ numberOfMatches: 3, seconds: 10, finished: false })
+    addPlaythrough(fewMatches)
+    expect(recordOf('list0')).toEqual(fewMatches)
 
-    deleteAllPlaythroughs()
+    const moreMatches = playthrough({ numberOfMatches: 8, seconds: 90 })
+    addPlaythrough(moreMatches)
+    expect(recordOf('list0')).toEqual(moreMatches)
 
-    expect(allPlaythroughs.value).toHaveLength(0)
+    const faster = playthrough({ seconds: 60 })
+    addPlaythrough(faster)
+    expect(recordOf('list0')).toEqual(faster)
+
+    addPlaythrough(playthrough({ seconds: 60 }))
+    expect(recordOf('list0')).toEqual(faster)
+
+    addPlaythrough(playthrough({ listId: 'list1', seconds: 1 }))
+    expect(recordOf('list0')).toEqual(faster)
   })
 
-  it('imports', () => {
-    const { allPlaythroughs, importPlaythroughs } = usePlaythroughs()
+  it('marks only the record, not other playthroughs with the same seconds', async () => {
+    const { isRecord, addPlaythrough } = await loadStore()
+    const record = playthrough({ seconds: 60 })
+    const sameSecondsUnfinished = playthrough({
+      seconds: 60,
+      numberOfMatches: 3,
+      finished: false,
+    })
+    const tiedButLater = playthrough({ seconds: 60 })
 
-    expect(allPlaythroughs.value).toHaveLength(0)
+    addPlaythrough(record)
+    addPlaythrough(sameSecondsUnfinished)
+    addPlaythrough(tiedButLater)
 
-    importPlaythroughs(undefined)
-    importPlaythroughs(null)
-    importPlaythroughs('null')
-    importPlaythroughs({})
-    importPlaythroughs({ a: 'b' })
-
-    importPlaythroughs([])
-    importPlaythroughs([undefined])
-    importPlaythroughs([null])
-    importPlaythroughs(['null'])
-    importPlaythroughs([{}])
-    importPlaythroughs([{ a: 'b' }])
-    importPlaythroughs(generatedPlaythrough())
-
-    expect(allPlaythroughs.value).toHaveLength(0)
-
-    importPlaythroughs([generatedPlaythrough()])
-
-    expect(allPlaythroughs.value).toHaveLength(1)
-  })
-})
-
-describe('listPlaythroughs composable', () => {
-  beforeEach(() => localStorage.clear())
-
-  it('filters by list', async () => {
-    const { allPlaythroughs } = usePlaythroughs()
-    const { allListPlaythroughs } = useListPlaythroughs('list0')
-
-    expect(allListPlaythroughs.value).toHaveLength(0)
-
-    allPlaythroughs.value.push(generatedPlaythrough())
-    allPlaythroughs.value.push(generatedPlaythrough())
-
-    await nextTick()
-    expect(allListPlaythroughs.value).toHaveLength(2)
-
-    allPlaythroughs.value.push(generatedPlaythrough('list1'))
-
-    expect(allListPlaythroughs.value).toHaveLength(2)
+    expect(isRecord(record)).toBe(true)
+    expect(isRecord(sameSecondsUnfinished)).toBe(false)
+    expect(isRecord(tiedButLater)).toBe(false)
   })
 
-  it('filters best by list', async () => {
-    const { allPlaythroughs } = usePlaythroughs()
-    const { allListPlaythroughs, bestListPlaythrough } = useListPlaythroughs('list0')
+  it('moves the record when the record is deleted', async () => {
+    const { isRecord, addPlaythrough, deletePlaythrough } = await loadStore()
+    const fast = playthrough({ seconds: 60 })
+    const slow = playthrough({ seconds: 70 })
 
-    expect(bestListPlaythrough.value).toBe(undefined)
+    addPlaythrough(fast)
+    addPlaythrough(slow)
+    expect(isRecord(slow)).toBe(false)
 
-    const playthrough0 = generatedPlaythrough('list0', 100, 10)
-    allPlaythroughs.value.push(playthrough0)
+    deletePlaythrough(fast)
 
-    await nextTick()
-    expect(bestListPlaythrough.value).toEqual(playthrough0)
-
-    const playthrough1 = generatedPlaythrough('list0', 99, 10)
-    allPlaythroughs.value.push(playthrough1)
-
-    await nextTick()
-    expect(bestListPlaythrough.value).toEqual(playthrough1)
-
-    const playthrough2 = generatedPlaythrough('list0', 101, 11)
-    allPlaythroughs.value.push(playthrough2)
-
-    await nextTick()
-    expect(bestListPlaythrough.value).toEqual(playthrough2)
-
-    const playthrough3 = generatedPlaythrough('list0', 99, 11)
-    allPlaythroughs.value.push(playthrough3)
-
-    await nextTick()
-    expect(bestListPlaythrough.value).toEqual(playthrough3)
-
-    const playthrough4 = generatedPlaythrough('list0', 98, 10)
-    allPlaythroughs.value.push(playthrough4)
-
-    await nextTick()
-    expect(bestListPlaythrough.value).toEqual(playthrough3)
-
-    const playthrough5 = generatedPlaythrough('list0', 99, 11)
-    allPlaythroughs.value.push(playthrough5)
-
-    await nextTick()
-    expect(bestListPlaythrough.value).toEqual(playthrough3)
-
-    const playthrough6 = { ...playthrough3, finished: true }
-    allPlaythroughs.value.push(playthrough6)
-
-    await nextTick()
-    expect(bestListPlaythrough.value).toEqual(playthrough6)
-    expect(allPlaythroughs.value).toEqual(expect.arrayContaining(allListPlaythroughs.value))
+    expect(isRecord(slow)).toBe(true)
   })
 
-  it('returns listProgress by list', async () => {
-    const { allPlaythroughs } = usePlaythroughs()
-    const { listProgress } = useListPlaythroughs('list0')
+  it('reports progress per list', async () => {
+    const { progressOf, addPlaythrough } = await loadStore()
 
-    expect(listProgress.value).toBe('untried')
+    expect(progressOf('list0')).toBe('untried')
 
-    const playthrough0 = generatedPlaythrough('list0', 100, 10)
-    allPlaythroughs.value.push(playthrough0)
+    addPlaythrough(playthrough({ numberOfMatches: 3, finished: false }))
+    expect(progressOf('list0')).toBe('tried')
 
+    addPlaythrough(playthrough())
+    expect(progressOf('list0')).toBe('finished')
+    expect(progressOf('list1')).toBe('untried')
+  })
+
+  it('reports a new record only when a finished playthrough beats a finished record on time', async () => {
+    const { addPlaythrough } = await loadStore()
+
+    expect(
+      addPlaythrough(playthrough({ numberOfMatches: 3, finished: false })).beatenRecord,
+    ).toBeUndefined()
+
+    const firstFinish = playthrough({ seconds: 60 })
+    expect(addPlaythrough(firstFinish).beatenRecord).toBeUndefined()
+
+    expect(addPlaythrough(playthrough({ seconds: 70 })).beatenRecord).toBeUndefined()
+
+    expect(addPlaythrough(playthrough({ seconds: 50 })).beatenRecord).toEqual(firstFinish)
+  })
+
+  it('collects one record per list', async () => {
+    const { records, addPlaythrough } = await loadStore()
+    const list0Record = playthrough({ seconds: 50 })
+    const list1Record = playthrough({ listId: 'list1' })
+
+    addPlaythrough(playthrough({ seconds: 60 }))
+    addPlaythrough(list0Record)
+    addPlaythrough(list1Record)
+
+    expect(records.value).toEqual([list0Record, list1Record])
+  })
+
+  it('deletes a playthrough by list id and timestamp', async () => {
+    const { playthroughs, addPlaythrough, deletePlaythrough } = await loadStore()
+    const kept = playthrough()
+    const deleted = playthrough()
+
+    addPlaythrough(kept)
+    addPlaythrough(deleted)
+
+    expect(deletePlaythrough({ ...deleted })).toBe(true)
+    expect(playthroughs.value).toEqual([kept])
+    expect(deletePlaythrough(deleted)).toBe(false)
+  })
+
+  it('deletes the history', async () => {
+    const { playthroughs, addPlaythrough, deleteHistory } = await loadStore()
+
+    addPlaythrough(playthrough())
+    addPlaythrough(playthrough())
+    deleteHistory()
+
+    expect(playthroughs.value).toEqual([])
+  })
+
+  it('drops invalid stored entries and writes the valid ones back', async () => {
+    const valid = playthrough()
+    localStorage.setItem('history', JSON.stringify([{ listId: 'list0', seconds: 'slow' }, valid]))
+
+    const { playthroughs, exportHistory } = await loadStore()
     await nextTick()
-    expect(listProgress.value).toBe('tried')
 
-    const playthrough1 = generatedPlaythrough('list0', 99, 42)
-    allPlaythroughs.value.push(playthrough1)
+    expect(playthroughs.value).toEqual([valid])
+    expect(exportHistory()).toEqual([valid])
+    expect(storedHistory()).toEqual([valid])
+  })
 
+  it('drops a stored history that is not a list', async () => {
+    localStorage.setItem('history', JSON.stringify({ a: 'b' }))
+
+    const { playthroughs } = await loadStore()
     await nextTick()
-    expect(listProgress.value).toBe('finished')
+
+    expect(playthroughs.value).toEqual([])
+    expect(storedHistory()).toEqual([])
+  })
+
+  it('does not write a valid stored history back', async () => {
+    localStorage.setItem('history', JSON.stringify([ListPlaythroughSchema.parse(playthrough())]))
+    const setItem = vi.spyOn(Storage.prototype, 'setItem')
+
+    await loadStore()
+    await nextTick()
+
+    expect(setItem).not.toHaveBeenCalled()
+    setItem.mockRestore()
+  })
+
+  it('imports only the valid playthroughs of a history', async () => {
+    const { playthroughs, importHistory, exportHistory } = await loadStore()
+
+    for (const rejected of [
+      undefined,
+      null,
+      'null',
+      {},
+      { a: 'b' },
+      playthrough(),
+      [],
+      [undefined],
+      [null],
+      ['null'],
+      [{}],
+      [{ a: 'b' }],
+    ])
+      expect(importHistory(rejected)).toBe(false)
+
+    expect(exportHistory()).toEqual([])
+
+    const valid = playthrough()
+
+    expect(importHistory([valid, { a: 'b' }])).toBe(true)
+    expect(playthroughs.value).toEqual([valid])
+    expect(exportHistory()).toEqual([valid])
+  })
+
+  it('replaces the history on import', async () => {
+    const { playthroughs, addPlaythrough, importHistory } = await loadStore()
+    const imported = playthrough()
+
+    addPlaythrough(playthrough())
+
+    expect(importHistory([imported])).toBe(true)
+    expect(playthroughs.value).toEqual([imported])
   })
 })

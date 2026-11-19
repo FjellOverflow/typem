@@ -10,11 +10,11 @@ import { downloadJSON, generateTimestampStr } from '@/plugins/util'
 import { useTitle } from '@vueuse/core'
 import { DownloadIcon, RotateCcwIcon, TrashIcon, TrophyIcon, UploadIcon } from '@lucide/vue'
 import { useCustomLists } from '@/composables/customLists'
+import { useToasts } from '@/composables/toasts'
 
 const { t } = useI18n()
 useTitle(`${t('Settings')} - Typem`)
 
-const { data: lists } = useListsLoader()
 const confirmDeleteAllPlaythroughsDialog = useTemplateRef('confirmDeleteAllPlaythroughsDialog')
 const confirmDeleteAllCustomListsDialog = useTemplateRef('confirmDeleteAllCustomListsDialog')
 
@@ -22,25 +22,27 @@ const uploadHistoryJsonDialog = useTemplateRef('uploadHistoryJsonDialog')
 const uploadCustomListDialog = useTemplateRef('uploadCustomListDialog')
 
 const { deleteAllCustomLists, lists: customLists } = useCustomLists()
-const { allPlaythroughs, deleteAllPlaythroughs, getBestListPlaythrough } = usePlaythroughs()
+const { sendToast } = useToasts()
+const { records, exportHistory, deleteHistory } = usePlaythroughs()
 
 function onClickDownloadAll() {
-  downloadJSON(allPlaythroughs.value, `typem_history_${generateTimestampStr()}`)
+  downloadJSON(exportHistory(), `typem_history_${generateTimestampStr()}`)
 }
 
 function onClickDownloadRecords() {
-  const records = [...new Set(lists.value.map((list) => list.id))]
-    .map((listId) => getBestListPlaythrough(listId))
-    .filter((p) => !!p)
+  downloadJSON(records.value, `typem_records_${generateTimestampStr()}`)
+}
 
-  downloadJSON(records, `typem_records_${generateTimestampStr()}`)
+function onConfirmDeleteHistory() {
+  deleteHistory()
+  sendToast({ message: t('Deleted all playthroughs'), sentiment: 'alert-success' })
 }
 </script>
 <template>
   <div class="sm:mb-4 flex flex-col gap-4">
     <DeleteAllPlaythroughsDialog
       ref="confirmDeleteAllPlaythroughsDialog"
-      @confirm="deleteAllPlaythroughs"
+      @confirm="onConfirmDeleteHistory"
     />
     <DeleteAllCustomListsDialog
       ref="confirmDeleteAllCustomListsDialog"

@@ -7,17 +7,17 @@ const { locale } = useI18n()
 
 const confirmDialog = useTemplateRef('confirmDialog')
 
-const oldBestPlaythrough = ref<IListPlaythrough>()
-const newBestPlaythrough = ref<IListPlaythrough>()
+const beatenRecord = ref<IListPlaythrough>()
+const newRecord = ref<IListPlaythrough>()
 
 const improvement = computed(() => {
-  if (!oldBestPlaythrough.value || !newBestPlaythrough.value) return 0
-  return oldBestPlaythrough.value?.seconds - newBestPlaythrough.value?.seconds
+  if (!beatenRecord.value || !newRecord.value) return 0
+  return beatenRecord.value?.seconds - newRecord.value?.seconds
 })
 
-function open(newPlaythrough: IListPlaythrough, oldPlaythrough: IListPlaythrough) {
-  oldBestPlaythrough.value = oldPlaythrough
-  newBestPlaythrough.value = newPlaythrough
+function open(record: IListPlaythrough, previousRecord: IListPlaythrough) {
+  beatenRecord.value = previousRecord
+  newRecord.value = record
 
   confirmDialog.value?.open()
 }
@@ -31,7 +31,7 @@ defineExpose({ open })
         <PartyPopperIcon class="h-8 sm:h-10" />
         {{
           $t('New record: {duration}', {
-            duration: formatDuration(newBestPlaythrough?.seconds || 0),
+            duration: formatDuration(newRecord?.seconds || 0),
           })
         }}
       </div>
@@ -39,7 +39,7 @@ defineExpose({ open })
     <template #body>
       {{
         $t('You beat your previous record from {date} by {seconds}.', {
-          date: new Date(oldBestPlaythrough?.timestamp || '').toLocaleDateString(locale),
+          date: new Date(beatenRecord?.timestamp || '').toLocaleDateString(locale),
           seconds: formatDuration(improvement),
         })
       }}

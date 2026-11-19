@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useLocalize } from '@/composables/localize'
-import { useListPlaythroughs } from '@/composables/playthroughs'
+import { usePlaythroughs } from '@/composables/playthroughs'
 import { matchKeyword } from '@/plugins/util'
 import { type IList, type ListProgress } from '@/types'
 import { useRouteQuery } from '@vueuse/router'
@@ -17,6 +17,7 @@ const props = withDefaults(
 )
 
 const { localize } = useLocalize()
+const { progressOf } = usePlaythroughs()
 
 const filterKeyword = useRouteQuery('keyword', '')
 const filterTag = useRouteQuery('tag', 'any')
@@ -57,9 +58,7 @@ const filteredLists = computed(() => {
         filterLanguage.value === 'any' || list.meta.supportedLocales.includes(filterLanguage.value),
     )
     .filter(
-      (list) =>
-        filterProgress.value === 'any' ||
-        filterProgress.value === useListPlaythroughs(list.id).listProgress.value,
+      (list) => filterProgress.value === 'any' || filterProgress.value === progressOf(list.id),
     )
 
   lists.sort((l1, l2) => {

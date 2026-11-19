@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { usePlaythroughs } from '@/composables/playthroughs'
+import { useToasts } from '@/composables/toasts'
 import { getListById } from '@/plugins/listLoader'
 import { getSecondsPerItem, formatDuration } from '@/plugins/util'
 import { type IList, type IListPlaythrough } from '@/types'
@@ -14,11 +15,11 @@ const props = defineProps<{
 }>()
 
 const { localize } = useLocalize()
-const { locale } = useI18n()
-const { getBestListPlaythrough, deletePlaythrough } = usePlaythroughs()
+const { locale, t } = useI18n()
+const { sendToast } = useToasts()
+const { isRecord, deletePlaythrough } = usePlaythroughs()
 
 const list = ref<IList>()
-const isRecord = ref(false)
 
 const imageUrl = computed(() =>
   list.value?.meta.imageUrl ? new URL(list.value.meta.imageUrl, import.meta.url).href : undefined,
@@ -26,16 +27,18 @@ const imageUrl = computed(() =>
 
 loadList()
 
-watch(props.playthrough, loadList)
+watch(() => props.playthrough.listId, loadList)
 
 async function loadList() {
   const result = await getListById(props.playthrough.listId)
 
-  if (result) {
-    list.value = result
-    const record = getBestListPlaythrough(result.id)
-    isRecord.value = !!record && record.seconds === props.playthrough.seconds
-  }
+  if (result) list.value = result
+}
+
+function onConfirmDelete() {
+  if (deletePlaythrough(props.playthrough))
+    sendToast({ message: t('Deleted playthrough'), sentiment: 'alert-success' })
+  else sendToast({ message: t("Couldn't delete playthrough"), sentiment: 'alert-error' })
 }
 </script>
 <template>
@@ -65,7 +68,7 @@ async function loadList() {
       <div class="col-span-3 flex justify-between sm:items-end items-center">
         <div class="flex gap-2">
           <div
-            v-if="isRecord"
+            v-if="isRecord(playthrough)"
             class="tooltip tooltip-bottom before:max-w-36 cursor-default"
             :data-tip="
               playthrough.finished
@@ -116,10 +119,7 @@ async function loadList() {
       </div>
 
       <div class="flex justify-end">
-        <DeletePlaythroughDialog
-          ref="confirmDeletionDialog"
-          @confirm="deletePlaythrough(playthrough)"
-        />
+        <DeletePlaythroughDialog ref="confirmDeletionDialog" @confirm="onConfirmDelete" />
         <div class="tooltip tooltip-bottom before:max-w-28" :data-tip="$t('Delete playthrough')">
           <button @click="confirmDeletionDialog?.open()" class="btn btn-ghost">
             <TrashIcon />

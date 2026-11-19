@@ -5,11 +5,12 @@ export { useListsLoader }
 
 <script setup lang="ts">
 import { usePlaythroughs } from '@/composables/playthroughs'
+import { playthroughsOfLists } from '@/plugins/util'
 import { useRouteQuery } from '@vueuse/router'
 import { EllipsisIcon, FilterIcon } from '@lucide/vue'
 
 const { data: lists } = useListsLoader()
-const { allPlaythroughs } = usePlaythroughs()
+const { playthroughs } = usePlaythroughs()
 
 const numberOfVisiblePlaythroughs = ref(10)
 const filterListId = useRouteQuery('listId', '')
@@ -17,11 +18,11 @@ const sortBy = useRouteQuery<'date' | 'speed' | 'duration'>('sortBy', 'date')
 const sortDirection = useRouteQuery<'asc' | 'desc'>('sortDir', 'asc')
 
 const filteredPlaythroughs = computed(() => {
-  const playthroughs = allPlaythroughs.value
+  const filtered = playthroughsOfLists(playthroughs.value, lists.value)
     .filter((r) => r.finished)
     .filter((p) => !filterListId.value || p.listId === filterListId.value)
 
-  playthroughs.sort((p1, p2) => {
+  filtered.sort((p1, p2) => {
     const [left, right] = sortDirection.value === 'desc' ? [p2, p1] : [p1, p2]
 
     if (sortBy.value === 'speed')
@@ -30,7 +31,7 @@ const filteredPlaythroughs = computed(() => {
 
     return new Date(right.timestamp).getTime() - new Date(left.timestamp).getTime()
   })
-  return playthroughs
+  return filtered
 })
 
 const visiblePlaythroughs = computed(() =>

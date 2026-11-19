@@ -1,6 +1,6 @@
 <script lang="ts">
 import { useListLoader } from '@/plugins/listLoader'
-import { useListPlaythroughs, usePlaythroughs } from '@/composables/playthroughs'
+import { usePlaythroughs } from '@/composables/playthroughs'
 import { useHotkey } from '@/composables/hotkey'
 import { useLocalize } from '@/composables/localize'
 export { useListLoader }
@@ -32,8 +32,7 @@ const settingsCard = useTemplateRef('settingsCard')
 const itemsCard = useTemplateRef('itemsCard')
 const newRecordDialog = useTemplateRef('newRecordDialog')
 
-const { allPlaythroughs } = usePlaythroughs()
-const { bestListPlaythrough } = useListPlaythroughs(list.value.id)
+const { addPlaythrough } = usePlaythroughs()
 
 useHotkey('q', () => {
   if (isInitialized.value && !isDone.value) {
@@ -119,14 +118,9 @@ function onStop() {
     numberOfMatches,
     timestamp: new Date().toISOString(),
   }
-  if (
-    newPlaythrough.finished &&
-    bestListPlaythrough.value?.finished &&
-    newPlaythrough.seconds < bestListPlaythrough.value.seconds
-  )
-    newRecordDialog.value?.open(newPlaythrough, bestListPlaythrough.value)
+  const { beatenRecord } = addPlaythrough(newPlaythrough)
 
-  allPlaythroughs.value.push(newPlaythrough)
+  if (beatenRecord) newRecordDialog.value?.open(newPlaythrough, beatenRecord)
 }
 
 function onInput() {

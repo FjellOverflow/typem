@@ -6,6 +6,7 @@ export { useListsLoader }
 <script setup lang="ts">
 import { useTitle } from '@vueuse/core'
 import { usePlaythroughs } from '@/composables/playthroughs'
+import { playthroughsOfLists } from '@/plugins/util'
 import { useRouteQuery } from '@vueuse/router'
 import { FilterIcon } from '@lucide/vue'
 
@@ -14,19 +15,18 @@ useTitle(`${t('Records')} - Typem`)
 
 const { data: lists } = useListsLoader()
 
-const { getBestListPlaythrough } = usePlaythroughs()
+const { records } = usePlaythroughs()
 
 const filterListId = useRouteQuery('listId', '')
 const sortBy = useRouteQuery<'date' | 'speed' | 'duration'>('sortBy', 'date')
 const sortDirection = useRouteQuery<'asc' | 'desc'>('sortDir', 'asc')
 
-const records = computed(() => {
-  const playthroughs = [...new Set(lists.value.map((list) => list.id))]
-    .map((listId) => getBestListPlaythrough(listId))
-    .filter((p) => !!p)
-    .filter((p) => !filterListId.value || p.listId === filterListId.value)
+const filteredRecords = computed(() => {
+  const filtered = playthroughsOfLists(records.value, lists.value).filter(
+    (p) => !filterListId.value || p.listId === filterListId.value,
+  )
 
-  playthroughs.sort((p1, p2) => {
+  filtered.sort((p1, p2) => {
     const [left, right] = sortDirection.value === 'desc' ? [p2, p1] : [p1, p2]
 
     if (sortBy.value === 'speed')
@@ -35,7 +35,7 @@ const records = computed(() => {
 
     return new Date(right.timestamp).getTime() - new Date(left.timestamp).getTime()
   })
-  return playthroughs
+  return filtered
 })
 </script>
 <template>
@@ -67,9 +67,12 @@ const records = computed(() => {
     </template>
   </CollapsibleBox>
 
-  <PlaythroughsList :playthroughs="records" />
+  <PlaythroughsList :playthroughs="filteredRecords" />
 
-  <div v-if="records.length === 0" class="w-full flex justify-center text-2xl sm:text-3xl mt-8">
+  <div
+    v-if="filteredRecords.length === 0"
+    class="w-full flex justify-center text-2xl sm:text-3xl mt-8"
+  >
     {{ $t('No playthroughs yet.') }}
   </div>
 </template>

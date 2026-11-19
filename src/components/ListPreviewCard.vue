@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useFavorites } from '@/composables/favorites'
 import { useLocalize } from '@/composables/localize'
-import { useListPlaythroughs } from '@/composables/playthroughs'
+import { usePlaythroughs } from '@/composables/playthroughs'
 import { getSecondsPerItem, formatDuration } from '@/plugins/util'
 import type { IList } from '@/types'
 import {
@@ -44,9 +44,9 @@ const difficultyLabel = computed(() => {
   return t('Easy')
 })
 
-const bestListPlaythrough = computed(
-  () => useListPlaythroughs(props.list.id).bestListPlaythrough.value,
-)
+const { recordOf } = usePlaythroughs()
+
+const record = computed(() => recordOf(props.list.id))
 </script>
 <template>
   <div :id="`list-preview-${list.id}`" class="border rounded-md p-4 grid grid-cols-3 gap-4">
@@ -103,20 +103,18 @@ const bestListPlaythrough = computed(
       </div>
 
       <div
-        v-if="bestListPlaythrough"
+        v-if="record"
         class="tooltip tooltip-bottom before:max-w-36 cursor-default"
-        :data-tip="
-          getSecondsPerItem(bestListPlaythrough.numberOfMatches, bestListPlaythrough.seconds)
-        "
+        :data-tip="getSecondsPerItem(record.numberOfMatches, record.seconds)"
       >
         <div class="flex gap-2 opacity-65">
-          <template v-if="bestListPlaythrough.finished">
+          <template v-if="record.finished">
             <TimerIcon />
-            <span> {{ formatDuration(bestListPlaythrough.seconds) }}</span>
+            <span> {{ formatDuration(record.seconds) }}</span>
           </template>
           <template v-else>
             <ListCheckIcon />
-            <span> {{ `${bestListPlaythrough.numberOfMatches}/${list.items.length}` }}</span>
+            <span> {{ `${record.numberOfMatches}/${list.items.length}` }}</span>
           </template>
         </div>
       </div>
