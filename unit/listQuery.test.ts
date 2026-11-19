@@ -78,6 +78,8 @@ const progressByListId: Record<string, ListProgress> = {
 
 const germanContext: ListQueryContext = {
   localize: (text) => (typeof text === 'string' ? text : (text.de ?? text.en ?? '')),
+  translateTag: (tag) =>
+    ({ universe: 'Universum', europe: 'Europa', capitals: 'Hauptstädte' })[tag] ?? tag,
   progressOf: (listId) => progressByListId[listId] ?? 'untried',
 }
 
@@ -106,8 +108,9 @@ describe('list query', () => {
     expect(queriedIds({ keyword: 'jupiter' })).toEqual(['moons'])
   })
 
-  it('finds a keyword in the tag key', () => {
-    expect(queriedIds({ keyword: 'universe' })).toEqual(['moons'])
+  it('finds a keyword in the translated tag and not in the tag key', () => {
+    expect(queriedIds({ keyword: 'Universum' })).toEqual(['moons'])
+    expect(queriedIds({ keyword: 'universe' })).toEqual([])
   })
 
   it('keeps only the lists with the selected tag', () => {

@@ -22,6 +22,7 @@ export const defaultListQuery = ListQuerySchema.parse({})
 
 export interface ListQueryContext {
   localize: (text: ILocalizedString) => string
+  translateTag: (tag: string) => string
   progressOf: (listId: string) => ListProgress
 }
 
@@ -46,10 +47,14 @@ function containsKeyword(text: string, keyword: string) {
 }
 
 export function queryLists(lists: IList[], query: IListQuery, context: ListQueryContext) {
-  const { localize, progressOf } = context
+  const { localize, translateTag, progressOf } = context
 
   const searchableTextOf = (list: IList) =>
-    [localize(list.meta.name), localize(list.meta.description), ...list.meta.tags].join(' ')
+    [
+      localize(list.meta.name),
+      localize(list.meta.description),
+      ...list.meta.tags.map(translateTag),
+    ].join(' ')
 
   const naturalOrder = naturalOrderBy(localize)[query.sortBy]
 

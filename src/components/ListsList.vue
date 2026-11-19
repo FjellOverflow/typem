@@ -15,6 +15,7 @@ const props = withDefaults(
   },
 )
 
+const { t } = useI18n()
 const { localize } = useLocalize()
 const { progressOf } = usePlaythroughs()
 const { query, isDefault } = useListQuery()
@@ -22,7 +23,11 @@ const { query, isDefault } = useListQuery()
 const availableTags = computed(() => [...new Set(props.lists.flatMap((list) => list.meta.tags))])
 
 const filteredLists = computed(() =>
-  queryLists(props.lists, query, { localize: localize.value, progressOf }),
+  queryLists(props.lists, query, {
+    localize: localize.value,
+    translateTag: (tag) => t(tag),
+    progressOf,
+  }),
 )
 </script>
 <template>
