@@ -36,7 +36,7 @@
     "caniuse-lite": "^1.0.30001826",
     "daisyui": "^5.8.1",
     "flag-icons": "^7.6.0",
-    "shepherd.js": "^15.3.0",
+    "shepherd.js": "^16.0.0",
     "tailwindcss": "^4.3.5",
     "unplugin-auto-import": "^21.1.0",
     "unplugin-vue-components": "^32.1.0",
